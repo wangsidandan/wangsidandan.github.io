@@ -99,7 +99,7 @@
 <h2 id="3-给新用户授予权限"><a href="#3-给新用户授予权限" class="headerlink" title="3.给新用户授予权限"></a>3.给新用户授予权限</h2><blockquote>
 <p>vim /etc/sudoers</p>
 </blockquote>
-<img src="images/image-20201029150720491.png" alt="image-20201029150720491" style="zoom:70%;" />
+<img src="/images/image-20201029150720491.png" alt="image-20201029150720491" style="zoom:70%;" />
 
 <h2 id="4-切换briup用户登陆"><a href="#4-切换briup用户登陆" class="headerlink" title="4.切换briup用户登陆"></a>4.切换briup用户登陆</h2><p><img src="/images/image-20201029150946144.png" alt="image-20201029150946144"></p>
 <h1 id="3-搭建JavaWeb运行环境"><a href="#3-搭建JavaWeb运行环境" class="headerlink" title="3.搭建JavaWeb运行环境"></a>3.搭建JavaWeb运行环境</h1><blockquote>
@@ -133,7 +133,7 @@
   <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">说明： 把本地当前目录下的Hello.java文件复制到远程目录下的Desktop/Hello.java</span><br></pre></td></tr></table></figure>
 
 <p>方法二：filezillla</p>
-<p><img src="images/image-20201029160615567.png" alt="image-20201029160615567"></p>
+<p><img src="/images/image-20201029160615567.png" alt="image-20201029160615567"></p>
 <p>（2）解压jdk的包</p>
 <p><code>tar -xvf jdk...</code></p>
 <p>（3）配置环境变量 （家目录）</p>
