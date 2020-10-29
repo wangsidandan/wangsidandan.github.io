@@ -5,32 +5,32 @@
     <url>/2020/10/29/estore%E5%BC%95%E5%85%A5%E6%94%AF%E4%BB%98%E5%AE%9D%E6%B2%99%E7%AE%B1/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="1-注册沙箱账号及配置"><a href="#1-注册沙箱账号及配置" class="headerlink" title="1.注册沙箱账号及配置"></a>1.注册沙箱账号及配置</h1><p><a href="https://www.antgroup.com/">1.登陆蚂蚁金服官网</a></p>
 <p>2.划到尾页，点击支付宝开放平台</p>
-<p><img src="/assets/image-20201029103938947.png" alt="image-20201029103938947"></p>
+<p><img src="/images/image-20201029103938947.png" alt="image-20201029103938947"></p>
 <p>3.点击立即入驻（注册过的直接扫码登陆）</p>
-<p><img src="/assets/image-20201029104756001.png" alt="image-20201029104756001"></p>
+<p><img src="/images/image-20201029104756001.png" alt="image-20201029104756001"></p>
 <p>4.填写身份信息注册沙箱账号</p>
 <p>5.注册完跳转页面，选择沙箱</p>
-<p><img src="/assets/image-20201029105235780.png" alt="image-20201029105235780"></p>
+<p><img src="/images/image-20201029105235780.png" alt="image-20201029105235780"></p>
 <p>6.跳转页面，点击开放平台控制台</p>
-<p><img src="/assets/image-20201029105359667.png" alt="image-20201029105359667"></p>
+<p><img src="/images/image-20201029105359667.png" alt="image-20201029105359667"></p>
 <p>7.跳转登陆页面，扫码登陆</p>
-<p><img src="/assets/image-20201029105433185.png" alt="image-20201029105433185"></p>
+<p><img src="/images/image-20201029105433185.png" alt="image-20201029105433185"></p>
 <p>8.跳转页面，点击研发服务</p>
-<p><img src="/assets/image-20201029105527432.png" alt="image-20201029105527432"></p>
-<p>9.<img src="/assets/image-20201029105856184.png" alt="image-20201029105856184"></p>
+<p><img src="/images/image-20201029105527432.png" alt="image-20201029105527432"></p>
+<p>9.<img src="/images/image-20201029105856184.png" alt="image-20201029105856184"></p>
 <p>10.此时需要设置公钥和私钥，点击设置/查看</p>
-<p><img src="/assets/image-20201029110003893.png" alt="image-20201029110003893"></p>
+<p><img src="/images/image-20201029110003893.png" alt="image-20201029110003893"></p>
 <p>11.点击支付宝密钥生成器</p>
-<p><img src="/assets/image-20201029110107302.png" alt="image-20201029110107302"></p>
+<p><img src="/images/image-20201029110107302.png" alt="image-20201029110107302"></p>
 <p>12.点击windows下载</p>
-<p><img src="/assets/image-20201029110158918.png" alt="image-20201029110158918"></p>
+<p><img src="/images/image-20201029110158918.png" alt="image-20201029110158918"></p>
 <p>13.打开软件，默认配置。点击生成密钥，然后点击复制公钥</p>
-<p><img src="/assets/image-20201029110451920.png" alt="image-20201029110451920"></p>
+<p><img src="/images/image-20201029110451920.png" alt="image-20201029110451920"></p>
 <p>14.将复制的公钥粘贴到</p>
-<p><img src="/assets/image-20201029110554942.png" alt="image-20201029110554942"></p>
+<p><img src="/images/image-20201029110554942.png" alt="image-20201029110554942"></p>
 <p>15.需要的话可下载沙箱支付宝手机版，可扫码支付（账号密码查看沙箱账号）</p>
-<p><img src="/assets/image-20201029110834665.png" alt="image-20201029110834665"></p>
-<p><img src="/assets/image-20201029110804774.png" alt="image-20201029110804774"></p>
+<p><img src="/images/image-20201029110834665.png" alt="image-20201029110834665"></p>
+<p><img src="/images/image-20201029110804774.png" alt="image-20201029110804774"></p>
 <p>16.数据准备完成</p>
 <hr>
 <h1 id="2-集成到项目中"><a href="#2-集成到项目中" class="headerlink" title="2.集成到项目中"></a>2.集成到项目中</h1><p>##1.导入支付宝依赖</p>
@@ -42,15 +42,15 @@
 <ul>
 <li>APPID/支付宝网关</li>
 </ul>
-<p><img src="/assets/image-20201029111602923.png"></p>
+<p><img src="/images/image-20201029111602923.png"></p>
 <ul>
 <li>RSA2(SHA256)密钥</li>
 </ul>
-<p><img src="/assets/image-20201029111705781.png" alt="image-20201029111705781"></p>
+<p><img src="/images/image-20201029111705781.png" alt="image-20201029111705781"></p>
 <ul>
 <li>用户私钥</li>
 </ul>
-<p><img src="/assets/image-20201029111759299.png" alt="image-20201029111759299"></p>
+<p><img src="/images/image-20201029111759299.png" alt="image-20201029111759299"></p>
 <p>##3.引入支付接口(注意配置访问路径)</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PayServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">			<span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">		doGet(request, response);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">			<span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">//拿到订单id</span></span><br><span class="line">	     String orderid = request.getParameter(<span class="string">&quot;id&quot;</span>);</span><br><span class="line">		<span class="comment">//调用service去数据库中查询当前订单</span></span><br><span class="line">	     OrderServiceImpl ordImpl = <span class="keyword">new</span> OrderServiceImpl();</span><br><span class="line">	     OrderForm orderForm = </span><br><span class="line">	    		 ordImpl.findOrderFormById(Integer.parseInt(orderid));</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//支付</span></span><br><span class="line">	    <span class="comment">//浏览器动态产生一个付钱的二维码</span></span><br><span class="line">	     <span class="comment">/**</span></span><br><span class="line"><span class="comment">	      * 需要将我们的项目接入支付宝</span></span><br><span class="line"><span class="comment">	      * 入驻蚂蚁金服平台</span></span><br><span class="line"><span class="comment">	      */</span></span><br><span class="line">	     </span><br><span class="line">	     <span class="keyword">try</span> &#123;</span><br><span class="line">	          AlipayClient alipayClient =</span><br><span class="line">	                  AlipayConfig.getAlipayClient();</span><br><span class="line">	          <span class="comment">//设置请求参数</span></span><br><span class="line">	          AlipayTradePagePayRequest alipayRequest = </span><br><span class="line">	                  <span class="keyword">new</span> AlipayTradePagePayRequest();</span><br><span class="line">	          </span><br><span class="line">	          AlipayTradePayModel model = </span><br><span class="line">	                  <span class="keyword">new</span> AlipayTradePayModel();</span><br><span class="line">	          <span class="comment">// 设定订单号 必须要写,且订单号不能重复，目前已经只是做测试，已经写死</span></span><br><span class="line">	          model.setOutTradeNo(System.currentTimeMillis()+<span class="string">&quot;&quot;</span>);</span><br><span class="line">	          <span class="comment">// 设置订单金额</span></span><br><span class="line">	          model.setTotalAmount(orderForm.getCost()+<span class="string">&quot;&quot;</span>);</span><br><span class="line">	          <span class="comment">// 订单名字</span></span><br><span class="line">	          model.setSubject(<span class="string">&quot;书籍订单&quot;</span>);</span><br><span class="line">	          <span class="comment">// 订单描述</span></span><br><span class="line">	          model.setBody(System.currentTimeMillis()+<span class="string">&quot;&quot;</span>);</span><br><span class="line">	          <span class="comment">// 产品码</span></span><br><span class="line">	          model.setProductCode(<span class="string">&quot;FAST_INSTANT_TRADE_PAY&quot;</span>);</span><br><span class="line">	          <span class="comment">// 设置参数</span></span><br><span class="line">	          alipayRequest.setBizModel(model);</span><br><span class="line">	          <span class="comment">// 设置回调地址</span></span><br><span class="line">	          alipayRequest.setReturnUrl(AlipayConfig.return_url);</span><br><span class="line">	          String result = alipayClient.pageExecute(alipayRequest).getBody();</span><br><span class="line">	          response.setContentType(<span class="string">&quot;text/html;charset=utf-8&quot;</span>);</span><br><span class="line">	          response.getWriter().println(result);</span><br><span class="line">	      &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">	              e.printStackTrace();</span><br><span class="line">	      &#125;  </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -60,5 +60,133 @@
 <p><strong>加油啊 少年！</strong></p>
 </blockquote>
 ]]></content>
+  </entry>
+  <entry>
+    <title>阿里云部署web项目</title>
+    <url>/2020/10/29/%E9%98%BF%E9%87%8C%E4%BA%91%E9%83%A8%E7%BD%B2web%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="1-购买阿里云"><a href="#1-购买阿里云" class="headerlink" title="1.购买阿里云"></a>1.购买阿里云</h1><ul>
+<li><p>登陆<a href="https://developer.aliyun.com/plan/grow-up">阿里云</a></p>
+</li>
+<li><p>搜索云翼计划 购买学生机==9.9/月==</p>
+<p><img src="/images/image-20201029143054774.png" alt="image-20201029143054774"></p>
+</li>
+<li><p>购买后记住ip 配置root密码</p>
+</li>
+<li><p>在服务器中选择操作系统 可选ubuntu16</p>
+</li>
+<li><p>在本地远程登陆阿里云 可使用自带xshell工具或者putty第三方工具</p>
+<ul>
+<li>输入阿里云账号 端口号默认22</li>
+</ul>
+<p><img src="/images/image-20201029145231540.png" alt="image-20201029145231540"></p>
+<ul>
+<li><p>登陆成功</p>
+<p> <img src="/images/image-20201029145437515.png" alt="image-20201029145437515"></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>#2.配置用户环境</p>
+<h2 id="1-修改主机名"><a href="#1-修改主机名" class="headerlink" title="1.修改主机名"></a>1.修改主机名</h2><blockquote>
+<p><strong>hostnamectl set-hostname ‘ubuntu’</strong></p>
+</blockquote>
+<p>然后去阿里云控制台重启服务器。</p>
+<h2 id="2-创建非root用户"><a href="#2-创建非root用户" class="headerlink" title="2.创建非root用户"></a>2.创建非root用户</h2><blockquote>
+<p>创建普通用户：briup/briup</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">adduser briup</span><br><span class="line">passwd briup</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-给新用户授予权限"><a href="#3-给新用户授予权限" class="headerlink" title="3.给新用户授予权限"></a>3.给新用户授予权限</h2><blockquote>
+<p>vim /etc/sudoers</p>
+</blockquote>
+<img src="images/image-20201029150720491.png" alt="image-20201029150720491" style="zoom:70%;" />
+
+<h2 id="4-切换briup用户登陆"><a href="#4-切换briup用户登陆" class="headerlink" title="4.切换briup用户登陆"></a>4.切换briup用户登陆</h2><p><img src="/images/image-20201029150946144.png" alt="image-20201029150946144"></p>
+<h1 id="3-搭建JavaWeb运行环境"><a href="#3-搭建JavaWeb运行环境" class="headerlink" title="3.搭建JavaWeb运行环境"></a>3.搭建JavaWeb运行环境</h1><blockquote>
+<p>与在本地启动项目一样，需要安装JDK环境，tomcat（服务器）以及mysql</p>
+</blockquote>
+<h2 id="1-安装JDK"><a href="#1-安装JDK" class="headerlink" title="1.安装JDK"></a>1.安装JDK</h2><ul>
+<li><p>apt在线安装</p>
+<h2 id="openjdk"><a href="#openjdk" class="headerlink" title="openjdk"></a>openjdk</h2><p>(1)查找合适的openjdk版本:</p>
+<p>​    <code>apt-cache search openjdk</code></p>
+<p>(2)安装</p>
+<p><code>sudo apt-get install openjdk-8-jdk</code></p>
+<p>(3) 配置环境变量, 编辑如下文件</p>
+<p><code>vim ~/.bashrc</code></p>
+<p>在最后加上一行</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">export JAVA_HOME=/usr/lib/jvm/java-<span class="number">8</span>-openjdk-amd64</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br></pre></td></tr></table></figure>
+
+<p>(4) 测试jdk是否安装成功:</p>
+<p><code>java -version</code></p>
+<p>显示如下结果, 则说明安装成功:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">openjdk version “1.8.0_91” </span><br><span class="line">OpenJDK Runtime Environment (build 1.8.0_91-8u91-b14-0ubuntu4~15.10.1-b14) </span><br><span class="line">OpenJDK Server VM (build 25.91-b14, mixed mode)</span><br></pre></td></tr></table></figure>
+
+<p>##oraclejdk</p>
+</li>
+<li><p><a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html">官网下载</a></p>
+<p>==注：apt下载oracle需要仓库==</p>
+<p>（1）将文件放置在briup用户下</p>
+<p>==<strong>ubuntu中需要安装SSHServer</strong>==</p>
+<p><code>sudo apt install openssh-server</code></p>
+<p>方法一：shell工具</p>
+<p><img src="/images/image-20201029155706089.png" alt="image-20201029155706089"></p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">说明： 把本地当前目录下的Hello.java文件复制到远程目录下的Desktop/Hello.java</span><br></pre></td></tr></table></figure>
+
+<p>方法二：filezillla</p>
+<p><img src="images/image-20201029160615567.png" alt="image-20201029160615567"></p>
+<p>（2）解压jdk的包</p>
+<p><code>tar -xvf jdk...</code></p>
+<p>（3）配置环境变量 （家目录）</p>
+<p><code>vi.bashrc</code></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">export JAVA_HOME=/home/briup/jdk1.<span class="number">8.0_74</span></span><br><span class="line">			export PATH=JAVA_HOME/bin:PATH</span><br><span class="line">			export CLASSPATH=.:./bin</span><br></pre></td></tr></table></figure>
+
+<p>(4) 使配置资源生效</p>
+<p><code>source .bashrc  </code></p>
+</li>
+</ul>
+<h2 id="2-安装tomcat"><a href="#2-安装tomcat" class="headerlink" title="2.安装tomcat"></a>2.安装tomcat</h2><ul>
+<li><a href="https://tomcat.apache.org/download-80.cgi">官网下载</a></li>
+</ul>
+<p>同上，将安装包移到服务器即可</p>
+<h2 id="3-安装mysql"><a href="#3-安装mysql" class="headerlink" title="3.安装mysql"></a>3.安装mysql</h2><ul>
+<li><p>在线安装</p>
+<p>1&gt;安装</p>
+<p><code>apt-get install mysql-server-5.7</code></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">如果无法安装，尝试更新源</span><br><span class="line">apt-get update</span><br><span class="line">apt-get upgrade</span><br></pre></td></tr></table></figure>
+
+<p>2&gt;开启mysql远程访问</p>
+<p><code>select user,host from user</code></p>
+<p>可看到host全是localhost，<img src="/images/image-20201029162843368.png" alt="image-20201029162843368"></p>
+<p><strong>localhost表示只能本地登录，可以将root账号对应的host改为%即可实现远程连接（暂不考虑安全性）</strong></p>
+<p><code>update user set host = &#39;%&#39; where user = &#39;root&#39;</code></p>
+<p>3&gt;设置mysql编码</p>
+<p><code>vim /etc/mysql/my.cnf</code></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">[client]</span><br><span class="line"><span class="keyword">default</span>-character-set=utf8</span><br><span class="line">[mysqld]</span><br><span class="line">character-set-server=utf8</span><br><span class="line">max_connections=<span class="number">1000</span></span><br><span class="line">!includedir /etc/mysql/conf.d/</span><br><span class="line">!includedir /etc/mysql/mysql.conf.d/</span><br><span class="line">bind-address=<span class="number">0.0</span>.<span class="number">0.0</span></span><br></pre></td></tr></table></figure>
+
+<p>4&gt;重启mysql服务</p>
+<p><code>service mysql restart</code></p>
+<p>//service mysql status   查看mysql状态</p>
+<p>5&gt;在线下载mysql</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span>sudo apt-get autoremove --purge mysql-server</span><br><span class="line"><span class="number">2.</span>sudo apt-get remove mysql-server</span><br><span class="line"><span class="number">3.</span>sudo apt-get autoremove mysql-server</span><br><span class="line"><span class="number">4.</span>sudo apt-get remove mysql-common</span><br><span class="line"><span class="number">5.</span>清理残留数据 dpkg -l |grep mysql|awk <span class="string">&#x27;&#123;print $2&#125;&#x27;</span> |sudo xargs dpkg -P </span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://dev.mysql.com/downloads/mysql/">官网下载</a></p>
+</li>
+</ul>
+<h1 id="4-部署war包"><a href="#4-部署war包" class="headerlink" title="4.部署war包"></a>4.部署war包</h1><p>1&gt;将web项目打成war包</p>
+<p>2&gt;将war包放入服务器上tomcat/webapps下面</p>
+<p>3&gt;开启服务器,会自动解压war包</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">cd /tomcat/bin</span><br><span class="line">./startup.sh</span><br></pre></td></tr></table></figure>
+
+<p>4&gt;需要的话，修改默认端口号</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">vim /tomcat/conf/server.xml</span><br><span class="line">找到&lt;connect <span class="string">&quot;8080&quot;</span>&gt;</span><br><span class="line">    修改成你想要的端口</span><br></pre></td></tr></table></figure>
+
+
+
+<p>#5.在阿里云控制台上开放相关端口号</p>
+<p>比如8080端口，3306或者你的项目端口，否则无法访问。</p>
+]]></content>
+      <tags>
+        <tag>java</tag>
+      </tags>
   </entry>
 </search>
