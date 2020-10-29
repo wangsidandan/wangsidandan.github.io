@@ -184,32 +184,32 @@
        
   <h1 id="1-注册沙箱账号及配置"><a href="#1-注册沙箱账号及配置" class="headerlink" title="1.注册沙箱账号及配置"></a>1.注册沙箱账号及配置</h1><p><a target="_blank" rel="noopener" href="https://www.antgroup.com/">1.登陆蚂蚁金服官网</a></p>
 <p>2.划到尾页，点击支付宝开放平台</p>
-<p><img src="/images/image-20201029103938947.png" alt="image-20201029103938947"></p>
+<p><img src="/assets/image-20201029103938947.png" alt="image-20201029103938947"></p>
 <p>3.点击立即入驻（注册过的直接扫码登陆）</p>
-<p><img src="%5Cassets%5Cimage-20201029104756001.png" alt="image-20201029104756001"></p>
+<p><img src="/assets/image-20201029104756001.png" alt="image-20201029104756001"></p>
 <p>4.填写身份信息注册沙箱账号</p>
 <p>5.注册完跳转页面，选择沙箱</p>
-<p><img src="%5Cassets%5Cimage-20201029105235780.png" alt="image-20201029105235780"></p>
+<p><img src="/assets/image-20201029105235780.png" alt="image-20201029105235780"></p>
 <p>6.跳转页面，点击开放平台控制台</p>
-<p><img src="%5Cassets%5Cimage-20201029105359667.png" alt="image-20201029105359667"></p>
+<p><img src="/assets/image-20201029105359667.png" alt="image-20201029105359667"></p>
 <p>7.跳转登陆页面，扫码登陆</p>
-<p><img src="%5Cassets%5Cimage-20201029105433185.png" alt="image-20201029105433185"></p>
+<p><img src="/assets/image-20201029105433185.png" alt="image-20201029105433185"></p>
 <p>8.跳转页面，点击研发服务</p>
-<p><img src="%5Cassets%5Cimage-20201029105527432.png" alt="image-20201029105527432"></p>
-<p>9.<img src="%5Cassets%5Cimage-20201029105856184.png" alt="image-20201029105856184"></p>
+<p><img src="/assets/image-20201029105527432.png" alt="image-20201029105527432"></p>
+<p>9.<img src="/assets/image-20201029105856184.png" alt="image-20201029105856184"></p>
 <p>10.此时需要设置公钥和私钥，点击设置/查看</p>
-<p><img src="%5Cassets%5Cimage-20201029110003893.png" alt="image-20201029110003893"></p>
+<p><img src="/assets/image-20201029110003893.png" alt="image-20201029110003893"></p>
 <p>11.点击支付宝密钥生成器</p>
-<p><img src="%5Cassets%5Cimage-20201029110107302.png" alt="image-20201029110107302"></p>
+<p><img src="/assets/image-20201029110107302.png" alt="image-20201029110107302"></p>
 <p>12.点击windows下载</p>
-<p><img src="%5Cassets%5Cimage-20201029110158918.png" alt="image-20201029110158918"></p>
+<p><img src="/assets/image-20201029110158918.png" alt="image-20201029110158918"></p>
 <p>13.打开软件，默认配置。点击生成密钥，然后点击复制公钥</p>
-<p><img src="%5Cassets%5Cimage-20201029110451920.png" alt="image-20201029110451920"></p>
+<p><img src="/assets/image-20201029110451920.png" alt="image-20201029110451920"></p>
 <p>14.将复制的公钥粘贴到</p>
-<p><img src="%5Cassets%5Cimage-20201029110554942.png" alt="image-20201029110554942"></p>
+<p><img src="/assets/image-20201029110554942.png" alt="image-20201029110554942"></p>
 <p>15.需要的话可下载沙箱支付宝手机版，可扫码支付（账号密码查看沙箱账号）</p>
-<p><img src="%5Cassets%5Cimage-20201029110834665.png" alt="image-20201029110834665"></p>
-<p><img src="%5Cassets%5Cimage-20201029110804774.png" alt="image-20201029110804774"></p>
+<p><img src="/assets/image-20201029110834665.png" alt="image-20201029110834665"></p>
+<p><img src="/assets/image-20201029110804774.png" alt="image-20201029110804774"></p>
 <p>16.数据准备完成</p>
 <hr>
 <h1 id="2-集成到项目中"><a href="#2-集成到项目中" class="headerlink" title="2.集成到项目中"></a>2.集成到项目中</h1><p>1.导入支付宝依赖</p>
@@ -221,21 +221,21 @@
 <ul>
 <li>APPID/支付宝网关</li>
 </ul>
-<p><img src="%5Cassets%5Cimage-20201029111602923.png"></p>
+<p><img src="/assets/image-20201029111602923.png"></p>
 <ul>
 <li>RSA2(SHA256)密钥</li>
 </ul>
-<p><img src="%5Cassets%5Cimage-20201029111705781.png" alt="image-20201029111705781"></p>
+<p><img src="/assets/image-20201029111705781.png" alt="image-20201029111705781"></p>
 <ul>
 <li>用户私钥</li>
 </ul>
-<p><img src="%5Cassets%5Cimage-20201029111759299.png" alt="image-20201029111759299"></p>
+<p><img src="/assets/image-20201029111759299.png" alt="image-20201029111759299"></p>
 <p>3.引入支付接口(注意配置访问路径)</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PayServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">			<span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">		doGet(request, response);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">			<span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">//拿到订单id</span></span><br><span class="line">	     String orderid = request.getParameter(<span class="string">&quot;id&quot;</span>);</span><br><span class="line">		<span class="comment">//调用service去数据库中查询当前订单</span></span><br><span class="line">	     OrderServiceImpl ordImpl = <span class="keyword">new</span> OrderServiceImpl();</span><br><span class="line">	     OrderForm orderForm = </span><br><span class="line">	    		 ordImpl.findOrderFormById(Integer.parseInt(orderid));</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//支付</span></span><br><span class="line">	    <span class="comment">//浏览器动态产生一个付钱的二维码</span></span><br><span class="line">	     <span class="comment">/**</span></span><br><span class="line"><span class="comment">	      * 需要将我们的项目接入支付宝</span></span><br><span class="line"><span class="comment">	      * 入驻蚂蚁金服平台</span></span><br><span class="line"><span class="comment">	      */</span></span><br><span class="line">	     </span><br><span class="line">	     <span class="keyword">try</span> &#123;</span><br><span class="line">	          AlipayClient alipayClient =</span><br><span class="line">	                  AlipayConfig.getAlipayClient();</span><br><span class="line">	          <span class="comment">//设置请求参数</span></span><br><span class="line">	          AlipayTradePagePayRequest alipayRequest = </span><br><span class="line">	                  <span class="keyword">new</span> AlipayTradePagePayRequest();</span><br><span class="line">	          </span><br><span class="line">	          AlipayTradePayModel model = </span><br><span class="line">	                  <span class="keyword">new</span> AlipayTradePayModel();</span><br><span class="line">	          <span class="comment">// 设定订单号 必须要写,且订单号不能重复，目前已经只是做测试，已经写死</span></span><br><span class="line">	          model.setOutTradeNo(System.currentTimeMillis()+<span class="string">&quot;&quot;</span>);</span><br><span class="line">	          <span class="comment">// 设置订单金额</span></span><br><span class="line">	          model.setTotalAmount(orderForm.getCost()+<span class="string">&quot;&quot;</span>);</span><br><span class="line">	          <span class="comment">// 订单名字</span></span><br><span class="line">	          model.setSubject(<span class="string">&quot;书籍订单&quot;</span>);</span><br><span class="line">	          <span class="comment">// 订单描述</span></span><br><span class="line">	          model.setBody(System.currentTimeMillis()+<span class="string">&quot;&quot;</span>);</span><br><span class="line">	          <span class="comment">// 产品码</span></span><br><span class="line">	          model.setProductCode(<span class="string">&quot;FAST_INSTANT_TRADE_PAY&quot;</span>);</span><br><span class="line">	          <span class="comment">// 设置参数</span></span><br><span class="line">	          alipayRequest.setBizModel(model);</span><br><span class="line">	          <span class="comment">// 设置回调地址</span></span><br><span class="line">	          alipayRequest.setReturnUrl(AlipayConfig.return_url);</span><br><span class="line">	          String result = alipayClient.pageExecute(alipayRequest).getBody();</span><br><span class="line">	          response.setContentType(<span class="string">&quot;text/html;charset=utf-8&quot;</span>);</span><br><span class="line">	          response.getWriter().println(result);</span><br><span class="line">	      &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">	              e.printStackTrace();</span><br><span class="line">	      &#125;  </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
-<h1 id="3-上岸"><a href="#3-上岸" class="headerlink" title="3.上岸"></a>3.上岸</h1><p><strong>加油！</strong></p>
+<h1 id="3-上岸"><a href="#3-上岸" class="headerlink" title="3.上岸"></a>3.上岸</h1><p><strong>加油啊 少年！</strong></p>
  
       <!-- reward -->
       
