@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en">
+<html lang="zh-CN">
 
 
 <head>
@@ -33,6 +33,7 @@
 
   
 
+<link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
 </head>
 
 </html>
@@ -212,10 +213,10 @@
 <p><img src="/assets/image-20201029110804774.png" alt="image-20201029110804774"></p>
 <p>16.数据准备完成</p>
 <hr>
-<h1 id="2-集成到项目中"><a href="#2-集成到项目中" class="headerlink" title="2.集成到项目中"></a>2.集成到项目中</h1><p>1.导入支付宝依赖</p>
+<h1 id="2-集成到项目中"><a href="#2-集成到项目中" class="headerlink" title="2.集成到项目中"></a>2.集成到项目中</h1><p>##1.导入支付宝依赖</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.alipay.sdk&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;alipay-sdk-java&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;4.8.10.ALL&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
 
-<p>2.封装配置类 AlipayConfig.java</p>
+<p>##2.封装配置类 AlipayConfig.java</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AlipayConfig</span> </span>&#123;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 服务网关   沙箱环境都是这个  </span></span><br><span class="line"><span class="comment">     (去沙箱应用中复制该信息 沙箱应用/支付宝网关 )</span></span><br><span class="line"><span class="comment">   */</span>								</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> String serverUrl = <span class="string">&quot;https://openapi.alipaydev.com/gateway.do&quot;</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 应用id  后期可以替换成自己的id</span></span><br><span class="line"><span class="comment">   	(去沙箱应用中复制该信息 沙箱应用/APPID)</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> String appId = <span class="string">&quot;2016102500758175&quot;</span>;<span class="comment">//2016102500758175</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   *  用户私钥   后期替换成自己的私钥 </span></span><br><span class="line"><span class="comment">   *  public static String privateKey =</span></span><br><span class="line"><span class="comment">    （去生成私钥公钥的软件中，已经下载  复制私钥）</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> String privateKey =<span class="string">&quot;MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC0+d4lR1AOvmduCyg3cBFxyRDUK//TOA7ct9kilfGcHjjk65HFz9UAQSsImdAd+YsAtOL0Fy1RtUdOjGZTG1nKG5eQnJo4gHXavvfnr5iDsdWOz8RUjV0YBK8uBtiEcJ98WuXUU5T3YEvdN8zOkq861Kq39VKElbFRgkfW3ZO97yDgVL3o2aic6IM/rB99a/AuDQggi4Ok84K0GPK64U/7eynR2Yr2kelPt03P6Gm5K3tw5miPKo/60ajKquM1yCyUQQ+6T9ebwN2hhkEfH6NdqJMVs05MfgKWzWm3jL/JJ54bFbWhz1GuB5lnzM2v3cz6mAnc7a6xbyOG1VMeqfVLAgMBAAECggEAJIaFokp5SvB82YXg8QdqTefBwMC8mjmnLj7g0Q0oPVUQMIum2SCwIaQFdm/sxA/4UQUxBQikeeg3YxANGtrbTWIyPdqNebfbkXGXgSg8hN/gdTlTq6j4T/+qB4UUL+63EZca6baQyzihNx2q9Uo/mYUQi540sFOx/PxpWWFRDzUbpH1Mip0fpSpdlq/rYNwnCtoOHx7AQYQWpFEWUr6WvaLhKEgICnzfsrmmPiyLX4rZ1H9gpf/zOeSP6l7HtGUc7vsbgKGBERx0Kx7FvYG41MEItev3zEklpwFwX4fHqc2wkCgBWuMnE5VuXQtToY6Z2236uyOn97fVneIFXi/b2QKBgQDwwH1XTav8qUL11A58y/K2w7KDXM7vMOgve4rXUpxakkaYYst4b9jzH1xODM2D3PGIE6v1omyLrj7khNlRBd7ffnIymzT32HE7V1Q3/SoJlLV8tcv+hETKF/Ycu5osrvc5da1JTVMc72lODNlHbYqOAW8DU9mGqX9TJToOU3iVjQKBgQDAcC61KstO0CGZZlJ7NvNBXrhAk2lKdNm3gd/nz9YRc3hyo07dT6RErbT1bim2dbO4lAkrf/qDnXWQjyh9b5c2hCV8BposaeJGxXbmsiPtsjrr+Fg6+KYv11PMyBMu1eF1gboRvAB0e8wbbLl8rlFmOSsS8HZRz09NR8aFViIkNwKBgFY6i2omjrArK6mCr0GxhphBVYHJTvDK0o6XMC5ZD1k9RP21fO0BGnJRzCzEVyOgkf3MFe4fo8MPwMT2dCOZ966SynIntvwCUOQRLj/zdAgEdFBbiNn7I+xCUssNwnW4oSG6bTtw75DQiyYCYhw8NsEP8GP/t0yNDuaH0dhpuynNAoGAHdDDy9oHifyBWC0cVm7bHaO5VHgCdkDIgsAimt3+wtFrNgfLbkqqnuFzChu5ZsWxxMVa7lxzyfSZhH5JvbWObinnTOIQ/RSitGhf1bqACpH0wx7FPM3Nodfw6eeN4VHODtC8rYa9Y07S/uTHkGPJxNbSr6qGCoLePJEEVyBTRd0CgYBbvf9/d8lybwvIVGi4YS72on4w86n64bS8EbBCZtmqwAKmGKLIsvSnlubEyP88dYtP6Hp6N8DExDd9I45OxdsX7CIRmfaPH+LT6oytWCiObtNK6ME4y/yaIpLuDKaFLg2fetJd6RyHd2nngbNgmVKVRu6tjIIKqbDkW8Q4XP+etg==&quot;</span>;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   *  发送数据的格式 目前只能为json</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> String format = <span class="string">&quot;json&quot;</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   *  设置字符集编码 目前只能为utf-8</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> String charset = <span class="string">&quot;utf-8&quot;</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   *  支付宝公钥 后期替换成自己的支付宝公钥 </span></span><br><span class="line"><span class="comment">   *  public static String publicKey =</span></span><br><span class="line"><span class="comment">   	(去沙箱应用中复制该信息 沙箱应用/RSA2(SHA256)密钥)</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> String publicKey = <span class="string">&quot;MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlb5JITbNNGuhnCwn2QXxYjh/iyLML/GT5omOMT+GD+vNY4ID6fn5oQDA8jByatzwMjoC251mj4TIRY1hb51FbAcfwkQEFuSULyaVFgDiC4ae+JZSHEwIzseznrQT0rqcIDj8Y70wRFcfL92bFzh/ETBrbE31nfc34hLATUpz3FOOAFuE4wx4KTW/OsugyKyVns+JAIIdlzNzZSEnh4DaL8/2OrWL+Em21pr50gaQQu1lGly9ArrKCnuICIa7lcGKEct0yeSaDA25UZg+YSodZCVUpWe3bOhrGDy4gn2AZiLfkejr2e3aPoETIIz1tBV011ZU+/zIzYrdnEt+O4gFQwIDAQAB&quot;</span>;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   *  支付宝签名 目前是 RSA2</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> String signType = <span class="string">&quot;RSA2&quot;</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   *  页面跳转同步通知页面路径 需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问</span></span><br><span class="line"><span class="comment">   *  付款结束后跳转的页面</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> String return_url = <span class="string">&quot;http://localhost:8080/estore_alipay/index.jsp&quot;</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> AlipayClient <span class="title">getAlipayClient</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="comment">// 获得初始化的AlipayClient</span></span><br><span class="line">      AlipayClient alipayClient = <span class="keyword">new</span> DefaultAlipayClient</span><br><span class="line">    		  (AlipayConfig.serverUrl, AlipayConfig.appId, </span><br><span class="line">    		AlipayConfig.privateKey, AlipayConfig.format, </span><br><span class="line">    		AlipayConfig.charset, AlipayConfig.publicKey, AlipayConfig.signType);</span><br><span class="line">      <span class="keyword">return</span> alipayClient;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
@@ -230,12 +231,14 @@
 <li>用户私钥</li>
 </ul>
 <p><img src="/assets/image-20201029111759299.png" alt="image-20201029111759299"></p>
-<p>3.引入支付接口(注意配置访问路径)</p>
+<p>##3.引入支付接口(注意配置访问路径)</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PayServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">			<span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">		doGet(request, response);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">			<span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">//拿到订单id</span></span><br><span class="line">	     String orderid = request.getParameter(<span class="string">&quot;id&quot;</span>);</span><br><span class="line">		<span class="comment">//调用service去数据库中查询当前订单</span></span><br><span class="line">	     OrderServiceImpl ordImpl = <span class="keyword">new</span> OrderServiceImpl();</span><br><span class="line">	     OrderForm orderForm = </span><br><span class="line">	    		 ordImpl.findOrderFormById(Integer.parseInt(orderid));</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//支付</span></span><br><span class="line">	    <span class="comment">//浏览器动态产生一个付钱的二维码</span></span><br><span class="line">	     <span class="comment">/**</span></span><br><span class="line"><span class="comment">	      * 需要将我们的项目接入支付宝</span></span><br><span class="line"><span class="comment">	      * 入驻蚂蚁金服平台</span></span><br><span class="line"><span class="comment">	      */</span></span><br><span class="line">	     </span><br><span class="line">	     <span class="keyword">try</span> &#123;</span><br><span class="line">	          AlipayClient alipayClient =</span><br><span class="line">	                  AlipayConfig.getAlipayClient();</span><br><span class="line">	          <span class="comment">//设置请求参数</span></span><br><span class="line">	          AlipayTradePagePayRequest alipayRequest = </span><br><span class="line">	                  <span class="keyword">new</span> AlipayTradePagePayRequest();</span><br><span class="line">	          </span><br><span class="line">	          AlipayTradePayModel model = </span><br><span class="line">	                  <span class="keyword">new</span> AlipayTradePayModel();</span><br><span class="line">	          <span class="comment">// 设定订单号 必须要写,且订单号不能重复，目前已经只是做测试，已经写死</span></span><br><span class="line">	          model.setOutTradeNo(System.currentTimeMillis()+<span class="string">&quot;&quot;</span>);</span><br><span class="line">	          <span class="comment">// 设置订单金额</span></span><br><span class="line">	          model.setTotalAmount(orderForm.getCost()+<span class="string">&quot;&quot;</span>);</span><br><span class="line">	          <span class="comment">// 订单名字</span></span><br><span class="line">	          model.setSubject(<span class="string">&quot;书籍订单&quot;</span>);</span><br><span class="line">	          <span class="comment">// 订单描述</span></span><br><span class="line">	          model.setBody(System.currentTimeMillis()+<span class="string">&quot;&quot;</span>);</span><br><span class="line">	          <span class="comment">// 产品码</span></span><br><span class="line">	          model.setProductCode(<span class="string">&quot;FAST_INSTANT_TRADE_PAY&quot;</span>);</span><br><span class="line">	          <span class="comment">// 设置参数</span></span><br><span class="line">	          alipayRequest.setBizModel(model);</span><br><span class="line">	          <span class="comment">// 设置回调地址</span></span><br><span class="line">	          alipayRequest.setReturnUrl(AlipayConfig.return_url);</span><br><span class="line">	          String result = alipayClient.pageExecute(alipayRequest).getBody();</span><br><span class="line">	          response.setContentType(<span class="string">&quot;text/html;charset=utf-8&quot;</span>);</span><br><span class="line">	          response.getWriter().println(result);</span><br><span class="line">	      &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">	              e.printStackTrace();</span><br><span class="line">	      &#125;  </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
-<h1 id="3-上岸"><a href="#3-上岸" class="headerlink" title="3.上岸"></a>3.上岸</h1><p><strong>加油啊 少年！</strong></p>
+<h1 id="3-上岸"><a href="#3-上岸" class="headerlink" title="3.上岸"></a>3.上岸</h1><blockquote>
+<p><strong>加油啊 少年！</strong></p>
+</blockquote>
  
       <!-- reward -->
       
@@ -276,9 +279,9 @@
         
         
         
-        Powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+        由 <a href="https://hexo.io" target="_blank">Hexo</a> 强力驱动
         <span class="division">|</span>
-        Theme - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        主题 - <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
         
       </li>
     </ul>
@@ -287,9 +290,9 @@
         
         
         <span>
-  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></s>
   <span class="division">|</span>
-  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
 </span>
         
       </li>
@@ -353,6 +356,10 @@
     </li>
     
     <li class="nav-item">
+      <a class="nav-item-link" href="/playlist">歌单</a>
+    </li>
+    
+    <li class="nav-item">
       <a class="nav-item-link" target="_blank" rel="noopener" href="http://shenyu-vip.lofter.com">摄影</a>
     </li>
     
@@ -370,7 +377,7 @@
   <ul class="nav">
     <li class="nav-item">
       
-      <a class="nav-item-link nav-item-search"  title="Search">
+      <a class="nav-item-link nav-item-search"  title="搜索">
         <i class="ri-search-line"></i>
       </a>
       
@@ -658,7 +665,7 @@
     
     
     <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="52"
-        src="//music.163.com/outchain/player?type=2&id=22707008&auto=1&height=32"></iframe>
+        src="//music.163.com/outchain/player?type=2&id=2975453976&auto=1&height=32"></iframe>
 </div>
 
 <style>
