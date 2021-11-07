@@ -713,18 +713,9 @@
 <p>注意，在后面的章节中，会陆续学习和认识到这些注解的使用</p>
 </blockquote>
 <h2 id="2-请求映射"><a href="#2-请求映射" class="headerlink" title="2 请求映射"></a>2 请求映射</h2><h3 id="2-1-http协议请求"><a href="#2-1-http协议请求" class="headerlink" title="2.1 http协议请求"></a>2.1 http协议请求</h3><p>假设浏览器发送了一个请求如下：</p>
-<pre><code>POST /login    HTTP1.1
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-Accept-Encoding: gzip, deflate
-Accept-Language: zh-CN,en;q=0.8,zh;q=0.5,en-US;q=0.3
-Connection: keep-alive
-Cookie: JSESSIONID=DBC6367DEB1C024A836F3EA35FCFD5A2
-Host: 127.0.0.1:8989
-Upgrade-Insecure-Requests: 1
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:82.0) Gecko/20100101 Firefox/82.0
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">POST /login	HTTP1.1</span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</span><br><span class="line">Accept-Encoding: gzip, deflate</span><br><span class="line">Accept-Language: zh-CN,en;q=0.8,zh;q=0.5,en-US;q=0.3</span><br><span class="line">Connection: keep-alive</span><br><span class="line">Cookie: JSESSIONID=DBC6367DEB1C024A836F3EA35FCFD5A2</span><br><span class="line">Host: 127.0.0.1:8989</span><br><span class="line">Upgrade-Insecure-Requests: 1</span><br><span class="line">User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:82.0) Gecko/20100101 Firefox/82.0</span><br><span class="line"></span><br><span class="line">username=tom&amp;password=123</span><br></pre></td></tr></table></figure>
 
-username=tom&amp;password=123
-</code></pre>
+
 <p>http协议的请求格式如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">请求方法 URL 协议版本号</span><br><span class="line">请求头信息</span><br><span class="line">请求头信息</span><br><span class="line">请求头信息</span><br><span class="line">..</span><br><span class="line">回车换行</span><br><span class="line">请求正文</span><br></pre></td></tr></table></figure>
 
@@ -2432,6 +2423,6 @@ username=tom&amp;password=123
 
 
   </div>
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 
 </html>
