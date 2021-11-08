@@ -1820,9 +1820,10 @@
 </ul>
 ]]></content>
       <categories>
-        <category>java</category>
+        <category>briup</category>
       </categories>
       <tags>
+        <tag>java</tag>
         <tag>briup</tag>
       </tags>
   </entry>
@@ -1849,6 +1850,7 @@
         <category>java</category>
       </categories>
       <tags>
+        <tag>java</tag>
         <tag>vanse_public</tag>
       </tags>
   </entry>
