@@ -2547,7 +2547,7 @@
       </tags>
   </entry>
   <entry>
-    <title>briup_cmd</title>
+    <title>briup_cms</title>
     <url>/archives/briup-cms.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>前言</p>
 <ul>
@@ -2797,7 +2797,7 @@
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 热部署 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-devtools<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">			<span class="comment">&lt;!-- optional=true, 依赖不会传递, 该项目依赖devtools; 之后依赖boot项目的项目如果想要使用devtools, </span></span><br><span class="line"><span class="comment">				需要重新引入 --&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">optional</span>&gt;</span>true<span class="tag">&lt;/<span class="name">optional</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>properties</p>
-<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 热部署</span></span><br><span class="line"><span class="meta">spring.devtools.restart.enabled</span>=<span class="string">true   </span></span><br><span class="line"><span class="meta">spring.devtools.restart.additional-paths</span>=<span class="string">src/main/java </span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">#返回json的全局时间格式 如果设置全局 生日也得是这个格式</span></span><br><span class="line"><span class="comment">#spring.jackson.date-format=yyyy-MM-dd HH:mm:ss</span></span><br><span class="line"><span class="comment">#spring.jackson.time-zone=GMT+8</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 热部署</span></span><br><span class="line"><span class="comment">#spring.devtools.restart.enabled=true   </span></span><br><span class="line"><span class="comment">#spring.devtools.restart.additional-paths=src/main/java </span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">#返回json的全局时间格式 如果设置全局 生日也得是这个格式</span></span><br><span class="line"><span class="comment">#spring.jackson.date-format=yyyy-MM-dd HH:mm:ss</span></span><br><span class="line"><span class="comment">#spring.jackson.time-zone=GMT+8</span></span><br></pre></td></tr></table></figure>
 
 
 
