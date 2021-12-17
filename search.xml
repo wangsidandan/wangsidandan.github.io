@@ -139,8 +139,8 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/archives/out-cms.html</url>
+    <title>out_cms</title>
+    <url>/archives/out_cms.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
 <li>教案: 看点咨询系统</li>
 <li>时间: 2021/12/12</li>
@@ -1752,5 +1752,11 @@
 <h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">onSubmit()&#123;</span><br><span class="line">            request.request(&#123;</span><br><span class="line">                url:<span class="string">&quot;http://localhost:8888/cms/article/save&quot;</span>,</span><br><span class="line">                method:<span class="string">&quot;post&quot;</span>,</span><br><span class="line">                headers:&#123;</span><br><span class="line">                    <span class="string">&quot;Content-Type&quot;</span>:<span class="string">&quot;application/x-www-form-urlencoded&quot;</span></span><br><span class="line">                &#125;,</span><br><span class="line">                data:qs.stringify(<span class="keyword">this</span>.form)</span><br><span class="line">            &#125;).then(response=&gt;&#123;</span><br><span class="line">               <span class="comment">// 提示成功</span></span><br><span class="line">                <span class="keyword">this</span>.$message(&#123;</span><br><span class="line">                message: response.message,</span><br><span class="line">                type: <span class="string">&#x27;success&#x27;</span></span><br><span class="line">                &#125;);</span><br><span class="line">                <span class="comment">//返回列表页</span></span><br><span class="line">                <span class="keyword">this</span>.back();</span><br><span class="line">            &#125;)</span><br><span class="line"></span><br><span class="line">                </span><br><span class="line">    toEditArticle()&#123;</span><br><span class="line">      <span class="keyword">this</span>.$router.push(&#123;</span><br><span class="line">        path:<span class="string">&#x27;/article/editor&#x27;</span>,</span><br><span class="line">        query:row</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">跳转接受参数</span><br><span class="line">  created()&#123;</span><br><span class="line">        <span class="keyword">this</span>.form=<span class="keyword">this</span>.$route.query;</span><br><span class="line">    &#125;,</span><br><span class="line">            </span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>project</category>
+      </categories>
+      <tags>
+        <tag>out</tag>
+      </tags>
   </entry>
 </search>
