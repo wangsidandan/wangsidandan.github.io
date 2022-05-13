@@ -1,8 +1,870 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>briup_servlet</title>
+    <url>/archives/briup/briup-servlet.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="servlet（一）"><a href="#servlet（一）" class="headerlink" title="servlet（一）"></a>servlet（一）</h1><h2 id="1-JavaEE"><a href="#1-JavaEE" class="headerlink" title="1 JavaEE"></a>1 JavaEE</h2><h3 id="1-1-概述"><a href="#1-1-概述" class="headerlink" title="1.1 概述"></a>1.1 概述</h3><p>JavaEE，Java 平台企业版（Java Platform Enterprise Edition）是 Sun 公司为企业级应用推出的标准平台，用来开发B/S架构软件，可以说它是一种企业级应用开发规范。2018年3月更名为 Jakarta EE。（Oracle将JavaEE交给Eclipse基金会来维护）</p>
+<p>JavaEE 5/6/7  版本都在oracle官网维护：</p>
+<p><a href="https://docs.oracle.com/javaee/7/">javaee 5/6/7</a></p>
+<p><img src="https://raw.githubusercontent.com/%5Bwangsidandan%5D/%5Bblog_images%5D/main/servlet/202205132145900.png" alt="image-20200928160813377"></p>
+<p>JavaEE 8 在oracle官网中也给出了介绍：</p>
+<p><a href="https://www.oracle.com/java/technologies/java-ee-glance.html">JavaEE 8</a></p>
+<p><img src="https://raw.githubusercontent.com/%5Bwangsidandan%5D/%5Bblog_images%5D/main/servlet/202205132138347.png" alt="image-20200928161001881"></p>
+<p>更多关于JavaEE新版本的动向，需要到JakartaEE官网上查看：</p>
+<p><a href="https://jakarta.ee/">JakartaEE</a></p>
+<p><img src="image/image-20200928161146662.png" alt="image-20200928161146662"></p>
+<p><img src="image/image-20200928161250020.png" alt="image-20200928161250020"></p>
+<p><img src="image/image-20200928161312140.png" alt="image-20200928161312140"></p>
+<blockquote>
+<p>可以看出，当前JakartaEE官网中，主推的是JakartaEE 8版本，同时JakartaEE 9也处于可用状态</p>
+</blockquote>
+<blockquote>
+<p>虽然JavaEE已经更名为JakartaEE，但是现在大多数情况下，大家还是习惯叫它JavaEE</p>
+</blockquote>
+<h3 id="1-2-组成"><a href="#1-2-组成" class="headerlink" title="1.2 组成"></a>1.2 组成</h3><p>JavaEE 是企业级应用开发规范，它本身并不是一种技术，而是多种技术解决方案的集合，这些技术和解决方案，会涉及到企业级应用开发过程中，所遇到的各种各样的问题。</p>
+<p>也就是说，使用java开发企业级应用的时候，如果遇到问题，可以使用JavaEE中，所指定的技术规范来进行问题的解决。但是一个问题的解决，一般会有很多种方案，JavaEE只是收录了其中一种方案，并制定成了规范标准。</p>
+<p>例如，<strong>JavaEE 5 中的技术规范</strong></p>
+<p><img src="image/image-20200928162515955.png" alt="image-20200928162515955"></p>
+<blockquote>
+<p>JavaEE中的每一种技术规范，都可以描述为JavaEE中的一种技术组件</p>
+</blockquote>
+<p>随着时代的进步，以及越来越多的公司和组织参与到Java世界，出现了各种各样的Java EE组件的代替者，比如Hibernate、Spring就是其中两个典型（第三方框架）。</p>
+<p>同时，Java官方制定的一些Java EE技术规范并不太受欢迎，例如</p>
+<ul>
+<li>它们制定了JSF规范，但实际企业开发喜欢用Struts 2、Spring MVC；</li>
+<li>它们制定了EJB规范，但实际企业开发往往还是喜欢用Spring；</li>
+<li>它们制定了JPA规范，但实际企业开发往往还是喜欢直接用Hibernate、MyBatis。</li>
+</ul>
+<p>但是，JavaEE规范中，还是有一些非常重要的技术规范，成为javaEE被广泛使用的核心技术，例如Servlet、Jsp</p>
+<p>除了，Servlet和Jsp之外，JavaEE中还有其他一些技术规范，其中核心的可以大致分为13种：</p>
+<ul>
+<li><p>JDBC(Java Database Connectivity)</p>
+<p>JDBC API为访问不同的数据库提供了一种统一的途径</p>
+</li>
+<li><p>JNDI(Java Name and Directory Interface)</p>
+<p>JNDI API被用于执行名字和目录服务</p>
+</li>
+<li><p>EJB(Enterprise JavaBean) </p>
+<p>J2EE技术之所以赢得媒体广泛重视的原因之一就是EJB。它们提供了一个框架来开发和实施分布式商务逻辑，由此很显著地简化了具有可伸缩性和高度复杂的企业级应用的开发</p>
+</li>
+<li><p>RMI(Remote Method Invoke)</p>
+<p>调用远程对象上的方法</p>
+</li>
+<li><p>Java IDL/CORBA</p>
+<p>在Java IDL的支持下，开发人员可以将Java和CORBA集成在一起</p>
+</li>
+<li><p>JSP(Java Server Pages)</p>
+<p>JSP页面由HTML代码和嵌入其中的Java代码所组成</p>
+</li>
+<li><p>Java Servlet</p>
+<p>Servlet是一种Java程序，它扩展了Web服务器的功能，作为一种服务器端的应用，当被请求时开始执行。</p>
+</li>
+<li><p>XML(Extensible Markup Language)</p>
+<p>Java中对XML的支持</p>
+</li>
+<li><p>JMS(Java Message Service)<br>JMS是用于和面向消息的中间件相互通信的应用程序接口</p>
+</li>
+<li><p>JTA(Java Transaction Architecture)</p>
+<p>JTA定义了一种标准的API，应用系统由此可以访问各种事务监控</p>
+</li>
+<li><p>JTS(Java Transaction Service)<br>JTS事务管理器，对JTA提供支持和管理服务</p>
+</li>
+<li><p>JavaMail</p>
+<p>JavaMail是用于存取邮件服务器的API，它提供了一套邮件服务器的抽象类</p>
+</li>
+<li><p>JAF(JavaBeans Activation Framework)</p>
+<p>JavaMail可以利用JAF来处理MIME编码的邮件附件</p>
+</li>
+</ul>
+<h3 id="1-3-区别"><a href="#1-3-区别" class="headerlink" title="1.3 区别"></a>1.3 区别</h3><p>在每一个JavaEE的版本中，会对一些指定的核心技术规范进行版本升级，或者新增一些技术规范</p>
+<p>例如，<strong>JavaEE 7 中的技术规范</strong></p>
+<blockquote>
+<p>其中，使用不同的颜色，表示出在此版本中，新增了哪些技术规范，以及哪些是可选的技术规范</p>
+</blockquote>
+<p><img src="image/image-20200928164809409.png" alt="image-20200928164809409"></p>
+<p>在官网中，会对JavaEE中，每项技术规范的版本罗列出来，并进行说明</p>
+<p><a href="https://www.oracle.com/java/technologies/javaee/javaeetechnologies.html#javaee7">JavaEE 7中技术规范版本</a></p>
+<p><img src="image/image-20200928165437589.png" alt="image-20200928165437589"></p>
+<p><img src="image/image-20200928165535726.png" alt="image-20200928165535726"></p>
+<blockquote>
+<p>可以看出，这里列出了JavaEE 7中，关于web应用开发技术中，每项技术规范的版本</p>
+</blockquote>
+<p>下图是<strong>JavaEE 5</strong>中，对web开发技术中，每项技术规范的版本：</p>
+<p><img src="image/image-20200928165737079.png" alt="image-20200928165737079"></p>
+<blockquote>
+<p>可以看出，JavaEE 5 和 JavaEE 7版本中，很多技术规范的版本的都有所升级</p>
+</blockquote>
+<p>JakartaEE官网中，对其新版本中的规范技术也有详细说明：</p>
+<p><a href="https://jakarta.ee/specifications/">JakartaEE官网版本说明</a></p>
+<p><img src="image/image-20200928170022610.png" alt="image-20200928170022610"></p>
+<p><img src="image/image-20200928170055327.png" alt="image-20200928170055327"></p>
+<p><img src="image/image-20200928170131504.png" alt="image-20200928170131504"></p>
+<h3 id="1-4-选择"><a href="#1-4-选择" class="headerlink" title="1.4 选择"></a>1.4 选择</h3><p>在JavaEE技术规范中，我们主要关注的是Servlet和Jsp的版本，特别是Servlet，版本不同，会直接影响将来代码中功能实现的方式。这里，我们选择使用<strong>JavaEE 7</strong>中的<strong>Servlet3.1</strong>版本，这个也是当前使用最广泛的版本。</p>
+<p>通过Maven中央仓库中的servlet依赖使用情况，也可以看出：</p>
+<p><img src="image/image-20200928171345590.png" alt="image-20200928171345590"></p>
+<blockquote>
+<p>注意，一般情况下，高版本是会兼容低版本的功能的</p>
+</blockquote>
+<h3 id="1-5-下载"><a href="#1-5-下载" class="headerlink" title="1.5 下载"></a>1.5 下载</h3><p><a href="https://download.oracle.com/otndocs/jcp/java_ee-7-fr-eval-spec/index.html">JavaEE 7官方说明文档下载</a></p>
+<p><img src="image/image-20200928171849967.png" alt="image-20200928171849967"></p>
+<blockquote>
+<p>注意，这个是JavaEE 7的总文档，里面包含各种技术组件的说明</p>
+</blockquote>
+<p><a href="https://download.oracle.com/otndocs/jcp/servlet-3_1-fr-eval-spec/index.html">Servlet3.1 官方文档下载</a></p>
+<p><img src="image/image-20200928171933203.png" alt="image-20200928171933203"></p>
+<blockquote>
+<p>注意，第一个是Servlet3.1的说明文档，第二个是Servlet3.1的API文档</p>
+</blockquote>
+<h3 id="1-6-容器"><a href="#1-6-容器" class="headerlink" title="1.6 容器"></a>1.6 容器</h3><p>通过前面的JavaEE技术组件图中，可以看出Servlet和Jsp，并不能像之前普通java程序一样，写一个main方法运行，而是需要将Servlet和Jsp程序，放到Web容器中运行：</p>
+<p><strong>JavaEE 5中的技术组件图：</strong></p>
+<p><img src="image/image-20200928172533726.png" alt="image-20200928172533726"></p>
+<p><strong>JavaEE 7中的技术组件图：</strong></p>
+<p><img src="image/image-20200928172504604.png" alt="image-20200928172504604"></p>
+<p>Web容器，也称为Web Container，它其实是一个运行环境，它可以给Servlet和Jsp程序的运行，提供一个合适的运行环境。所以，将来在将web项目部署到服务器里面的时候，会要求服务器中含有<strong>web容器</strong>，以便支持Servlet和Jsp程序的运行。如果服务器中没有web容器，那么这个服务器中将不能运行servlet和jsp的程序。</p>
+<p>一般情况下对服务器的描述有：</p>
+<ul>
+<li><p>web服务器</p>
+<p>也称为web server或者http server，主要用于处理http请求以及返回响应。它可以处理请求，也可以将请求转发至其他服务器，多用于处理web中的静态资源。例如，Nginx 、apache</p>
+</li>
+<li><p>web容器</p>
+<p>主要用于支持Servlet和Jsp的运行(没有主函数)，同时也可以处理http协议下的静态资源的访问，因为一般是在==web服务器中内嵌了web容器。例如，tomcat、jetty==</p>
+</li>
+<li><p>JavaEE应用服务器</p>
+<p>它具备了 Web Server 处理http请求的能力（没有Web Server专业），同时也支持了JavaEE 技术组件，比如JMS、DI、JPA、Transactions、Concurrency等，同时也包含了Web Container。例如，WebLogic、WebSphere.(一般配合web服务器使用tomcat+nginx)</p>
+</li>
+</ul>
+<p><img src="image/image-20200928195857793.png" alt="image-20200928195857793"></p>
+<blockquote>
+<p>后面，我们会选择tomcat作为web容器，去部署运行servlet和jsp相关的程序</p>
+</blockquote>
+<p>==思考，JavaEE、Servlet、Jsp、Web Container、tomcat这几者之间的关系是什么？==</p>
+<h2 id="2-Tomcat"><a href="#2-Tomcat" class="headerlink" title="2 Tomcat"></a>2 Tomcat</h2><h3 id="2-1-概述"><a href="#2-1-概述" class="headerlink" title="2.1 概述"></a>2.1 概述</h3><p>Tomcat是由Apache基金组织维护的一款开源、免费、Java语言实现的web容器，同时它也是一个web服务器，支持Http协议下的资源访问（静态资源、动态资源）。</p>
+<p>在Tomcat服务器中，可以部署web应用，然后对外提供Http协议下的资源访问</p>
+<p><img src="image/image-20200928202700541.png" alt="image-20200928202700541"></p>
+<h3 id="2-2-下载"><a href="#2-2-下载" class="headerlink" title="2.2 下载"></a>2.2 下载</h3><p><a href="https://tomcat.apache.org/">apache-tomcat官网</a></p>
+<p><img src="image/image-20200928202942725.png" alt="image-20200928202942725"></p>
+<p>官网列出了tomcat和Servlet、Jsp等相关技术规范的版本关系：</p>
+<p><img src="image/image-20200928203045326.png" alt="image-20200928203045326"></p>
+<blockquote>
+<p>可以看出，tomcat8.5刚好支持JavaEE 7里面的servlet3.1规范</p>
+</blockquote>
+<p><a href="https://tomcat.apache.org/download-80.cgi">tomcat 8.5下载</a></p>
+<p>官网中分别提供了源码和编译后的软件下载：</p>
+<p><img src="image/image-20200928203537201.png" alt="image-20200928203537201"></p>
+<h3 id="2-3-安装"><a href="#2-3-安装" class="headerlink" title="2.3 安装"></a>2.3 安装</h3><p>将下载完成的压缩包，直接解压到文件中即可，例如</p>
+<p><img src="image/image-20200928203849722.png" alt="image-20200928203849722"></p>
+<blockquote>
+<p>注意，这个解压安装的路径中，不要有中文、空格、特殊符号等</p>
+</blockquote>
+<h3 id="2-4-目录"><a href="#2-4-目录" class="headerlink" title="2.4 目录"></a>2.4 目录</h3><p>tomcat解压后，每个目录的作用：</p>
+<ul>
+<li><p>bin目录，存放运行tomcat需要的命令文件</p>
+<p>例如，tomcat启动和关闭的命令</p>
+<p>windows中，startup.bat、shutdown.bat</p>
+<p>Unix中，startup.sh、shutdown.sh</p>
+</li>
+<li><p>conf目录，存放tomcat相关的配置文件</p>
+<p>其中最重要的一个配置文件就是server.xml</p>
+<p>例如，在该文件中配置tomcat启动后监听的端口号</p>
+</li>
+<li><p>lib目录，存放项目运行时需要的jar包</p>
+<p>这个目录中存放的是公共的jar包，部署到tomcat服务器中的多个web项目，可以共享这些jar包</p>
+<p>例如，servlet-api.jar，在使用servlet规范编写代码的时候，需要该jar中的接口</p>
+</li>
+<li><p>logs目录，存放tomcat运行时的日志文件</p>
+<p>tomcat把会运行时的重要信息记录下来</p>
+<p>例如，tomcat中部署的web项目发生了严重错误</p>
+</li>
+<li><p>temp目录，存放tomcat运行时产生的临时文件</p>
+<p>tomcat在运行期间，可能会产生一些临时文件，这些文件默认放到这个目录下</p>
+</li>
+<li><p>webapps目录，部署web项目的位置</p>
+<p>把web项目部署到tomcat服务器中，其实就是把项目放到这个目录下面</p>
+</li>
+<li><p>work目录，编译Jsp页面后所存放的目录</p>
+</li>
+</ul>
+<h3 id="2-5-端口"><a href="#2-5-端口" class="headerlink" title="2.5 端口"></a>2.5 端口</h3><p>tomcat启动后，会默认监听端口8080，如果和本机中的其他服务器程序(oracle)有冲突，可以在配置文件中进行修改：</p>
+<p><code>conf/server.xml</code></p>
+<p><img src="image/image-20200928205335160.png" alt="image-20200928205335160"></p>
+<p>例如，可以修改成8989</p>
+<p><img src="image/image-20200928205414023.png" alt="image-20200928205414023"></p>
+<blockquote>
+<p>注意，也可以修改成其它，自己想使用的端口号，和本地已有的程序没有冲突即可</p>
+</blockquote>
+<h3 id="2-6-运行"><a href="#2-6-运行" class="headerlink" title="2.6 运行"></a>2.6 运行</h3><p>因为tomcat软件是java编写的，所以在启动运行tomcat的时候，需要有JDK的支持，并且通过tomcat官网给出的版本关系图可知，当前使用的Tomcat 8.5 需要有JDK7或以上的版本支持。</p>
+<p>第一步，安装JDK7或以上版本，并正确配置好JAVA_HOME，以便让Tomcat在启动时可以找到安装的JDK</p>
+<p>第二步，运行bin目录下的启动文件即可（双击startup.bat）</p>
+<p><img src="image/image-20200928210142789.png" alt="image-20200928210142789"></p>
+<blockquote>
+<p>注意，如果出现命令窗口一闪而过，并且消失，那么很可能是JAVA_HOME配置问题</p>
+</blockquote>
+<blockquote>
+<p>注意，这里出现日志显示乱码，是因为Windows中默认编码的问题</p>
+</blockquote>
+<h3 id="2-7-访问"><a href="#2-7-访问" class="headerlink" title="2.7 访问"></a>2.7 访问</h3><p>Tomcat成功启动后，可以使用URL地址，来访问部署到Tomcat中的web项目：</p>
+<p><a href="http://localhost:8989/your_project/resource_in_project">http://localhost:8989/your_project/resource_in_project</a><br><a href="http://127.0.0.1:8989/your_project/resource_in_project">http://127.0.0.1:8989/your_project/resource_in_project</a></p>
+<p>webapps目录是Tomcat中部署项目的位置，默认情况下，里面已经有了一些示例项目：</p>
+<p><img src="image/image-20200928210721010.png" alt="image-20200928210721010"></p>
+<blockquote>
+<p>注意，webapps中，文件夹的名字，默认就是部署的项目名字</p>
+</blockquote>
+<p>例如，<a href="http://127.0.0.1:8989/examples/index.html">http://127.0.0.1:8989/examples/index.html</a></p>
+<p><img src="image/image-20200928210821686.png" alt="image-20200928210821686"></p>
+<p><img src="image/image-20200928210912034.png" alt="image-20200928210912034"></p>
+<p><img src="image/image-20200928210928468.png" alt="image-20200928210928468"></p>
+<p><img src="image/image-20200928210941237.png" alt="image-20200928210941237"></p>
+<h3 id="2-8-关闭"><a href="#2-8-关闭" class="headerlink" title="2.8 关闭"></a>2.8 关闭</h3><p>tomcat启动后，如果关闭，可以直接运行bin目录下的shutdown.bat文件，或者在tomcat的运行窗口的右上角，直接点击叉号：</p>
+<p><img src="image/image-20200928211342512.png" alt="image-20200928211342512"></p>
+<blockquote>
+<p>注意，双击shutdown.bat关闭服务器和点击叉号关闭服务器，俩种虽然都可以关闭，但是关闭的细节有所不同，特殊场景下会导出程序再次运行的结果不同，后面在实际操作过程中，会具体解释</p>
+</blockquote>
+<blockquote>
+<p>注意，代码+环境+操作 = 正常的程序执行结果</p>
+</blockquote>
+<h2 id="3-Project"><a href="#3-Project" class="headerlink" title="3 Project"></a>3 Project</h2><h3 id="3-1-概述"><a href="#3-1-概述" class="headerlink" title="3.1 概述"></a>3.1 概述</h3><p>在Tomcat中，部署的Web项目，是有固定的结构要求的，假设以web-test项目为例，进行说明。</p>
+<p>这里描述的是，把web项目部署到Tomcat中之后的目录结构，并不是项目在Eclipse中的结构，所以Eclipse帮我们部署项目的时候，其实是把原来的项目结构进行处理，变为tomcat中要求的项目结构，然后再部署到tomcat里面的webapps目录中的。</p>
+<p>对应一个web项目（例如，web-test），部署后最基本的项目结构为：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">web-test/</span><br><span class="line">└─WEB-INF/</span><br><span class="line">    │  web.xml</span><br><span class="line">    │</span><br><span class="line">    ├─classes/</span><br><span class="line">    └─lib/</span><br></pre></td></tr></table></figure>
+
+<p>其中，</p>
+<p>web-test，它是项目的根目录，也是web项目的名字</p>
+<ul>
+<li>这里面一定要有子目录WEB-INF</li>
+<li>除此之外，这里还可以存放web项目的静态资源（html、css、js、image）</li>
+<li>这里还可以新建其它子目录</li>
+</ul>
+<p>WEB-INF，它是web项目中的核心目录，客户端浏览器是无法直接访问该目录下的资源</p>
+<ul>
+<li>classes，存放项目中编译好的class文件</li>
+<li>lib，存放项目中使用到的第三方jar包（不会给其他tomcat部署的web项目共享）</li>
+<li>web.xml，它是web项目中核心的配置文件，tomcat启动后会自动读取项目中web.xml文件</li>
+</ul>
+<h3 id="3-2-操作"><a href="#3-2-操作" class="headerlink" title="3.2 操作"></a>3.2 操作</h3><p>在桌面创建好web-test项目，其结构按照上面描述的规则。</p>
+<p>然后进行以下操作，<strong>感受</strong>一个web项目编写、编译、部署、运行、访问的过程</p>
+<p>1、新建index.html页面，存放到web-test项目目录下</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>index<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello world<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>2、在桌面创建java类（servlet）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.briup.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.*;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">    <span class="keyword">throws</span> IOException, ServletException</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        response.setContentType(<span class="string">&quot;text/html&quot;</span>);</span><br><span class="line">        PrintWriter out = response.getWriter();</span><br><span class="line">        out.println(<span class="string">&quot;&lt;html&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;head&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;title&gt;index&lt;/title&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;/head&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;body&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;h1&gt;Hello World! briup&lt;/h1&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;/body&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;/html&gt;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>3、编译此java类（servlet）</p>
+<p>当前类中，使用到了servlet规范，需要用到servlet-api.jar，此jar包在tomcat中lib里面中，所以在编译的时候，需要指定jar所在的路径：</p>
+<p><code>javac -cp D:\briup\apache-tomcat-8.5.58\lib\servlet-api.jar -d . HelloWorld.java</code></p>
+<p><img src="image/image-20200928215132763.png" alt="image-20200928215132763"></p>
+<p>4、将编译好的class文件，连同包对应的目录，一起剪切到WEB-INF下面的classes目录</p>
+<p><img src="image/image-20200928215359894.png" alt="image-20200928215359894"></p>
+<p>5、配置web.xml</p>
+<p>在tomcat的目录中，有web.xml文件的配置模板：conf/web.xml</p>
+<p>复制过来，进行修改，如下</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://xmlns.jcp.org/xml/ns/javaee&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://xmlns.jcp.org/xml/ns/javaee</span></span></span><br><span class="line"><span class="string"><span class="tag">                      http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">version</span>=<span class="string">&quot;3.1&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>com.briup.test.HelloWorld<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line">	</span><br><span class="line">    <span class="comment">&lt;!-- 当前浏览器访问web-test项目中的动态资源/hello-world的时候--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- tomcat会自动帮我们调用com.briup.test.HelloWorld中的方法来进行处理--&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/hello-world<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.html<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.jsp<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>6、部署项目</p>
+<p>将完成以上步骤的web-test项目，部署到tomcat中的webapps目录中。（复制过去即可）</p>
+<p><img src="image/image-20200928220234198.png" alt="image-20200928220234198"></p>
+<p>7、启动</p>
+<p>如果tomcat之前已经启动了，可以关闭后重写启动。</p>
+<p>8、访问</p>
+<p>先访问web-test项目中的静态资源</p>
+<p><a href="http://127.0.0.1:8989/web-test/index.html">http://127.0.0.1:8989/web-test/index.html</a></p>
+<p><img src="image/image-20200928220545658.png" alt="image-20200928220545658"></p>
+<p>再访问web-test项目中的动态资源</p>
+<p><a href="http://127.0.0.1:8989/web-test/hello-world">http://127.0.0.1:8989/web-test/hello-world</a></p>
+<p><img src="image/image-20200928220623329.png" alt="image-20200928220623329"></p>
+<h3 id="3-3-思考"><a href="#3-3-思考" class="headerlink" title="3.3 思考"></a>3.3 思考</h3><p>以上例子中，我们新建了一个java类<code>HelloWorld</code>，此类中并没有编写main方法，只有一个<code>doGet</code>方法，那么最后我们通过浏览器访问/hello-world路径的时候，该方法是怎么执行的？</p>
+<p>大致思路如下：</p>
+<ol>
+<li>浏览器发送请求，访问web-test项目中的/hello-world资源</li>
+<li>tomcat接收到请求，根据web.xml文件的配置信息，找到/hello-world对应的是com.briup.test.HelloWorld</li>
+<li>tomcat创建HelloWorld类的对象（反射）</li>
+<li>tomcat调用HelloWorld对象中的方法</li>
+<li>最后doGet方法被执行，向浏览器写回一个html页面的源代码</li>
+<li>浏览器接到tomcat写回来的html页面源代码，解析并显示出来</li>
+</ol>
+<h2 id="4-Eclipse"><a href="#4-Eclipse" class="headerlink" title="4 Eclipse"></a>4 Eclipse</h2><p>上面示例，是自己通过手动的方式，创建一个web项目，然后再进行编写、编译、部署、启动、运行。</p>
+<p>同时，也可以使用Eclipse来简化以上操作的步骤</p>
+<h3 id="4-1-关联"><a href="#4-1-关联" class="headerlink" title="4.1 关联"></a>4.1 关联</h3><p>在Eclipse中，新建服务器，关联外部解压的tomcat</p>
+<p><img src="image/image-20200928222557951.png" alt="image-20200928222557951"></p>
+<p><img src="image/image-20200928222617948.png" alt="image-20200928222617948"></p>
+<p><img src="image/image-20200928222700920.png" alt="image-20200928222700920"></p>
+<p><img src="image/image-20200928222718421.png" alt="image-20200928222718421"></p>
+<p><img src="image/image-20200928222756686.png" alt="image-20200928222756686"></p>
+<p><img src="image/image-20200928222838990.png" alt="image-20200928222838990"></p>
+<p><img src="image/image-20200928222859017.png" alt="image-20200928222859017"></p>
+<p><img src="image/image-20200928223031128.png" alt="image-20200928223031128"></p>
+<blockquote>
+<p>此时，Eclipse中多了一个Servers的项目，里面是关联了外部tomcat的配置文件</p>
+</blockquote>
+<p><img src="image/image-20200928223226355.png" alt="image-20200928223226355"></p>
+<p><img src="image/image-20200928223345650.png" alt="image-20200928223345650"></p>
+<p>对默认配置进行修改，如下：</p>
+<p><img src="image/image-20200928223455105.png" alt="image-20200928223455105"></p>
+<blockquote>
+<p>注意，第一个修改地方表示使用外部的tomcat的位置，第二个修改的地方表示web项目部署的位置</p>
+</blockquote>
+<p>如果还要修改端口号，也可以在这里修改：</p>
+<p><img src="image/image-20200928224641385.png" alt="image-20200928224641385"></p>
+<h3 id="4-2-启动"><a href="#4-2-启动" class="headerlink" title="4.2 启动"></a>4.2 启动</h3><p>启动之前，可以先把之前手动不是的web-test项目，从webapps目录中删除掉。</p>
+<p><img src="image/image-20200928223607332.png" alt="image-20200928223607332"></p>
+<p><img src="image/image-20200928224006472.png" alt="image-20200928224006472"></p>
+<blockquote>
+<p>控制台中，可以看到tomcat启动的日志信息</p>
+</blockquote>
+<h3 id="4-2-关闭"><a href="#4-2-关闭" class="headerlink" title="4.2 关闭"></a>4.2 关闭</h3><p>在Eclipse，关闭已经启动的Tomcat服务器，也很简单。</p>
+<p><img src="image/image-20200928224358321.png" alt="image-20200928224358321"></p>
+<p>或者，也可以点击console右上方的红点，直接停止JVM的运行，那么tomcat服务器也就停止了：</p>
+<p><img src="image/image-20200928224457926.png" alt="image-20200928224457926"></p>
+<h3 id="4-3-dynamic-web"><a href="#4-3-dynamic-web" class="headerlink" title="4.3 dynamic-web"></a>4.3 dynamic-web</h3><p>在Eclipse中，创建web项目，可以使用Eclipse中的动态web项目（dynamic  web）</p>
+<h4 id="4-3-1-创建"><a href="#4-3-1-创建" class="headerlink" title="4.3.1 创建"></a>4.3.1 创建</h4><p><img src="image/image-20200928225125715.png" alt="image-20200928225125715"></p>
+<p><img src="image/image-20200928225158905.png" alt="image-20200928225158905"></p>
+<p><img src="image/image-20200928225449055.png" alt="image-20200928225449055"></p>
+<p><img src="image/image-20200928225547450.png" alt="image-20200928225547450"></p>
+<p><img src="image/image-20200928225750688.png" alt="image-20200928225750688"></p>
+<p><img src="image/image-20200928230110222.png" alt="image-20200928230110222"></p>
+<p>如果之前没有打钩自动生成web.xml文件，这时候也可以点击项目然后自动生成：</p>
+<p><img src="image/image-20200928230230925.png" alt="image-20200928230230925"></p>
+<p><img src="image/image-20200928230339161.png" alt="image-20200928230339161"></p>
+<blockquote>
+<p>注意，如果需要关联servlet-api.jar的源代码，可以直接将apache-tomcat-8.5.58-src.zip配置关联过去即可</p>
+</blockquote>
+<h4 id="4-3-2-编写"><a href="#4-3-2-编写" class="headerlink" title="4.3.2 编写"></a>4.3.2 编写</h4><p>项目中，src里面是编写java源代码的地方</p>
+<p><code>HelloWorld</code></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.briup.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"></span><br><span class="line"><span class="meta">@WebServlet(&quot;/hello-world&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">		</span><br><span class="line">		resp.setContentType(<span class="string">&quot;text/html&quot;</span>);</span><br><span class="line">        PrintWriter out = resp.getWriter();</span><br><span class="line">        out.println(<span class="string">&quot;&lt;html&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;head&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;title&gt;index&lt;/title&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;/head&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;body&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;h1&gt;Hello World! dynamic web&lt;/h1&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;/body&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;/html&gt;&quot;</span>);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意，这里使用一个注解 <code>@WebServlet</code>，来代替了之前web.xml中的配置，其效果是一样的</p>
+</blockquote>
+<p>==思考，这里用到的servlet规范，在servlet-api.jar里面，此jar在什么地方，该项目是怎么引入的？==</p>
+<p>项目中，WebContent里面是编写页面的地方</p>
+<p><code>index.html</code></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>index<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello world!dynamic web<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="image/image-20200928231330732.png" alt="image-20200928231330732"></p>
+<h4 id="4-3-3-部署"><a href="#4-3-3-部署" class="headerlink" title="4.3.3 部署"></a>4.3.3 部署</h4><p>仔细观察会发现，此时Eclipse中的web项目结构，和要求的部署到Tomcat中的项目结构，是有所不同的，那么在部署的时候，Eclipse里会进行自动处理，因为Eclipse中对项目的部署做映射配置：</p>
+<p><img src="image/image-20200928231721322.png" alt="image-20200928231721322"></p>
+<p><img src="image/image-20200928231953209.png" alt="image-20200928231953209"></p>
+<blockquote>
+<p>默认情况下，Eclipse已经把当前的项目结构，和最后部署到Tomcat中的项目结构的对应关系，都配置好了</p>
+</blockquote>
+<p><strong>接下来部署项目：</strong></p>
+<p><img src="image/image-20200928232133403.png" alt="image-20200928232133403"></p>
+<p><img src="image/image-20200928232144212.png" alt="image-20200928232144212"></p>
+<p><img src="image/image-20200928232157368.png" alt="image-20200928232157368"></p>
+<p><img src="image/image-20200928232217507.png" alt="image-20200928232217507"></p>
+<h4 id="4-3-4-启动"><a href="#4-3-4-启动" class="headerlink" title="4.3.4 启动"></a>4.3.4 启动</h4><p>部署完成后，就可以启动tomcat了</p>
+<p><img src="image/image-20200928232300519.png" alt="image-20200928232300519"></p>
+<p>启动成功后，观察tomcat中的webapps目录里面，是否已经完成了项目部署：</p>
+<p><img src="image/image-20200928232422146.png" alt="image-20200928232422146"></p>
+<h4 id="4-3-5-访问"><a href="#4-3-5-访问" class="headerlink" title="4.3.5 访问"></a>4.3.5 访问</h4><p>访问静态资源：</p>
+<p><a href="http://127.0.0.1:8989/dynamic-web/index.html">http://127.0.0.1:8989/dynamic-web/index.html</a></p>
+<p><img src="image/image-20200928232510037.png" alt="image-20200928232510037"></p>
+<p>访问动态资源：</p>
+<p><a href="http://127.0.0.1:8989/dynamic-web/hello-world">http://127.0.0.1:8989/dynamic-web/hello-world</a></p>
+<p><img src="image/image-20200928232537584.png" alt="image-20200928232537584"></p>
+<h4 id="4-3-6-移除"><a href="#4-3-6-移除" class="headerlink" title="4.3.6 移除"></a>4.3.6 移除</h4><p>项目如果不需要运行了，还可以从tomcat的部署中移除：</p>
+<p><img src="image/image-20200928232644327.png" alt="image-20200928232644327"></p>
+<p><img src="image/image-20200928232716802.png" alt="image-20200928232716802"></p>
+<p>观察tomcat中的webapps目录中是否已经将当前项目给移除：</p>
+<p><img src="image/image-20200928232744989.png" alt="image-20200928232744989"></p>
+<p>因为项目移除了，此时浏览器访问会出现404，资源找不到的情况：</p>
+<p><img src="image/image-20200928233122326.png" alt="image-20200928233122326"></p>
+<h3 id="4-4-maven-web"><a href="#4-4-maven-web" class="headerlink" title="4.4 maven-web"></a>4.4 maven-web</h3><p>在Eclipse中，创建web项目，还可以使用maven项目</p>
+<h4 id="4-4-1-创建"><a href="#4-4-1-创建" class="headerlink" title="4.4.1 创建"></a>4.4.1 创建</h4><p><img src="image/image-20200928233325758.png" alt="image-20200928233325758"></p>
+<p><img src="image/image-20200928233343830.png" alt="image-20200928233343830"></p>
+<p><img src="image/image-20200928233530045.png" alt="image-20200928233530045"></p>
+<p><img src="image/image-20200928233606264.png" alt="image-20200928233606264"></p>
+<p><img src="image/image-20200928234300664.png" alt="image-20200928234300664"></p>
+<p><img src="image/image-20220512103524555.png" alt="image-20220512103524555"></p>
+<p>在webapp中，新建目录WEB-INF，里面在新建web.xml</p>
+<p><img src="image/image-20200928234426964.png" alt="image-20200928234426964"></p>
+<p><code>web.xml</code> 文件内容： </p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns</span>=<span class="string">&quot;http://xmlns.jcp.org/xml/ns/javaee&quot;</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd&quot;</span></span></span><br><span class="line"><span class="tag">	<span class="attr">version</span>=<span class="string">&quot;3.1&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">display-name</span>&gt;</span>maven-web<span class="tag">&lt;/<span class="name">display-name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.html<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.htm<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.jsp<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>default.html<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>default.htm<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>default.jsp<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>可以复制之前的web.xml，修改下即可</p>
+</blockquote>
+<p>配置pom.xml文件，指定maven项目的JDK版本、项目编码、以及相关项目依赖：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://maven.apache.org/POM/4.0.0&quot;</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.briup.test<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">packaging</span>&gt;</span>war<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line">	</span><br><span class="line">	<span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.build.sourceEncoding</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">maven.compiler.source</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.source</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">maven.compiler.target</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.target</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">	</span><br><span class="line">	<span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 引入servlet3.1的依赖 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.servlet<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javax.servlet-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">version</span>&gt;</span>3.1.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">		</span><br><span class="line">        <span class="comment">&lt;!-- 引入jstl的依赖，jsp页面中会使用到 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.servlet<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jstl<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">		</span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line">	</span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意，这里将servlet的依赖范围（scope）设置为了provided，因为tomcat的lib目录中也有这个jar包，将来部署的时候，使用tomcat自带的jar包即可</p>
+</blockquote>
+<p>修改完这些配置后，记得对maven项目进行update操作：</p>
+<p><img src="image/image-20200928234927413.png" alt="image-20200928234927413"></p>
+<p>此时，maven项目中就不会报错了：</p>
+<p><img src="image/image-20200928235011223.png" alt="image-20200928235011223"></p>
+<blockquote>
+<p>注意，因为maven项目中会对web.xml文件进行验证，从网络上下载schame，但是可能会因为网络原因下载验证失败，导致maven项目还会报错，这个错误不影响运行，或多更新几次项目就可以了。</p>
+</blockquote>
+<blockquote>
+<p>注意，此时的maven项目并没有像动态web项目一样，引用了tomcat的运行环境，而且我们在pom文件中，自己添加了依赖，将需要用的的servlet-api.jar引入了进来</p>
+</blockquote>
+<h4 id="4-4-2-编写"><a href="#4-4-2-编写" class="headerlink" title="4.4.2 编写"></a>4.4.2 编写</h4><p>在maven项目中，完成和上面项目中一样的功能，进行测试。</p>
+<p>项目中，src/main/java里面是编写java源代码的地方</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.briup.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"></span><br><span class="line"><span class="meta">@WebServlet(&quot;/hello-world&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">		</span><br><span class="line">		resp.setContentType(<span class="string">&quot;text/html&quot;</span>);</span><br><span class="line">        PrintWriter out = resp.getWriter();</span><br><span class="line">        out.println(<span class="string">&quot;&lt;html&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;head&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;title&gt;index&lt;/title&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;/head&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;body&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;h1&gt;Hello World! maven web&lt;/h1&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;/body&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;/html&gt;&quot;</span>);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意，这里输出的是maven web，之前上个例子有所不同</p>
+</blockquote>
+<p>项目中，webapp里面是编写页面的地方</p>
+<p><code>index.html</code></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>index<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="image/image-20200928235843519.png" alt="image-20200928235843519"></p>
+<h4 id="4-4-3-部署"><a href="#4-4-3-部署" class="headerlink" title="4.4.3 部署"></a>4.4.3 部署</h4><p>Eclipse中，也对Maven项目，做了部署映射，可以将maven项目的结构，转换为Tomcat中部署项目的结构要求：</p>
+<p><img src="image/image-20200929000015319.png" alt="image-20200929000015319"></p>
+<p><img src="image/image-20200929000050330.png" alt="image-20200929000050330"></p>
+<blockquote>
+<p>所以，maven项目的结构虽然和Tomcat中部署项目的结构有很大区别，但是最终部署完成后，还是会变成最终要求的项目结构</p>
+</blockquote>
+<p>接下来进行项目的部署：</p>
+<p><img src="image/image-20200929000230541.png" alt="image-20200929000230541"></p>
+<p><img src="image/image-20200929000304499.png" alt="image-20200929000304499"></p>
+<p><img src="image/image-20200929000325275.png" alt="image-20200929000325275"></p>
+<h4 id="4-4-4-启动"><a href="#4-4-4-启动" class="headerlink" title="4.4.4 启动"></a>4.4.4 启动</h4><p>部署完成后，就可以启动tomcat了，如果已经启动了，也可以重启一次。</p>
+<p><img src="image/image-20200929000447419.png" alt="image-20200929000447419"></p>
+<p>启动成功后，观察tomcat中的webapps目录里面，是否已经完成了项目部署：</p>
+<p><img src="image/image-20200929000522218.png" alt="image-20200929000522218"></p>
+<p><img src="image/image-20220512110054611.png" alt="image-20220512110054611"></p>
+<h4 id="4-4-5-访问"><a href="#4-4-5-访问" class="headerlink" title="4.4.5 访问"></a>4.4.5 访问</h4><p>访问静态资源：</p>
+<p><a href="http://127.0.0.1:8989/maven-web/index.html">http://127.0.0.1:8989/maven-web/index.html</a></p>
+<p><img src="image/image-20200929000612531.png" alt="image-20200929000612531"></p>
+<p>访问动态资源：</p>
+<p><a href="http://127.0.0.1:8989/maven-web/hello-world">http://127.0.0.1:8989/maven-web/hello-world</a></p>
+<p><img src="image/image-20200929000712569.png" alt="image-20200929000712569"></p>
+<h4 id="4-4-6-移除"><a href="#4-4-6-移除" class="headerlink" title="4.4.6 移除"></a>4.4.6 移除</h4><p>项目如果不需要运行了，还可以从tomcat的部署中移除：</p>
+<p><img src="image/image-20200929000824385.png" alt="image-20200929000824385"></p>
+<blockquote>
+<p>注意，如果tomact还在运行期间，把项目移除了，可能会导致控制台中输出错误信息，但是这个影响，重新启动tomcat就可以了。</p>
+</blockquote>
+<p><img src="image/image-20200929000934737.png" alt="image-20200929000934737"></p>
+<p>观察tomcat中的webapps目录中是否已经将当前项目给移除：</p>
+<p><img src="image/image-20200929001001172.png" alt="image-20200929001001172"></p>
+<p>因为项目移除了，此时浏览器访问会出现404，资源找不到的情况：</p>
+<p><img src="image/image-20200929001046633.png" alt="image-20200929001046633"></p>
+<h2 id="5-Http"><a href="#5-Http" class="headerlink" title="5 Http"></a>5 Http</h2><blockquote>
+<p>在上面的测试中，客户端浏览器和tomcat服务器进行访问交互，其采用的协议是http，该协议规定了客户端和服务器之间的交互方式，以及交互内容的格式要求。</p>
+</blockquote>
+<h3 id="5-1-概述"><a href="#5-1-概述" class="headerlink" title="5.1 概述"></a>5.1 概述</h3><p>超文本传输协议 (HTTP-Hypertext transfer protocol) 是一种详细规定了浏览器和万维网服务器之间互相通信的规则，通过因特网传送万维网文档的数据传送协议。HTTP是一个应用层协议，由请求和响应构成，是一个标准的客户端服务器模型。</p>
+<h3 id="5-2-交互方式"><a href="#5-2-交互方式" class="headerlink" title="5.2 交互方式"></a>5.2 交互方式</h3><p>http协议规定，默认情况下：</p>
+<ul>
+<li>先由客户端（浏览器）向服务器（tomcat）发送请求（request）</li>
+<li>服务器接收到请求后，根据请求的资源路径，在服务器内部部署的项目中，查找是否有该资源</li>
+<li>如果该资源存在，那么服务器就会将该资源返回（静态资源），或者把该资源的运行结果返回（动态资源）</li>
+<li>如果该资源不存在，那么服务器就会返回一个状态码（404），表示本次访问的资源找不到</li>
+<li>不管资源存在还是不存在，服务器都会针对这次请求，返回一个结果，这个结果就被称之为响应（response）</li>
+<li>客户端（浏览器）接收到本次请求的响应内容后，解析并显示出来</li>
+</ul>
+<p>此时，本次http协议下的访问结束。用户还可以再次发出请求，那么就重复上述过程。</p>
+<h3 id="5-3-内容格式"><a href="#5-3-内容格式" class="headerlink" title="5.3 内容格式"></a>5.3 内容格式</h3><blockquote>
+<p>无论是客户端发送的请求内容，还是服务器返回的响应内容，在http协议中，都是有固定的格式要求的。</p>
+</blockquote>
+<h4 id="5-3-1-请求"><a href="#5-3-1-请求" class="headerlink" title="5.3.1 请求"></a>5.3.1 请求</h4><p>客户端发送到服务器端的请求消息，称之为请求(request)，其实就是一个按照http协议的规则拼接而成的字符串</p>
+<p>Request请求消息包含三部分：</p>
+<ul>
+<li>请求行，request line</li>
+<li>消息报头（请求头），request head</li>
+<li>请求正文，request body</li>
+</ul>
+<p><strong>1、请求行，request line</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//格式: CRLF表示回车和换行</span><br><span class="line">Method Request-URI HTTP-Version CRLF</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Method表示请求方法；一般为GET或者POST</li>
+<li>Request-URI是一个统一资源标识符，本次请求的资源路径</li>
+<li>HTTP-Version表示请求的HTTP协议版本，HTTP/1.1</li>
+</ul>
+<p>例如，</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GET /test.html HTTP/1.1</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>2、消息报头（请求头），request head</strong></p>
+<blockquote>
+<p>注意，此部分作为了解，遇到具体情况再进行查阅即可</p>
+</blockquote>
+<p>http请求报头的生成，主要有三种情况：</p>
+<ul>
+<li><p>浏览器自动生成的请求</p>
+<p>绝大部分正常用户访问都是这类情况，只要是用户主动输入网址访问时发送的http请求，那这些头部字段都是浏览器自动生成的，比如host，cookie，user-agent, Accept-Encoding:等</p>
+</li>
+<li><p>浏览器插件</p>
+<p>javascript脚本增加或者修改的header。JS能够控制浏览器发起请求，也能在这里增加一些header，但是考虑到安全和性能的原因，对JS控制 header的能力做了一些限制，比如host和cookie, user-agent等这些字段，JS是无法干预的</p>
+</li>
+<li><p>中间代理</p>
+<p>如果用户请求要经过一些中间代理（比如运营商或者公司网关），中间代理能够查看和修改用户的全部数据和任何头部字段。除非使用了HTTPS</p>
+</li>
+</ul>
+<p>http消息报头包括普通报头、请求报头、响应报头、实体报头这四大类，它们的作用是描述 客户端或者服务器 的属性，并且都是由 名字+冒号+空格+值 组成，例如， Content-Type: text/html</p>
+<ul>
+<li><p>普通报头</p>
+<p>即可用于请求，也可用于响应，是作为一个整体而不是特定资源与事务相关联</p>
+<p>例如，</p>
+<p>Cache-Control<br>Connection<br>Date<br>Pragma<br>Transfer-Encoding<br>Upgrade<br>Via</p>
+</li>
+<li><p>请求报头</p>
+<p>允许客户端传递关于自身信息和希望的响应形式</p>
+<p>例如，</p>
+<p>Accept<br>Accept-Charset<br>Accept-Encoding<br>Accept-Language<br>Authorization<br>Host<br>User-Agent<br>From<br>If-Modified-Since<br>If-Match<br>If-None-Match<br>If-Range<br>If-Unmodified-Since<br>Max-Forwards<br>Proxy-Authorization<br>Range<br>Referer</p>
+</li>
+<li><p>响应报头</p>
+<p>允许服务器传递关于自身信息的响应</p>
+<p>例如，</p>
+<p>Location<br>Server<br>WWW-Authenticate<br>Age<br>Proxy-Authenticate<br>Public<br>Retry-After<br>Vary<br>Warning</p>
+</li>
+<li><p>实体报头</p>
+<p>定义被传送资源的信息。即可用于请求，也可用于响应</p>
+<p>例如，</p>
+<p>Content-Encoding<br>Content-Language<br>Content-Length<br>Content-Type<br>Last-Modified<br>Expires<br>Allow<br>Content-Base<br>Content-Location<br>Content-MD5<br>Content-Range<br>Etag<br>extension-header</p>
+</li>
+</ul>
+<p>例如:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GET /test.html HTTP/1.1</span><br><span class="line">Host: 127.0.0.1:9999</span><br><span class="line">User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0</span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</span><br><span class="line">Accept-Language: zh-CN,en;q=0.8,zh;q=0.5,en-US;q=0.3</span><br><span class="line">Accept-Encoding: gzip, deflate</span><br><span class="line">Connection: keep-alive</span><br></pre></td></tr></table></figure>
+
+<p>​        </p>
+<p>具体的可以在浏览器的web控制台中，进行查看</p>
+<p><img src="image/image-20200929004449654.png" alt="image-20200929004449654"></p>
+<p><strong>3、请求正文，request body</strong></p>
+<p>请求头和请求正文之间是一个空行，这个行非常重要，它表示请求头已经结束，接下来的是请求正文。</p>
+<p>请求正文中可以包含客户提交的字符串信息</p>
+<p>例如，</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">POST /test.html HTTP/1.1</span><br><span class="line">Host: 127.0.0.1:9999</span><br><span class="line">User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0</span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</span><br><span class="line">Accept-Language: zh-CN,en;q=0.8,zh;q=0.5,en-US;q=0.3</span><br><span class="line">Accept-Encoding: gzip, deflate</span><br><span class="line">Connection: keep-alive</span><br><span class="line"></span><br><span class="line">id=1&amp;name=tom&amp;age=20</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="5-3-2-响应"><a href="#5-3-2-响应" class="headerlink" title="5.3.2 响应"></a>5.3.2 响应</h4><p>服务器在接收和解析客户端的请求消息后，会返回给客户端一个HTTP响应消息（response）。</p>
+<p>其实也是一个按照http协议的规则拼接而成的一个字符串。</p>
+<p>HTTP响应也是由三个部分组成：</p>
+<ul>
+<li>响应状态行，response status line</li>
+<li>消息报头（响应头），response head</li>
+<li>响应正文，response body</li>
+</ul>
+<p><strong>1、响应状态行，response status line</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//格式如下：CRLF表示回车和换行</span><br><span class="line">HTTP-Version Status-Code Reason-Phrase CRLF</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>HTTP-Version表示服务器HTTP协议的版本</li>
+<li>Status-Code表示服务器发回的响应状态代码</li>
+<li>Reason-Phrase表示状态代码的文本描述</li>
+</ul>
+<p>例如，</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br></pre></td></tr></table></figure>
+
+
+
+<p>关于响应状态代码，共分为5种类型：</p>
+<table>
+<thead>
+<tr>
+<th align="left">分类</th>
+<th align="left">分类描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1xx</td>
+<td align="left">信息，服务器收到请求，需要请求者继续执行操作</td>
+</tr>
+<tr>
+<td align="left">2xx</td>
+<td align="left">成功，操作被成功接收并处理</td>
+</tr>
+<tr>
+<td align="left">3xx</td>
+<td align="left">重定向，需要进一步的操作以完成请求</td>
+</tr>
+<tr>
+<td align="left">4xx</td>
+<td align="left">客户端错误，请求包含语法错误或无法完成请求</td>
+</tr>
+<tr>
+<td align="left">5xx</td>
+<td align="left">服务器错误，服务器在处理请求的过程中发生了错误</td>
+</tr>
+</tbody></table>
+<p><strong>HTTP状态码列表</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">状态码</th>
+<th align="left">状态码英文名称</th>
+<th align="left">中文描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">100</td>
+<td align="left">Continue</td>
+<td align="left">继续。客户端应继续其请求</td>
+</tr>
+<tr>
+<td align="left">101</td>
+<td align="left">Switching Protocols</td>
+<td align="left">切换协议。服务器根据客户端的请求切换协议。只能切换到更高级的协议，例如，切换到HTTP的新版本协议</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">200</td>
+<td align="left">OK</td>
+<td align="left">请求成功。一般用于GET与POST请求</td>
+</tr>
+<tr>
+<td align="left">201</td>
+<td align="left">Created</td>
+<td align="left">已创建。成功请求并创建了新的资源</td>
+</tr>
+<tr>
+<td align="left">202</td>
+<td align="left">Accepted</td>
+<td align="left">已接受。已经接受请求，但未处理完成</td>
+</tr>
+<tr>
+<td align="left">203</td>
+<td align="left">Non-Authoritative Information</td>
+<td align="left">非授权信息。请求成功。但返回的meta信息不在原始的服务器，而是一个副本</td>
+</tr>
+<tr>
+<td align="left">204</td>
+<td align="left">No Content</td>
+<td align="left">无内容。服务器成功处理，但未返回内容。在未更新网页的情况下，可确保浏览器继续显示当前文档</td>
+</tr>
+<tr>
+<td align="left">205</td>
+<td align="left">Reset Content</td>
+<td align="left">重置内容。服务器处理成功，用户终端（例如：浏览器）应重置文档视图。可通过此返回码清除浏览器的表单域</td>
+</tr>
+<tr>
+<td align="left">206</td>
+<td align="left">Partial Content</td>
+<td align="left">部分内容。服务器成功处理了部分GET请求</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">300</td>
+<td align="left">Multiple Choices</td>
+<td align="left">多种选择。请求的资源可包括多个位置，相应可返回一个资源特征与地址的列表用于用户终端（例如：浏览器）选择</td>
+</tr>
+<tr>
+<td align="left">301</td>
+<td align="left">Moved Permanently</td>
+<td align="left">永久移动。请求的资源已被永久的移动到新URI，返回信息会包括新的URI，浏览器会自动定向到新URI。今后任何新的请求都应使用新的URI代替</td>
+</tr>
+<tr>
+<td align="left">302</td>
+<td align="left">Found</td>
+<td align="left">临时移动。与301类似。但资源只是临时被移动。客户端应继续使用原有URI</td>
+</tr>
+<tr>
+<td align="left">303</td>
+<td align="left">See Other</td>
+<td align="left">查看其它地址。与301类似。使用GET和POST请求查看</td>
+</tr>
+<tr>
+<td align="left">304</td>
+<td align="left">Not Modified</td>
+<td align="left">未修改。所请求的资源未修改，服务器返回此状态码时，不会返回任何资源。客户端通常会缓存访问过的资源，通过提供一个头信息指出客户端希望只返回在指定日期之后修改的资源</td>
+</tr>
+<tr>
+<td align="left">305</td>
+<td align="left">Use Proxy</td>
+<td align="left">使用代理。所请求的资源必须通过代理访问</td>
+</tr>
+<tr>
+<td align="left">306</td>
+<td align="left">Unused</td>
+<td align="left">已经被废弃的HTTP状态码</td>
+</tr>
+<tr>
+<td align="left">307</td>
+<td align="left">Temporary Redirect</td>
+<td align="left">临时重定向。与302类似。使用GET请求重定向</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">400</td>
+<td align="left">Bad Request</td>
+<td align="left">客户端请求的语法错误，服务器无法理解</td>
+</tr>
+<tr>
+<td align="left">401</td>
+<td align="left">Unauthorized</td>
+<td align="left">请求要求用户的身份认证</td>
+</tr>
+<tr>
+<td align="left">402</td>
+<td align="left">Payment Required</td>
+<td align="left">保留，将来使用</td>
+</tr>
+<tr>
+<td align="left">403</td>
+<td align="left">Forbidden</td>
+<td align="left">服务器理解请求客户端的请求，但是拒绝执行此请求</td>
+</tr>
+<tr>
+<td align="left">404</td>
+<td align="left">Not Found</td>
+<td align="left">服务器无法根据客户端的请求找到资源（网页）。通过此代码，网站设计人员可设置”您所请求的资源无法找到”的个性页面</td>
+</tr>
+<tr>
+<td align="left">405</td>
+<td align="left">Method Not Allowed</td>
+<td align="left">客户端请求中的方法被禁止</td>
+</tr>
+<tr>
+<td align="left">406</td>
+<td align="left">Not Acceptable</td>
+<td align="left">服务器无法根据客户端请求的内容特性完成请求</td>
+</tr>
+<tr>
+<td align="left">407</td>
+<td align="left">Proxy Authentication Required</td>
+<td align="left">请求要求代理的身份认证，与401类似，但请求者应当使用代理进行授权</td>
+</tr>
+<tr>
+<td align="left">408</td>
+<td align="left">Request Time-out</td>
+<td align="left">服务器等待客户端发送的请求时间过长，超时</td>
+</tr>
+<tr>
+<td align="left">409</td>
+<td align="left">Conflict</td>
+<td align="left">服务器完成客户端的PUT请求是可能返回此代码，服务器处理请求时发生了冲突</td>
+</tr>
+<tr>
+<td align="left">410</td>
+<td align="left">Gone</td>
+<td align="left">客户端请求的资源已经不存在。410不同于404，如果资源以前有现在被永久删除了可使用410代码，网站设计人员可通过301代码指定资源的新位置</td>
+</tr>
+<tr>
+<td align="left">411</td>
+<td align="left">Length Required</td>
+<td align="left">服务器无法处理客户端发送的不带Content-Length的请求信息</td>
+</tr>
+<tr>
+<td align="left">412</td>
+<td align="left">Precondition Failed</td>
+<td align="left">客户端请求信息的先决条件错误</td>
+</tr>
+<tr>
+<td align="left">413</td>
+<td align="left">Request Entity Too Large</td>
+<td align="left">由于请求的实体过大，服务器无法处理，因此拒绝请求。为防止客户端的连续请求，服务器可能会关闭连接。如果只是服务器暂时无法处理，则会包含一个Retry-After的响应信息</td>
+</tr>
+<tr>
+<td align="left">414</td>
+<td align="left">Request-URI Too Large</td>
+<td align="left">请求的URI过长（URI通常为网址），服务器无法处理</td>
+</tr>
+<tr>
+<td align="left">415</td>
+<td align="left">Unsupported Media Type</td>
+<td align="left">服务器无法处理请求附带的媒体格式</td>
+</tr>
+<tr>
+<td align="left">416</td>
+<td align="left">Requested range not satisfiable</td>
+<td align="left">客户端请求的范围无效</td>
+</tr>
+<tr>
+<td align="left">417</td>
+<td align="left">Expectation Failed</td>
+<td align="left">服务器无法满足Expect的请求头信息</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">500</td>
+<td align="left">Internal Server Error</td>
+<td align="left">服务器内部错误，无法完成请求</td>
+</tr>
+<tr>
+<td align="left">501</td>
+<td align="left">Not Implemented</td>
+<td align="left">服务器不支持请求的功能，无法完成请求</td>
+</tr>
+<tr>
+<td align="left">502</td>
+<td align="left">Bad Gateway</td>
+<td align="left">作为网关或者代理工作的服务器尝试执行请求时，从远程服务器接收到了一个无效的响应</td>
+</tr>
+<tr>
+<td align="left">503</td>
+<td align="left">Service Unavailable</td>
+<td align="left">由于超载或系统维护，服务器暂时的无法处理客户端的请求。延时的长度可包含在服务器的Retry-After头信息中</td>
+</tr>
+<tr>
+<td align="left">504</td>
+<td align="left">Gateway Time-out</td>
+<td align="left">充当网关或代理的服务器，未及时从远端服务器获取请求</td>
+</tr>
+<tr>
+<td align="left">505</td>
+<td align="left">HTTP Version not supported</td>
+<td align="left">服务器不支持请求的HTTP协议的版本，无法完成处理</td>
+</tr>
+</tbody></table>
+<p><strong>常见状态码&amp;含义</strong></p>
+<pre><code> 200 - 请求成功，已经正常处理完毕
+</code></pre>
+<p>​    301 - 请求永久重定向，转移到其它URL</p>
+<p>​    302 - 请求临时重定向</p>
+<p>​    304 - 请求被重定向到客户端本地缓存</p>
+<p>​    400 - 客户端请求存在语法错误</p>
+<p>​    401 - 客户端请求没有经过授权</p>
+<p>​    403 - 客户端的请求被服务器拒绝，一般为客户端没有访问权限</p>
+<p>​    404 - 客户端请求的URL在服务端不存在</p>
+<p>​    500 - 服务端错误</p>
+<p><strong>2、消息报头（响应头），response head</strong></p>
+<p>和请求报头中的描述一致。</p>
+<p>额外的，在响应的消息报头中，一般都会有Content-Type字段，用来告诉浏览器，本次响应回去的内容是什么类型的数据，浏览器可以根据就这个对内容进行解析。</p>
+<p>例如，如果响应的数据是html，则响应报头中应该有，<code>Content-Type: text/html</code></p>
+<p>例如，如果响应的数据是xml，则响应报头中应该有，<code>Content-Type: text/xml</code></p>
+<p>例如，如果响应的数据是普通文本，则响应报头中应该有，<code>Content-Type: text/plain</code></p>
+<p>例如，如果响应的数据是png图片，则响应报头中应该有，<code>Content-Type: image/png</code></p>
+<p><strong>3、响应正文，response body</strong></p>
+<p>响应正文就是服务器返回的资源的内容，响应正文和消息报头之间也需要有一个空行！</p>
+<p>例如，</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Content-Type: text/html;charset=ISO-8859-1</span><br><span class="line">Content-Length: 106</span><br><span class="line">Date: Mon, 28 Sep 2020 16:59:15 GMT</span><br><span class="line">Keep-Alive: timeout=20</span><br><span class="line">Connection: keep-alive</span><br><span class="line"></span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;index&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h1&gt;Hello World! maven web&lt;/h1&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>具体的可以在浏览器的控制台中查看：</p>
+<p><img src="image/image-20200929010159867.png" alt="image-20200929010159867"></p>
+<p><img src="image/image-20200929010227874.png" alt="image-20200929010227874"></p>
+]]></content>
+      <tags>
+        <tag>briup_java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>spring理解</title>
-    <url>/archives/vanse_spring.html</url>
+    <url>/archives/briup/vanse_spring.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
 <li>教程：spring ioc和aop理解</li>
 <li>时间：2021/11/5</li>
@@ -285,7 +1147,7 @@
   </entry>
   <entry>
     <title>environment</title>
-    <url>/archives/briup_environment.html</url>
+    <url>/archives/project/briup_environment.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="0-前言"><a href="#0-前言" class="headerlink" title="0 前言"></a>0 前言</h1><ul>
 <li>:file_folder: 物联网环境监测系统 </li>
 <li>:timer_clock: 2021/9/24</li>
@@ -723,7 +1585,7 @@
   </entry>
   <entry>
     <title>cms</title>
-    <url>/archives/briup-cms.html</url>
+    <url>/archives/project/briup-cms.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>前言</p>
 <ul>
 <li>教程: cms</li>
@@ -1857,7 +2719,7 @@
   </entry>
   <entry>
     <title>out_before</title>
-    <url>/archives/out-before.html</url>
+    <url>/archives/project/out-before.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
 <li>项目前置知识 springboot+ssm+mysql</li>
 <li>整理人: vanse(刘聪)</li>
@@ -3710,7 +4572,7 @@
   </entry>
   <entry>
     <title>springmvc</title>
-    <url>/archives/briup_springmvc.html</url>
+    <url>/archives/briup/briup_springmvc.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="springmvc-一"><a href="#springmvc-一" class="headerlink" title="springmvc(一)"></a>springmvc(一)</h1><h2 id="1-MVC"><a href="#1-MVC" class="headerlink" title="1 MVC"></a>1 MVC</h2><h3 id="1-1-Web"><a href="#1-1-Web" class="headerlink" title="1.1 Web"></a>1.1 Web</h3><p>完成一次web请求的过程：</p>
 <ul>
 <li>Web浏览器发起请求</li>
@@ -5538,7 +6400,7 @@
   </entry>
   <entry>
     <title>out_cms</title>
-    <url>/archives/out_cms.html</url>
+    <url>/archives/project/out_cms.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
 <li>教案: 看点咨询系统</li>
 <li>时间: 2021/12/12</li>
@@ -7229,868 +8091,6 @@
       <tags>
         <tag>vanse_public</tag>
         <tag>out</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>briup_servlet</title>
-    <url>/archives/private/briup-servlet.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="servlet（一）"><a href="#servlet（一）" class="headerlink" title="servlet（一）"></a>servlet（一）</h1><h2 id="1-JavaEE"><a href="#1-JavaEE" class="headerlink" title="1 JavaEE"></a>1 JavaEE</h2><h3 id="1-1-概述"><a href="#1-1-概述" class="headerlink" title="1.1 概述"></a>1.1 概述</h3><p>JavaEE，Java 平台企业版（Java Platform Enterprise Edition）是 Sun 公司为企业级应用推出的标准平台，用来开发B/S架构软件，可以说它是一种企业级应用开发规范。2018年3月更名为 Jakarta EE。（Oracle将JavaEE交给Eclipse基金会来维护）</p>
-<p>JavaEE 5/6/7  版本都在oracle官网维护：</p>
-<p><a href="https://docs.oracle.com/javaee/7/">javaee 5/6/7</a></p>
-<p><img src="https://raw.githubusercontent.com/%5Bwangsidandan%5D/%5Bblog_images%5D/main/servlet/202205132145900.png" alt="image-20200928160813377"></p>
-<p>JavaEE 8 在oracle官网中也给出了介绍：</p>
-<p><a href="https://www.oracle.com/java/technologies/java-ee-glance.html">JavaEE 8</a></p>
-<p><img src="https://raw.githubusercontent.com/%5Bwangsidandan%5D/%5Bblog_images%5D/main/servlet/202205132138347.png" alt="image-20200928161001881"></p>
-<p>更多关于JavaEE新版本的动向，需要到JakartaEE官网上查看：</p>
-<p><a href="https://jakarta.ee/">JakartaEE</a></p>
-<p><img src="image/image-20200928161146662.png" alt="image-20200928161146662"></p>
-<p><img src="image/image-20200928161250020.png" alt="image-20200928161250020"></p>
-<p><img src="image/image-20200928161312140.png" alt="image-20200928161312140"></p>
-<blockquote>
-<p>可以看出，当前JakartaEE官网中，主推的是JakartaEE 8版本，同时JakartaEE 9也处于可用状态</p>
-</blockquote>
-<blockquote>
-<p>虽然JavaEE已经更名为JakartaEE，但是现在大多数情况下，大家还是习惯叫它JavaEE</p>
-</blockquote>
-<h3 id="1-2-组成"><a href="#1-2-组成" class="headerlink" title="1.2 组成"></a>1.2 组成</h3><p>JavaEE 是企业级应用开发规范，它本身并不是一种技术，而是多种技术解决方案的集合，这些技术和解决方案，会涉及到企业级应用开发过程中，所遇到的各种各样的问题。</p>
-<p>也就是说，使用java开发企业级应用的时候，如果遇到问题，可以使用JavaEE中，所指定的技术规范来进行问题的解决。但是一个问题的解决，一般会有很多种方案，JavaEE只是收录了其中一种方案，并制定成了规范标准。</p>
-<p>例如，<strong>JavaEE 5 中的技术规范</strong></p>
-<p><img src="image/image-20200928162515955.png" alt="image-20200928162515955"></p>
-<blockquote>
-<p>JavaEE中的每一种技术规范，都可以描述为JavaEE中的一种技术组件</p>
-</blockquote>
-<p>随着时代的进步，以及越来越多的公司和组织参与到Java世界，出现了各种各样的Java EE组件的代替者，比如Hibernate、Spring就是其中两个典型（第三方框架）。</p>
-<p>同时，Java官方制定的一些Java EE技术规范并不太受欢迎，例如</p>
-<ul>
-<li>它们制定了JSF规范，但实际企业开发喜欢用Struts 2、Spring MVC；</li>
-<li>它们制定了EJB规范，但实际企业开发往往还是喜欢用Spring；</li>
-<li>它们制定了JPA规范，但实际企业开发往往还是喜欢直接用Hibernate、MyBatis。</li>
-</ul>
-<p>但是，JavaEE规范中，还是有一些非常重要的技术规范，成为javaEE被广泛使用的核心技术，例如Servlet、Jsp</p>
-<p>除了，Servlet和Jsp之外，JavaEE中还有其他一些技术规范，其中核心的可以大致分为13种：</p>
-<ul>
-<li><p>JDBC(Java Database Connectivity)</p>
-<p>JDBC API为访问不同的数据库提供了一种统一的途径</p>
-</li>
-<li><p>JNDI(Java Name and Directory Interface)</p>
-<p>JNDI API被用于执行名字和目录服务</p>
-</li>
-<li><p>EJB(Enterprise JavaBean) </p>
-<p>J2EE技术之所以赢得媒体广泛重视的原因之一就是EJB。它们提供了一个框架来开发和实施分布式商务逻辑，由此很显著地简化了具有可伸缩性和高度复杂的企业级应用的开发</p>
-</li>
-<li><p>RMI(Remote Method Invoke)</p>
-<p>调用远程对象上的方法</p>
-</li>
-<li><p>Java IDL/CORBA</p>
-<p>在Java IDL的支持下，开发人员可以将Java和CORBA集成在一起</p>
-</li>
-<li><p>JSP(Java Server Pages)</p>
-<p>JSP页面由HTML代码和嵌入其中的Java代码所组成</p>
-</li>
-<li><p>Java Servlet</p>
-<p>Servlet是一种Java程序，它扩展了Web服务器的功能，作为一种服务器端的应用，当被请求时开始执行。</p>
-</li>
-<li><p>XML(Extensible Markup Language)</p>
-<p>Java中对XML的支持</p>
-</li>
-<li><p>JMS(Java Message Service)<br>JMS是用于和面向消息的中间件相互通信的应用程序接口</p>
-</li>
-<li><p>JTA(Java Transaction Architecture)</p>
-<p>JTA定义了一种标准的API，应用系统由此可以访问各种事务监控</p>
-</li>
-<li><p>JTS(Java Transaction Service)<br>JTS事务管理器，对JTA提供支持和管理服务</p>
-</li>
-<li><p>JavaMail</p>
-<p>JavaMail是用于存取邮件服务器的API，它提供了一套邮件服务器的抽象类</p>
-</li>
-<li><p>JAF(JavaBeans Activation Framework)</p>
-<p>JavaMail可以利用JAF来处理MIME编码的邮件附件</p>
-</li>
-</ul>
-<h3 id="1-3-区别"><a href="#1-3-区别" class="headerlink" title="1.3 区别"></a>1.3 区别</h3><p>在每一个JavaEE的版本中，会对一些指定的核心技术规范进行版本升级，或者新增一些技术规范</p>
-<p>例如，<strong>JavaEE 7 中的技术规范</strong></p>
-<blockquote>
-<p>其中，使用不同的颜色，表示出在此版本中，新增了哪些技术规范，以及哪些是可选的技术规范</p>
-</blockquote>
-<p><img src="image/image-20200928164809409.png" alt="image-20200928164809409"></p>
-<p>在官网中，会对JavaEE中，每项技术规范的版本罗列出来，并进行说明</p>
-<p><a href="https://www.oracle.com/java/technologies/javaee/javaeetechnologies.html#javaee7">JavaEE 7中技术规范版本</a></p>
-<p><img src="image/image-20200928165437589.png" alt="image-20200928165437589"></p>
-<p><img src="image/image-20200928165535726.png" alt="image-20200928165535726"></p>
-<blockquote>
-<p>可以看出，这里列出了JavaEE 7中，关于web应用开发技术中，每项技术规范的版本</p>
-</blockquote>
-<p>下图是<strong>JavaEE 5</strong>中，对web开发技术中，每项技术规范的版本：</p>
-<p><img src="image/image-20200928165737079.png" alt="image-20200928165737079"></p>
-<blockquote>
-<p>可以看出，JavaEE 5 和 JavaEE 7版本中，很多技术规范的版本的都有所升级</p>
-</blockquote>
-<p>JakartaEE官网中，对其新版本中的规范技术也有详细说明：</p>
-<p><a href="https://jakarta.ee/specifications/">JakartaEE官网版本说明</a></p>
-<p><img src="image/image-20200928170022610.png" alt="image-20200928170022610"></p>
-<p><img src="image/image-20200928170055327.png" alt="image-20200928170055327"></p>
-<p><img src="image/image-20200928170131504.png" alt="image-20200928170131504"></p>
-<h3 id="1-4-选择"><a href="#1-4-选择" class="headerlink" title="1.4 选择"></a>1.4 选择</h3><p>在JavaEE技术规范中，我们主要关注的是Servlet和Jsp的版本，特别是Servlet，版本不同，会直接影响将来代码中功能实现的方式。这里，我们选择使用<strong>JavaEE 7</strong>中的<strong>Servlet3.1</strong>版本，这个也是当前使用最广泛的版本。</p>
-<p>通过Maven中央仓库中的servlet依赖使用情况，也可以看出：</p>
-<p><img src="image/image-20200928171345590.png" alt="image-20200928171345590"></p>
-<blockquote>
-<p>注意，一般情况下，高版本是会兼容低版本的功能的</p>
-</blockquote>
-<h3 id="1-5-下载"><a href="#1-5-下载" class="headerlink" title="1.5 下载"></a>1.5 下载</h3><p><a href="https://download.oracle.com/otndocs/jcp/java_ee-7-fr-eval-spec/index.html">JavaEE 7官方说明文档下载</a></p>
-<p><img src="image/image-20200928171849967.png" alt="image-20200928171849967"></p>
-<blockquote>
-<p>注意，这个是JavaEE 7的总文档，里面包含各种技术组件的说明</p>
-</blockquote>
-<p><a href="https://download.oracle.com/otndocs/jcp/servlet-3_1-fr-eval-spec/index.html">Servlet3.1 官方文档下载</a></p>
-<p><img src="image/image-20200928171933203.png" alt="image-20200928171933203"></p>
-<blockquote>
-<p>注意，第一个是Servlet3.1的说明文档，第二个是Servlet3.1的API文档</p>
-</blockquote>
-<h3 id="1-6-容器"><a href="#1-6-容器" class="headerlink" title="1.6 容器"></a>1.6 容器</h3><p>通过前面的JavaEE技术组件图中，可以看出Servlet和Jsp，并不能像之前普通java程序一样，写一个main方法运行，而是需要将Servlet和Jsp程序，放到Web容器中运行：</p>
-<p><strong>JavaEE 5中的技术组件图：</strong></p>
-<p><img src="image/image-20200928172533726.png" alt="image-20200928172533726"></p>
-<p><strong>JavaEE 7中的技术组件图：</strong></p>
-<p><img src="image/image-20200928172504604.png" alt="image-20200928172504604"></p>
-<p>Web容器，也称为Web Container，它其实是一个运行环境，它可以给Servlet和Jsp程序的运行，提供一个合适的运行环境。所以，将来在将web项目部署到服务器里面的时候，会要求服务器中含有<strong>web容器</strong>，以便支持Servlet和Jsp程序的运行。如果服务器中没有web容器，那么这个服务器中将不能运行servlet和jsp的程序。</p>
-<p>一般情况下对服务器的描述有：</p>
-<ul>
-<li><p>web服务器</p>
-<p>也称为web server或者http server，主要用于处理http请求以及返回响应。它可以处理请求，也可以将请求转发至其他服务器，多用于处理web中的静态资源。例如，Nginx 、apache</p>
-</li>
-<li><p>web容器</p>
-<p>主要用于支持Servlet和Jsp的运行(没有主函数)，同时也可以处理http协议下的静态资源的访问，因为一般是在==web服务器中内嵌了web容器。例如，tomcat、jetty==</p>
-</li>
-<li><p>JavaEE应用服务器</p>
-<p>它具备了 Web Server 处理http请求的能力（没有Web Server专业），同时也支持了JavaEE 技术组件，比如JMS、DI、JPA、Transactions、Concurrency等，同时也包含了Web Container。例如，WebLogic、WebSphere.(一般配合web服务器使用tomcat+nginx)</p>
-</li>
-</ul>
-<p><img src="image/image-20200928195857793.png" alt="image-20200928195857793"></p>
-<blockquote>
-<p>后面，我们会选择tomcat作为web容器，去部署运行servlet和jsp相关的程序</p>
-</blockquote>
-<p>==思考，JavaEE、Servlet、Jsp、Web Container、tomcat这几者之间的关系是什么？==</p>
-<h2 id="2-Tomcat"><a href="#2-Tomcat" class="headerlink" title="2 Tomcat"></a>2 Tomcat</h2><h3 id="2-1-概述"><a href="#2-1-概述" class="headerlink" title="2.1 概述"></a>2.1 概述</h3><p>Tomcat是由Apache基金组织维护的一款开源、免费、Java语言实现的web容器，同时它也是一个web服务器，支持Http协议下的资源访问（静态资源、动态资源）。</p>
-<p>在Tomcat服务器中，可以部署web应用，然后对外提供Http协议下的资源访问</p>
-<p><img src="image/image-20200928202700541.png" alt="image-20200928202700541"></p>
-<h3 id="2-2-下载"><a href="#2-2-下载" class="headerlink" title="2.2 下载"></a>2.2 下载</h3><p><a href="https://tomcat.apache.org/">apache-tomcat官网</a></p>
-<p><img src="image/image-20200928202942725.png" alt="image-20200928202942725"></p>
-<p>官网列出了tomcat和Servlet、Jsp等相关技术规范的版本关系：</p>
-<p><img src="image/image-20200928203045326.png" alt="image-20200928203045326"></p>
-<blockquote>
-<p>可以看出，tomcat8.5刚好支持JavaEE 7里面的servlet3.1规范</p>
-</blockquote>
-<p><a href="https://tomcat.apache.org/download-80.cgi">tomcat 8.5下载</a></p>
-<p>官网中分别提供了源码和编译后的软件下载：</p>
-<p><img src="image/image-20200928203537201.png" alt="image-20200928203537201"></p>
-<h3 id="2-3-安装"><a href="#2-3-安装" class="headerlink" title="2.3 安装"></a>2.3 安装</h3><p>将下载完成的压缩包，直接解压到文件中即可，例如</p>
-<p><img src="image/image-20200928203849722.png" alt="image-20200928203849722"></p>
-<blockquote>
-<p>注意，这个解压安装的路径中，不要有中文、空格、特殊符号等</p>
-</blockquote>
-<h3 id="2-4-目录"><a href="#2-4-目录" class="headerlink" title="2.4 目录"></a>2.4 目录</h3><p>tomcat解压后，每个目录的作用：</p>
-<ul>
-<li><p>bin目录，存放运行tomcat需要的命令文件</p>
-<p>例如，tomcat启动和关闭的命令</p>
-<p>windows中，startup.bat、shutdown.bat</p>
-<p>Unix中，startup.sh、shutdown.sh</p>
-</li>
-<li><p>conf目录，存放tomcat相关的配置文件</p>
-<p>其中最重要的一个配置文件就是server.xml</p>
-<p>例如，在该文件中配置tomcat启动后监听的端口号</p>
-</li>
-<li><p>lib目录，存放项目运行时需要的jar包</p>
-<p>这个目录中存放的是公共的jar包，部署到tomcat服务器中的多个web项目，可以共享这些jar包</p>
-<p>例如，servlet-api.jar，在使用servlet规范编写代码的时候，需要该jar中的接口</p>
-</li>
-<li><p>logs目录，存放tomcat运行时的日志文件</p>
-<p>tomcat把会运行时的重要信息记录下来</p>
-<p>例如，tomcat中部署的web项目发生了严重错误</p>
-</li>
-<li><p>temp目录，存放tomcat运行时产生的临时文件</p>
-<p>tomcat在运行期间，可能会产生一些临时文件，这些文件默认放到这个目录下</p>
-</li>
-<li><p>webapps目录，部署web项目的位置</p>
-<p>把web项目部署到tomcat服务器中，其实就是把项目放到这个目录下面</p>
-</li>
-<li><p>work目录，编译Jsp页面后所存放的目录</p>
-</li>
-</ul>
-<h3 id="2-5-端口"><a href="#2-5-端口" class="headerlink" title="2.5 端口"></a>2.5 端口</h3><p>tomcat启动后，会默认监听端口8080，如果和本机中的其他服务器程序(oracle)有冲突，可以在配置文件中进行修改：</p>
-<p><code>conf/server.xml</code></p>
-<p><img src="image/image-20200928205335160.png" alt="image-20200928205335160"></p>
-<p>例如，可以修改成8989</p>
-<p><img src="image/image-20200928205414023.png" alt="image-20200928205414023"></p>
-<blockquote>
-<p>注意，也可以修改成其它，自己想使用的端口号，和本地已有的程序没有冲突即可</p>
-</blockquote>
-<h3 id="2-6-运行"><a href="#2-6-运行" class="headerlink" title="2.6 运行"></a>2.6 运行</h3><p>因为tomcat软件是java编写的，所以在启动运行tomcat的时候，需要有JDK的支持，并且通过tomcat官网给出的版本关系图可知，当前使用的Tomcat 8.5 需要有JDK7或以上的版本支持。</p>
-<p>第一步，安装JDK7或以上版本，并正确配置好JAVA_HOME，以便让Tomcat在启动时可以找到安装的JDK</p>
-<p>第二步，运行bin目录下的启动文件即可（双击startup.bat）</p>
-<p><img src="image/image-20200928210142789.png" alt="image-20200928210142789"></p>
-<blockquote>
-<p>注意，如果出现命令窗口一闪而过，并且消失，那么很可能是JAVA_HOME配置问题</p>
-</blockquote>
-<blockquote>
-<p>注意，这里出现日志显示乱码，是因为Windows中默认编码的问题</p>
-</blockquote>
-<h3 id="2-7-访问"><a href="#2-7-访问" class="headerlink" title="2.7 访问"></a>2.7 访问</h3><p>Tomcat成功启动后，可以使用URL地址，来访问部署到Tomcat中的web项目：</p>
-<p><a href="http://localhost:8989/your_project/resource_in_project">http://localhost:8989/your_project/resource_in_project</a><br><a href="http://127.0.0.1:8989/your_project/resource_in_project">http://127.0.0.1:8989/your_project/resource_in_project</a></p>
-<p>webapps目录是Tomcat中部署项目的位置，默认情况下，里面已经有了一些示例项目：</p>
-<p><img src="image/image-20200928210721010.png" alt="image-20200928210721010"></p>
-<blockquote>
-<p>注意，webapps中，文件夹的名字，默认就是部署的项目名字</p>
-</blockquote>
-<p>例如，<a href="http://127.0.0.1:8989/examples/index.html">http://127.0.0.1:8989/examples/index.html</a></p>
-<p><img src="image/image-20200928210821686.png" alt="image-20200928210821686"></p>
-<p><img src="image/image-20200928210912034.png" alt="image-20200928210912034"></p>
-<p><img src="image/image-20200928210928468.png" alt="image-20200928210928468"></p>
-<p><img src="image/image-20200928210941237.png" alt="image-20200928210941237"></p>
-<h3 id="2-8-关闭"><a href="#2-8-关闭" class="headerlink" title="2.8 关闭"></a>2.8 关闭</h3><p>tomcat启动后，如果关闭，可以直接运行bin目录下的shutdown.bat文件，或者在tomcat的运行窗口的右上角，直接点击叉号：</p>
-<p><img src="image/image-20200928211342512.png" alt="image-20200928211342512"></p>
-<blockquote>
-<p>注意，双击shutdown.bat关闭服务器和点击叉号关闭服务器，俩种虽然都可以关闭，但是关闭的细节有所不同，特殊场景下会导出程序再次运行的结果不同，后面在实际操作过程中，会具体解释</p>
-</blockquote>
-<blockquote>
-<p>注意，代码+环境+操作 = 正常的程序执行结果</p>
-</blockquote>
-<h2 id="3-Project"><a href="#3-Project" class="headerlink" title="3 Project"></a>3 Project</h2><h3 id="3-1-概述"><a href="#3-1-概述" class="headerlink" title="3.1 概述"></a>3.1 概述</h3><p>在Tomcat中，部署的Web项目，是有固定的结构要求的，假设以web-test项目为例，进行说明。</p>
-<p>这里描述的是，把web项目部署到Tomcat中之后的目录结构，并不是项目在Eclipse中的结构，所以Eclipse帮我们部署项目的时候，其实是把原来的项目结构进行处理，变为tomcat中要求的项目结构，然后再部署到tomcat里面的webapps目录中的。</p>
-<p>对应一个web项目（例如，web-test），部署后最基本的项目结构为：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">web-test/</span><br><span class="line">└─WEB-INF/</span><br><span class="line">    │  web.xml</span><br><span class="line">    │</span><br><span class="line">    ├─classes/</span><br><span class="line">    └─lib/</span><br></pre></td></tr></table></figure>
-
-<p>其中，</p>
-<p>web-test，它是项目的根目录，也是web项目的名字</p>
-<ul>
-<li>这里面一定要有子目录WEB-INF</li>
-<li>除此之外，这里还可以存放web项目的静态资源（html、css、js、image）</li>
-<li>这里还可以新建其它子目录</li>
-</ul>
-<p>WEB-INF，它是web项目中的核心目录，客户端浏览器是无法直接访问该目录下的资源</p>
-<ul>
-<li>classes，存放项目中编译好的class文件</li>
-<li>lib，存放项目中使用到的第三方jar包（不会给其他tomcat部署的web项目共享）</li>
-<li>web.xml，它是web项目中核心的配置文件，tomcat启动后会自动读取项目中web.xml文件</li>
-</ul>
-<h3 id="3-2-操作"><a href="#3-2-操作" class="headerlink" title="3.2 操作"></a>3.2 操作</h3><p>在桌面创建好web-test项目，其结构按照上面描述的规则。</p>
-<p>然后进行以下操作，<strong>感受</strong>一个web项目编写、编译、部署、运行、访问的过程</p>
-<p>1、新建index.html页面，存放到web-test项目目录下</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>index<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello world<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>2、在桌面创建java类（servlet）</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.briup.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.*;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">    <span class="keyword">throws</span> IOException, ServletException</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        response.setContentType(<span class="string">&quot;text/html&quot;</span>);</span><br><span class="line">        PrintWriter out = response.getWriter();</span><br><span class="line">        out.println(<span class="string">&quot;&lt;html&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;head&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;title&gt;index&lt;/title&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;/head&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;body&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;h1&gt;Hello World! briup&lt;/h1&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;/body&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;/html&gt;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>3、编译此java类（servlet）</p>
-<p>当前类中，使用到了servlet规范，需要用到servlet-api.jar，此jar包在tomcat中lib里面中，所以在编译的时候，需要指定jar所在的路径：</p>
-<p><code>javac -cp D:\briup\apache-tomcat-8.5.58\lib\servlet-api.jar -d . HelloWorld.java</code></p>
-<p><img src="image/image-20200928215132763.png" alt="image-20200928215132763"></p>
-<p>4、将编译好的class文件，连同包对应的目录，一起剪切到WEB-INF下面的classes目录</p>
-<p><img src="image/image-20200928215359894.png" alt="image-20200928215359894"></p>
-<p>5、配置web.xml</p>
-<p>在tomcat的目录中，有web.xml文件的配置模板：conf/web.xml</p>
-<p>复制过来，进行修改，如下</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://xmlns.jcp.org/xml/ns/javaee&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://xmlns.jcp.org/xml/ns/javaee</span></span></span><br><span class="line"><span class="string"><span class="tag">                      http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">version</span>=<span class="string">&quot;3.1&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>com.briup.test.HelloWorld<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line">	</span><br><span class="line">    <span class="comment">&lt;!-- 当前浏览器访问web-test项目中的动态资源/hello-world的时候--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- tomcat会自动帮我们调用com.briup.test.HelloWorld中的方法来进行处理--&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/hello-world<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.html<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.jsp<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p>6、部署项目</p>
-<p>将完成以上步骤的web-test项目，部署到tomcat中的webapps目录中。（复制过去即可）</p>
-<p><img src="image/image-20200928220234198.png" alt="image-20200928220234198"></p>
-<p>7、启动</p>
-<p>如果tomcat之前已经启动了，可以关闭后重写启动。</p>
-<p>8、访问</p>
-<p>先访问web-test项目中的静态资源</p>
-<p><a href="http://127.0.0.1:8989/web-test/index.html">http://127.0.0.1:8989/web-test/index.html</a></p>
-<p><img src="image/image-20200928220545658.png" alt="image-20200928220545658"></p>
-<p>再访问web-test项目中的动态资源</p>
-<p><a href="http://127.0.0.1:8989/web-test/hello-world">http://127.0.0.1:8989/web-test/hello-world</a></p>
-<p><img src="image/image-20200928220623329.png" alt="image-20200928220623329"></p>
-<h3 id="3-3-思考"><a href="#3-3-思考" class="headerlink" title="3.3 思考"></a>3.3 思考</h3><p>以上例子中，我们新建了一个java类<code>HelloWorld</code>，此类中并没有编写main方法，只有一个<code>doGet</code>方法，那么最后我们通过浏览器访问/hello-world路径的时候，该方法是怎么执行的？</p>
-<p>大致思路如下：</p>
-<ol>
-<li>浏览器发送请求，访问web-test项目中的/hello-world资源</li>
-<li>tomcat接收到请求，根据web.xml文件的配置信息，找到/hello-world对应的是com.briup.test.HelloWorld</li>
-<li>tomcat创建HelloWorld类的对象（反射）</li>
-<li>tomcat调用HelloWorld对象中的方法</li>
-<li>最后doGet方法被执行，向浏览器写回一个html页面的源代码</li>
-<li>浏览器接到tomcat写回来的html页面源代码，解析并显示出来</li>
-</ol>
-<h2 id="4-Eclipse"><a href="#4-Eclipse" class="headerlink" title="4 Eclipse"></a>4 Eclipse</h2><p>上面示例，是自己通过手动的方式，创建一个web项目，然后再进行编写、编译、部署、启动、运行。</p>
-<p>同时，也可以使用Eclipse来简化以上操作的步骤</p>
-<h3 id="4-1-关联"><a href="#4-1-关联" class="headerlink" title="4.1 关联"></a>4.1 关联</h3><p>在Eclipse中，新建服务器，关联外部解压的tomcat</p>
-<p><img src="image/image-20200928222557951.png" alt="image-20200928222557951"></p>
-<p><img src="image/image-20200928222617948.png" alt="image-20200928222617948"></p>
-<p><img src="image/image-20200928222700920.png" alt="image-20200928222700920"></p>
-<p><img src="image/image-20200928222718421.png" alt="image-20200928222718421"></p>
-<p><img src="image/image-20200928222756686.png" alt="image-20200928222756686"></p>
-<p><img src="image/image-20200928222838990.png" alt="image-20200928222838990"></p>
-<p><img src="image/image-20200928222859017.png" alt="image-20200928222859017"></p>
-<p><img src="image/image-20200928223031128.png" alt="image-20200928223031128"></p>
-<blockquote>
-<p>此时，Eclipse中多了一个Servers的项目，里面是关联了外部tomcat的配置文件</p>
-</blockquote>
-<p><img src="image/image-20200928223226355.png" alt="image-20200928223226355"></p>
-<p><img src="image/image-20200928223345650.png" alt="image-20200928223345650"></p>
-<p>对默认配置进行修改，如下：</p>
-<p><img src="image/image-20200928223455105.png" alt="image-20200928223455105"></p>
-<blockquote>
-<p>注意，第一个修改地方表示使用外部的tomcat的位置，第二个修改的地方表示web项目部署的位置</p>
-</blockquote>
-<p>如果还要修改端口号，也可以在这里修改：</p>
-<p><img src="image/image-20200928224641385.png" alt="image-20200928224641385"></p>
-<h3 id="4-2-启动"><a href="#4-2-启动" class="headerlink" title="4.2 启动"></a>4.2 启动</h3><p>启动之前，可以先把之前手动不是的web-test项目，从webapps目录中删除掉。</p>
-<p><img src="image/image-20200928223607332.png" alt="image-20200928223607332"></p>
-<p><img src="image/image-20200928224006472.png" alt="image-20200928224006472"></p>
-<blockquote>
-<p>控制台中，可以看到tomcat启动的日志信息</p>
-</blockquote>
-<h3 id="4-2-关闭"><a href="#4-2-关闭" class="headerlink" title="4.2 关闭"></a>4.2 关闭</h3><p>在Eclipse，关闭已经启动的Tomcat服务器，也很简单。</p>
-<p><img src="image/image-20200928224358321.png" alt="image-20200928224358321"></p>
-<p>或者，也可以点击console右上方的红点，直接停止JVM的运行，那么tomcat服务器也就停止了：</p>
-<p><img src="image/image-20200928224457926.png" alt="image-20200928224457926"></p>
-<h3 id="4-3-dynamic-web"><a href="#4-3-dynamic-web" class="headerlink" title="4.3 dynamic-web"></a>4.3 dynamic-web</h3><p>在Eclipse中，创建web项目，可以使用Eclipse中的动态web项目（dynamic  web）</p>
-<h4 id="4-3-1-创建"><a href="#4-3-1-创建" class="headerlink" title="4.3.1 创建"></a>4.3.1 创建</h4><p><img src="image/image-20200928225125715.png" alt="image-20200928225125715"></p>
-<p><img src="image/image-20200928225158905.png" alt="image-20200928225158905"></p>
-<p><img src="image/image-20200928225449055.png" alt="image-20200928225449055"></p>
-<p><img src="image/image-20200928225547450.png" alt="image-20200928225547450"></p>
-<p><img src="image/image-20200928225750688.png" alt="image-20200928225750688"></p>
-<p><img src="image/image-20200928230110222.png" alt="image-20200928230110222"></p>
-<p>如果之前没有打钩自动生成web.xml文件，这时候也可以点击项目然后自动生成：</p>
-<p><img src="image/image-20200928230230925.png" alt="image-20200928230230925"></p>
-<p><img src="image/image-20200928230339161.png" alt="image-20200928230339161"></p>
-<blockquote>
-<p>注意，如果需要关联servlet-api.jar的源代码，可以直接将apache-tomcat-8.5.58-src.zip配置关联过去即可</p>
-</blockquote>
-<h4 id="4-3-2-编写"><a href="#4-3-2-编写" class="headerlink" title="4.3.2 编写"></a>4.3.2 编写</h4><p>项目中，src里面是编写java源代码的地方</p>
-<p><code>HelloWorld</code></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.briup.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"></span><br><span class="line"><span class="meta">@WebServlet(&quot;/hello-world&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">		</span><br><span class="line">		resp.setContentType(<span class="string">&quot;text/html&quot;</span>);</span><br><span class="line">        PrintWriter out = resp.getWriter();</span><br><span class="line">        out.println(<span class="string">&quot;&lt;html&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;head&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;title&gt;index&lt;/title&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;/head&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;body&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;h1&gt;Hello World! dynamic web&lt;/h1&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;/body&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;/html&gt;&quot;</span>);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意，这里使用一个注解 <code>@WebServlet</code>，来代替了之前web.xml中的配置，其效果是一样的</p>
-</blockquote>
-<p>==思考，这里用到的servlet规范，在servlet-api.jar里面，此jar在什么地方，该项目是怎么引入的？==</p>
-<p>项目中，WebContent里面是编写页面的地方</p>
-<p><code>index.html</code></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>index<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello world!dynamic web<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p><img src="image/image-20200928231330732.png" alt="image-20200928231330732"></p>
-<h4 id="4-3-3-部署"><a href="#4-3-3-部署" class="headerlink" title="4.3.3 部署"></a>4.3.3 部署</h4><p>仔细观察会发现，此时Eclipse中的web项目结构，和要求的部署到Tomcat中的项目结构，是有所不同的，那么在部署的时候，Eclipse里会进行自动处理，因为Eclipse中对项目的部署做映射配置：</p>
-<p><img src="image/image-20200928231721322.png" alt="image-20200928231721322"></p>
-<p><img src="image/image-20200928231953209.png" alt="image-20200928231953209"></p>
-<blockquote>
-<p>默认情况下，Eclipse已经把当前的项目结构，和最后部署到Tomcat中的项目结构的对应关系，都配置好了</p>
-</blockquote>
-<p><strong>接下来部署项目：</strong></p>
-<p><img src="image/image-20200928232133403.png" alt="image-20200928232133403"></p>
-<p><img src="image/image-20200928232144212.png" alt="image-20200928232144212"></p>
-<p><img src="image/image-20200928232157368.png" alt="image-20200928232157368"></p>
-<p><img src="image/image-20200928232217507.png" alt="image-20200928232217507"></p>
-<h4 id="4-3-4-启动"><a href="#4-3-4-启动" class="headerlink" title="4.3.4 启动"></a>4.3.4 启动</h4><p>部署完成后，就可以启动tomcat了</p>
-<p><img src="image/image-20200928232300519.png" alt="image-20200928232300519"></p>
-<p>启动成功后，观察tomcat中的webapps目录里面，是否已经完成了项目部署：</p>
-<p><img src="image/image-20200928232422146.png" alt="image-20200928232422146"></p>
-<h4 id="4-3-5-访问"><a href="#4-3-5-访问" class="headerlink" title="4.3.5 访问"></a>4.3.5 访问</h4><p>访问静态资源：</p>
-<p><a href="http://127.0.0.1:8989/dynamic-web/index.html">http://127.0.0.1:8989/dynamic-web/index.html</a></p>
-<p><img src="image/image-20200928232510037.png" alt="image-20200928232510037"></p>
-<p>访问动态资源：</p>
-<p><a href="http://127.0.0.1:8989/dynamic-web/hello-world">http://127.0.0.1:8989/dynamic-web/hello-world</a></p>
-<p><img src="image/image-20200928232537584.png" alt="image-20200928232537584"></p>
-<h4 id="4-3-6-移除"><a href="#4-3-6-移除" class="headerlink" title="4.3.6 移除"></a>4.3.6 移除</h4><p>项目如果不需要运行了，还可以从tomcat的部署中移除：</p>
-<p><img src="image/image-20200928232644327.png" alt="image-20200928232644327"></p>
-<p><img src="image/image-20200928232716802.png" alt="image-20200928232716802"></p>
-<p>观察tomcat中的webapps目录中是否已经将当前项目给移除：</p>
-<p><img src="image/image-20200928232744989.png" alt="image-20200928232744989"></p>
-<p>因为项目移除了，此时浏览器访问会出现404，资源找不到的情况：</p>
-<p><img src="image/image-20200928233122326.png" alt="image-20200928233122326"></p>
-<h3 id="4-4-maven-web"><a href="#4-4-maven-web" class="headerlink" title="4.4 maven-web"></a>4.4 maven-web</h3><p>在Eclipse中，创建web项目，还可以使用maven项目</p>
-<h4 id="4-4-1-创建"><a href="#4-4-1-创建" class="headerlink" title="4.4.1 创建"></a>4.4.1 创建</h4><p><img src="image/image-20200928233325758.png" alt="image-20200928233325758"></p>
-<p><img src="image/image-20200928233343830.png" alt="image-20200928233343830"></p>
-<p><img src="image/image-20200928233530045.png" alt="image-20200928233530045"></p>
-<p><img src="image/image-20200928233606264.png" alt="image-20200928233606264"></p>
-<p><img src="image/image-20200928234300664.png" alt="image-20200928234300664"></p>
-<p><img src="image/image-20220512103524555.png" alt="image-20220512103524555"></p>
-<p>在webapp中，新建目录WEB-INF，里面在新建web.xml</p>
-<p><img src="image/image-20200928234426964.png" alt="image-20200928234426964"></p>
-<p><code>web.xml</code> 文件内容： </p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns</span>=<span class="string">&quot;http://xmlns.jcp.org/xml/ns/javaee&quot;</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd&quot;</span></span></span><br><span class="line"><span class="tag">	<span class="attr">version</span>=<span class="string">&quot;3.1&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">display-name</span>&gt;</span>maven-web<span class="tag">&lt;/<span class="name">display-name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.html<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.htm<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.jsp<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>default.html<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>default.htm<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>default.jsp<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>可以复制之前的web.xml，修改下即可</p>
-</blockquote>
-<p>配置pom.xml文件，指定maven项目的JDK版本、项目编码、以及相关项目依赖：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://maven.apache.org/POM/4.0.0&quot;</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.briup.test<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">packaging</span>&gt;</span>war<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line">	</span><br><span class="line">	<span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.build.sourceEncoding</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">maven.compiler.source</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.source</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">maven.compiler.target</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.target</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">	</span><br><span class="line">	<span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- 引入servlet3.1的依赖 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.servlet<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javax.servlet-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">version</span>&gt;</span>3.1.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">		</span><br><span class="line">        <span class="comment">&lt;!-- 引入jstl的依赖，jsp页面中会使用到 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.servlet<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jstl<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">		</span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line">	</span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意，这里将servlet的依赖范围（scope）设置为了provided，因为tomcat的lib目录中也有这个jar包，将来部署的时候，使用tomcat自带的jar包即可</p>
-</blockquote>
-<p>修改完这些配置后，记得对maven项目进行update操作：</p>
-<p><img src="image/image-20200928234927413.png" alt="image-20200928234927413"></p>
-<p>此时，maven项目中就不会报错了：</p>
-<p><img src="image/image-20200928235011223.png" alt="image-20200928235011223"></p>
-<blockquote>
-<p>注意，因为maven项目中会对web.xml文件进行验证，从网络上下载schame，但是可能会因为网络原因下载验证失败，导致maven项目还会报错，这个错误不影响运行，或多更新几次项目就可以了。</p>
-</blockquote>
-<blockquote>
-<p>注意，此时的maven项目并没有像动态web项目一样，引用了tomcat的运行环境，而且我们在pom文件中，自己添加了依赖，将需要用的的servlet-api.jar引入了进来</p>
-</blockquote>
-<h4 id="4-4-2-编写"><a href="#4-4-2-编写" class="headerlink" title="4.4.2 编写"></a>4.4.2 编写</h4><p>在maven项目中，完成和上面项目中一样的功能，进行测试。</p>
-<p>项目中，src/main/java里面是编写java源代码的地方</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.briup.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"></span><br><span class="line"><span class="meta">@WebServlet(&quot;/hello-world&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">		</span><br><span class="line">		resp.setContentType(<span class="string">&quot;text/html&quot;</span>);</span><br><span class="line">        PrintWriter out = resp.getWriter();</span><br><span class="line">        out.println(<span class="string">&quot;&lt;html&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;head&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;title&gt;index&lt;/title&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;/head&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;body&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;h1&gt;Hello World! maven web&lt;/h1&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;/body&gt;&quot;</span>);</span><br><span class="line">        out.println(<span class="string">&quot;&lt;/html&gt;&quot;</span>);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意，这里输出的是maven web，之前上个例子有所不同</p>
-</blockquote>
-<p>项目中，webapp里面是编写页面的地方</p>
-<p><code>index.html</code></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>index<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p><img src="image/image-20200928235843519.png" alt="image-20200928235843519"></p>
-<h4 id="4-4-3-部署"><a href="#4-4-3-部署" class="headerlink" title="4.4.3 部署"></a>4.4.3 部署</h4><p>Eclipse中，也对Maven项目，做了部署映射，可以将maven项目的结构，转换为Tomcat中部署项目的结构要求：</p>
-<p><img src="image/image-20200929000015319.png" alt="image-20200929000015319"></p>
-<p><img src="image/image-20200929000050330.png" alt="image-20200929000050330"></p>
-<blockquote>
-<p>所以，maven项目的结构虽然和Tomcat中部署项目的结构有很大区别，但是最终部署完成后，还是会变成最终要求的项目结构</p>
-</blockquote>
-<p>接下来进行项目的部署：</p>
-<p><img src="image/image-20200929000230541.png" alt="image-20200929000230541"></p>
-<p><img src="image/image-20200929000304499.png" alt="image-20200929000304499"></p>
-<p><img src="image/image-20200929000325275.png" alt="image-20200929000325275"></p>
-<h4 id="4-4-4-启动"><a href="#4-4-4-启动" class="headerlink" title="4.4.4 启动"></a>4.4.4 启动</h4><p>部署完成后，就可以启动tomcat了，如果已经启动了，也可以重启一次。</p>
-<p><img src="image/image-20200929000447419.png" alt="image-20200929000447419"></p>
-<p>启动成功后，观察tomcat中的webapps目录里面，是否已经完成了项目部署：</p>
-<p><img src="image/image-20200929000522218.png" alt="image-20200929000522218"></p>
-<p><img src="image/image-20220512110054611.png" alt="image-20220512110054611"></p>
-<h4 id="4-4-5-访问"><a href="#4-4-5-访问" class="headerlink" title="4.4.5 访问"></a>4.4.5 访问</h4><p>访问静态资源：</p>
-<p><a href="http://127.0.0.1:8989/maven-web/index.html">http://127.0.0.1:8989/maven-web/index.html</a></p>
-<p><img src="image/image-20200929000612531.png" alt="image-20200929000612531"></p>
-<p>访问动态资源：</p>
-<p><a href="http://127.0.0.1:8989/maven-web/hello-world">http://127.0.0.1:8989/maven-web/hello-world</a></p>
-<p><img src="image/image-20200929000712569.png" alt="image-20200929000712569"></p>
-<h4 id="4-4-6-移除"><a href="#4-4-6-移除" class="headerlink" title="4.4.6 移除"></a>4.4.6 移除</h4><p>项目如果不需要运行了，还可以从tomcat的部署中移除：</p>
-<p><img src="image/image-20200929000824385.png" alt="image-20200929000824385"></p>
-<blockquote>
-<p>注意，如果tomact还在运行期间，把项目移除了，可能会导致控制台中输出错误信息，但是这个影响，重新启动tomcat就可以了。</p>
-</blockquote>
-<p><img src="image/image-20200929000934737.png" alt="image-20200929000934737"></p>
-<p>观察tomcat中的webapps目录中是否已经将当前项目给移除：</p>
-<p><img src="image/image-20200929001001172.png" alt="image-20200929001001172"></p>
-<p>因为项目移除了，此时浏览器访问会出现404，资源找不到的情况：</p>
-<p><img src="image/image-20200929001046633.png" alt="image-20200929001046633"></p>
-<h2 id="5-Http"><a href="#5-Http" class="headerlink" title="5 Http"></a>5 Http</h2><blockquote>
-<p>在上面的测试中，客户端浏览器和tomcat服务器进行访问交互，其采用的协议是http，该协议规定了客户端和服务器之间的交互方式，以及交互内容的格式要求。</p>
-</blockquote>
-<h3 id="5-1-概述"><a href="#5-1-概述" class="headerlink" title="5.1 概述"></a>5.1 概述</h3><p>超文本传输协议 (HTTP-Hypertext transfer protocol) 是一种详细规定了浏览器和万维网服务器之间互相通信的规则，通过因特网传送万维网文档的数据传送协议。HTTP是一个应用层协议，由请求和响应构成，是一个标准的客户端服务器模型。</p>
-<h3 id="5-2-交互方式"><a href="#5-2-交互方式" class="headerlink" title="5.2 交互方式"></a>5.2 交互方式</h3><p>http协议规定，默认情况下：</p>
-<ul>
-<li>先由客户端（浏览器）向服务器（tomcat）发送请求（request）</li>
-<li>服务器接收到请求后，根据请求的资源路径，在服务器内部部署的项目中，查找是否有该资源</li>
-<li>如果该资源存在，那么服务器就会将该资源返回（静态资源），或者把该资源的运行结果返回（动态资源）</li>
-<li>如果该资源不存在，那么服务器就会返回一个状态码（404），表示本次访问的资源找不到</li>
-<li>不管资源存在还是不存在，服务器都会针对这次请求，返回一个结果，这个结果就被称之为响应（response）</li>
-<li>客户端（浏览器）接收到本次请求的响应内容后，解析并显示出来</li>
-</ul>
-<p>此时，本次http协议下的访问结束。用户还可以再次发出请求，那么就重复上述过程。</p>
-<h3 id="5-3-内容格式"><a href="#5-3-内容格式" class="headerlink" title="5.3 内容格式"></a>5.3 内容格式</h3><blockquote>
-<p>无论是客户端发送的请求内容，还是服务器返回的响应内容，在http协议中，都是有固定的格式要求的。</p>
-</blockquote>
-<h4 id="5-3-1-请求"><a href="#5-3-1-请求" class="headerlink" title="5.3.1 请求"></a>5.3.1 请求</h4><p>客户端发送到服务器端的请求消息，称之为请求(request)，其实就是一个按照http协议的规则拼接而成的字符串</p>
-<p>Request请求消息包含三部分：</p>
-<ul>
-<li>请求行，request line</li>
-<li>消息报头（请求头），request head</li>
-<li>请求正文，request body</li>
-</ul>
-<p><strong>1、请求行，request line</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//格式: CRLF表示回车和换行</span><br><span class="line">Method Request-URI HTTP-Version CRLF</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>Method表示请求方法；一般为GET或者POST</li>
-<li>Request-URI是一个统一资源标识符，本次请求的资源路径</li>
-<li>HTTP-Version表示请求的HTTP协议版本，HTTP/1.1</li>
-</ul>
-<p>例如，</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GET /test.html HTTP/1.1</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>2、消息报头（请求头），request head</strong></p>
-<blockquote>
-<p>注意，此部分作为了解，遇到具体情况再进行查阅即可</p>
-</blockquote>
-<p>http请求报头的生成，主要有三种情况：</p>
-<ul>
-<li><p>浏览器自动生成的请求</p>
-<p>绝大部分正常用户访问都是这类情况，只要是用户主动输入网址访问时发送的http请求，那这些头部字段都是浏览器自动生成的，比如host，cookie，user-agent, Accept-Encoding:等</p>
-</li>
-<li><p>浏览器插件</p>
-<p>javascript脚本增加或者修改的header。JS能够控制浏览器发起请求，也能在这里增加一些header，但是考虑到安全和性能的原因，对JS控制 header的能力做了一些限制，比如host和cookie, user-agent等这些字段，JS是无法干预的</p>
-</li>
-<li><p>中间代理</p>
-<p>如果用户请求要经过一些中间代理（比如运营商或者公司网关），中间代理能够查看和修改用户的全部数据和任何头部字段。除非使用了HTTPS</p>
-</li>
-</ul>
-<p>http消息报头包括普通报头、请求报头、响应报头、实体报头这四大类，它们的作用是描述 客户端或者服务器 的属性，并且都是由 名字+冒号+空格+值 组成，例如， Content-Type: text/html</p>
-<ul>
-<li><p>普通报头</p>
-<p>即可用于请求，也可用于响应，是作为一个整体而不是特定资源与事务相关联</p>
-<p>例如，</p>
-<p>Cache-Control<br>Connection<br>Date<br>Pragma<br>Transfer-Encoding<br>Upgrade<br>Via</p>
-</li>
-<li><p>请求报头</p>
-<p>允许客户端传递关于自身信息和希望的响应形式</p>
-<p>例如，</p>
-<p>Accept<br>Accept-Charset<br>Accept-Encoding<br>Accept-Language<br>Authorization<br>Host<br>User-Agent<br>From<br>If-Modified-Since<br>If-Match<br>If-None-Match<br>If-Range<br>If-Unmodified-Since<br>Max-Forwards<br>Proxy-Authorization<br>Range<br>Referer</p>
-</li>
-<li><p>响应报头</p>
-<p>允许服务器传递关于自身信息的响应</p>
-<p>例如，</p>
-<p>Location<br>Server<br>WWW-Authenticate<br>Age<br>Proxy-Authenticate<br>Public<br>Retry-After<br>Vary<br>Warning</p>
-</li>
-<li><p>实体报头</p>
-<p>定义被传送资源的信息。即可用于请求，也可用于响应</p>
-<p>例如，</p>
-<p>Content-Encoding<br>Content-Language<br>Content-Length<br>Content-Type<br>Last-Modified<br>Expires<br>Allow<br>Content-Base<br>Content-Location<br>Content-MD5<br>Content-Range<br>Etag<br>extension-header</p>
-</li>
-</ul>
-<p>例如:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GET /test.html HTTP/1.1</span><br><span class="line">Host: 127.0.0.1:9999</span><br><span class="line">User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0</span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</span><br><span class="line">Accept-Language: zh-CN,en;q=0.8,zh;q=0.5,en-US;q=0.3</span><br><span class="line">Accept-Encoding: gzip, deflate</span><br><span class="line">Connection: keep-alive</span><br></pre></td></tr></table></figure>
-
-<p>​        </p>
-<p>具体的可以在浏览器的web控制台中，进行查看</p>
-<p><img src="image/image-20200929004449654.png" alt="image-20200929004449654"></p>
-<p><strong>3、请求正文，request body</strong></p>
-<p>请求头和请求正文之间是一个空行，这个行非常重要，它表示请求头已经结束，接下来的是请求正文。</p>
-<p>请求正文中可以包含客户提交的字符串信息</p>
-<p>例如，</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">POST /test.html HTTP/1.1</span><br><span class="line">Host: 127.0.0.1:9999</span><br><span class="line">User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0</span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</span><br><span class="line">Accept-Language: zh-CN,en;q=0.8,zh;q=0.5,en-US;q=0.3</span><br><span class="line">Accept-Encoding: gzip, deflate</span><br><span class="line">Connection: keep-alive</span><br><span class="line"></span><br><span class="line">id=1&amp;name=tom&amp;age=20</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="5-3-2-响应"><a href="#5-3-2-响应" class="headerlink" title="5.3.2 响应"></a>5.3.2 响应</h4><p>服务器在接收和解析客户端的请求消息后，会返回给客户端一个HTTP响应消息（response）。</p>
-<p>其实也是一个按照http协议的规则拼接而成的一个字符串。</p>
-<p>HTTP响应也是由三个部分组成：</p>
-<ul>
-<li>响应状态行，response status line</li>
-<li>消息报头（响应头），response head</li>
-<li>响应正文，response body</li>
-</ul>
-<p><strong>1、响应状态行，response status line</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//格式如下：CRLF表示回车和换行</span><br><span class="line">HTTP-Version Status-Code Reason-Phrase CRLF</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>HTTP-Version表示服务器HTTP协议的版本</li>
-<li>Status-Code表示服务器发回的响应状态代码</li>
-<li>Reason-Phrase表示状态代码的文本描述</li>
-</ul>
-<p>例如，</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br></pre></td></tr></table></figure>
-
-
-
-<p>关于响应状态代码，共分为5种类型：</p>
-<table>
-<thead>
-<tr>
-<th align="left">分类</th>
-<th align="left">分类描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">1xx</td>
-<td align="left">信息，服务器收到请求，需要请求者继续执行操作</td>
-</tr>
-<tr>
-<td align="left">2xx</td>
-<td align="left">成功，操作被成功接收并处理</td>
-</tr>
-<tr>
-<td align="left">3xx</td>
-<td align="left">重定向，需要进一步的操作以完成请求</td>
-</tr>
-<tr>
-<td align="left">4xx</td>
-<td align="left">客户端错误，请求包含语法错误或无法完成请求</td>
-</tr>
-<tr>
-<td align="left">5xx</td>
-<td align="left">服务器错误，服务器在处理请求的过程中发生了错误</td>
-</tr>
-</tbody></table>
-<p><strong>HTTP状态码列表</strong></p>
-<table>
-<thead>
-<tr>
-<th align="left">状态码</th>
-<th align="left">状态码英文名称</th>
-<th align="left">中文描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">100</td>
-<td align="left">Continue</td>
-<td align="left">继续。客户端应继续其请求</td>
-</tr>
-<tr>
-<td align="left">101</td>
-<td align="left">Switching Protocols</td>
-<td align="left">切换协议。服务器根据客户端的请求切换协议。只能切换到更高级的协议，例如，切换到HTTP的新版本协议</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">200</td>
-<td align="left">OK</td>
-<td align="left">请求成功。一般用于GET与POST请求</td>
-</tr>
-<tr>
-<td align="left">201</td>
-<td align="left">Created</td>
-<td align="left">已创建。成功请求并创建了新的资源</td>
-</tr>
-<tr>
-<td align="left">202</td>
-<td align="left">Accepted</td>
-<td align="left">已接受。已经接受请求，但未处理完成</td>
-</tr>
-<tr>
-<td align="left">203</td>
-<td align="left">Non-Authoritative Information</td>
-<td align="left">非授权信息。请求成功。但返回的meta信息不在原始的服务器，而是一个副本</td>
-</tr>
-<tr>
-<td align="left">204</td>
-<td align="left">No Content</td>
-<td align="left">无内容。服务器成功处理，但未返回内容。在未更新网页的情况下，可确保浏览器继续显示当前文档</td>
-</tr>
-<tr>
-<td align="left">205</td>
-<td align="left">Reset Content</td>
-<td align="left">重置内容。服务器处理成功，用户终端（例如：浏览器）应重置文档视图。可通过此返回码清除浏览器的表单域</td>
-</tr>
-<tr>
-<td align="left">206</td>
-<td align="left">Partial Content</td>
-<td align="left">部分内容。服务器成功处理了部分GET请求</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">300</td>
-<td align="left">Multiple Choices</td>
-<td align="left">多种选择。请求的资源可包括多个位置，相应可返回一个资源特征与地址的列表用于用户终端（例如：浏览器）选择</td>
-</tr>
-<tr>
-<td align="left">301</td>
-<td align="left">Moved Permanently</td>
-<td align="left">永久移动。请求的资源已被永久的移动到新URI，返回信息会包括新的URI，浏览器会自动定向到新URI。今后任何新的请求都应使用新的URI代替</td>
-</tr>
-<tr>
-<td align="left">302</td>
-<td align="left">Found</td>
-<td align="left">临时移动。与301类似。但资源只是临时被移动。客户端应继续使用原有URI</td>
-</tr>
-<tr>
-<td align="left">303</td>
-<td align="left">See Other</td>
-<td align="left">查看其它地址。与301类似。使用GET和POST请求查看</td>
-</tr>
-<tr>
-<td align="left">304</td>
-<td align="left">Not Modified</td>
-<td align="left">未修改。所请求的资源未修改，服务器返回此状态码时，不会返回任何资源。客户端通常会缓存访问过的资源，通过提供一个头信息指出客户端希望只返回在指定日期之后修改的资源</td>
-</tr>
-<tr>
-<td align="left">305</td>
-<td align="left">Use Proxy</td>
-<td align="left">使用代理。所请求的资源必须通过代理访问</td>
-</tr>
-<tr>
-<td align="left">306</td>
-<td align="left">Unused</td>
-<td align="left">已经被废弃的HTTP状态码</td>
-</tr>
-<tr>
-<td align="left">307</td>
-<td align="left">Temporary Redirect</td>
-<td align="left">临时重定向。与302类似。使用GET请求重定向</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">400</td>
-<td align="left">Bad Request</td>
-<td align="left">客户端请求的语法错误，服务器无法理解</td>
-</tr>
-<tr>
-<td align="left">401</td>
-<td align="left">Unauthorized</td>
-<td align="left">请求要求用户的身份认证</td>
-</tr>
-<tr>
-<td align="left">402</td>
-<td align="left">Payment Required</td>
-<td align="left">保留，将来使用</td>
-</tr>
-<tr>
-<td align="left">403</td>
-<td align="left">Forbidden</td>
-<td align="left">服务器理解请求客户端的请求，但是拒绝执行此请求</td>
-</tr>
-<tr>
-<td align="left">404</td>
-<td align="left">Not Found</td>
-<td align="left">服务器无法根据客户端的请求找到资源（网页）。通过此代码，网站设计人员可设置”您所请求的资源无法找到”的个性页面</td>
-</tr>
-<tr>
-<td align="left">405</td>
-<td align="left">Method Not Allowed</td>
-<td align="left">客户端请求中的方法被禁止</td>
-</tr>
-<tr>
-<td align="left">406</td>
-<td align="left">Not Acceptable</td>
-<td align="left">服务器无法根据客户端请求的内容特性完成请求</td>
-</tr>
-<tr>
-<td align="left">407</td>
-<td align="left">Proxy Authentication Required</td>
-<td align="left">请求要求代理的身份认证，与401类似，但请求者应当使用代理进行授权</td>
-</tr>
-<tr>
-<td align="left">408</td>
-<td align="left">Request Time-out</td>
-<td align="left">服务器等待客户端发送的请求时间过长，超时</td>
-</tr>
-<tr>
-<td align="left">409</td>
-<td align="left">Conflict</td>
-<td align="left">服务器完成客户端的PUT请求是可能返回此代码，服务器处理请求时发生了冲突</td>
-</tr>
-<tr>
-<td align="left">410</td>
-<td align="left">Gone</td>
-<td align="left">客户端请求的资源已经不存在。410不同于404，如果资源以前有现在被永久删除了可使用410代码，网站设计人员可通过301代码指定资源的新位置</td>
-</tr>
-<tr>
-<td align="left">411</td>
-<td align="left">Length Required</td>
-<td align="left">服务器无法处理客户端发送的不带Content-Length的请求信息</td>
-</tr>
-<tr>
-<td align="left">412</td>
-<td align="left">Precondition Failed</td>
-<td align="left">客户端请求信息的先决条件错误</td>
-</tr>
-<tr>
-<td align="left">413</td>
-<td align="left">Request Entity Too Large</td>
-<td align="left">由于请求的实体过大，服务器无法处理，因此拒绝请求。为防止客户端的连续请求，服务器可能会关闭连接。如果只是服务器暂时无法处理，则会包含一个Retry-After的响应信息</td>
-</tr>
-<tr>
-<td align="left">414</td>
-<td align="left">Request-URI Too Large</td>
-<td align="left">请求的URI过长（URI通常为网址），服务器无法处理</td>
-</tr>
-<tr>
-<td align="left">415</td>
-<td align="left">Unsupported Media Type</td>
-<td align="left">服务器无法处理请求附带的媒体格式</td>
-</tr>
-<tr>
-<td align="left">416</td>
-<td align="left">Requested range not satisfiable</td>
-<td align="left">客户端请求的范围无效</td>
-</tr>
-<tr>
-<td align="left">417</td>
-<td align="left">Expectation Failed</td>
-<td align="left">服务器无法满足Expect的请求头信息</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">500</td>
-<td align="left">Internal Server Error</td>
-<td align="left">服务器内部错误，无法完成请求</td>
-</tr>
-<tr>
-<td align="left">501</td>
-<td align="left">Not Implemented</td>
-<td align="left">服务器不支持请求的功能，无法完成请求</td>
-</tr>
-<tr>
-<td align="left">502</td>
-<td align="left">Bad Gateway</td>
-<td align="left">作为网关或者代理工作的服务器尝试执行请求时，从远程服务器接收到了一个无效的响应</td>
-</tr>
-<tr>
-<td align="left">503</td>
-<td align="left">Service Unavailable</td>
-<td align="left">由于超载或系统维护，服务器暂时的无法处理客户端的请求。延时的长度可包含在服务器的Retry-After头信息中</td>
-</tr>
-<tr>
-<td align="left">504</td>
-<td align="left">Gateway Time-out</td>
-<td align="left">充当网关或代理的服务器，未及时从远端服务器获取请求</td>
-</tr>
-<tr>
-<td align="left">505</td>
-<td align="left">HTTP Version not supported</td>
-<td align="left">服务器不支持请求的HTTP协议的版本，无法完成处理</td>
-</tr>
-</tbody></table>
-<p><strong>常见状态码&amp;含义</strong></p>
-<pre><code> 200 - 请求成功，已经正常处理完毕
-</code></pre>
-<p>​    301 - 请求永久重定向，转移到其它URL</p>
-<p>​    302 - 请求临时重定向</p>
-<p>​    304 - 请求被重定向到客户端本地缓存</p>
-<p>​    400 - 客户端请求存在语法错误</p>
-<p>​    401 - 客户端请求没有经过授权</p>
-<p>​    403 - 客户端的请求被服务器拒绝，一般为客户端没有访问权限</p>
-<p>​    404 - 客户端请求的URL在服务端不存在</p>
-<p>​    500 - 服务端错误</p>
-<p><strong>2、消息报头（响应头），response head</strong></p>
-<p>和请求报头中的描述一致。</p>
-<p>额外的，在响应的消息报头中，一般都会有Content-Type字段，用来告诉浏览器，本次响应回去的内容是什么类型的数据，浏览器可以根据就这个对内容进行解析。</p>
-<p>例如，如果响应的数据是html，则响应报头中应该有，<code>Content-Type: text/html</code></p>
-<p>例如，如果响应的数据是xml，则响应报头中应该有，<code>Content-Type: text/xml</code></p>
-<p>例如，如果响应的数据是普通文本，则响应报头中应该有，<code>Content-Type: text/plain</code></p>
-<p>例如，如果响应的数据是png图片，则响应报头中应该有，<code>Content-Type: image/png</code></p>
-<p><strong>3、响应正文，response body</strong></p>
-<p>响应正文就是服务器返回的资源的内容，响应正文和消息报头之间也需要有一个空行！</p>
-<p>例如，</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Content-Type: text/html;charset=ISO-8859-1</span><br><span class="line">Content-Length: 106</span><br><span class="line">Date: Mon, 28 Sep 2020 16:59:15 GMT</span><br><span class="line">Keep-Alive: timeout=20</span><br><span class="line">Connection: keep-alive</span><br><span class="line"></span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;index&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h1&gt;Hello World! maven web&lt;/h1&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>具体的可以在浏览器的控制台中查看：</p>
-<p><img src="image/image-20200929010159867.png" alt="image-20200929010159867"></p>
-<p><img src="image/image-20200929010227874.png" alt="image-20200929010227874"></p>
-]]></content>
-      <tags>
-        <tag>briup_java</tag>
       </tags>
   </entry>
 </search>
