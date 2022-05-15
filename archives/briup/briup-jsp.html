@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>briup-jsp |  vanse</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css"
+      />
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    </head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      <canvas class="fireworks"></canvas>
+      <style>
+        .fireworks {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 99999;
+          pointer-events: none;
+        }
+      </style>
+      
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-briup/briup-jsp"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  briup-jsp
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/archives/briup/briup-jsp.html" class="article-date">
+  <time datetime="2022-05-15T16:55:10.000Z" itemprop="datePublished">2022-05-16</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">7.1k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">34 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+     
+	
+	 
+		 
+			
+				
+    <div class="tocbot"></div>
+
+
+
+
+   
+			 
+		
+		
+		 
+	
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="jsp"><a href="#jsp" class="headerlink" title="jsp"></a>jsp</h1><h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1 概述"></a>1 概述</h2><blockquote>
+<p>jsp全称Java Server Pages，是一种动态网页开发技术</p>
+</blockquote>
+<p>.html文件是静态页面<br>.jsp 文件是动态页面</p>
+<p>jsp页面允许我们在html代码中嵌入java代码，这样就可以在html中使用java代码来完成的功能了。</p>
+<p>所以，简单的理解：jsp就是html页面+java代码</p>
+<p>例如，</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">&quot;java&quot;</span> contentType=<span class="string">&quot;text/html; charset=UTF-8&quot;</span></span><br><span class="line">    pageEncoding=<span class="string">&quot;UTF-8&quot;</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">&lt;title&gt;index.html&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;% String name = <span class="string">&quot;tom&quot;</span>; %&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;h1&gt;&lt;%=<span class="string">&quot;hello!&quot;</span>+name %&gt;&lt;/h1&gt;</span><br><span class="line">	</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="2-运行"><a href="#2-运行" class="headerlink" title="2 运行"></a>2 运行</h2><p>浏览器可以直接运行html页面，但是不能直接运行jsp页面。</p>
+<p>jsp是需要在web容器中运行（例如tomcat中），因为web容器中有JSP的运行环境。</p>
+<p>其中最核心的是有JSP的引擎（jasper.jar）,它可以将jsp页面翻译成java程序，并编译成class文件，然后在运行。</p>
+<p>所以jsp是运行在服务器端的，运行完之后，把动态生成的html页面再使用io流写回给浏览器，浏览器接收并且解析后再呈现出来效果。</p>
+<h2 id="3-关系"><a href="#3-关系" class="headerlink" title="3 关系"></a>3 关系</h2><p>JSP和Servlet的关系：JSP本质上也是Servlet。</p>
+<p>因为JSP页面第一次被访问的时，会被tomcat服务器编译成一个java类，这个java类默认继承<code>HttpJspBase</code>类，而<code>HttpJspBase</code>类是<code>HttpServlet</code>的子类，所以JSP其实就是一个Servlet程序。</p>
+<p>这也是为什么JSP程序和Servlet一样，都需要运行在Web容器中。</p>
+<p>jsp页面被tomcat服务器编译成的java文件及其class文件，保存在tomcat服务器里面的work目录中，在这里的代码中，我们还可以看见它是如何使用io流把生成的html页面代码一行一行写回给浏览器的。</p>
+<blockquote>
+<p>注意: 项目路径不要/ 否则生成class文件位置不对</p>
+</blockquote>
+<p>例如，index.jsp将会翻译成下面的java代码，然后再变成class文件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * Generated by the Jasper component of Apache Tomcat</span></span><br><span class="line"><span class="comment"> * Version: Apache Tomcat/8.5.58</span></span><br><span class="line"><span class="comment"> * Generated at: 2020-10-07 01:50:21 UTC</span></span><br><span class="line"><span class="comment"> * Note: The last modified time of this file was set to</span></span><br><span class="line"><span class="comment"> *       the last modified time of the source file after</span></span><br><span class="line"><span class="comment"> *       generation to assist with modification tracking.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">package</span> org.apache.jsp;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.*;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.*;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.jsp.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">index_jsp</span> <span class="keyword">extends</span> <span class="title">org</span>.<span class="title">apache</span>.<span class="title">jasper</span>.<span class="title">runtime</span>.<span class="title">HttpJspBase</span></span></span><br><span class="line"><span class="class">    <span class="keyword">implements</span> <span class="title">org</span>.<span class="title">apache</span>.<span class="title">jasper</span>.<span class="title">runtime</span>.<span class="title">JspSourceDependent</span>,</span></span><br><span class="line"><span class="class">                 <span class="title">org</span>.<span class="title">apache</span>.<span class="title">jasper</span>.<span class="title">runtime</span>.<span class="title">JspSourceImports</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> javax.servlet.jsp.JspFactory _jspxFactory =</span><br><span class="line">          javax.servlet.jsp.JspFactory.getDefaultFactory();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> java.util.Map&lt;java.lang.String,java.lang.Long&gt; _jspx_dependants;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> java.util.Set&lt;java.lang.String&gt; _jspx_imports_packages;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> java.util.Set&lt;java.lang.String&gt; _jspx_imports_classes;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> &#123;</span><br><span class="line">    _jspx_imports_packages = <span class="keyword">new</span> java.util.HashSet&lt;&gt;();</span><br><span class="line">    _jspx_imports_packages.add(<span class="string">&quot;javax.servlet&quot;</span>);</span><br><span class="line">    _jspx_imports_packages.add(<span class="string">&quot;javax.servlet.http&quot;</span>);</span><br><span class="line">    _jspx_imports_packages.add(<span class="string">&quot;javax.servlet.jsp&quot;</span>);</span><br><span class="line">    _jspx_imports_classes = <span class="keyword">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">volatile</span> javax.el.ExpressionFactory _el_expressionfactory;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">volatile</span> org.apache.tomcat.InstanceManager _jsp_instancemanager;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> java.util.Map&lt;java.lang.String,java.lang.Long&gt; getDependants() &#123;</span><br><span class="line">    <span class="keyword">return</span> _jspx_dependants;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> java.util.Set&lt;java.lang.String&gt; getPackageImports() &#123;</span><br><span class="line">    <span class="keyword">return</span> _jspx_imports_packages;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> java.util.Set&lt;java.lang.String&gt; getClassImports() &#123;</span><br><span class="line">    <span class="keyword">return</span> _jspx_imports_classes;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> javax.el.<span class="function">ExpressionFactory <span class="title">_jsp_getExpressionFactory</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (_el_expressionfactory == <span class="keyword">null</span>) &#123;</span><br><span class="line">      <span class="keyword">synchronized</span> (<span class="keyword">this</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (_el_expressionfactory == <span class="keyword">null</span>) &#123;</span><br><span class="line">          _el_expressionfactory = _jspxFactory.getJspApplicationContext(getServletConfig().getServletContext()).getExpressionFactory();</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> _el_expressionfactory;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> org.apache.tomcat.<span class="function">InstanceManager <span class="title">_jsp_getInstanceManager</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (_jsp_instancemanager == <span class="keyword">null</span>) &#123;</span><br><span class="line">      <span class="keyword">synchronized</span> (<span class="keyword">this</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (_jsp_instancemanager == <span class="keyword">null</span>) &#123;</span><br><span class="line">          _jsp_instancemanager = org.apache.jasper.runtime.InstanceManagerFactory.getInstanceManager(getServletConfig());</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> _jsp_instancemanager;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">_jspInit</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">_jspDestroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">_jspService</span><span class="params">(<span class="keyword">final</span> javax.servlet.http.HttpServletRequest request, <span class="keyword">final</span> javax.servlet.http.HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">      <span class="keyword">throws</span> java.io.IOException, javax.servlet.ServletException </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">final</span> java.lang.String _jspx_method = request.getMethod();</span><br><span class="line">    <span class="keyword">if</span> (!<span class="string">&quot;GET&quot;</span>.equals(_jspx_method) &amp;&amp; !<span class="string">&quot;POST&quot;</span>.equals(_jspx_method) &amp;&amp; !<span class="string">&quot;HEAD&quot;</span>.equals(_jspx_method) &amp;&amp; !javax.servlet.DispatcherType.ERROR.equals(request.getDispatcherType())) &#123;</span><br><span class="line">      response.sendError(HttpServletResponse.SC_METHOD_NOT_ALLOWED, <span class="string">&quot;JSP 只允许 GET、POST 或 HEAD。Jasper 还允许 OPTIONS&quot;</span>);</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">final</span> javax.servlet.jsp.PageContext pageContext;</span><br><span class="line">    javax.servlet.http.HttpSession session = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">final</span> javax.servlet.ServletContext application;</span><br><span class="line">    <span class="keyword">final</span> javax.servlet.ServletConfig config;</span><br><span class="line">    javax.servlet.jsp.JspWriter out = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">final</span> java.lang.Object page = <span class="keyword">this</span>;</span><br><span class="line">    javax.servlet.jsp.JspWriter _jspx_out = <span class="keyword">null</span>;</span><br><span class="line">    javax.servlet.jsp.PageContext _jspx_page_context = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      response.setContentType(<span class="string">&quot;text/html; charset=UTF-8&quot;</span>);</span><br><span class="line">      pageContext = _jspxFactory.getPageContext(<span class="keyword">this</span>, request, response,</span><br><span class="line">      			<span class="keyword">null</span>, <span class="keyword">true</span>, <span class="number">8192</span>, <span class="keyword">true</span>);</span><br><span class="line">      _jspx_page_context = pageContext;</span><br><span class="line">      application = pageContext.getServletContext();</span><br><span class="line">      config = pageContext.getServletConfig();</span><br><span class="line">      session = pageContext.getSession();</span><br><span class="line">      out = pageContext.getOut();</span><br><span class="line">      _jspx_out = out;</span><br><span class="line"></span><br><span class="line">      out.write(<span class="string">&quot;\r\n&quot;</span>);</span><br><span class="line">      out.write(<span class="string">&quot;&lt;!DOCTYPE html&gt;\r\n&quot;</span>);</span><br><span class="line">      out.write(<span class="string">&quot;&lt;html&gt;\r\n&quot;</span>);</span><br><span class="line">      out.write(<span class="string">&quot;&lt;head&gt;\r\n&quot;</span>);</span><br><span class="line">      out.write(<span class="string">&quot;&lt;meta charset=\&quot;UTF-8\&quot;&gt;\r\n&quot;</span>);</span><br><span class="line">      out.write(<span class="string">&quot;&lt;title&gt;index.html&lt;/title&gt;\r\n&quot;</span>);</span><br><span class="line">      out.write(<span class="string">&quot;&lt;/head&gt;\r\n&quot;</span>);</span><br><span class="line">      out.write(<span class="string">&quot;&lt;body&gt;\r\n&quot;</span>);</span><br><span class="line">      out.write(<span class="string">&quot;\t&quot;</span>);</span><br><span class="line"> String name = <span class="string">&quot;tom&quot;</span>; </span><br><span class="line">      out.write(<span class="string">&quot;\r\n&quot;</span>);</span><br><span class="line">      out.write(<span class="string">&quot;\t\r\n&quot;</span>);</span><br><span class="line">      out.write(<span class="string">&quot;\t&lt;h1&gt;&quot;</span>);</span><br><span class="line">      out.print(<span class="string">&quot;hello!&quot;</span>+name );</span><br><span class="line">      out.write(<span class="string">&quot;&lt;/h1&gt;\r\n&quot;</span>);</span><br><span class="line">      out.write(<span class="string">&quot;\t\r\n&quot;</span>);</span><br><span class="line">      out.write(<span class="string">&quot;&lt;/body&gt;\r\n&quot;</span>);</span><br><span class="line">      out.write(<span class="string">&quot;&lt;/html&gt;&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (java.lang.Throwable t) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!(t <span class="keyword">instanceof</span> javax.servlet.jsp.SkipPageException))&#123;</span><br><span class="line">        out = _jspx_out;</span><br><span class="line">        <span class="keyword">if</span> (out != <span class="keyword">null</span> &amp;&amp; out.getBufferSize() != <span class="number">0</span>)</span><br><span class="line">          <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (response.isCommitted()) &#123;</span><br><span class="line">              out.flush();</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">              out.clearBuffer();</span><br><span class="line">            &#125;</span><br><span class="line">          &#125; <span class="keyword">catch</span> (java.io.IOException e) &#123;&#125;</span><br><span class="line">        <span class="keyword">if</span> (_jspx_page_context != <span class="keyword">null</span>) _jspx_page_context.handlePageException(t);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">throw</span> <span class="keyword">new</span> ServletException(t);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">      _jspxFactory.releasePageContext(_jspx_page_context);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意，这里的<code>_jspService</code>方法，就相当于servlet中的<code>service</code>方法，jsp被访问的时候会自动调用该方法</p>
+</blockquote>
+<h2 id="4-代码"><a href="#4-代码" class="headerlink" title="4 代码"></a>4 代码</h2><p>jsp页面中嵌入java代码，一共有三种方式：</p>
+<ul>
+<li>表达式(expression)</li>
+<li>脚本(scriptlet)</li>
+<li>声明(declaration)</li>
+</ul>
+<h3 id="4-1-表达式"><a href="#4-1-表达式" class="headerlink" title="4.1 表达式"></a>4.1 表达式</h3><p>形式：</p>
+<p><code>&lt;%= %&gt;</code></p>
+<p>例如，</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;%=<span class="string">&quot;hello&quot;</span> %&gt;</span><br><span class="line">&lt;%=<span class="number">1</span>+<span class="number">1</span> %&gt;</span><br><span class="line">&lt;%=s.getName() %&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>将来翻译到java文件中的位置：</p>
+<p>_jspService方法中，out.print(..)代码的参数</p>
+<p>例如，上面那几个例子会翻译成</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">out.print(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">out.print(<span class="number">1</span>+<span class="number">1</span>);</span><br><span class="line">out.print(s.getName());</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>所以out.prntln()这个方法的参数可以写什么，那么这个jsp页面中表达式里面就可以写什么</p>
+</blockquote>
+<blockquote>
+<p>注意，在jsp中的表达式，语句的最后不需要加;号</p>
+</blockquote>
+<h3 id="4-2-脚本"><a href="#4-2-脚本" class="headerlink" title="4.2 脚本"></a>4.2 脚本</h3><p>形式：</p>
+<p><code>&lt;% %&gt;</code></p>
+<p>例如，</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> &lt;%</span><br><span class="line">    Student s = <span class="keyword">new</span> Student();</span><br><span class="line"></span><br><span class="line">    String name = <span class="string">&quot;tom&quot;</span>;</span><br><span class="line"></span><br><span class="line">    String username = s.getName();</span><br><span class="line"></span><br><span class="line">    List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">    list.add(<span class="string">&quot;hello&quot;</span>)</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>将来翻译到java文件中的位置：</p>
+<p>脚本中的代码将来会被直接翻译到_jspService这个方法中</p>
+<blockquote>
+<p>所以，在一个普通的方法中我们可以写什么样的代码，那么在脚本中就可以写什么样的代码.</p>
+</blockquote>
+<h3 id="4-3-声明"><a href="#4-3-声明" class="headerlink" title="4.3 声明"></a>4.3 声明</h3><p>形式：</p>
+<p><code>&lt;%! %&gt;</code></p>
+<p>例如，</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;%!</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">go</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;hello world &quot;</span>+name);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;this is go()&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>将来翻译到java文件中的位置：</p>
+<p>直接将声明中的代码翻译到java文件里面所定义的类中</p>
+<blockquote>
+<p>所以，我们可以在一个类中写什么（属性和方法），就可以在声明中写什么</p>
+</blockquote>
+<h2 id="5-指令"><a href="#5-指令" class="headerlink" title="5 指令"></a>5 指令</h2><p>jsp的指令是给jsp引擎看的，让jsp引擎在翻译jsp页面成java文件的时候，知道需要注意哪些地方的设置。比如页面中的编码、页面中脚本里面所用的编程语言、翻译的java文件中需要引入哪些包下的java类等等</p>
+<p>写法：</p>
+<p><code>&lt;%@指令名字  属性=&quot;值&quot; ..  %&gt;</code></p>
+<p>分类：</p>
+<ul>
+<li>page指令</li>
+<li>include指令</li>
+<li>taglib指令</li>
+</ul>
+<h3 id="5-1-page"><a href="#5-1-page" class="headerlink" title="5.1 page"></a>5.1 page</h3><p>page是常用的一个jsp指令，可以用来指定当前jsp的一些基本设置</p>
+<p>例如，新建jsp页面后，文件头部会默认有以下page指令的设置</p>
+<p><code>&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;     pageEncoding=&quot;UTF-8&quot;%&gt;</code></p>
+<p>其作用分别是</p>
+<ul>
+<li>指定当前jsp页面中嵌入的语言是java</li>
+<li>指定写回给浏览器页面的时候，contentType的内容</li>
+<li>指定当前页面件保存时候所用的编码</li>
+</ul>
+<p>例如，在jsp中引入其他的类和接口</p>
+<p><code>&lt;%@ page import=&quot;java.util.List,java.util.ArrayList&quot; %&gt;</code></p>
+<p>例如，指定当前jsp页面中是否支持session的使用，默认值就是true</p>
+<p><code>&lt;%@ page session=&quot;true&quot; %&gt;</code></p>
+<p>例如，指定当前页面出错之后，会跳转到error.jsp页面</p>
+<p><code>&lt;%@ page errorPage=&quot;error.jsp&quot; %&gt;</code></p>
+<p>例如，指定当前页面是专门用来显示错误的页面，在当前页面中可以使用隐藏对象exception来显示错误信息</p>
+<p><code>&lt;%@ page isErrorPage=&quot;true&quot; %&gt;</code></p>
+<h3 id="5-2-include"><a href="#5-2-include" class="headerlink" title="5.2 include"></a>5.2 include</h3><p>include指令，可以将另一个页面的显示内容，引入到当前页面中的指定位置</p>
+<p>形式，</p>
+<p><code>&lt;%@include file=&quot;&quot; %&gt;</code></p>
+<p>例如，</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">&quot;java&quot;</span> contentType=<span class="string">&quot;text/html; charset=UTF-8&quot;</span></span><br><span class="line">    pageEncoding=<span class="string">&quot;UTF-8&quot;</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">&lt;title&gt;hello&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;h1&gt;hello!jsp&lt;/h1&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">&quot;java&quot;</span> contentType=<span class="string">&quot;text/html; charset=UTF-8&quot;</span></span><br><span class="line">    pageEncoding=<span class="string">&quot;UTF-8&quot;</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">&lt;title&gt;index.html&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;h1&gt;index&lt;/h1&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;%@ include file=<span class="string">&quot;/hello.jsp&quot;</span> %&gt;</span><br><span class="line">	</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>访问页面index.jsp，查看其页面源代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>index.html<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	</span><br><span class="line">	<span class="tag">&lt;<span class="name">h1</span>&gt;</span>index<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello!jsp<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line">	</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>可以看出，在index.jsp页面中的include指令处，把hello.jsp的内容引入了过来</p>
+</blockquote>
+<h3 id="5-3-taglib"><a href="#5-3-taglib" class="headerlink" title="5.3 taglib"></a>5.3 taglib</h3><p>taglib指令，在jsp中可以引入标签库，然后就可以使用标签库中的标签，来完成相应的功能了</p>
+<p>例如，引入JSTL标签库 (简化jsp开发)</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib uri=<span class="string">&quot;http://java.sun.com/jsp/jstl/core&quot;</span> prefix=<span class="string">&quot;c&quot;</span> %&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>例如，引入spring框架的标签库</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib uri=<span class="string">&quot;http://www.springframework.org/tags&quot;</span> prefix=<span class="string">&quot;s&quot;</span> %&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>例如，引入struts2框架的标签</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib uri=<span class="string">&quot;/struts-tags&quot;</span> prefix=<span class="string">&quot;s&quot;</span> %&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>注意1，引入标签库，需要先在项目中引入对应的jar包</p>
+<p>注意2，uri属性，指的是标签库的设置的URI地址</p>
+<p>注意3，prefix属性，指的是给引入的标签库起一个别名，这样使用起来较为方便</p>
+<blockquote>
+<p>注意，后面学习到JSTL标签库的时候，再具体来使用</p>
+</blockquote>
+<h2 id="6-动作"><a href="#6-动作" class="headerlink" title="6 动作"></a>6 动作</h2><p>jsp中还有内置的标签，称之为jsp的动作元素，它的本质就是把固定的java代码，封装成了标签的形式。</p>
+<p>例如，</p>
+<p><code>&lt;jsp:useBean id=&quot;s&quot; class=&quot;com.briup.bean.Student&quot; scope=&quot;page&quot;&gt;&lt;/jsp:useBean&gt;</code></p>
+<p>相当于代码：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> &lt;%</span><br><span class="line">    Student s = <span class="keyword">null</span>;</span><br><span class="line">    s = (Student)pageContext.getAttribute(<span class="string">&quot;s&quot;</span>);</span><br><span class="line">    <span class="keyword">if</span>(s==<span class="keyword">null</span>)&#123;</span><br><span class="line">        s = <span class="keyword">new</span> Student();</span><br><span class="line">        pageContext.setAttribute(<span class="string">&quot;s&quot;</span>,s);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+
+<p>查看效果</p>
+<p><code>&lt;%= pageContext.getAttribute(&quot;user&quot;) %&gt;</code></p>
+<p>例如，</p>
+<p><code>&lt;jsp:setProperty property=&quot;name&quot; value=&quot;tom&quot; name=&quot;s&quot;/&gt;</code></p>
+<p>相当于代码：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">    Student s = (Student)pageContext.getAttribute(<span class="string">&quot;s&quot;</span>);</span><br><span class="line">    s.setName(<span class="string">&quot;tom&quot;</span>);</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+
+<p>查看效果</p>
+<p><code>&lt;%= pageContext.getAttribute(&quot;user&quot;) %&gt;</code></p>
+<p>例如，</p>
+<p><code>&lt;jsp:getProperty property=&quot;name&quot; name=&quot;s&quot;/&gt;</code></p>
+<p>相当于代码：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">	Student s = (Student)pageContext.getAttribute(<span class="string">&quot;s&quot;</span>);</span><br><span class="line">	out.write(s.getName());</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>JSP的动作元素中，常被用的有俩个：</p>
+<ul>
+<li>forward</li>
+<li>include</li>
+</ul>
+<p>例如，页面跳转</p>
+<p><code>&lt;jsp:forward page=&quot;target.jsp&quot;&gt;&lt;/jsp:forward&gt;</code></p>
+<p>例如，跳转的同时还可以传参数</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:forward page=<span class="string">&quot;target.jsp&quot;</span>&gt;</span><br><span class="line">    &lt;jsp:param value=<span class="string">&quot;tom&quot;</span> name=<span class="string">&quot;name&quot;</span>/&gt;</span><br><span class="line">&lt;/jsp:forward&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>例如，在当前页面中包含另一个页面</p>
+<p><code>&lt;jsp:include page=&quot;foot.jsp&quot;&gt;&lt;/jsp:include&gt;</code></p>
+<p>例如，在包含页面的同时，还可以传参</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:include page=<span class="string">&quot;foot.jsp&quot;</span>&gt;</span><br><span class="line">    &lt;jsp:param value=<span class="string">&quot;lisi&quot;</span> name=<span class="string">&quot;name&quot;</span>/&gt;</span><br><span class="line">&lt;/jsp:include&gt;</span><br></pre></td></tr></table></figure>
+
+<p>foot.jsp</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">注册|登录|购物车 你好 &lt;%= request.getParameter(<span class="string">&quot;username&quot;</span>) %&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<p>一个页面包含/引入另外一个页面有俩种方式</p>
+<ul>
+<li>静态包含，<code>&lt;%@include file=&quot;&quot; %&gt;</code></li>
+<li>动态包含，<code>&lt;jsp:include page=&quot;&quot;&gt;&lt;/jsp:include&gt;</code></li>
+</ul>
+<p>静态包含，在jsp翻译成java程序的时候，直接将另一个页面的内容原封不动的写入到代码中。</p>
+<p>动态包含，在jsp翻译成java程序的时候，只会把包含的动作翻译成一个方法的调用，将来在访问的时候才会真正的去获取另一个页面的内容。</p>
+<p><code>具体可查看编译后的字节码文件做对比</code></p>
+<blockquote>
+<p>注意，动态包含可以传参，静态包含不能穿参</p>
+</blockquote>
+<h2 id="7-注释"><a href="#7-注释" class="headerlink" title="7 注释"></a>7 注释</h2><p>jsp中的注释，分为三种</p>
+<ul>
+<li>html/xml中的注释方式</li>
+<li>jsp中的注释方式</li>
+<li>java中的注释方式</li>
+</ul>
+<h3 id="7-1-html注释"><a href="#7-1-html注释" class="headerlink" title="7.1 html注释"></a>7.1 html注释</h3><p>形式：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- html/xml中的注释方式 --&gt;</span><br></pre></td></tr></table></figure>
+
+<p>特点:</p>
+<ol>
+<li>用户在浏览器中右键查看源代码 【能】 看到这个注释</li>
+<li>在服务器端,这个jsp页面被翻译成的java文件中 【能】 看到这个注释.</li>
+</ol>
+<blockquote>
+<p>注意，jsp动作元素，放在这种注释里面可能不起作用(注释不起作用,jsp动作元素正常执行)</p>
+</blockquote>
+<p>例如：下面的注释不起作用</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- </span><br><span class="line">	&lt;jsp:forward page=<span class="string">&quot;hello.jsp&quot;</span>&gt;&lt;/jsp:forward&gt;</span><br><span class="line">--&gt;</span><br></pre></td></tr></table></figure>
+
+<p>起作用</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- username: &lt;jsp:getProperty property=<span class="string">&quot;username&quot;</span> name=<span class="string">&quot;user&quot;</span>/&gt; --&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="7-2-jsp注释"><a href="#7-2-jsp注释" class="headerlink" title="7.2 jsp注释"></a>7.2 jsp注释</h3><p>形式：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;%-- </span><br><span class="line">    jsp中的注释方式(隐藏注释)</span><br><span class="line">--%&gt;</span><br></pre></td></tr></table></figure>
+
+<p>特点:</p>
+<ol>
+<li>用户在浏览器中右键查看源代码 【不能】看到这个注释。</li>
+<li>在服务器端,这个jsp页面被翻译成的java文件中 [不能] 看到这个注释.</li>
+</ol>
+<blockquote>
+<p>注意，这种注释，也被称为JSP中的隐藏注释</p>
+</blockquote>
+<h3 id="7-3-java注释"><a href="#7-3-java注释" class="headerlink" title="7.3 java注释"></a>7.3 java注释</h3><p>java中的注释方式，只能在jsp的脚本或者声明中使用。</p>
+<p>例如，</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">	<span class="comment">//String name = &quot;tom&quot;;</span></span><br><span class="line">	<span class="comment">/* </span></span><br><span class="line"><span class="comment">		int b = 40;</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">  		 	</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">		int a = 20;</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line"></span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+
+<p>特点:</p>
+<ol>
+<li>用户在浏览器中右键查看源代码 【不能】 看到这个注释。</li>
+<li>在服务器端,这个jsp页面被翻译成的java文件中 【能】 看到这个注释.</li>
+</ol>
+<h2 id="8-对象"><a href="#8-对象" class="headerlink" title="8 对象"></a>8 对象</h2><p>在jsp页面代码中，可以直接使用的内置的对象，只要对象名字写对即可。</p>
+<p>jsp中的内置对象一共有九种：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>名字</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>PageContext</td>
+<td>pageContext</td>
+<td>页面范围对象</td>
+</tr>
+<tr>
+<td>HttpServletRequest</td>
+<td>request</td>
+<td>和servlet中的相同</td>
+</tr>
+<tr>
+<td>HttpSession</td>
+<td>session</td>
+<td>和servlet中的相同</td>
+</tr>
+<tr>
+<td>ServletContext</td>
+<td>application</td>
+<td>和servlet中的相同</td>
+</tr>
+<tr>
+<td>Object</td>
+<td>page</td>
+<td>jsp页面本身（this）</td>
+</tr>
+<tr>
+<td>HttpServletResponse</td>
+<td>response</td>
+<td>和servlet中的相同</td>
+</tr>
+<tr>
+<td>JspWriter</td>
+<td>out</td>
+<td>输出流，可以给客户端写回内容</td>
+</tr>
+<tr>
+<td>ServletConfig</td>
+<td>config</td>
+<td>和servlet中的相同</td>
+</tr>
+<tr>
+<td>Throwable</td>
+<td>exception</td>
+<td>隐藏对象，表示jsp中的异常</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>注意，这些对象的类型和名字都是固定的，任意打开一个jsp页面翻译成的java代码，查看_jspService方法，就可以看到这些内置的对象</p>
+</blockquote>
+<blockquote>
+<p>注意，JSP中比servlet多了一个更加小的传值范围pageContext，存进去的值，只会在一个页面中有效，比之前的request范围还要小</p>
+</blockquote>
+<p>默认情况下，jsp页面中是不能使用exception这个对象的，除非页面中设置了isErrorPage属性：</p>
+<p><code>&lt;%@ page isErrorPage=&quot;true&quot; %&gt;</code></p>
+<p>查看错误信息</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;%=</span><br><span class="line">    exception.getMessage()</span><br><span class="line">%&gt; </span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="9-路径"><a href="#9-路径" class="headerlink" title="9 路径"></a>9 路径</h2><p>一般情况下，jsp中路径问题是和我们之前在servlet中讨论的html里面的路径问题是一样的，但是在jsp中可以动态获得该项目的URL地址</p>
+<p>例如，</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">&quot;java&quot;</span> contentType=<span class="string">&quot;text/html; charset=UTF-8&quot;</span></span><br><span class="line">    pageEncoding=<span class="string">&quot;UTF-8&quot;</span>%&gt;</span><br><span class="line">&lt;%</span><br><span class="line">	String path = request.getContextPath();</span><br><span class="line">	String basePath = request.getScheme()+<span class="string">&quot;://&quot;</span>+request.getServerName()+<span class="string">&quot;:&quot;</span>+request.getServerPort()+path+<span class="string">&quot;/&quot;</span>;</span><br><span class="line">%&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;base href=<span class="string">&quot;&lt;%=basePath%&gt;&quot;</span> /&gt;</span><br><span class="line">&lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">&lt;title&gt;index.html&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;h1&gt;index&lt;/h1&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;a href=<span class="string">&quot;hello.jsp&quot;</span>&gt;hello&lt;/a&gt;</span><br><span class="line">	</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这里把项目的基础URL地址，动态的拼接了出来，并且使用了base标签，来指定页面中相对路径的参照点</p>
+</blockquote>
+<h2 id="10-EL"><a href="#10-EL" class="headerlink" title="10 EL"></a>10 EL</h2><blockquote>
+<p>EL（Expression Language），称为EL表达式，目的是为了使JSP写起来更加简单</p>
+</blockquote>
+<p>在jsp页面中，使用EL表达式，就可以不用写大量的java代码了，这样可以提高页面的可读性和维护性。</p>
+<p>形式：</p>
+<p><code>$&#123;&#125;</code></p>
+<p>例如，接收客户端参数</p>
+<p><code>http://localhost:8989/day9-jsp/el.jsp?name=lucy</code></p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;param.name1 &#125;  &lt;%requet.getParmeter(<span class="string">&quot;usernm&quot;</span>%&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>例如，指定范围并取值</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$&#123;pageScope.name2 &#125;</span><br><span class="line">$&#123;requestScope.name3 &#125;</span><br><span class="line">$&#123;sessionScope.name4 &#125;</span><br><span class="line">$&#123;applicationScope.name5 &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>例如，可以不指定范围再去取值</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;name&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意，这时候会按照pageContext request session application这样一个顺序依次的去找，有没有一个叫name的值存在，一旦找到了就输出出来，最终没有找到那么就什么都不输出</p>
+</blockquote>
+<p>例如，取出一个对象中的属性值</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$&#123;requestScope.student.id&#125;</span><br><span class="line">$&#123;requestScope.student.name&#125;</span><br><span class="line">$&#123;requestScope.student.age&#125;</span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line">$&#123;student.id&#125;</span><br><span class="line">$&#123;student.name&#125;</span><br><span class="line">$&#123;student.age&#125;</span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line">$&#123;student[<span class="string">&quot;id&quot;</span>]&#125;</span><br><span class="line">$&#123;student[<span class="string">&#x27;id&#x27;</span>]&#125;</span><br><span class="line"></span><br><span class="line">$&#123;student[<span class="string">&quot;name&quot;</span>]&#125;</span><br><span class="line">$&#123;student[<span class="string">&#x27;name&#x27;</span>]&#125;</span><br><span class="line"></span><br><span class="line">$&#123;student[<span class="string">&quot;age&quot;</span>]&#125;</span><br><span class="line">$&#123;student[<span class="string">&#x27;age&#x27;</span>]&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意，${student.id}表示要调用student对象中的getId方法，至于对象中有没有id属性，对这个操作没有任何影响。所以这和id指的是对象中的property而不是attribute</p>
+<p>${student[‘name’]}调用的是attribute</p>
+</blockquote>
+<p>例如，如果Student类中一个方法是getAddress，返回一个Address类的对象，Address类中有一个方法getCity，这个时候就可以这样写去拿到city属性的值.</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;student.address.city&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>例如，输出字符串</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;<span class="string">&quot;hello&quot;</span>&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>例如，输出运算结果或者boolean表达式</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">$&#123;<span class="number">1</span>+<span class="number">1</span> &#125;</span><br><span class="line">$&#123;(<span class="number">1</span>+<span class="number">2</span>)*<span class="number">3</span>-<span class="number">4</span>+<span class="number">5</span>*<span class="number">3</span> &#125;</span><br><span class="line">$&#123;u.age * <span class="number">10</span> &#125;</span><br><span class="line">$&#123;<span class="number">1</span>&lt;<span class="number">3</span> &#125;</span><br><span class="line">      </span><br><span class="line">&lt;%</span><br><span class="line">		String name = <span class="string">&quot;&quot;</span>;</span><br><span class="line">		String name2 = <span class="string">&quot;lucy&quot;</span>;</span><br><span class="line">	%&gt;      </span><br><span class="line"><span class="comment">//为空的话返回true 注意取不到脚本的值 可以将name存到request中</span></span><br><span class="line">$&#123;empty <span class="string">&quot;&quot;</span> &#125;</span><br><span class="line">$&#123;empty <span class="string">&quot;hello&quot;</span> &#125;</span><br><span class="line"> 判断<span class="number">1</span> $&#123;empty <span class="string">&quot;$&#123;name&#125;&quot;</span> &#125;&lt;br&gt;  </span><br><span class="line"><span class="comment">//取否 不为空的话返回true</span></span><br><span class="line">$&#123;not empty <span class="string">&quot;hello&quot;</span> &#125;</span><br><span class="line">$&#123;! empty <span class="string">&quot;hello&quot;</span> &#125;</span><br><span class="line">$&#123;param.score &gt;<span class="number">50</span> &#125;</span><br><span class="line">    </span><br><span class="line">$&#123;param.score &gt;<span class="number">60</span>?<span class="string">&quot;good&quot;</span>:<span class="string">&quot;bad&quot;</span> &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	&lt;%</span><br><span class="line">		request.setAttribute(<span class="string">&quot;s&quot;</span>, <span class="keyword">new</span> Student(<span class="number">1</span>,<span class="string">&quot;lucy&quot;</span>));</span><br><span class="line">	%&gt;</span><br><span class="line">	$&#123;<span class="number">1</span>&lt;<span class="number">3</span> &#125; &lt;br&gt;</span><br><span class="line">	$&#123;empty <span class="number">1</span> &#125;&lt;br&gt;</span><br><span class="line">	$&#123;empty <span class="string">&quot;&quot;</span> &#125;&lt;br&gt;</span><br><span class="line">	$&#123;<span class="number">5</span>&lt;<span class="number">6</span>? <span class="number">5</span>:<span class="number">6</span> &#125;&lt;br&gt;</span><br><span class="line">	$&#123; empty requestScope.s? <span class="string">&quot;登录&quot;</span>:requestScope.s.name&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>例如，输出数组、集合中的元素</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">String[] str = &#123;<span class="string">&quot;hello&quot;</span>,<span class="string">&quot;world&quot;</span>&#125;;</span><br><span class="line"></span><br><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">list.add(<span class="string">&quot;zhangsan&quot;</span>);</span><br><span class="line">list.add(<span class="string">&quot;lisi&quot;</span>);</span><br><span class="line"></span><br><span class="line">Map&lt;String,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;String,Integer&gt;();</span><br><span class="line">map.put(<span class="string">&quot;a&quot;</span>,<span class="number">100</span>);</span><br><span class="line">map.put(<span class="string">&quot;b&quot;</span>,<span class="number">200</span>);</span><br><span class="line">map.put(<span class="string">&quot;c&quot;</span>,<span class="number">300</span>);</span><br><span class="line"></span><br><span class="line">request.setAttribute(<span class="string">&quot;str&quot;</span>,str);</span><br><span class="line">request.setAttribute(<span class="string">&quot;list&quot;</span>,list);</span><br><span class="line">request.setAttribute(<span class="string">&quot;map&quot;</span>,map);</span><br><span class="line"></span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line">$&#123;str[<span class="number">0</span>] &#125;&lt;br&gt;</span><br><span class="line">$&#123;list[<span class="number">1</span>] &#125;&lt;br&gt;</span><br><span class="line">$&#123;map[<span class="string">&quot;c&quot;</span>] &#125;&lt;br&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>遍历集合</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 遍历集合 放入表格中--&gt;</span><br><span class="line">	&lt;table border=<span class="string">&quot;1px&quot;</span> cellpadding=<span class="string">&quot;0px&quot;</span> cellspacing=<span class="string">&quot;0px&quot;</span>&gt;</span><br><span class="line">		&lt;tr&gt;</span><br><span class="line">			&lt;td&gt;name&lt;/td&gt;</span><br><span class="line">		&lt;/tr&gt;</span><br><span class="line">		&lt;%	</span><br><span class="line">			List&lt;String&gt; l = (List&lt;String&gt;)request.getAttribute(<span class="string">&quot;list&quot;</span>);</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; l.size(); i++ )&#123;</span><br><span class="line">				String name = l.get(i);</span><br><span class="line">		%&gt;</span><br><span class="line">		&lt;tr&gt;</span><br><span class="line">			&lt;td&gt;&lt;%= name %&gt;&lt;/td&gt;</span><br><span class="line">		&lt;/tr&gt;</span><br><span class="line">		&lt;%</span><br><span class="line">			&#125;</span><br><span class="line">		%&gt;</span><br><span class="line">	&lt;/table&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>例如，key的值中含有特殊符号点</p>
+<p>request对象中有一个key值为:javax.servlet.forward.request_uri</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;requestScope[<span class="string">&#x27;javax.servlet.forward.request_uri&#x27;</span>] &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="11-JSTL"><a href="#11-JSTL" class="headerlink" title="11 JSTL"></a>11 JSTL</h2><blockquote>
+<p>JSTL（JSP Standard Tag Library），jsp标准的标签库，其目的也是简化jsp中java代码的编写</p>
+</blockquote>
+<h3 id="11-1-引入"><a href="#11-1-引入" class="headerlink" title="11.1 引入"></a>11.1 引入</h3><p>1、先将标签库对应的jar导入项目中</p>
+<p>如果是动态的web项目，直接将jstl-1.2.jar复制粘贴到lib目录中即可。</p>
+<p>如果是maven项目，引入其依赖坐标即可：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.servlet<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jstl<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>2、然后再需要使用的JSP页面中，使用tablib指令，将标签库引入：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib uri=<span class="string">&quot;http://java.sun.com/jsp/jstl/core&quot;</span> prefix=<span class="string">&quot;c&quot;</span> %&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="11-2-使用"><a href="#11-2-使用" class="headerlink" title="11.2 使用"></a>11.2 使用</h3><blockquote>
+<p>注意，JSTL标签库一般会结合着EL表达式一起使用</p>
+</blockquote>
+<p>常用的几种标签为：</p>
+<p><code>&lt;c:forEach&gt;</code>标签(遍历使用)</p>
+<p>脚本遍历</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">		<span class="comment">// 准备数据</span></span><br><span class="line">		List&lt;User&gt; list = <span class="keyword">new</span> ArrayList&lt;User&gt;();</span><br><span class="line">		list.add(<span class="keyword">new</span> User(<span class="number">1</span>,<span class="string">&quot;lucy&quot;</span>));</span><br><span class="line">		list.add(<span class="keyword">new</span> User(<span class="number">2</span>,<span class="string">&quot;tom&quot;</span>));</span><br><span class="line">		list.add(<span class="keyword">new</span> User(<span class="number">1</span>,<span class="string">&quot;jack&quot;</span>));</span><br><span class="line">	%&gt;</span><br><span class="line">	&lt;table&gt;</span><br><span class="line">		&lt;tr&gt;</span><br><span class="line">			&lt;td&gt;id&lt;/td&gt;</span><br><span class="line">			&lt;td&gt;name&lt;/td&gt;</span><br><span class="line">		&lt;/tr&gt;</span><br><span class="line">		&lt;%</span><br><span class="line">		   <span class="keyword">for</span>(User user : list)&#123;</span><br><span class="line">			 <span class="keyword">int</span> id =  user.getId(); </span><br><span class="line">			 String username = user.getUsername();</span><br><span class="line">		%&gt;</span><br><span class="line">		&lt;tr&gt;</span><br><span class="line">			&lt;td&gt;&lt;%=id%&gt;&lt;/td&gt;</span><br><span class="line">			&lt;td&gt;&lt;%=username%&gt;&lt;/td&gt;</span><br><span class="line">		&lt;/tr&gt;</span><br><span class="line">		&lt;%  </span><br><span class="line">			&#125;</span><br><span class="line">		%&gt;</span><br><span class="line">	&lt;/table&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>标签遍历，</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">    List&lt;Student&gt; list = <span class="keyword">new</span> ArrayList&lt;Student&gt;();</span><br><span class="line">    list.add(<span class="keyword">new</span> Student(<span class="number">1</span>,<span class="string">&quot;tom1&quot;</span>,<span class="number">21</span>));</span><br><span class="line">    list.add(<span class="keyword">new</span> Student(<span class="number">2</span>,<span class="string">&quot;tom2&quot;</span>,<span class="number">22</span>));</span><br><span class="line">    list.add(<span class="keyword">new</span> Student(<span class="number">3</span>,<span class="string">&quot;tom3&quot;</span>,<span class="number">23</span>));</span><br><span class="line">    list.add(<span class="keyword">new</span> Student(<span class="number">4</span>,<span class="string">&quot;tom4&quot;</span>,<span class="number">24</span>));</span><br><span class="line">    session.setAttribute(<span class="string">&quot;list&quot;</span>, list);</span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line">&lt;c:forEach items=<span class="string">&quot;$&#123;list &#125;&quot;</span> <span class="keyword">var</span> =<span class="string">&quot;stu&quot;</span> begin=<span class="string">&quot;0&quot;</span> end =<span class="string">&quot;3&quot;</span> varStatus=<span class="string">&quot;status&quot;</span> step=<span class="string">&quot;1&quot;</span>&gt;  </span><br><span class="line">    $&#123;status.index &#125; : $&#123;stu.id &#125; - $&#123;stu.name &#125; - $&#123;stu.age &#125; &lt;br&gt;  </span><br><span class="line">&lt;/c:forEach&gt;</span><br></pre></td></tr></table></figure>
+
+<p>其中，</p>
+<p><code>varStatus</code>表示当前循环遍历的序号</p>
+<p><code>begin=&quot;&quot;</code>默认值是0  ，<code>end=&quot;&quot;</code>默认值是最后一个元素，<code>step=&quot;&quot;</code>默认值是1，一般的遍历只要写var和items来个属性即可</p>
+<p>例如，遍历List集合，假设students是放进request对象中的一个List集合，集合中存放的是Student类型的对象</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;c:forEach items=<span class="string">&quot;$&#123;students&#125;&quot;</span> <span class="keyword">var</span>=<span class="string">&quot;stu&quot;</span>&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;$&#123;stu.id &#125;&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;$&#123;stu.name &#125;&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;$&#123;stu.age &#125;&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">&lt;/c:forEach&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>例如，遍历Map集合，假设有一个Map类型的集合，放到了request对象中，key是id值，value是Student对象</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;c:forEach items=<span class="string">&quot;$&#123;map&#125;&quot;</span> <span class="keyword">var</span>=<span class="string">&quot;entry&quot;</span>&gt;</span><br><span class="line">  		$&#123;entry.key &#125;--&gt;$&#123;entry.value.id &#125; &amp;nbsp; $&#123;entry.value.name &#125; &amp;nbsp; $&#123;entry.value.age &#125;&lt;br&gt;</span><br><span class="line">&lt;/c:forEach&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>entry是定义的一个变量，用做接收每次遍历到的集合中的一组键值对,可以通过entry.key 和 entry.value分别拿到这次遍历到的key值和value值</p>
+</blockquote>
+<p><code>&lt;if&gt;</code>标签</p>
+<p>例如，</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">    &lt;%</span><br><span class="line">        request.setAttribute(<span class="string">&quot;score&quot;</span>,<span class="number">40</span>);</span><br><span class="line">    %&gt;</span><br><span class="line"></span><br><span class="line">    &lt;c:<span class="keyword">if</span> test=<span class="string">&quot;$&#123;score&gt;85 &#125;&quot;</span>&gt;</span><br><span class="line">        &lt;font color=<span class="string">&quot;red&quot;</span>&gt;你的分数超过了<span class="number">85</span>分&lt;/font&gt;</span><br><span class="line">    &lt;/c:<span class="keyword">if</span>&gt;</span><br><span class="line">&lt;!-- 注意放reuqest即可,session一直在会话级别 --&gt;</span><br><span class="line">&lt;c:<span class="keyword">if</span> test=<span class="string">&quot;$&#123;!empty s&#125;&quot;</span>&gt;</span><br><span class="line">		&lt;font color=<span class="string">&quot;red&quot;</span>&gt;$&#123;s.name &#125;&lt;/font&gt;</span><br><span class="line">	&lt;/c:<span class="keyword">if</span>&gt;</span><br><span class="line">	&lt;c:<span class="keyword">if</span> test=<span class="string">&quot;$&#123;empty s&#125;&quot;</span>&gt;</span><br><span class="line">		&lt;font color=<span class="string">&quot;green&quot;</span>&gt;登录&lt;/font&gt;</span><br><span class="line">	&lt;/c:<span class="keyword">if</span>&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;c:choose&gt;</span><br><span class="line">		&lt;c:when test=<span class="string">&quot;$&#123;!empty s&#125;&quot;</span>&gt;</span><br><span class="line">			&lt;font color=<span class="string">&quot;red&quot;</span>&gt;$&#123;s.name &#125;&lt;/font&gt;</span><br><span class="line">		&lt;/c:when&gt;</span><br><span class="line">		&lt;c:otherwise&gt;</span><br><span class="line">			&lt;font color=<span class="string">&quot;green&quot;</span>&gt;登录&lt;/font&gt;</span><br><span class="line">		&lt;/c:otherwise&gt;</span><br><span class="line">	&lt;/c:choose&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>&lt;c:import&gt;</code>标签</p>
+<p>和<code>&lt;jsp:include&gt;</code>的作用基本相同，但是<code>&lt;c:import&gt;</code>还可以选择把引入的内容先保存在一个变量中，之后通过EL表达式再拿出来显示</p>
+<p>例如，</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;c:<span class="keyword">import</span> <span class="keyword">var</span>=<span class="string">&quot;data&quot;</span> url=<span class="string">&quot;a.jsp&quot;</span> /&gt;</span><br><span class="line"><span class="comment">// 什么时候导入 就什么时候用</span></span><br><span class="line">&lt;div&gt;$&#123;data&#125;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>&lt;c:redirect&gt;</code>标签</p>
+<p>重定向标签</p>
+<p>例如，</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;c:redirect url=<span class="string">&quot;a.jsp&quot;</span>/&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="12-自定义"><a href="#12-自定义" class="headerlink" title="12 自定义"></a>12 自定义</h2><blockquote>
+<p>除了使用现有的标签库之外，我们还可以自定义的自己的标签库。（作为扩展了解的内容即可）</p>
+</blockquote>
+<p>JSP1.1版本中增加了自定义标签库规范，但是在 JSP1.1规范中开发自定义标签库比较复杂，JSP2.0 及以上版本中简化了标签库的开发，只需如下几个步骤</p>
+<ul>
+<li><p>编写自定义标签处理类</p>
+</li>
+<li><p>建立一个 *.tld 文件，该文件放在WEB-INF下即可</p>
+<p>每个 *.tld 文件对应一个标签库，每个标签库可以对应多个标签</p>
+</li>
+<li><p>在jsp文件中使用tablib指令引入并使用自定义标签</p>
+</li>
+<li><p>jsp页面中使用该标签库</p>
+</li>
+</ul>
+<p><strong>例如1</strong>，编写一个标签，可以自动输出hello</p>
+<p>第一步，继承SimpleTagSupport，重写doTag即可</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloTag</span> <span class="keyword">extends</span> <span class="title">SimpleTagSupport</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doTag</span><span class="params">()</span> <span class="keyword">throws</span> JspException, IOException </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.getJspContext().getOut().println(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>第二步，编写my-tag.tld文件(名字随意)，存放在WEB-INF下</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot; ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">taglib</span></span></span><br><span class="line"><span class="meta">   <span class="meta-keyword">PUBLIC</span> <span class="meta-string">&quot;-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN&quot;</span></span></span><br><span class="line"><span class="meta">   <span class="meta-string">&quot;http://java.sun.com/j2ee/dtd/web-jsptaglibrary_1_2.dtd&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">taglib</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">tlib-version</span>&gt;</span>1.0<span class="tag">&lt;/<span class="name">tlib-version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">jsp-version</span>&gt;</span>1.2<span class="tag">&lt;/<span class="name">jsp-version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">short-name</span>&gt;</span>my-taglib<span class="tag">&lt;/<span class="name">short-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">uri</span>&gt;</span>briup-taglib<span class="tag">&lt;/<span class="name">uri</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">tag</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tag-class</span>&gt;</span>com.briup.test.HelloTag<span class="tag">&lt;/<span class="name">tag-class</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">body-content</span>&gt;</span>empty<span class="tag">&lt;/<span class="name">body-content</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tag</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">taglib</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>注意1，该文件的样例可以在tomcat中的实例项目中复制出来修改</p>
+<p>例如，tomcat\webapps\examples\WEB-INF\jsp\example-taglib.tld文件</p>
+<p>注意2，<code>&lt;body-content&gt;</code>标签中的值，表示自定义标签中body部分可以填写的内容类型，有四种：</p>
+<ul>
+<li>empty，空标记，即起始标记和结束标记之间没有内容</li>
+<li>scriptless，可以接收文本、EL和JSP动作</li>
+<li>JSP，（SimpleTagSupport类型不支持），接受所有JSP语法，如定制的或内部的tag、scripts、静态HTML、脚本元素、JSP指令和动作</li>
+<li>tagdependent，标签体内容直接被写入BodyContent，由自定义标签类来进行处理，而不被JSP容器解释</li>
+</ul>
+<p>第三步，jsp页面中引入并使用标签库</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">&quot;java&quot;</span> contentType=<span class="string">&quot;text/html; charset=UTF-8&quot;</span></span><br><span class="line">    pageEncoding=<span class="string">&quot;UTF-8&quot;</span>%&gt;</span><br><span class="line">&lt;%@ taglib uri=<span class="string">&quot;briup-taglib&quot;</span> prefix=<span class="string">&quot;briup&quot;</span> %&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta charset=<span class="string">&quot;UTF-8&quot;</span>&gt;</span><br><span class="line">        &lt;title&gt;hello.jsp&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;briup:hello&gt;&lt;/briup:hello&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>例如2</strong>，编写一个标签，可以自动输出hello，并附带上标签体中的内容</p>
+<p>第一步，修改HelloTag类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloTag</span> <span class="keyword">extends</span> <span class="title">SimpleTagSupport</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doTag</span><span class="params">()</span> <span class="keyword">throws</span> JspException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">//准备好一个StringWriter，接收标签体内容</span></span><br><span class="line">        StringWriter sw = <span class="keyword">new</span> StringWriter();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//把标签体内容写到StringWriter中</span></span><br><span class="line">        <span class="keyword">super</span>.getJspBody().invoke(sw);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//从StringWriter中获取标签体的内容</span></span><br><span class="line">        String tagBody = sw.toString();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">super</span>.getJspContext().getOut().println(<span class="string">&quot;hello! &quot;</span>+tagBody);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>第二步，修改my-tag.tld文件</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">tag</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tag-class</span>&gt;</span>com.briup.test.HelloTag<span class="tag">&lt;/<span class="name">tag-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body-content</span>&gt;</span>scriptless<span class="tag">&lt;/<span class="name">body-content</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tag</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>注意，这里只是修改了<code>&lt;body-content&gt;</code>标签中的值，改为scriptless或者tagdependent都是可以的.其他地方不用修改</p>
+<p>第三步，修改jsp文件，添加标签body内容即可</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;briup:hello&gt;tom&lt;/briup:hello&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><strong>例如3</strong>，编写一个标签，可以自动输出hello，并附带上标签体中的内容，并且根据标签中属性的值，来确定内容将会输出多少次</p>
+<p>第一步，修改HelloTag类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloTag</span> <span class="keyword">extends</span> <span class="title">SimpleTagSupport</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> count;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doTag</span><span class="params">()</span> <span class="keyword">throws</span> JspException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">//准备好一个StringWriter，接收标签体内容</span></span><br><span class="line">        StringWriter sw = <span class="keyword">new</span> StringWriter();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//把标签体内容写到StringWriter中</span></span><br><span class="line">        <span class="keyword">super</span>.getJspBody().invoke(sw);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//从StringWriter中获取标签体的内容</span></span><br><span class="line">        String tagBody = sw.toString();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;count;i++) &#123;</span><br><span class="line">            <span class="keyword">super</span>.getJspContext().getOut().println(<span class="string">&quot;hello! &quot;</span>+tagBody+<span class="string">&quot;&lt;br&gt;&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCount</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCount</span><span class="params">(<span class="keyword">int</span> count)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.count = count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>修改地方1，添加属性count，提供get/set方法，用来接收标签中属性的count属性的值<br>修改地方2，输出内容语句外面嵌套循环，循环次数由count的值来控制</p>
+<p>第二步，修改my-tag.tld文件</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">tag</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tag-class</span>&gt;</span>com.briup.test.HelloTag<span class="tag">&lt;/<span class="name">tag-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body-content</span>&gt;</span>scriptless<span class="tag">&lt;/<span class="name">body-content</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">attribute</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>count<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">required</span>&gt;</span>true<span class="tag">&lt;/<span class="name">required</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">attribute</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tag</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>修改地方，添加attribute标签来指定属性的相关信息</p>
+<p>第三步，修改jsp文件，添加标签的属性</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;briup:hello count=<span class="string">&quot;5&quot;</span>&gt;tom&lt;/briup:hello&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>例如4</strong>，编写一个标签，可以自动输出hello，并附带上标签体中的内容，并且根据标签中属性的值，来确定内容将会输出多少次，同时标签体值和属性的值都是要EL表达式来表示</p>
+<p>第一步，HelloTag类，和例3保持一致，不需要改动</p>
+<p>第二步，修改my-tag.tld文件</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">tag</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tag-class</span>&gt;</span>com.briup.test.HelloTag<span class="tag">&lt;/<span class="name">tag-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body-content</span>&gt;</span>scriptless<span class="tag">&lt;/<span class="name">body-content</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">attribute</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>count<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">required</span>&gt;</span>true<span class="tag">&lt;/<span class="name">required</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">rtexprvalue</span>&gt;</span>true<span class="tag">&lt;/<span class="name">rtexprvalue</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">attribute</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tag</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>修改地方，添加标签<code>&lt;rtexprvalue&gt;</code>，表示支持EL</p>
+<p>注意，rtexprvalue的意思是：Runtime Expression Value</p>
+<p>第三步，修改jsp文件，添加标签的属性</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">    request.setAttribute(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;zs&quot;</span>);</span><br><span class="line">    request.setAttribute(<span class="string">&quot;count&quot;</span>, <span class="string">&quot;10&quot;</span>);</span><br><span class="line">%&gt;</span><br><span class="line">&lt;briup:hello count=<span class="string">&quot;$&#123;count &#125;&quot;</span>&gt;$&#123;name &#125;&lt;/briup:hello&gt;</span><br></pre></td></tr></table></figure>
+
+<p>修改地方，添加了jsp脚本，配合测试，同时标签中是使用了EL表达式</p>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/briup/" rel="tag">briup</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/archives/briup/briup-servlet.html" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">briup_servlet</div>
+      </a>
+    
+  </nav>
+
+  
+   
+<div class="gitalk" id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css">
+
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script>
+
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: 'abdf20cf8f71fc88e695',
+    clientSecret: '050f9f7209fbd2e9f446fb0ade695e4e5dd12e84',
+    repo: 'hexo_comment',
+    owner: 'wangsidandan',
+    admin: ['wangsidandan'],
+    // id: location.pathname,      // Ensure uniqueness and length less than 50
+    id: md5(location.pathname),
+    distractionFreeMode: false,  // Facebook-like distraction free mode
+    pagerDirection: 'last'
+  })
+
+  gitalk.render('gitalk-container')
+</script>
+
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2015-2022
+        <i class="ri-heart-fill heart_icon"></i> vanse
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="vanse"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/playlist">音乐</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/photos">相册</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://gitee.com/vanse/images/raw/master/bruip_course/aliapy.png">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://gitee.com/vanse/images/raw/master/bruip_course/wechat.png">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script>
+
+<script src="/js/clickBoom1.js"></script>
+ 
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+ 
+<script src="/js/dz.js"></script>
+ 
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    <div id="music">
+    
+    
+    
+    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="52"
+        src="//music.163.com/outchain/player?type=2&id=506654324&auto=0&height=32"></iframe>
+</div>
+
+<style>
+    #music {
+        position: fixed;
+        right: 15px;
+        bottom: 0;
+        z-index: 998;
+    }
+</style>
+    
+    
+<script>
+  const password = "briup!";
+  const lock_password = window.sessionStorage.getItem("lock_password");
+  console.log(password, lock_password);
+  if (lock_password !== password) {
+    Swal.fire({
+      title: "请输入访问密码",
+      input: "password",
+      inputAttributes: {
+        autocapitalize: "off",
+      },
+      showCancelButton: false,
+      showLoaderOnConfirm: true,
+      allowOutsideClick: false,
+      confirmButtonText: "确定",
+    }).then((result) => {
+      console.log(result);
+      if (result.isConfirmed) {
+        console.log(password);
+        if (result.value === password) {
+          window.sessionStorage.setItem("lock_password", result.value);
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "密码错误，请重试",
+            confirmButtonText: "确定",
+            allowOutsideClick: false,
+          }).then(() => {
+            window.location.reload();
+          });
+        }
+      }
+    });
+  }
+</script>
+
+
+  </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>
