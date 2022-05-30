@@ -131,7 +131,7 @@
 <p>2、Sql 语句在代码中硬编码，造成代码不易维护，实际应用 sql 变化的可能较大，sql 变动需要改变 java 代码。 </p>
 <p>3、使用 preparedStatement 向占有位符号传参数存在硬编码，因为 sql 语句的 where 条件不一定，可能 多也可能少，修改 sql 还要修改代码，系统不易维护。 </p>
 <p>4、对结果集解析存在硬编码（查询列名），sql 变化导致解析代码变化，系统不易维护，如果能将数据库记 录封装成 pojo 对象解析比较方便。</p>
-<p><img src="image/image-20210914092945449.png" alt="image-20210914092945449"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/mybatis/202205221733517.png" alt="image-20210914092945449"></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">结构一样,sql不一样	</span><br><span class="line"><span class="meta">Jdbc-&gt;</span><span class="bash">JdbcUtil-&gt;QueryRunner-&gt;  Mybatis</span></span><br><span class="line">				JdbcTemplate   Hibernate</span><br><span class="line">				...</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">配置文件-&gt; mybatis加载配置文件 -&gt; SqlSesson -&gt; 调用sql</span><br><span class="line"></span><br><span class="line">加载配置文件</span><br><span class="line">	InputStream in = Resources.getRresourceAsStream(&quot;&quot;);</span><br><span class="line"></span><br><span class="line">获取session</span><br><span class="line">	SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(in);</span><br><span class="line">	SqlSession session = factory.openSqlSession();</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">// 调用sql	</span><br><span class="line">	// session.insert(&quot;com.briup.dao.student.InsertStudent&quot;,student);</span><br><span class="line">调用Mapper接口</span><br><span class="line">	StudentMapper studentMapper= session.getMapper(StudentMapper.class);</span><br><span class="line">	studentMapper.insertStudent(student);</span><br><span class="line">	</span><br><span class="line">该方式可能不会出错</span><br><span class="line">	映射器:</span><br><span class="line">		映射接口和映射文件相关联</span><br><span class="line">		StudentMapper&#123;					 </span><br><span class="line">			insertStudent(Student);			</span><br><span class="line">		&#125;</span><br><span class="line">		StudentMapper.xml</span><br><span class="line">			 &lt;insert id=&quot;insert&quot; param=&quot;Student&quot;&gt;</span><br><span class="line">			 &lt;/insert&gt;</span><br><span class="line"></span><br><span class="line">主配置文件</span><br><span class="line">日志</span><br><span class="line">封装</span><br><span class="line">映射文件</span><br></pre></td></tr></table></figure>
 
 
@@ -228,7 +228,7 @@
 
 
 
-<h4 id="1-4-6-图解"><a href="#1-4-6-图解" class="headerlink" title="1.4.6 图解"></a>1.4.6 图解</h4><p><img src="image/image-20201019112222960.png" alt="image-20201019112222960"></p>
+<h4 id="1-4-6-图解"><a href="#1-4-6-图解" class="headerlink" title="1.4.6 图解"></a>1.4.6 图解</h4><p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/mybatis/202205221734684.png" alt="image-20201019112222960"></p>
 <blockquote>
 <p>注意，该图描述了上述例子中的俩个过程，mybatis左边是配置的过程，mybatis右边是写代码的过程</p>
 </blockquote>
@@ -777,14 +777,14 @@
 <tbody><tr>
 <td>1</td>
 <td>John</td>
-<td><a href="mailto:&#106;&#111;&#x68;&#110;&#64;&#x67;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#106;&#111;&#x68;&#110;&#64;&#x67;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#x6d;</a></td>
+<td><a href="mailto:&#106;&#111;&#104;&#x6e;&#64;&#x67;&#x6d;&#x61;&#105;&#x6c;&#46;&#99;&#x6f;&#109;">&#106;&#111;&#104;&#x6e;&#64;&#x67;&#x6d;&#x61;&#105;&#x6c;&#46;&#99;&#x6f;&#109;</a></td>
 <td>123-456-7890</td>
 <td>1</td>
 </tr>
 <tr>
 <td>2</td>
 <td>Paul</td>
-<td><a href="mailto:&#112;&#97;&#x75;&#108;&#64;&#x67;&#x6d;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#109;">&#112;&#97;&#x75;&#108;&#64;&#x67;&#x6d;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#109;</a></td>
+<td><a href="mailto:&#112;&#x61;&#117;&#108;&#64;&#x67;&#x6d;&#x61;&#x69;&#108;&#x2e;&#99;&#111;&#x6d;">&#112;&#x61;&#117;&#108;&#64;&#x67;&#x6d;&#x61;&#x69;&#108;&#x2e;&#99;&#111;&#x6d;</a></td>
 <td>111-222-3333</td>
 <td>2</td>
 </tr>
@@ -880,14 +880,14 @@
 <tbody><tr>
 <td>1</td>
 <td>zs</td>
-<td><a href="mailto:&#x7a;&#115;&#x40;&#x62;&#x72;&#105;&#x75;&#x70;&#46;&#99;&#111;&#x6d;">&#x7a;&#115;&#x40;&#x62;&#x72;&#105;&#x75;&#x70;&#46;&#99;&#111;&#x6d;</a></td>
+<td><a href="mailto:&#x7a;&#115;&#64;&#98;&#114;&#x69;&#x75;&#x70;&#x2e;&#x63;&#x6f;&#x6d;">&#x7a;&#115;&#64;&#98;&#114;&#x69;&#x75;&#x70;&#x2e;&#x63;&#x6f;&#x6d;</a></td>
 <td>123-456-7890</td>
 <td>1</td>
 </tr>
 <tr>
 <td>2</td>
 <td>ls</td>
-<td><a href="mailto:&#108;&#115;&#64;&#x62;&#x72;&#105;&#x75;&#112;&#x2e;&#99;&#111;&#x6d;">&#108;&#115;&#64;&#x62;&#x72;&#105;&#x75;&#112;&#x2e;&#99;&#111;&#x6d;</a></td>
+<td><a href="mailto:&#x6c;&#x73;&#x40;&#98;&#114;&#105;&#117;&#x70;&#46;&#x63;&#111;&#x6d;">&#x6c;&#x73;&#x40;&#98;&#114;&#105;&#117;&#x70;&#46;&#x63;&#111;&#x6d;</a></td>
 <td>111-222-3333</td>
 <td>2</td>
 </tr>
