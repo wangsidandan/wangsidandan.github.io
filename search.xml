@@ -3045,6 +3045,12 @@
 <blockquote>
 <p>注意，根据当前项目的情况，灵活的选择合适的配置方式，如果有需要也可以将多种配置方式混合使用</p>
 </blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">bean三种配置方式</span><br><span class="line">			<span class="function">xml  new <span class="title">ClassPathXmlApplicationConetxt</span><span class="params">(<span class="string">&quot;app.xml&quot;</span>)</span></span></span><br><span class="line"><span class="function">				&lt;bean id</span>=<span class="string">&quot;&quot;</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;&quot;</span>&gt;</span><br><span class="line">				缺点: xml内容比较多 编写繁琐</span><br><span class="line">			<span class="function">annotation new <span class="title">AnnotationConfigApplicationContext</span><span class="params">(<span class="string">&quot;含有注解的包&quot;</span>)</span></span></span><br><span class="line"><span class="function">				@Component @Controller @Service @Repository..</span></span><br><span class="line"><span class="function">				缺点: 注解分布在各个地方 不便维护</span></span><br><span class="line"><span class="function">			JavaConfig new <span class="title">AnnotationConfigApplicationContext</span><span class="params">(配置类.class)</span></span></span><br><span class="line"><span class="function">				@Configuration</span></span><br><span class="line"><span class="function">				配置类</span>&#123;</span><br><span class="line">					<span class="meta">@Bean</span></span><br><span class="line">					<span class="function"><span class="keyword">public</span> Husband <span class="title">getHsuaband</span><span class="params">()</span></span>&#123;</span><br><span class="line">						</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="meta">@Bean</span></span><br><span class="line">					<span class="function"><span class="keyword">public</span> Wife <span class="title">getWife</span><span class="params">()</span></span>&#123;</span><br><span class="line">						</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
 <h2 id="7-Spring-Test"><a href="#7-Spring-Test" class="headerlink" title="7.Spring Test"></a>7.Spring Test</h2><blockquote>
 <p>Spring框架中，也整合了Junit测试框架，可以更加方便的对使用了Spring框架的项目进行单元测试</p>
 </blockquote>
