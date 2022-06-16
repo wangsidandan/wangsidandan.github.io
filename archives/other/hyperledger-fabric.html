@@ -135,7 +135,7 @@
 <li><a target="_blank" rel="noopener" href="https://hyperledger-fabric.readthedocs.io/zh_CN/latest/install.html">fabric官方教程</a></li>
 <li><a target="_blank" rel="noopener" href="https://hyperledger.github.io/fabric-chaincode-java/release-2.2/api/org/hyperledger/fabric/shim/ChaincodeStub.html">chaincode api</a></li>
 </ul>
-<h1 id="区块链概念"><a href="#区块链概念" class="headerlink" title="区块链概念"></a>区块链概念</h1><h2 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h2><p>一般而言，区块链是不可变的交易账本，维护在<strong>对等节点</strong>的分布式网络中。这些节点每个都通过应用已通过<strong>共识协议</strong>验证的交易来维护账本的副本，这些交易被分组为包含将每个块绑定到前一个块的哈希的块。</p>
+<h1 id="区块链"><a href="#区块链" class="headerlink" title="区块链"></a>区块链</h1><h2 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h2><p>一般而言，区块链是不可变的交易账本，维护在<strong>对等节点</strong>的分布式网络中。这些节点每个都通过应用已通过<strong>共识协议</strong>验证的交易来维护账本的副本，这些交易被分组为包含将每个块绑定到前一个块的哈希的块。</p>
 <p>区块链的第一个也是最广泛认可的应用是<strong>比特币</strong>（加密货币），尽管其他人也纷纷效仿。以太坊是另一种加密货币，采用了不同的方法，集成了许多与比特币相同的特征，但添加了<strong>智能合约</strong>以创建分布式应用程序平台。比特币和以太坊属于一类区块链，我们将其归类为 <strong>公共许可</strong>区块链技术。基本上，这些是公共网络，对任何人开放，参与者匿名互动。</p>
 <p>随着比特币、以太坊和其他一些衍生技术的普及，将区块链、分布式账本和分布式应用平台的底层技术应用于更具创新性的<strong>企业用例</strong>的兴趣也在增长。然而，许多企业用例需要未经许可的区块链技术（目前）无法提供的性能特征。此外，在许多用例中，参与者的身份是一项硬性要求，例如在金融交易中，必须遵守了解你的客户 (KYC) 和反洗钱 (AML) 规定。</p>
 <p>对于企业使用，我们需要考虑以下需求：</p>
@@ -210,7 +210,7 @@
 </li>
 </ul>
 <p><strong>比特币和以太坊主要用来做数字货币,含有”币”的概念</strong></p>
-<h1 id="Hyperledger-Fabric"><a href="#Hyperledger-Fabric" class="headerlink" title="Hyperledger Fabric"></a>Hyperledger Fabric</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>2015年，Linux基金会启动了Hyperledger项目，目标是发展跨行业的区块链技术。Hyperledger项目并不仅仅是定义一个单一的区块链标准，它更鼓励通过开源社区的力量协作开发区块链技术。</p>
+<h1 id="Hyperledger-Fabric"><a href="#Hyperledger-Fabric" class="headerlink" title="Hyperledger Fabric"></a>Hyperledger Fabric</h1><h2 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h2><p>2015年，Linux基金会启动了Hyperledger项目，目标是发展跨行业的区块链技术。Hyperledger项目并不仅仅是定义一个单一的区块链标准，它更鼓励通过开源社区的力量协作开发区块链技术。</p>
 <p>Hyperledger Fabric是Hyperledger中的一个区块链项目。与其他区块链技术类似，Hyperledger Fabric包含一个账本，使用智能合约并且是一个通过所有参与者管理交易的系统。</p>
 <p>Hyperledger Fabric与其他区块链系统最大的不同体现在<strong>私有</strong>和<strong>许可</strong>。与开放无需许可的网络系统允许未知身份的参与者加入网络不同（需要通过工作量证明协议来保证交易有效并维护网络的安全），Hyperledger Fabric通过**Membership Service Provider(MSP)**来登记所有的成员。</p>
 <p>Hyperledger Fabric也提供了多个可拔插选项。账本数据可被存储为多种格式，共识机制可被接入或者断开，同时支持多种不同的MSP。</p>
@@ -227,17 +227,6 @@
 <p>Hyperledger Fabric被设计为允许网络构建者依据业务需求来选择采用的共识机制。好比考虑隐私性，就会有一连串的需求，从高度结构化的网络或是更加点对点的网络。</p>
 <p>更多的Hyperledger Fabric共识机制会在另一份文档中详细描述，这些共识机制目前包含SOLO，Kafka以及后续会添加的SBFT (Simplified Byzantine Fault Tolerance)。</p>
 <h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><p>回顾下fabric的启动过程：创建证书，生成创世区块，通道配置交易块，创建通道，节点加入通道，安装链码，实例化链码，链码的调用。这个是完整的生命周期</p>
-<ul>
-<li>基于联盟概念</li>
-<li>许可链(MSP)<ul>
-<li>节点和节点的通信,sdk连接区块链网络需要身份信息验证</li>
-</ul>
-</li>
-<li>plugin<ul>
-<li>共识算法 加密算法 内置系统合约可更换扩展</li>
-</ul>
-</li>
-</ul>
 <h2 id="核心组件"><a href="#核心组件" class="headerlink" title="核心组件"></a>核心组件</h2><h3 id="数字签名"><a href="#数字签名" class="headerlink" title="数字签名"></a>数字签名</h3><blockquote>
 <p>“数字签名”（digital signature）和”数字证书”（digital certificate）</p>
 </blockquote>
@@ -417,8 +406,8 @@
 <p>通过与server的交互可以是client，也可以是sdk，同时server发布了一些列的rest接口，通过rest接口来交互</p>
 <p>一个服务器可以包含多个CAs，每个CA可以代表一个组织机构</p>
 <p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/fabric/202206160908919.png" alt="ca证书"></p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><a target="_blank" rel="noopener" href="https://hyperledger-fabric.readthedocs.io/zh_CN/latest/test_network.html">fabric官方教程</a></p>
-<h2 id="test-network"><a href="#test-network" class="headerlink" title="test-network"></a>test-network</h2><blockquote>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><a target="_blank" rel="noopener" href="https://hyperledger-fabric.readthedocs.io/zh_CN/latest/prereqs.html">官方教程</a></p>
+<h2 id="测试网络"><a href="#测试网络" class="headerlink" title="测试网络"></a>测试网络</h2><blockquote>
 <p>根据<a target="_blank" rel="noopener" href="https://hyperledger-fabric.readthedocs.io/en/release-2.2/test_network.html">官方文档</a>的描述，使用测试网络(test-network)可以在本地计算机运行节点、测试链码和应用程序等。不过测试网络只作测试目的，不应作实际生产的网络模板。</p>
 </blockquote>
 <h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/fabric/202206160908296.png" alt="测试网络结构"></p>
@@ -589,6 +578,8 @@
 
 
 
+<p>##集成sdk</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/fabric/202206161440363.png" alt="image-20220616144006217"></p>
  
       <!-- reward -->
       
