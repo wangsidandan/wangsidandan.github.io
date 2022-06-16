@@ -151,8 +151,7 @@
 <p>区块链账本通常被定义为<strong>去中心化</strong>，这是因为在整个网络中，每个参与者都保存着一个区块链账本的副本，所有参与者通过<strong>协作</strong>共同维护着账本。接下来我们会看到，去中心化与协作这两个特点在现实世界的商业货物交易和商务服务中展现出的显著优点。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/spring/202206160906046.png" alt="image-20220111204457945"></p>
 <p>除了去中心化与协作，区块链的另一个显著特点是信息在只能以“附加”的方式记录在区块链中，<strong>同时使用加密技术保障了交易一旦被添加进账本中，就无法被篡改。</strong>区块链的这种不可篡改性使得信息来源的确认变得异常容易，这是由于参与者可以肯定信息一旦被写入区块链中就几乎不可被篡改。这也是为什么区块链常常也被称为<strong>证明的系统</strong>的原因。</p>
-<p>###智能合约</p>
-<p>为了持续的进行信息的更新，以及对账本进行管理（写入交易，进行查询等），区块链网络引入了<strong>智能合约</strong>来实现对账本的访问和控制。</p>
+<h3 id="智能合约"><a href="#智能合约" class="headerlink" title="智能合约"></a>智能合约</h3><p>为了持续的进行信息的更新，以及对账本进行管理（写入交易，进行查询等），区块链网络引入了<strong>智能合约</strong>来实现对账本的访问和控制。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/fabric/202206160906588.png" alt="image-20220111204515614"></p>
 <p>智能合约不仅仅可用于在区块链网络中打包信息，它们也可以被用于自动的执行由参与者定义的特定交易操作。</p>
 <p>例如，买卖双方可以定义一个智能合约，以保证当卖方发货的商品运送到达时，买方支付的货款会自动转账给卖方。</p>
@@ -187,7 +186,7 @@
 <li><p>节点之间对等</p>
 </li>
 </ul>
-<h3 id="智能合约"><a href="#智能合约" class="headerlink" title="智能合约"></a>智能合约</h3><ul>
+<h3 id="智能合约-1"><a href="#智能合约-1" class="headerlink" title="智能合约"></a>智能合约</h3><ul>
 <li>实现自己业务逻辑的一串代码</li>
 <li>通过编译部署在区块链上</li>
 <li>通过sdk或其他方法调用</li>
@@ -219,7 +218,7 @@
 <h3 id="共享账本"><a href="#共享账本" class="headerlink" title="共享账本"></a>共享账本</h3><p>Hyperledger Fabric包含一个账本子系统，这个子系统包含两个组件：<strong>世界状态(world state)<strong>和</strong>交易记录</strong>。在Hyperledger Fabric网络中的每一个参与者都拥有一个账本的副本。</p>
 <p>世界状态组件描述了账本在特定时间点的状态，它是账本的数据库。交易记录组件记录了产生世界状态当前值的所有交易，它是世界状态的更新历史。那么，账本则是世界状态数据库和交易历史记录的集合。</p>
 <p>账本的世界状态存储数据库是可更换的。默认配置下，这是一个key-value存储数据库。交易记录模块不需要被接入。只需要记录在区块链网络中账本数据库被使用时之前和之后的值就可以了。</p>
-<h3 id="智能合约-1"><a href="#智能合约-1" class="headerlink" title="智能合约"></a>智能合约</h3><p>Hyperledger Fabric智能合约被称为<strong>chaincode</strong>，当一个区块链外部的一个应用程序需要访问账本时，就会调用chaincode。大多数情况下，chaincode只会访问账本的数据库组件和世界状态(world state)（比如查询），但不会查询交易记录。</p>
+<h3 id="智能合约-2"><a href="#智能合约-2" class="headerlink" title="智能合约"></a>智能合约</h3><p>Hyperledger Fabric智能合约被称为<strong>chaincode</strong>，当一个区块链外部的一个应用程序需要访问账本时，就会调用chaincode。大多数情况下，chaincode只会访问账本的数据库组件和世界状态(world state)（比如查询），但不会查询交易记录。</p>
 <p>chaincode可通过多种不同编程语言实现。目前支持chaincode的语言是Go（包含对java的支持），更多的编程语言会在今后的版本中获得支持。</p>
 <h3 id="隐私"><a href="#隐私" class="headerlink" title="隐私"></a>隐私</h3><p>根据网络的需求，在一个Business-to-Business（B2B）网络中的参与者会对信息共享的程度极为敏感。然而，对于其他的网络，隐私并不是首要考虑的因素。</p>
 <p>Hyperledger Fabric支持构建隐私保护严格的网络，也支持构建相对开放的网络。</p>
@@ -313,7 +312,7 @@
 <p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/fabric/202206160908047.png" alt="image-20220505212243503"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/fabric/202206160908870.png" alt="image-20220505212340869"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/fabric/202206160908369.png" alt="image-20220505214535159"></p>
-<h3 id="智能合约-2"><a href="#智能合约-2" class="headerlink" title="智能合约"></a>智能合约</h3><blockquote>
+<h3 id="智能合约-3"><a href="#智能合约-3" class="headerlink" title="智能合约"></a>智能合约</h3><blockquote>
 <p>智能合约也称为chaincode</p>
 </blockquote>
 <ul>
