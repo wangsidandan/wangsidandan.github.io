@@ -4,16 +4,11 @@
     <title>briup-estore</title>
     <url>/archives/briup-estore.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
-<li>教程： estore</li>
-<li>整理人： vanse(刘聪)</li>
+<li>教程：estore</li>
+<li>整理人：vanse(刘聪)</li>
 <li>时间：2022/6/23</li>
-<li>环境<ul>
-<li>idea2019</li>
-<li>oracle10g</li>
-</ul>
-</li>
-<li>技术：html/css/js/ajax/jq/servlet/jsp/mybatis/oracle/md5</li>
 <li>项目托管平台: git</li>
+<li>类别: 实训</li>
 </ul>
 <h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><h2 id="jdk"><a href="#jdk" class="headerlink" title="jdk"></a>jdk</h2><blockquote>
 <p>软件安装</p>
@@ -142,7 +137,7 @@
 <blockquote>
 <p>注意，这个解压安装的路径中，不要有中文、空格、特殊符号等</p>
 </blockquote>
-<h2 id="idea"><a href="#idea" class="headerlink" title="idea"></a>idea</h2><p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221122821.jpg" alt="img"></p>
+<h2 id="idea"><a href="#idea" class="headerlink" title="idea"></a>idea</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221122821.jpg" alt="img"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221122862.jpg" alt="img"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221122968.jpg" alt="img"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221122533.jpg" alt="img"></p>
@@ -154,7 +149,14 @@
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">-Dfile.encoding=UTF-8</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221123167.png" alt="image-20220620161704708"></p>
-<h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><blockquote>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><ul>
+<li>基本配置</li>
+<li>编码</li>
+<li>集成maven</li>
+<li>相关插件(lombock mybatisx .ignore)</li>
+<li>…</li>
+</ul>
+<h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><blockquote>
 <p>注意，安装步骤全都选择默认的配置即可，直接一路选择next下一步，即可完成</p>
 </blockquote>
 <p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221123383.png" alt="image-20220621001137664"></p>
@@ -184,19 +186,73 @@
 
 <p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221124494.png" alt="image-20220621002124273"></p>
 <p><code>注意，如果你希望在一个特定的项目中使用不同的名称或邮箱地址，可以使用  --local 在项目重新 设置</code></p>
-<p><strong>命令</strong></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 新建一个目录，将其初始化为Git代码库</span></span><br><span class="line">git init [project-name]</span><br><span class="line"><span class="comment"># 克隆一个远程仓库到本地</span></span><br><span class="line">git <span class="built_in">clone</span> [url]</span><br><span class="line"><span class="comment"># 查看指定文件状态</span></span><br><span class="line">git status [filename]</span><br><span class="line"><span class="comment"># 执行添加命令，将readme.txt文件添加到 staged暂存区</span></span><br><span class="line">git add readme.txt</span><br><span class="line"><span class="comment"># 将暂存区的readme文件进行commit提交</span></span><br><span class="line">git commit -m <span class="string">&#x27;create new file readme&#x27;</span></span><br><span class="line"><span class="comment"># 恢复改变之前</span></span><br><span class="line">git reset</span><br><span class="line"><span class="comment"># 关联远程仓库</span></span><br><span class="line">git remote add origin git地址</span><br><span class="line"><span class="comment"># 提交到远程仓库</span></span><br><span class="line">git push -u origin master</span><br><span class="line"><span class="comment"># 拉取项目</span></span><br><span class="line">git pull</span><br><span class="line"><span class="comment"># 克隆项</span></span><br></pre></td></tr></table></figure>
+<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 新建一个目录，将其初始化为Git代码库</span></span><br><span class="line">git init [project-name]</span><br><span class="line"><span class="comment"># 克隆一个远程仓库到本地</span></span><br><span class="line">git <span class="built_in">clone</span> [url]</span><br><span class="line"><span class="comment"># 查看指定文件状态</span></span><br><span class="line">git status [filename]</span><br><span class="line"><span class="comment"># 执行添加命令，将readme.txt文件添加到 staged暂存区</span></span><br><span class="line">git add readme.txt</span><br><span class="line"><span class="comment"># 将暂存区的readme文件进行commit提交</span></span><br><span class="line">git commit -m <span class="string">&#x27;create new file readme&#x27;</span></span><br><span class="line"><span class="comment"># 恢复改变之前</span></span><br><span class="line">git reset</span><br><span class="line"><span class="comment"># 关联远程仓库</span></span><br><span class="line">git remote add origin git地址</span><br><span class="line"><span class="comment"># 提交到远程仓库</span></span><br><span class="line">git push -u origin master</span><br><span class="line"><span class="comment"># 拉取项目</span></span><br><span class="line">git pull</span><br><span class="line"><span class="comment"># 克隆项</span></span><br></pre></td></tr></table></figure>
 
 
 
-<blockquote>
-<p>注册码云</p>
+<h3 id="码云"><a href="#码云" class="headerlink" title="码云"></a>码云</h3><blockquote>
+<p>注册账号</p>
 </blockquote>
 <p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221124151.png" alt="image-20220621002514246"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221124940.png" alt="image-20220621002525447"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221124032.png" alt="image-20220621002555044"></p>
 <p><code>注意，这里可以使用【个人空间地址】、【绑定邮箱地址】、【绑定电话号码】进行登录</code></p>
-<h1 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h1><h2 id="servlet"><a href="#servlet" class="headerlink" title="servlet"></a>servlet</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>Servlet技术可以扩展服务器端的功能，让java代码在服务器端也能成为一种资源（动态资源），客户端浏览器可以通过指定的资源地址（URI），来访问这个java代码（Servlet），同时在Servlet代码中，还可以使用IO流把结果写回给浏览器。</p>
+<blockquote>
+<p>创建仓库</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221603478.png" alt="image-20220622153051045"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221603472.png" alt="image-20220622153139411"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221603884.png" alt="image-20220622153222951"></p>
+<h3 id="集成idea"><a href="#集成idea" class="headerlink" title="集成idea"></a>集成idea</h3><p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221603795.png" alt="image-20220622153459323"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221603824.png" alt="image-20220622153535867"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221603295.png" alt="image-20220622153621699"></p>
+<p><code>忽略不需要提交的文件</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221603584.png" alt="image-20220622154228013"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221603283.png" alt="image-20220622154404569"></p>
+<p>.gitignore</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Created by .ignore support plugin (hsz.mobi)</span></span><br><span class="line"><span class="comment">### Java template</span></span><br><span class="line"><span class="comment"># Compiled class file</span></span><br><span class="line">*.class</span><br><span class="line"></span><br><span class="line"><span class="comment"># Log file</span></span><br><span class="line">*.<span class="built_in">log</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># BlueJ files</span></span><br><span class="line">*.ctxt</span><br><span class="line"></span><br><span class="line"><span class="comment"># Mobile Tools for Java (J2ME)</span></span><br><span class="line">.mtj.tmp/</span><br><span class="line"></span><br><span class="line"><span class="comment"># Package Files #</span></span><br><span class="line">*.jar</span><br><span class="line">*.war</span><br><span class="line">*.nar</span><br><span class="line">*.ear</span><br><span class="line">*.zip</span><br><span class="line">*.tar.gz</span><br><span class="line">*.rar</span><br><span class="line"></span><br><span class="line"><span class="comment"># virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml</span></span><br><span class="line">hs_err_pid*</span><br><span class="line"></span><br><span class="line"><span class="comment"># 自定义添加</span></span><br><span class="line">.idea/</span><br><span class="line">target/</span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>添加到暂存区</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221603138.png" alt="image-20220622154642622"></p>
+<p><code>提交代码</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221603596.png" alt="image-20220622154712923"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221603769.png" alt="image-20220622155133205"></p>
+<p><code>推送到远程仓库</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221603888.png" alt="image-20220622155242351"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221603639.png" alt="image-20220622155326043"></p>
+<p><code>如果是第一次提交 需要输入账号和密码</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221603038.png" alt="image-20220622155459593"></p>
+<h3 id="协作开发"><a href="#协作开发" class="headerlink" title="协作开发"></a>协作开发</h3><blockquote>
+<p>别人的私有仓库你是搜索查找不到的</p>
+</blockquote>
+<p>我们克隆别人的项目到本地，只能进行本地操作，无法将修改推送到别人的远程仓库中,但是，如果tom这时候将jack加入到这个远程仓库的开发成员中，那么jack也可以进行push和pull操作了</p>
+<p>来到仓库主界面：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221603757.png" alt="image-20220622155916260"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221603020.png" alt="image-20220622160129307"></p>
+<p><code>注意，这里截图中，使用用户注册时候的【姓名】进行的搜索，所以有很多相同名字的用户（姓名 可以重复），但是这里显示的名字后面还有灰色字体，这个就是该用户对于的个人空间地址（一定 是唯一的）</code></p>
+<h1 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h1><h2 id="oracle-1"><a href="#oracle-1" class="headerlink" title="oracle"></a>oracle</h2><h3 id="DDL"><a href="#DDL" class="headerlink" title="DDL"></a>DDL</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 建表</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> demo(</span><br><span class="line">	id number,</span><br><span class="line">	name VARCHAR2(<span class="number">30</span>),</span><br><span class="line">	age number</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 删表</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> demo;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="DML"><a href="#DML" class="headerlink" title="DML"></a>DML</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 插入数据</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> demo ( id, name, age )</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">	( <span class="number">1</span>, <span class="string">&#x27;briup&#x27;</span>, <span class="number">18</span> );</span><br><span class="line">	</span><br><span class="line"><span class="comment">-- 修改数据</span></span><br><span class="line">update demo <span class="keyword">set</span> name<span class="operator">=</span><span class="string">&#x27;vanse&#x27;</span> <span class="keyword">where</span> id <span class="operator">=</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 删除数据</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> demo <span class="keyword">where</span> id <span class="operator">=</span> <span class="number">1</span></span><br><span class="line">	</span><br><span class="line"><span class="keyword">commit</span>;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="DQL"><a href="#DQL" class="headerlink" title="DQL"></a>DQL</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> demo;</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> demo <span class="keyword">where</span> id <span class="operator">=</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="序列"><a href="#序列" class="headerlink" title="序列"></a>序列</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 删除序列</span></span><br><span class="line"><span class="keyword">drop</span> sequence my_seq;</span><br><span class="line"><span class="comment">-- 创建序列</span></span><br><span class="line"><span class="keyword">create</span> sequence my_seq;</span><br><span class="line"><span class="comment">-- 使用x</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> demo ( id, name, age )</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">	( my_seq.nextval, <span class="string">&#x27;briup&#x27;</span>, <span class="number">18</span> );</span><br><span class="line"><span class="keyword">commit</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="servlet"><a href="#servlet" class="headerlink" title="servlet"></a>servlet</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>Servlet技术可以扩展服务器端的功能，让java代码在服务器端也能成为一种资源（动态资源），客户端浏览器可以通过指定的资源地址（URI），来访问这个java代码（Servlet），同时在Servlet代码中，还可以使用IO流把结果写回给浏览器。</p>
 <p>按照Servlet规范要求，编写一个Servlet程序，只需要让自己的类实现<code>javax.servlet.Servlet</code>接口就可以了，但是该接口也有一些默认的实现类，所以除了实现接口的方式之外，我们也可以继承它默认的几个实现类，并且重写指定方法，也同样可以完成Servlet程序的编写。</p>
 <blockquote>
 <p>idea中导入servlet依赖</p>
@@ -503,7 +559,465 @@
 <li>过滤器</li>
 <li>…</li>
 </ul>
-<h1 id="estore"><a href="#estore" class="headerlink" title="estore"></a>estore</h1><h2 id="项目准备"><a href="#项目准备" class="headerlink" title="项目准备"></a>项目准备</h2><h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><h4 id="导入表"><a href="#导入表" class="headerlink" title="导入表"></a>导入表</h4><p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221134871.png" alt="image-20210909101745687"></p>
+<h1 id="estore"><a href="#estore" class="headerlink" title="estore"></a>estore</h1><h2 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h2><h3 id="概述-2"><a href="#概述-2" class="headerlink" title="概述"></a>概述</h3><p><strong>estore</strong>系统，也成为网上商城，主要业务是完成在线购物的功能。</p>
+<p>estore系统包括前台商家系统、买家系统及后台管理员操作系统，其功能包括：</p>
+<ul>
+<li>用户浏览</li>
+<li>购物车</li>
+<li>商品管理</li>
+<li>用户管理</li>
+<li>订单管理</li>
+<li>配送管理</li>
+<li>广告推广</li>
+<li>…</li>
+</ul>
+<p>如图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221609144.png" alt="image-20201025221024414"></p>
+<h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>通过该项目的编写，需要完成的学习目标如下：</p>
+<ul>
+<li>掌握软件开发流程</li>
+<li>完成软件开发项目</li>
+<li>积累软件开发经验</li>
+<li>巧用软件开发技术</li>
+<li>熟悉电商业务模型</li>
+<li>发扬团队合作精神</li>
+<li>提高语言表达能力</li>
+<li>锻炼文档书写能力</li>
+<li>分析解决问题能力</li>
+</ul>
+<h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><p>软件开发的流程，大致可以分为：</p>
+<ul>
+<li>软件需求分析（Software Requirements Analysis）</li>
+<li>数据建模（ Data Model ）</li>
+<li>编码/单元测试（Coding）</li>
+<li>联合调试（Integration）</li>
+<li>系统测试（Testing）</li>
+<li>运行维护（Installation &amp; Maintenance)</li>
+</ul>
+<p>###模型</p>
+<p>常见的软件开发过程模块主要分为：</p>
+<ul>
+<li>瀑布模型</li>
+<li>快速原型模型</li>
+<li>螺旋模型</li>
+</ul>
+<p><strong>1、瀑布模型</strong></p>
+<blockquote>
+<p>它是线性模型的一种，在所有模型中占有重要地位，是所有其他模型的一个基础</p>
+</blockquote>
+<p>每一个阶段执行一次，按线性顺序进行软件开发。</p>
+<p>如图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221610422.png" alt="image-20201025222756402"></p>
+<p>在该模型中，测试阶段处于软件实现后，必须在代码完成后留出足够的时间来进行测试，否则将导致测试不充分，并且很多问题到项目后期才暴露。</p>
+<p>瀑布模型的优点：</p>
+<ul>
+<li>开发的各个阶段比较清晰</li>
+<li>强调早期计划及需求调查</li>
+<li>适合需求稳定的产品开发</li>
+</ul>
+<p>瀑布模型的缺点：</p>
+<ul>
+<li>依赖于早期的需求调查，不适应需求的变化</li>
+<li>单一流程不可逆</li>
+<li>风险往往延至后期才显露，失去及早纠正的机会</li>
+<li>问题在项目后期才开始暴露</li>
+<li>前面未发现的错误会传递并扩散到后面的阶段，可能导致项目失败</li>
+</ul>
+<p><strong>2、快速原型模型</strong></p>
+<blockquote>
+<p>它是沿用瀑布模型的线性思想，细化了各个阶段，在某些重要关注的阶段之间掺入迭代的思想</p>
+</blockquote>
+<p>在开发真实系统之前，构造一个原型，在该原型的基础上，逐渐完成整个系统的开发工作。</p>
+<p>例如，</p>
+<p>第一步，建造一个快速原型，实现用户与系统的交互，用户对原型进行评价，进一步细化软件的需求。通过逐步调整原型使其满足用户的要求，开发人员可以确定用户的真正需求是什么。</p>
+<p>第二步，是在第一步的基础上开发出用户满意的软件产品。</p>
+<p>如图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221610754.png" alt="image-20201025223354574"></p>
+<blockquote>
+<p>注意，原型中，只是粗糙的对功能进行实现，和用户进行沟通、测试、评价、修改，迭代这个过程，最终获取用户真正想要的软件功能</p>
+</blockquote>
+<p>快速原型模型优点：</p>
+<ul>
+<li>克服瀑布模型的缺点，更好地满足用户的需求并减少由于软件需求不明确带来的项目开发风险。</li>
+<li>适合预先不能确切定义需求的软件系统的开发。</li>
+</ul>
+<p>快速原型模型缺点：</p>
+<ul>
+<li>不适合大型系统的开发，对于小型的、灵活性高的系统较为合适</li>
+<li>前提要有一个展示性的产品原型，并且需要专门学习相应的工具使用</li>
+</ul>
+<p>有很多专门快速创建原型的工具，例如，<strong>Axure</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221610825.png" alt="image-20201025225936217"></p>
+<p>构建完成后，可以在浏览器中发布预览：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221610482.png" alt="image-20201025230039406"></p>
+<p><strong>3、螺旋模型</strong></p>
+<blockquote>
+<p>螺旋模型是以快速原型模型为基础，在每个项目阶段使用瀑布模型法</p>
+</blockquote>
+<p>这种模型的每一个周期都包括需求定义、风险分析、工程实现和评审4个阶段，由这4个阶段进行迭代。</p>
+<p>螺旋模型即是一种引入了风险分析与规避机制的过程模型，是瀑布模型、快速原型方法和风险分析方法的有机结合。</p>
+<p>螺旋模型最大的特点在于引入了其他模型不具备的风险分析，使软件在无法排除重大风险时有机会停止，以减小损失。</p>
+<p>如图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221610266.png" alt="image-20201025230811641"></p>
+<p>螺旋模型沿着螺线进行若干次迭代，图中的四个象限代表了以下活动： </p>
+<ul>
+<li>制定计划：确定软件目标，选定实施方案，弄清项目开发的限制条件</li>
+<li>风险分析：分析评估所选方案，考虑如何识别和消除风险</li>
+<li>实施工程：实施软件开发和验证</li>
+<li>客户评估：评价开发工作，提出修正建议，制定下一步计划</li>
+</ul>
+<p>每轮循环包含如下六个步骤：</p>
+<ol>
+<li>确定目标</li>
+<li>识别并化解风险</li>
+<li>评估</li>
+<li>开发并测试当前阶段</li>
+<li>规划下一阶段</li>
+<li>确定进入下一阶段的方法步骤</li>
+</ol>
+<p>螺旋模型强调<strong>风险分析</strong>，使得开发人员和用户对每个演化层出现的风险有所了解，继而做出应有的反应，因此特别适用于庞大、复杂并具有高风险的系统。</p>
+<p>螺旋模型优点：</p>
+<ul>
+<li>螺旋模型很大程度上是一种风险驱动的方法体系</li>
+<li>每个阶段之前及经常发生的循环之前，都必须首先进行风险评估</li>
+</ul>
+<p>螺旋模型缺点：</p>
+<ul>
+<li>采用螺旋模型需要具有相当丰富的风险评估经验和专门知识</li>
+<li>在风险较大的项目开发中，如果未能够及时标识风险，势必造成重大损失</li>
+<li>过多的迭代次数会增加开发成本，延迟提交时间</li>
+</ul>
+<h3 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h3><p>在当前项目中，我们采用之前介绍过的三层架构：</p>
+<ul>
+<li>web层，负责和客户端交互</li>
+<li>service层，负责处理业务逻辑功能</li>
+<li>dao层，负责和数据库交互</li>
+</ul>
+<p>如图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221610242.png" alt="image-20201025231923231"></p>
+<h3 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h3><p>该项目中所采用的技术：</p>
+<ul>
+<li>前端技术<ul>
+<li>html、css、js、ajax、jquery</li>
+</ul>
+</li>
+<li>后端技术<ul>
+<li>servlet、jsp、jdbc、mybaits</li>
+</ul>
+</li>
+<li>数据库<ul>
+<li>oracle、mysql</li>
+</ul>
+</li>
+</ul>
+<h3 id="用例"><a href="#用例" class="headerlink" title="用例"></a>用例</h3><p>系统中，用户核心功能的用例图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221610842.png" alt="image-20201025235346234"></p>
+<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><p>系统中一些主要功能说明：</p>
+<ul>
+<li>注册<ul>
+<li>需要判断注册的用户名是否已经在数据库中存在</li>
+<li>最后将注册信息保存到数据库中</li>
+</ul>
+</li>
+<li>登录<ul>
+<li>查看登陆的用户名是否存在</li>
+<li>查看密码是否正确</li>
+</ul>
+</li>
+<li>购物车<ul>
+<li>增加订单项</li>
+<li>查看购物车</li>
+<li>删除订单项</li>
+<li>修改订单项</li>
+</ul>
+</li>
+<li>订单<ul>
+<li>查看订单</li>
+<li>提交订单</li>
+<li>删除订单</li>
+</ul>
+</li>
+</ul>
+<h3 id="ER图"><a href="#ER图" class="headerlink" title="ER图"></a>ER图</h3><p>系统中的ER图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221609612.png" alt="image-20201025235451555"></p>
+<h2 id="项目准备"><a href="#项目准备" class="headerlink" title="项目准备"></a>项目准备</h2><h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><h4 id="导入表"><a href="#导入表" class="headerlink" title="导入表"></a>导入表</h4><p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221134871.png" alt="image-20210909101745687"></p>
+<h4 id="数据字典"><a href="#数据字典" class="headerlink" title="数据字典"></a>数据字典</h4><p>该系统的数据字典如下：</p>
+<p><strong>es_customer，用户表</strong></p>
+<table>
+<thead>
+<tr>
+<th>列名</th>
+<th>类型</th>
+<th>约束</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>int</td>
+<td>primary key</td>
+<td>编号</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar</td>
+<td>not null</td>
+<td>用户名</td>
+</tr>
+<tr>
+<td>password</td>
+<td>varchar</td>
+<td>not null</td>
+<td>密码</td>
+</tr>
+<tr>
+<td>zipCode</td>
+<td>varchar</td>
+<td>-</td>
+<td>邮编</td>
+</tr>
+<tr>
+<td>address</td>
+<td>varchar</td>
+<td>-</td>
+<td>地址</td>
+</tr>
+<tr>
+<td>telephone</td>
+<td>varchar</td>
+<td>-</td>
+<td>电话</td>
+</tr>
+<tr>
+<td>email</td>
+<td>varchar</td>
+<td>-</td>
+<td>邮箱</td>
+</tr>
+</tbody></table>
+<p><strong>es_book，书籍表</strong></p>
+<table>
+<thead>
+<tr>
+<th>列名</th>
+<th>类型</th>
+<th>约束</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>int</td>
+<td>primary key</td>
+<td>书籍编号</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar</td>
+<td>not null</td>
+<td>书籍名字</td>
+</tr>
+<tr>
+<td>price</td>
+<td>varchar</td>
+<td>not null</td>
+<td>书籍价格</td>
+</tr>
+<tr>
+<td>author</td>
+<td>varchar</td>
+<td>-</td>
+<td>书籍作者</td>
+</tr>
+<tr>
+<td>publisher</td>
+<td>varchar</td>
+<td>-</td>
+<td>书籍出版社</td>
+</tr>
+<tr>
+<td>pubDate</td>
+<td>date</td>
+<td>-</td>
+<td>发布时间</td>
+</tr>
+<tr>
+<td>description</td>
+<td>varchar</td>
+<td>-</td>
+<td>书籍描述</td>
+</tr>
+<tr>
+<td>image</td>
+<td>varchar</td>
+<td>-</td>
+<td>书籍图片</td>
+</tr>
+<tr>
+<td>category_id</td>
+<td>int</td>
+<td>foreign key</td>
+<td>书籍类别编号</td>
+</tr>
+</tbody></table>
+<p><strong>es_category，书籍分类表</strong></p>
+<table>
+<thead>
+<tr>
+<th>列名</th>
+<th>类型</th>
+<th>约束</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>int</td>
+<td>primary key</td>
+<td>书籍分类编号</td>
+</tr>
+<tr>
+<td>name</td>
+<td>varchar</td>
+<td>not null</td>
+<td>书籍分类名字</td>
+</tr>
+<tr>
+<td>description</td>
+<td>varchar</td>
+<td>not null</td>
+<td>书籍分类描述</td>
+</tr>
+<tr>
+<td>parent_id</td>
+<td>int</td>
+<td>foreign key</td>
+<td>父类别编号</td>
+</tr>
+</tbody></table>
+<p><strong>es_orderform，订单表</strong></p>
+<table>
+<thead>
+<tr>
+<th>列名</th>
+<th>类型</th>
+<th>约束</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>int</td>
+<td>primary key</td>
+<td>订单编号</td>
+</tr>
+<tr>
+<td>cost</td>
+<td>double</td>
+<td>not null</td>
+<td>订单金额</td>
+</tr>
+<tr>
+<td>orderDate</td>
+<td>date</td>
+<td>not null</td>
+<td>订单时间</td>
+</tr>
+<tr>
+<td>shopAddress_id</td>
+<td>int</td>
+<td>foreign key</td>
+<td>收货地址编号</td>
+</tr>
+<tr>
+<td>customer_id</td>
+<td>int</td>
+<td>foreign key</td>
+<td>客户编号</td>
+</tr>
+</tbody></table>
+<p><strong>es_orderline，订单项表</strong></p>
+<table>
+<thead>
+<tr>
+<th>列名</th>
+<th>类型</th>
+<th>约束</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>int</td>
+<td>primary key</td>
+<td>订单项编号</td>
+</tr>
+<tr>
+<td>num</td>
+<td>int</td>
+<td>not null</td>
+<td>商品数量</td>
+</tr>
+<tr>
+<td>cost</td>
+<td>date</td>
+<td>not null</td>
+<td>订单项金额</td>
+</tr>
+<tr>
+<td>book_id</td>
+<td>int</td>
+<td>foreign key</td>
+<td>书籍编号</td>
+</tr>
+<tr>
+<td>orderForm_id</td>
+<td>int</td>
+<td>foreign key</td>
+<td>订单编号</td>
+</tr>
+</tbody></table>
+<p><strong>es_shopaddress，收货地址表</strong></p>
+<table>
+<thead>
+<tr>
+<th>列名</th>
+<th>类型</th>
+<th>约束</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id</td>
+<td>int</td>
+<td>primary key</td>
+<td>收货地址编号</td>
+</tr>
+<tr>
+<td>receiveName</td>
+<td>varchar</td>
+<td>not null</td>
+<td>收货人姓名</td>
+</tr>
+<tr>
+<td>address</td>
+<td>varchar</td>
+<td>not null</td>
+<td>收货人地址</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>varchar</td>
+<td>not null</td>
+<td>收货人电话</td>
+</tr>
+<tr>
+<td>customer_id</td>
+<td>int</td>
+<td>foreign key</td>
+<td>客户编号</td>
+</tr>
+</tbody></table>
 <h4 id="表分析"><a href="#表分析" class="headerlink" title="表分析"></a>表分析</h4><blockquote>
 <p>所有表都没有物理外键，而是逻辑外键</p>
 </blockquote>
