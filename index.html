@@ -161,6 +161,1004 @@
     
     
     <article
+  id="post-briup-linux"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/archives/briup-linux.html"
+    >briup-linux</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/archives/briup-linux.html" class="article-date">
+  <time datetime="2022-07-10T16:13:26.000Z" itemprop="datePublished">2022-07-11</time>
+</a>    
+    </div>
+     
+	
+	 
+	
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h1><h2 id="1-历史"><a href="#1-历史" class="headerlink" title="1 历史"></a>1 历史</h2><blockquote>
+<p>UNIX ，是一个强大的多用户、多任务操作系统，支持多种处理器架构，按照操作系统的分类，属于分时操作系统，最早由KenThompson、DennisRitchie和DouglasMcIlroy于1969年在AT&amp;T的贝尔实验室开发。</p>
+</blockquote>
+<p>目前它的商标权由国际开放标准组织（The Open Group）所拥有。</p>
+<p>在Unix的开发过程中，产生了B语言，并再次进行改良，形成了今天的大名鼎鼎的C语言。于是，Ken Thompson (肯.汤普森)与Dennis Ritchie(丹尼斯.里奇)成功地用C语言重写了Unix的第三版内核。至此，Unix这个操作系统修改、移植相当便利，为Unix日后的普及打下了坚实的基础。而Unix和C完美地结合成为一个统一体，C与Unix很快成为世界的主导。</p>
+<ol>
+<li><p>分裂</p>
+<p>1978年，对 Unix而言是革命性的一年；因为学术界的老大柏克利大学 （UC Berkeley），推出了一份以第六版为基础，加上一些改进和新功能而成的 Unix。</p>
+<p>这就是著名的“1 BSD（1st Berkeley Software Distribution）”，开创了Unix的另一个分支：BSD 系列。同时期，AT&amp;T成立USG（Unix Support Group），将 Unix变成商业化的产品。</p>
+<p>从此，BSD的 Unix 便和AT&amp;T 的Unix 分庭抗礼，Unix就分为<strong>System IV和4.x BSD这两大主流</strong>，各自蓬勃发展。Unix的发展开始<strong>走向闭源</strong>的道路。</p>
+<p>同时，其他一些公司也开始为其自己的小型机或工作站提供商业版本的UNIX系统，有些选择System V作为基础版本，有些则选择了BSD。BSD的一名主要开发者，Bill Joy，在BSD基础上开发了SunOS，并最终创办了Sun Microsystems。</p>
+</li>
+<li><p>纠纷</p>
+<p>Berkeley Software Design,Inc（BSDI）很快就与AT&amp;T的UNIX Systems Laboratories（USL）附属公司产生了法律纠纷，USL是AT&amp;T注册的公司。AT&amp;T为了拥有System V版权，以及Unix商标，为了垄断Unix，1992年，USL正式对BSDI提起诉讼，说BSD剽窃他的源码。而最终了结了好评如潮的BSD系统。</p>
+<p>由于最后判决悬而未决，这桩法律诉讼将BSD后裔的开发，特别是自由软件，延迟了两年，这导致没有法律问题的Linux内核获得了极大的支持。Linux跟386BSD的开发几乎同时起步，Linus说，当时如果有自由的基于386的Unix-like操作系统，他就可能不会创造Linux。尽管无法预料这给以后的软件业究竟造成了什么样的影响，但有一点可以肯定，Linux更加丰富了这块土壤。</p>
+<p>这场官司一直打到 AT&amp;T将自己的Unix系统实验室卖掉，新接手的Novell公司采取了一种比较开明的做法，允许BSDI自由发布自己的BSD，但是前提是必须将来自于AT&amp;T的代码完全删除，于是诞生了4.4 BSD Lite版，由于这个版本不存在法律问题，4.4BSD Lite成为了现代BSD系统的基础版本。于是，BSD Unix走上了复兴的道路。BSD的开发也走向了几个不同的方向，并最终导致了FreeBSD、OpenBSD和NetBSD的出现。</p>
+<p>Unix的版权曾经为AT&amp;T所有，之后Novell拥有了Unix，再之后Novell又将版权出售给了SCO（这一事实双方尚存在争议）。有很多大公司在取得了Unix的授权之后，开发了自己的Unix产品。</p>
+<p>由于Unix是由C语言写的，所以修改和移植都很容易，因此，很多商业公司及学术机构均加入这个操作系统的研发，各个不同版本的Unix也开始蓬勃发展。这才产生了今天这么多的各式各样的Unix衍生产品。如AIX、Solaris、HP-UX、IRIX、OSF、Ultrix等等。</p>
+</li>
+<li><p>开源</p>
+<p>AT&amp;T的这种商业态度，让当时许多的Unix的爱好者和软件开发者们感到相当的痛心和忧虑，他们认为商业化的种种限制并不利于生产的发展，相反还能导制产品出现诸多的问题。随着商业化Unix的版本的种种限制和诸多问题，引起了大众的不满和反对。于是，大家开始有组织地结成“反叛联盟”以此对抗欺行罢市的AT&amp;T等商业化行为。</p>
+<p>此时，一个名叫Richard Stallman的领袖出现了，他认为Unix是一个相当好的操作系统，如果大家都能够将自己所学贡献出来，那么这个系统将会更加的优异！他倡导的<strong>Open Source</strong>的概念，就是针对Unix这一事实反对实验室里的产品商业化私有化。尽管Stallman既不是、也从来没有成为一个Unix程序员，但在后1980的大环境下，实现一个仿Unix操作系统成了他追求的明确战略目标。Richard Stallman早期的捐助者大都是新踏入Unix土地的老牌ARPANET黑客，他们对代码共享的使命感甚至比那些有更多Unix背景的人强烈。</p>
+<p>为了这个理想，Richard Stallman于1984年创业了<strong>GNU</strong>，计划开发一套与Unix相互兼容的的软件。1985 年 Richard Stallman 又创立了自由软件基金会（Free Software Foundation）来为 GNU 计划提供技术、法律以及财政支持。尽管 GNU 计划大部分时候是由个人自愿无偿贡献，但 FSF 有时还是会聘请程序员帮助编写。当 GNU 计划开始逐渐获得成功时，一些商业公司开始介 入开发和技术支持。当中最著名的就是之后被 Red Hat 兼并的 Cygnus Solutions。</p>
+</li>
+<li><p>Linux</p>
+<p>GNU组织的建立，延续了当年Unix刚出现时的情形，并为这种情形建立了可靠的法律和财务保障。GNU 工程十几年以来，已经成为一个对软件开发主要的影响力量， 创造了无数的重要的工具。例如：强健的编译器，有力的文本编辑器，甚至一个全功能的操作系统。从那时开始，许多程序员聚集起来开始开发一个自由的、高质量、易理解的软件，这使得Unix社区生机勃勃，一派繁荣景象。</p>
+<p>自90年代发起这个计划以来，GNU 开始大量的产生或收集各种系统所必备的组件，像是——函数库（libraries）、编译器（compilers）、调试工具（debugs）、文本编辑器（text editors）、网站服务器（web server），以及一个Unix的使用者接口（Unix shell）等等。</p>
+<p>但由于种种原因，GNU一直没有开发操作系统的kernel。正当Richard Stallman在为操作系统内核伤脑筋的时候，Linux出现了。正是因为Unix的不开源路线促成了Linux的诞生，Linus Torvalids 在1991年使用Minix创造了Linux –这并不是一个简单的Unix克隆版本，只不过它长得像Unix（系统结构和功能上），该内核和GNU套件整合后形成了如今各式各样的Linux版本。</p>
+<p>所以，这里所说的Linux操作系统，其实是 Linux系统内核+GNU系统套件 = 各种版本的Linux操作系统</p>
+</li>
+<li><p>三大派生版本</p>
+<ul>
+<li><p>System V<br>System V它最初由A    UNIX操作系统。<br>AIX（Advanced Interactive eXecutive）是IBM开发的一套UNIX操作系统。<br>HP-UX（Hewlett Packard UniX）是惠普以SystemV为基础所研发成的类UNIX操作系统</p>
+</li>
+<li><p>Berkley<br>BSD（Berkeley Software Distribution，伯克利软件套件）是Unix的衍生系统，1970年代由伯克利加州大学（Uni Versity of California, Berkeley）开创。BSD用来代表由此派生出的各种套件集合。<br>主要有386BSD,DragonFly BSD,FreeBSD,NetBSD,NEXTSTEP,Mac OS X,OpenBSD,Solaris</p>
+</li>
+<li><p>Hybrid<br>属于其他混合的版本</p>
+<h6 id="主要有GNU-Linux-Minix-QNXUnix等"><a href="#主要有GNU-Linux-Minix-QNXUnix等" class="headerlink" title="主要有GNU / Linux,Minix,QNXUnix等"></a>主要有GNU / Linux,Minix,QNXUnix等</h6></li>
+</ul>
+</li>
+<li><p>Unix和Linux</p>
+<p>Unix系统大多是与硬件配套的，而Linux则可运行在多种硬件平台上.</p>
+<p>Unix有些版本比如aix,hp-ux是商业软件是闭源的（不过solaris,*bsd等unix都是开源的），而Linux是自由软件，免费、公开源代码的. </p>
+<p>Linux只是在Unix发展的过程中为解决开源问题而产生的一种类Unix系统，两者之间没有没有代码逻辑上的关系（源代码没一点关系），只不过Linux模仿Unix的系统结构、功能，独立开发出来的一种兼容Unix的系统。</p>
+</li>
+<li><p>Ubuntu</p>
+<p>Linux有非常多的发行版本，大体分为由商业公司维护的商业版本与由开源社区维护的免费发行版本。商业版本以Redhat为代表，开源社区版本则以Debian为代表。</p>
+<p>Ubuntu 是一个以桌面应用为主的开源GNU/Linux操作系统。它是基于DebianGNU/Linux，支持x86、amd64(即x64)和ppc架构。</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Linux系统</span><br><span class="line">	开源与免费的操作系统</span><br><span class="line">	更加安全</span><br><span class="line">	更加稳定</span><br><span class="line">	适合服务器使用</span><br><span class="line">	</span><br><span class="line">unix</span><br><span class="line">	BSD</span><br><span class="line">	AT&amp;T 付费</span><br><span class="line">linux 其余 BSD和ＡT&amp;T纠纷  </span><br><span class="line">	李维斯  同时创造了git</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="2-图解"><a href="#2-图解" class="headerlink" title="2 图解"></a>2 图解</h2><p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207110016185.png" alt="image-20200715115742644"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207110017449.png" alt="image-20200715115825225"></p>
+<h2 id="3-系统"><a href="#3-系统" class="headerlink" title="3 系统"></a>3 系统</h2><p>一个Linux操作系统，由三个重要的部分组成。内核、Shell、文件系统</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207110017260.png" alt="image-20200715161322129"></p>
+<ol>
+<li><p><strong>Kernel</strong><br>内核，管理硬件设备、内存、进程、交互空间、文件系统、系统程序等。</p>
+</li>
+<li><p><strong>Shell</strong><br>Shell是用户和kernel之间的接口，它也是一个命令解释器，当用户在linux界面发出一个指令时，命令先传到shell，然后在将这个指令翻译成计算机可以识别的二进制语言，然后传给计算机内核，告诉他要做什么事情。计算机内核将结果返还给shell，shell翻译成人所熟悉的语言，将结果展示出来</p>
+</li>
+</ol>
+<p>常见的几种Shell：</p>
+<ul>
+<li>Bourne shell （sh）<br>是一个快捷方式，已经被/bin/bash所取代</li>
+<li>Korn shell （ksh）<br>语法与Bourne shell相同，同时具备了C shell的易用特点</li>
+<li>C shell （csh）<br>使用的是“类C”语法，csh是具有C语言风格的一种shell</li>
+<li>Bourne-again shell （bash）<br>大多数Linux系统默认使用的Shell，是Bourne shell 的一个免费版本，它是最早的Unix Shell</li>
+</ul>
+<blockquote>
+<p>默认普通用户会显示$符号，root账号会显示#符号</p>
+</blockquote>
+<p>打开终端 ctrl + alt +t</p>
+<p>   查看用户默认使用的shell，<code>echo $SHELL</code><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207110052379.png" alt="image-20200715171931836"></p>
+<p>   查看用户当前使用的shell，<code>ps</code><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207110052665.png" alt="image-20200715172252292"></p>
+<blockquote>
+<p>PID 进程编号，TTY 与进程关联的终端，TIME 进程使用的总cpu时间，CMD 正在执行的命令行命令</p>
+</blockquote>
+<p>也可以切换其他shell</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">briup@briup-virtual-machine:~/code/day04$ sh</span><br><span class="line">$ ps</span><br><span class="line">   PID TTY          TIME CMD</span><br><span class="line"> 67407 pts/5    00:00:00 bash</span><br><span class="line"> 69133 pts/5    00:00:00 sh</span><br><span class="line"> 69134 pts/5    00:00:00 ps</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<ol start="3">
+<li><p><strong>File System</strong><br>文件系统，将硬件和软件都映射成文件，统一进行管理。</p>
+<p><strong>Ubuntu系统中常见的目录及作用：</strong></p>
+<table>
+<thead>
+<tr>
+<th>目录</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/</td>
+<td>根目录，所有目录的父目录</td>
+</tr>
+<tr>
+<td>/bin</td>
+<td>包含普通用户和系统管理员可以共享的各种通用程序…bin 是 Binaries (二进制文件) 的缩写, 这个目录存放着最经常使用的命令。</td>
+</tr>
+<tr>
+<td>/boot</td>
+<td>包含系统引导程序GRUB及其配置文件、linux内核文件vmlinuz和磁盘内存映像文件initrd.img等重要引导文件… 这里存放的是启动 Linux 时使用的一些核心文件，包括一些连接文件以及镜像文件。</td>
+</tr>
+<tr>
+<td>/dev</td>
+<td>包含系统支持的所有设备文件.   dev 是 Device(设备) 的缩写, 该目录下存放的是 Linux 的外部设备，在 Linux 中访问设备的方式和访问文件的方式是相同的。</td>
+</tr>
+<tr>
+<td>/etc</td>
+<td>包含系统管理和维护方面的所有配置文件</td>
+</tr>
+<tr>
+<td>/home</td>
+<td>包含所有普通用户的家目录.  用户的主目录，在 Linux 中，每个用户都有一个自己的目录，一般该目录名是以用户的账号命名的，如上图中的 alice、bob 和 eve。</td>
+</tr>
+<tr>
+<td>/lost+found</td>
+<td>用于存储fsck命令在检测与修复文件系统时删除的文件和目录.   这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件。</td>
+</tr>
+<tr>
+<td>/media</td>
+<td>包含移动存储介质的挂载点  linux 系统会自动识别一些设备，例如U盘、光驱等等，当识别后，Linux 会把识别的设备挂载到这个目录下。</td>
+</tr>
+<tr>
+<td>/mnt</td>
+<td>包含所有自定义的文件系统的挂载点，可以挂载任何文件系统  系统提供该目录是为了让用户临时挂载别的文件系统的，我们可以将光驱挂载在 /mnt/ 上，然后进入该目录就可以查看光驱里的内容了。</td>
+</tr>
+<tr>
+<td>/opt</td>
+<td>应用程序等附加软件的安装目录 opt 是 optional(可选) 的缩写，这是给主机额外安装软件所摆放的目录。比如你安装一个ORACLE数据库则就可以放到这个目录下。默认是空的。</td>
+</tr>
+<tr>
+<td>/proc</td>
+<td>虚拟文件目录，系统关闭时为空目录，系统运行时进程文件系统根目录，其中的部分文件系统分别对应当前正在运行的进程，可用于访问当前进程的地址空间.</td>
+</tr>
+<tr>
+<td>/root</td>
+<td>超级用户root的家目录</td>
+</tr>
+<tr>
+<td>/sbin</td>
+<td>超级用户管理员的常用工具、如管理和维护、系统引导和恢复命令集合</td>
+</tr>
+<tr>
+<td>/srv</td>
+<td>分担了var目录的一些功能，保存了一些网络服务所需的数据文件</td>
+</tr>
+<tr>
+<td>/sys</td>
+<td>和proc一样是虚拟目录，系统各种设备配置信息的根目录</td>
+</tr>
+<tr>
+<td>/tmp</td>
+<td>临时文件目录，用于存储系统运行过程生成的临时文件</td>
+</tr>
+<tr>
+<td>/usr</td>
+<td>既可以作为根目录下的一个子目录，其中保存系统提供的各种共享数据（用户命令、库函数、头文件、文档等），又可以作为一个单独的文件系统，可以认为是对根目录的一个递归目录，使得文件系统具有更大的灵活性 usr 是 unix shared resources(共享资源) 的缩写，这是一个非常重要的目录，用户的很多应用程序和文件都放在这个目录下，类似于 windows 下的 program files 目录。</td>
+</tr>
+<tr>
+<td>/var</td>
+<td>该目录和usr 类似，首先是根目录下的子目录，也可以作为单独的文件系统，用于存储各种可变长的数据文件（如日志文件）、暂存文件或待处理的临时文件</td>
+</tr>
+<tr>
+<td>/lib</td>
+<td>lib 是 Library(库) 的缩写这个目录里存放着系统最基本的动态连接共享库，其作用类似于 Windows 里的 DLL 文件。几乎所有的应用程序都需要用到这些共享库。</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>不同的Linux系统或者同一系统的不同版本，文件系统的目录结果可能会有所区别，但基本属于大同小异</p>
+</blockquote>
+<p><strong>Solaris系统的目录结构：</strong></p>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207110052993.png" alt="image-20200716002003685"></p>
+<h2 id="4-路径"><a href="#4-路径" class="headerlink" title="4 路径"></a>4 路径</h2><blockquote>
+<p>告诉 Linux 系统某个文件存放的准确位置(路径)，那么它就可以找到这个文件。</p>
+</blockquote>
+<p><strong>路径的特点：</strong></p>
+<ul>
+<li>一个路径可以唯一表示一个目录或者文件</li>
+<li>多级路径直接可以使用/进行分割，例如 test/a/b/hello.txt</li>
+<li>路径中的第一个位置如果出现了/，那么这个/代表的是根目录，例如 **/**home/briup/hello.txt</li>
+</ul>
+<p><strong>系统中的路径可以分为俩种，绝对路径和相对路径。</strong></p>
+<ol>
+<li>绝对路径<br>Linux系统中，以系统中根目录开头的路径，都是绝对路径<br>例如：/bin 、/home/briup、/opt等<br>例如，查看/home/briup目录中的hello.txt文件<br><code>cat /home/briup/hello.txt</code></li>
+<li>相对路径<br>在当前路径下，去描述另一个路径，就可以使用相对路径，它表示的俩个路径的相对位置。<br>当前路径，就是当前输入执行命令的路径，在当前路径下，去表示另一个路径的相对位置。<br>例如，当前路径在/home/briup下，查看另一个/home/test目录中的hello.txt文件<br><code>cat ../test/hello.txt</code></li>
+</ol>
+<blockquote>
+<p>在系统中，使用点（.）来表示当前目录，使用点点（..）来表示当前目录的上一级目录，也就是其父目录</p>
+</blockquote>
+<h2 id="5-密码"><a href="#5-密码" class="headerlink" title="5 密码"></a>5 密码</h2><p><strong>普通用户修改密码：</strong></p>
+<p><code>passwd</code> 命令，输入老密码和新密码即可，密码输入时，是不显示当前输入的内容的。<br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207110030627.png" alt="image-20200716005149143"></p>
+<p><code>注意普通用户修改密码时有长度以及格式限制,如果使用root用户去修改普通用户密码则无要求</code></p>
+<p><strong>设置root（超级用户）用户密码</strong></p>
+<p><code>sudo passwd root</code> 先输入当前用户的密码，然后再输入root用户的新密码<br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207110035362.png" alt="image-20200716005515936"></p>
+<blockquote>
+<p>sudo，命令表示临时使用最高权限（root账号权限）进行操作</p>
+</blockquote>
+<p>当前用户，切换到root用户：</p>
+<p><code>su</code> 命令，su默认就是切换到root账号，然后输入root账号的密码即可 (切换后还是原用户目录)<br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207110035958.png" alt="image-20200716010109510"></p>
+<p><code>su - root</code> 命令,切换到root账号,root用户目录</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207110035665.png" alt="image-20220711003531974"></p>
+<p><code>尽量不使用root账户</code></p>
+<p>在root用户下，退回到原来的用户：</p>
+<p><code>exit</code> 命令<br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207110036740.png" alt="image-20200716010349817"></p>
+<blockquote>
+<p>注意，普通用户和root用户的命令提示符有所不同</p>
+</blockquote>
+<h2 id="6-用户"><a href="#6-用户" class="headerlink" title="6 用户"></a>6 用户</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">pwd</span>  <span class="comment"># 当前目录</span></span><br><span class="line">who	  <span class="comment"># 当前用户</span></span><br><span class="line">id   <span class="comment"># 组信息</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>创建一个新的用户swift，家目录为/home/swift，用户登录后使用bash</p>
+<p><code>sudo useradd -mk /home/swift -s /bin/bash swift</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-m:使用者目录如不存在则自动建立。</span><br><span class="line">	如使用-k选项skeleton_dir内的档案将复制至使用者目录下。然而在/etc/skel目录下的档案也会复制过去取代。任何在skeleton_diror/etc/skel的目录也相同会在使用者目录下一一建立。The-k同-m不建立目录以及不复制任何档案为预设值。</span><br><span class="line">-s：指定用户登入后所使用的shell。默认值为/bin/bash。</span><br></pre></td></tr></table></figure>
+
+
+
+<p>给新建的swift用户设置密码：</p>
+<p><code>sudo passwd swift</code></p>
+<p>切换到swift用户：</p>
+<p><code>su - swift</code></p>
+<p><strong>注意 - 有空格</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207110051861.png" alt="image-20200716012653658"></p>
+<p>使用sudo命令测试：</p>
+<p><code>sudo clear</code><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207110051779.png" alt="image-20200716012839183"></p>
+<p>是因为swift用户不在sudo这个用户组中，所以无法使用sudo命令：</p>
+<p><code>id</code> 命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d命令可以显示真实有效的用户ID(UID)和组ID(GID)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207110051258.png" alt="image-20200716012939416"></p>
+<p>切换到briup账号，使用sudo命令，将用户swift添加到sudo组中</p>
+<p><code>sudo gpasswd -a swift sudo</code></p>
+<p>Linux gpasswd 是 Linux 下工作组文件 /etc/group 和 /etc/gshadow 管理工具，用于将一个用户添加到组或者从组中删除。<br>    -a：添加用户到组；<br>    -d：从组删除用户；</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207110051586.png" alt="image-20200716013716460"></p>
+<blockquote>
+<p>注意，切换到root用户也可以直接操作</p>
+</blockquote>
+<p>切换到swift用户，查看是否已经在sudo组中，并且测试sudo命令是否可用</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207110051982.png" alt="image-20200716013905166"></p>
+<p>切换到briup用户，使用sudo命令，将swift用户从sudo组中删除</p>
+<p><code>sudo gpasswd -d swift sudo</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207110052696.png" alt="image-20200716014057276"></p>
+<p>使用sudo命令，删除swift用户，并删除swift用户对于的家目录 /home/swift，并且是<strong>强制删除</strong></p>
+<p><code>sudo userdel -r -f swift</code><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207110053181.png" alt="image-20200716014405018"></p>
+<h2 id="7-命令"><a href="#7-命令" class="headerlink" title="7 命令"></a>7 命令</h2><blockquote>
+<p>命令格式：<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-cat.html">Command</a> [option(s)] [argument[s]]</p>
+</blockquote>
+<p>command：    命令关键字<br>options:            可以有多个选项<br>arguments:     可以有多个参数</p>
+<p>例如：显示a.txt的内容，并且显示行号。</p>
+<p><code>cat -n a.txt</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat: concatnate 命令用于连接文件并打印到标准输出设备上</span><br></pre></td></tr></table></figure>
+
+
+
+<p>  <strong>注意事项：</strong></p>
+<ul>
+<li>中间用空格隔开</li>
+<li>单行命令一般不超过256个字符</li>
+<li>大小写敏感</li>
+</ul>
+<p><strong>常用的几个命令：</strong></p>
+<ul>
+<li><p>clear    清屏</p>
+</li>
+<li><p>pwd    显示当前工作目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Linux pwd（英文全拼：print work directory） 命令用于显示工作目录。</span><br></pre></td></tr></table></figure></li>
+<li><p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207110053961.png" alt="image-20200716105428271"></p>
+</li>
+<li><p>cd        切换目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd: change directory  切换目录</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>要切换的目录，可以使用相对路径，也可以使用绝对路径。</p>
+<p>例如：</p>
+<p><code>cd ../test</code></p>
+<p><code>cd /home/test</code></p>
+<p><code>cd</code> 直接输入cd会自动切换到当前用户的家目录。</p>
+</li>
+<li><p>ls         显示当前目录下的内容列表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls: list files</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ls -a	//显示隐藏文件和隐藏目录，也就是以点（.）开头的文件和目录</span><br><span class="line">ls -R	//递归显示目录中的内容</span><br><span class="line">ls -t	//显示目录中的内容列表，并使用时间排序，默认是按着名字排序</span><br><span class="line">ls -l	//显示详细信息</span><br><span class="line"></span><br><span class="line">ls -a -l //这些参数可以多个一起使用</span><br><span class="line">ls -al  //参数可以分开也可以合在一起写</span><br><span class="line">ls -F 	//显示文件的类型，目录/  可执行文件*   普通文件</span><br></pre></td></tr></table></figure>
+
+<p><code>ls -l</code><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207110053819.png" alt="image-20200716123925965"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">-rw-rw-r-- 1 briup briup  199  7月 16 12:16 a.txt</span><br><span class="line"></span><br><span class="line">从左到右</span><br><span class="line">- 				文件类型，普通文件是- 目录是d 链接文件是l 块设备文件是b 字符设备文件是c </span><br><span class="line">						命令管道文件是p sock文件是s</span><br><span class="line">rw-rw-r--		权限设置，这里是分三组，分别为拥有者权限、同组人权限、其他人权限	</span><br><span class="line">1				链接号(软连接 y)</span><br><span class="line">briup			拥有者</span><br><span class="line">briup			拥有组</span><br><span class="line">199				文件大小</span><br><span class="line">7月 16 12:16		最后修改时间</span><br><span class="line">a.txt			文件名字</span><br></pre></td></tr></table></figure>
+
+<p><code>ls -F</code><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207110053327.png" alt="image-20200716130744467"></p>
+</li>
+</ul>
+<h2 id="8-权限"><a href="#8-权限" class="headerlink" title="8 权限"></a>8 权限</h2><blockquote>
+<p>使用ls -l 命令，可以查看文件或目录的相关权限</p>
+</blockquote>
+<p>例如：</p>
+<p><code>ls -l </code><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207110053579.png" alt="image-20200716215012525"></p>
+<p>截屏中标注的部分就是当前b.txt文件针对用户的权限。</p>
+<p>r    读权限</p>
+<p>w    写权限，对目录来说,可生成文件与子目录或删除文件与子目录</p>
+<p>x    执行权限，对目录来说,可查找该目录下内容</p>
+<p>-表示没有任何权限</p>
+<p>例如：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">rw- r-- ---</span><br><span class="line"></span><br><span class="line">rw-   表示当前文件对拥有者的权限</span><br><span class="line"></span><br><span class="line">r--   表示当前文件对同组人的权限</span><br><span class="line"></span><br><span class="line">---   表示当前文件对其他人的权限</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>默认情况下 演示briup和swift(不分配sudo组)对hello.txt的操作</strong></p>
+<blockquote>
+<p>Linux/Unix 的文件调用权限分为三级 : 文件所有者（Owner）、用户组（Group）、其它用户（Other Users）。</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207110111980.jpg" alt="img"></p>
+<p>只有文件所有者和超级用户可以修改文件或目录的权限。可以使用绝对模式（八进制数字模式），符号模式指定文件的权限。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207110111763.png" alt="img"></p>
+<p>在添加或者删除某个权限的时候：</p>
+<ul>
+<li>u 表示拥有者 user</li>
+<li>g 表示同组人 group</li>
+<li>o 表示其他人 others</li>
+<li>a 表示所有人 all</li>
+</ul>
+<p>例如，</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">chmod u+x b.txt</span><br><span class="line">chmod g-r b.txt</span><br><span class="line">chmod u+r,g-r b.txt</span><br><span class="line">chmod a=rw b.txt</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Linux chmod（英文全拼：change mode）命令是控制用户对文件的权限的命令</span><br><span class="line">	Linux/Unix 的文件调用权限分为三级 : 文件所有者（Owner）、用户组（Group）、其它用户（Other Users）。</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>也可以是数字来表示权限</p>
+</blockquote>
+<p>0000 0001  x     执行权限            十进制数字 1</p>
+<p>0000 0010 w     写权限                十进制数字 2</p>
+<p>0000 0100 r      读权限                十进制数字 4</p>
+<p>在这种情况下，任意权限组合相加得出的数字结果，都是唯一。</p>
+<p>例如，</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//7一定是1+2+4所得，表示拥有者、同组人、其他人都是可读可写可执行</span><br><span class="line">chmod 777 b.txt</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="9常用命令"><a href="#9常用命令" class="headerlink" title="9常用命令"></a>9常用命令</h2><h3 id="9-1-touch命令"><a href="#9-1-touch命令" class="headerlink" title="9.1 touch命令"></a>9.1 touch命令</h3><p>例如，创建一个文件或者修改文件的更新时间</p>
+<p><code>touch a.txt</code></p>
+<blockquote>
+<p>当a.txt文件不存在的时候，会创建该文件</p>
+<p>当a.txt文件存在的时候，会更新文件的修改时间</p>
+</blockquote>
+<p>例如，创建多个文件</p>
+<p><code>touch a b c d</code></p>
+<blockquote>
+<p>直接创建四个文件a b c d</p>
+</blockquote>
+<h3 id="9-2-mkdir命令"><a href="#9-2-mkdir命令" class="headerlink" title="9.2 mkdir命令"></a>9.2 mkdir命令</h3><p>例如，创建一个目录</p>
+<p><code>mkdir test</code></p>
+<p>例如，创建多个平级目录</p>
+<p><code>mkdir test1 test2 test3</code></p>
+<p>例如，在当前用户家路径下创建一个子目录</p>
+<p><code>mkdir ~/test4</code></p>
+<p>例如，创建多级子目录，-p表示如果子目录不存在就创建</p>
+<p><code>mkdir -p test1/test2/test3</code></p>
+<h3 id="9-3-cp命令"><a href="#9-3-cp命令" class="headerlink" title="9.3 cp命令"></a>9.3 cp命令</h3><p>例如，复制当前目录下a.txt文件内容到b.txt中</p>
+<p><code>cp a.txt b.txt</code></p>
+<blockquote>
+<p> 如果b.txt不存在，则自动创建b.txt文件</p>
+<p> 如果b.txt 存在，则自动覆盖b.txt文件内容</p>
+</blockquote>
+<p>如果，使用-i 进行覆盖提示</p>
+<p><code>cp -i a.txt b.txt</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">interactive 覆盖</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="image/image-20200716231513679.png" alt="image-20200716231513679"></p>
+<blockquote>
+<p>  y是覆盖，n是取消操作，直接回车也是取消操作</p>
+</blockquote>
+<p>例如，复制多个文件，到一个指定目录</p>
+<p><code>cp a.txt b.txt test</code></p>
+<blockquote>
+<p>复制a.txt b.txt文件到test目录中，要求这些文件和目录都是存在的</p>
+</blockquote>
+<p>例如，复制文件夹和它的内容，到=另一个文件夹中=</p>
+<p><code>cp -r test1 test2</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">copy directories recursively 递归赋值</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>复制test1文件及其内容到test2目录中</p>
+<p>如果test2目录不存在，则创建test2并把test1目录中的内容复制进去，不包含test1目录</p>
+<p>如果test2目录存在，则把整个test1目录及其内容全都复制到test2中，包含test1目录</p>
+</blockquote>
+<p>例如，把test目录复制到test4目录中，并且修改目录名字为temp</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">此时test4存在,temp不存在</span><br></pre></td></tr></table></figure>
+
+<p><code>cp -r test test4/temp</code><br><img src="image/image-20200717094302574.png" alt="image-20200717094302574"></p>
+<blockquote>
+<p> 注意，要求test4目录必须是存在的</p>
+</blockquote>
+<h3 id="9-4-mv命令"><a href="#9-4-mv命令" class="headerlink" title="9.4 mv命令"></a>9.4 mv命令</h3><p>例如，移动一个文件</p>
+<p><code>mv a.txt test</code></p>
+<blockquote>
+<p>将a.txt移动到test目录中</p>
+<p>注意，也可以同时移动多个文件到目录中<br>mv a.txt b.txt c.txt test</p>
+</blockquote>
+<p>例如，将test目录中的a.txt移动到当前目录</p>
+<p><code>mv ./test/a.txt .</code></p>
+<p>例如，修改一个文件的名字，将a.txt改为b.txt</p>
+<p><code>mv a.txt b.txt</code></p>
+<p>例如，-i参数，覆盖提示</p>
+<p><code>mv -i a.txt b.txt</code><br><img src="image/image-20200717003032354.png" alt="image-20200717003032354"></p>
+<blockquote>
+<p>本机 ubuntu16</p>
+</blockquote>
+<p><img src="image/image-20220220230501862.png" alt="image-20220220230501862"></p>
+<p>移动时发现同名也会出现提示</p>
+<p>例如，修改目录的名字</p>
+<p><code>mv dir1 dir2</code></p>
+<blockquote>
+<p>这是dir2不存在的时候</p>
+</blockquote>
+<p>例如，将一个目录移动到另一个目录中</p>
+<p><code>mv dir1 dir2</code></p>
+<blockquote>
+<p>这是dir2存在的时候</p>
+</blockquote>
+<h3 id="9-5-rm命令"><a href="#9-5-rm命令" class="headerlink" title="9.5 rm命令"></a>9.5 rm命令</h3><p>例如，删除一个文件</p>
+<p><code>rm a.txt</code></p>
+<p>例如，删除前提示确认</p>
+<p><code>rm -i a.txt</code></p>
+<p>例如，删除多个文件</p>
+<p><code>rm a b c d</code></p>
+<blockquote>
+<p>同时删除四个文件，分别是a b c d</p>
+</blockquote>
+<p>例如，删除空目录</p>
+<p><code>rmdir test</code></p>
+<blockquote>
+<p>如果目录非空，则报错</p>
+</blockquote>
+<p>例如，删除非空目录</p>
+<p><code>rm -r test</code></p>
+<p>例如，删除非空目录，并且删除前确认</p>
+<p><code>rm -r -i test</code></p>
+<p>或者</p>
+<p><code>rm -ri test</code><br><img src="image/image-20200717100643439.png" alt="image-20200717100643439"></p>
+<p>例如，删除非空目录，强制删除，不做任何提示</p>
+<p><code>rm -r -f test</code></p>
+<p>或者</p>
+<p><code>rm -rf test</code></p>
+<h3 id="9-6-man命令"><a href="#9-6-man命令" class="headerlink" title="9.6 man命令"></a>9.6 man命令</h3><blockquote>
+<p>Linux提供了丰富的帮助手册，当需要查看某个命令的参数时，可以使用man命令。</p>
+<p><strong>man is your friend</strong></p>
+</blockquote>
+<p>例如，查看ls命令的使用手册</p>
+<p><code>man ls</code></p>
+<p><img src="image/image-20200717004708058.png" alt="image-20200717004708058"></p>
+<p>空格，每次往下翻一个屏幕的内容</p>
+<p>回车，每次往下翻一行内容</p>
+<p>b，每次向上翻回一页</p>
+<p>f， 每次向下翻一页</p>
+<p>q，退出当前手册界面</p>
+<p>/stirng，查找指定字符串，例如，/the 就是查找这个单词</p>
+<p>n，配合/string命令，可以快速调整跳到下一个指定字符串的位置</p>
+<h3 id="9-7-telnet-todo"><a href="#9-7-telnet-todo" class="headerlink" title="9.7 telnet(todo)"></a>9.7 telnet(todo)</h3><p>使用telnet命令进行远程登录服务器</p>
+<p>ifconfig ，查看ip地址</p>
+<p>telnet远程登录服务器的要求：</p>
+<ol>
+<li>本机有telnet客户端，可以使用telnet命令</li>
+<li>服务器主机安装了telnet服务器端，并已经开启服务</li>
+<li>本机可以ping通服务器主机的ip地址</li>
+</ol>
+<blockquote>
+<p>也可使用ssh连接方式</p>
+</blockquote>
+<h2 id="10-特殊字符"><a href="#10-特殊字符" class="headerlink" title="10 特殊字符"></a>10 特殊字符</h2><blockquote>
+<p>Shell命令中可以接收一些特殊字符来表示特殊的含义</p>
+</blockquote>
+<h3 id="10-1"><a href="#10-1" class="headerlink" title="10.1 *"></a>10.1 *</h3><p>表示通配，可以代表0~n个字符</p>
+<p>例如，列出所有txt结尾的文件</p>
+<p><code>ls *.txt</code></p>
+<p>例如，删除所有txt结尾的文件</p>
+<p><code>rm *.txt</code></p>
+<h3 id="10-2"><a href="#10-2" class="headerlink" title="10.2 ?"></a>10.2 ?</h3><p>表示任意的一个字符</p>
+<p>例如，显示a?.txt文件</p>
+<p><code>ls a?.txt</code><br><img src="image/image-20200717012440648.png" alt="image-20200717012440648"></p>
+<h3 id="10-3"><a href="#10-3" class="headerlink" title="10.3 ;"></a>10.3 ;</h3><p>表示在一行语句中连续执行多个命令，命令之间使用分号进行分割</p>
+<p>例如，先cd回到家目录，然后再执行ls命令</p>
+<p><code>cd;ls</code></p>
+<p>例如，先显示时间，再显示日历，再显示当前路径</p>
+<p><code>date;cal;pwd</code><br><img src="image/image-20200717012652303.png" alt="image-20200717012652303"></p>
+<h3 id="10-4-gt-和-gt-gt"><a href="#10-4-gt-和-gt-gt" class="headerlink" title="10.4 &gt;和&gt;&gt;"></a>10.4 &gt;和&gt;&gt;</h3><p> <strong>输出重定向符合，将来原本输出到命令行中的内容，重定向输入到另外一个地方。</strong></p>
+<p><code>&gt;</code>表示往文件中写入内容，是覆盖操作</p>
+<p>例如，把hello写入到a文件中</p>
+<p><code>echo &quot;hello&quot; &gt; a</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Shell 的 echo 用于字符串的输出</span><br><span class="line"># echo &quot;hello&quot;</span><br><span class="line">输出 hello</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>a文件如果不存在，则自动创建，a文件如果存在，则覆盖之前的内容</p>
+</blockquote>
+<p>例如，cal命令输出的日历写入到a文件中</p>
+<p><code>cal &gt; a</code></p>
+<p><code>&gt;&gt;</code> 表示往文件中写入内容，是追加操作</p>
+<p>例如，先把date命令显示的日期写入到a文件中，再把cal显示的日历追到a文件中，再查看a文件的内容</p>
+<p><code>date &gt;&gt; a</code></p>
+<p><code>cal &gt;&gt; a</code></p>
+<p><code>cat a</code><br><img src="image/image-20200717013425909.png" alt="image-20200717013425909"></p>
+<p>例如，把2020年12月的日历，写入到a文件中，覆盖之前的内容</p>
+<p><code>cal 12 2020 &gt; a</code><br><img src="image/image-20200717013556995.png" alt="image-20200717013556995"></p>
+<h3 id="10-5"><a href="#10-5" class="headerlink" title="10.5 |"></a>10.5 |</h3><p>管道符，可以把第一个命令的结果，交给第二个命令作为参数进行操作</p>
+<p>例如，把当前日历通过打印机进行打印</p>
+<p><code>cal | lp</code></p>
+<blockquote>
+<p>如果当前网络中配置好打印机并连接成功的话，可以打印出日历</p>
+</blockquote>
+<p>例如，查看/etc/passwd中的内容并筛选出briup相关的信息</p>
+<p><code>cat /etc/passwd | grep &quot;briup&quot;</code><br><img src="image/image-20200717014118194.png" alt="image-20200717014118194"></p>
+<blockquote>
+<p>grep命令进行对结果进行过滤筛选</p>
+</blockquote>
+<h2 id="11-查看内容"><a href="#11-查看内容" class="headerlink" title="11 查看内容"></a>11 查看内容</h2><p>###11.1 cat命令</p>
+<p>例如，显示文件中的所有内容</p>
+<p><code>cat a.txt</code></p>
+<p>例如，把a.txt和b.txt的内容合并到c.txt中</p>
+<p><code>cat a.txt b.txt &gt; c.txt</code><br><img src="image/image-20200717014501638.png" alt="image-20200717014501638"></p>
+<p>例如，把c.txt文件内容，设置为空</p>
+<p><code>cat /dev/null &gt; c.txt</code><br><img src="image/image-20200717014625553.png" alt="image-20200717014625553"></p>
+<p>Linux系统中，/dev/null（空设备文件或黑洞文件）是一个特殊的设备文件，所有写入其中的数据，都会被丢弃的无影无踪，/dev/null通常被用于丢弃不需要的数据输出，或作为用于输入流的空文件。这些操作通常由重定向完成。</p>
+<p>例如，清空a文件</p>
+<p><code>cat /dev/null &gt; a</code></p>
+<p>例如，将本来要输出的内容直接丢弃不要</p>
+<p><code>ls -R &gt; /dev/null</code><br><img src="image/image-20200717015042831.png" alt="image-20200717015042831"></p>
+<h3 id="12-2-more命令"><a href="#12-2-more命令" class="headerlink" title="12.2 more命令"></a>12.2 more命令</h3><p>more和cat一样，也是查看内容的命令，但是more命令可以一点点的显示内容，而不是一次全显示出来。</p>
+<p>例如，使用more命令查看/etc/passwd文件内容</p>
+<p><code>more /etc/passwd</code><br><img src="image/image-20200717015324152.png" alt="image-20200717015324152"></p>
+<p><strong>在这种情况下，可以使用命令进行操作。</strong></p>
+<p>空格，每次往下翻一个屏幕的内容</p>
+<p>回车，每次往下翻一行内容</p>
+<p>b，每次向上翻回一页</p>
+<p>f， 每次向下翻一页</p>
+<p>q，退出当前查看内容界面</p>
+<p><strong>v，进入vi模式（只读）</strong>，在vi模式下，输入:q 则退出vi模块回到more的查看模式</p>
+<p>在vi模式下，使用/stirng，查找指定字符串，例如，/the 就是查找这个单词</p>
+<p>在vi模式下，n，配合/string命令，可以快速调整跳到下一个指定字符串的位置</p>
+<blockquote>
+<p>more也经常和管道费 |  搭配使用</p>
+<p>例如： ls  -R | more</p>
+</blockquote>
+<h2 id="12-vi编辑器"><a href="#12-vi编辑器" class="headerlink" title="12 vi编辑器"></a>12 vi编辑器</h2><blockquote>
+<p>vi编辑器是所有Unix及Linux系统下标准的编辑器，他就相当于windows系统中的记事本一样，它的强大不逊色于任何最新的文本编辑器。</p>
+</blockquote>
+<h3 id="12-1-三种模式"><a href="#12-1-三种模式" class="headerlink" title="12.1 三种模式"></a>12.1 三种模式</h3><p>vi编辑器有三种模式，命令模式，命令行模式，编辑模式</p>
+<ul>
+<li><p>命令模式，可以使用简单的命令进行文本内容的操作</p>
+</li>
+<li><p>命令行模式，可以使用复杂点的命令进行文本内容操作</p>
+</li>
+<li><p>编辑模式，可以直接编辑文本内容</p>
+</li>
+</ul>
+<p>例如，直接使用vi打开文件的时候，就是命令模式</p>
+<p><code>echo &quot;hello&quot; &gt; a</code></p>
+<p><code>vi a</code><br><img src="image/image-20200717022317484.png" alt="image-20200717022317484"></p>
+<blockquote>
+<p> 这时候，不能直接编辑文件，但是可以简单的命令操作文件内容，例如yy命令复制当前行，p命令把复制内容粘贴到下一行。</p>
+</blockquote>
+<p>先yy命令然后p命令<br><img src="image/image-20200717022507226.png" alt="image-20200717022507226"></p>
+<p>在命令模式下，按冒号（shift+:）进入到命令行模式： 输入命令w，然后回车，把内容进行保存<br><img src="image/image-20200717022751872.png" alt="image-20200717022751872"><br><img src="image/image-20200717022816176.png" alt="image-20200717022816176"></p>
+<blockquote>
+<p>命令行模式执行完命令自动返回到命令模式</p>
+</blockquote>
+<p>在命令模式下，按命令i或者a或者o都可以进入到编辑模式，然后可以直接编辑内容<br><img src="image/image-20200717023316856.png" alt="image-20200717023316856"></p>
+<blockquote>
+<p>i 表示在光标当前位置处插入，并变为编辑模式</p>
+<p>a 表示在光标所在位置后插入，并变为编辑模式</p>
+<p>o 表示在光标所在行的下方插入空行，并变为编辑模式</p>
+<p>在插入模式下，可以像在记事本中一样编辑文件内容了。</p>
+<p>编辑模式下按Esc，退回到命令模式。</p>
+</blockquote>
+<p>编辑完成后，先按Esc进入到命令模式，再按（shift+:）进入到命令行模式，再输入wq，然后回车，表示保存内容并退出<br><img src="image/image-20200717023904083.png" alt="image-20200717023904083"></p>
+<blockquote>
+<p>如果是 wq! 则表示保存并强制退出</p>
+</blockquote>
+<p><strong>三种模式的转换关系如下：</strong></p>
+<p><img src="image/image-20200717023204594.png" alt="image-20200717023204594"></p>
+<h3 id="12-2-命令模式"><a href="#12-2-命令模式" class="headerlink" title="12.2 命令模式"></a>12.2 命令模式</h3><p>:tipping_hand_man: 以下每个命令都需要动手</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>x</td>
+<td>删除一个字符</td>
+</tr>
+<tr>
+<td>dw</td>
+<td>删除一个单词</td>
+</tr>
+<tr>
+<td>3dw</td>
+<td>删除3个单词</td>
+</tr>
+<tr>
+<td>dd</td>
+<td>删除一行，光所在行</td>
+</tr>
+<tr>
+<td>2dd</td>
+<td>删除2行，光标所在行和下一行</td>
+</tr>
+<tr>
+<td>r</td>
+<td>替换一个字符，在某个字符上按r，然后再按另一个新字符，这样新字符就会替换原来的老字符</td>
+</tr>
+<tr>
+<td>cw</td>
+<td>先删除这个单词，再进入到编辑模式</td>
+</tr>
+<tr>
+<td>cc</td>
+<td>先删除当前行，再进入到编辑模式</td>
+</tr>
+<tr>
+<td>C</td>
+<td>大写C（shift+c）,删除光标所在位置到当前行的末尾，然后进入编辑模式</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>yy</td>
+<td>复制当前行</td>
+</tr>
+<tr>
+<td>yw</td>
+<td>复制一个单词</td>
+</tr>
+<tr>
+<td>p</td>
+<td>粘贴复制的内容</td>
+</tr>
+<tr>
+<td>~</td>
+<td>shift+~，把字符进行大小写转换</td>
+</tr>
+<tr>
+<td>J</td>
+<td>shift+j，把当前行和下一行进行连接</td>
+</tr>
+<tr>
+<td>u</td>
+<td>撤销之前的操作</td>
+</tr>
+<tr>
+<td>G</td>
+<td>shift+g，将光标定位到文件末尾</td>
+</tr>
+<tr>
+<td>0</td>
+<td>行首</td>
+</tr>
+<tr>
+<td>$</td>
+<td>行尾</td>
+</tr>
+<tr>
+<td>nG</td>
+<td>将光标定位到文件第n行，这里n代表的是行号</td>
+</tr>
+<tr>
+<td>gg</td>
+<td>移动到第一行</td>
+</tr>
+<tr>
+<td>/hello</td>
+<td>查找和hello的位置，然后使用n可以定位到下一个匹配的地方，从上往下查找</td>
+</tr>
+<tr>
+<td>?test</td>
+<td>查找和test的位置，然后使用n可以定位到下一个匹配的地方，从下往上查找</td>
+</tr>
+<tr>
+<td></td>
+<td>将把光标移动到下一个字的字尾</td>
+</tr>
+<tr>
+<td>w</td>
+<td>将光标移至下一个字的字首</td>
+</tr>
+<tr>
+<td>b</td>
+<td>将光标移至上一个字的字首</td>
+</tr>
+<tr>
+<td>h</td>
+<td>将光标左移</td>
+</tr>
+<tr>
+<td>l</td>
+<td>将光标右移</td>
+</tr>
+<tr>
+<td>j</td>
+<td>将光标下移</td>
+</tr>
+<tr>
+<td>k</td>
+<td>将光标上移</td>
+</tr>
+</tbody></table>
+<h3 id="12-3-命令行模式"><a href="#12-3-命令行模式" class="headerlink" title="12.3 命令行模式"></a>12.3 命令行模式</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>:2,4d</td>
+<td>删除第2行到第4行</td>
+</tr>
+<tr>
+<td>:2,4co5</td>
+<td>拷贝第2行到第4行之间的内容到第5行后面</td>
+</tr>
+<tr>
+<td>:1,2m7</td>
+<td>移动第1行到第2行之间的内容到第7行后面</td>
+</tr>
+<tr>
+<td>:w</td>
+<td>保存</td>
+</tr>
+<tr>
+<td>:w newfile</td>
+<td>保存为另一个新文件，相当于另存为功能</td>
+</tr>
+<tr>
+<td>:q</td>
+<td>退出</td>
+</tr>
+<tr>
+<td>:q!</td>
+<td>强制退出</td>
+</tr>
+<tr>
+<td>:wq!</td>
+<td>保存并强制退出</td>
+</tr>
+<tr>
+<td>:set nu</td>
+<td>显示行号，set nonu 是取消行号</td>
+</tr>
+<tr>
+<td>:5</td>
+<td>将光标直接定位到第五行</td>
+</tr>
+<tr>
+<td>:r b.txt</td>
+<td>将b.txt文件内容插入到当前文件中</td>
+</tr>
+<tr>
+<td>:1,$s/hello/test/g</td>
+<td>将文件中从1行开始，所有的hello替换成test</td>
+</tr>
+<tr>
+<td>:n1,n2s/word1/word2/g</td>
+<td>从n1行到n2行中将word1替换成word2 全部</td>
+</tr>
+</tbody></table>
+<h2 id="13-环境变量"><a href="#13-环境变量" class="headerlink" title="13 环境变量"></a>13 环境变量</h2><blockquote>
+<p><strong>environment variables</strong></p>
+<p>在操作系统中，可以设置一些环境变量（名字=值），将来在执行命令的时候，可以从指的环境变量中获取到对应的值，也可以将来在我们写的程序中，通过环境变量的名字获取到这些值。</p>
+</blockquote>
+<h3 id="13-1-Linux"><a href="#13-1-Linux" class="headerlink" title="13.1 Linux"></a>13.1 Linux</h3><p>设置<strong>临时</strong>的环境变量的值：<br><code>name=tom</code><br><img src="image/image-20200719202801115.png" alt="image-20200719202801115"></p>
+<p>使用$符合，获取环境变量的值：<br><code>echo $name</code><br><img src="image/image-20200719202917368.png" alt="image-20200719202917368"></p>
+<blockquote>
+<p>注意，这种临时设置环境变量的方式，一旦关闭命令创建，这个环境变量就失效了</p>
+</blockquote>
+<p>设置<strong>用户级别</strong>的环境变量：把环境变量配置到用户家目录中的.bashrc中</p>
+<p><code>vi .bashrc</code><br><img src="image/image-20200719204201553.png" alt="image-20200719204201553"></p>
+<p>保存退出后，使用<code>source</code>命令，让修改过的配置文件生效：<br><img src="image/image-20200719204418654.png" alt="image-20200719204418654"></p>
+<p>当前默认使用的bash，在这个窗口中切换到sh中，然后再查看sh中是否能使用刚刚配置的环境变量：<br><img src="image/image-20200719204622120.png" alt="image-20200719204622120"></p>
+<blockquote>
+<p>打开命令窗口默认使用的bash是父shell，又打开的sh是子shell，这时候父shell中配置的环境变量没有传递给子shell中，如果想让它进行传递，需要使用export命令将配置好的环境导出。</p>
+</blockquote>
+<p>:tipping_hand_man: </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">使用终端ssh登录Linux操作系统的控制台后，会出现一个提示符号（例如：#或~），在这个提示符号之后可以输入命令，Linux根据输入的命令会做回应，这一连串的动作是由一个所谓的Shell来做处理。</span><br><span class="line"></span><br><span class="line">Shell是一个程序，最常用的就是Bash，这也是登录系统默认会使用的Shell。</span><br><span class="line"></span><br><span class="line">bashrc和profile都是Shell的启动设置文件（其实这两个文件也是Shell脚本），可以为当前的Shell初始化环境变量等，它们类似Microsoft DOS/Windows下的autoexec.bat文件。</span><br><span class="line"></span><br><span class="line">下面详细介绍bashrc和profile的用途和区别：</span><br><span class="line">针对个别用户</span><br><span class="line"></span><br><span class="line">用户HOME（家）目录/.bashrc</span><br><span class="line"># ~/.bashrc: executed by bash(1) for non-login shells.</span><br><span class="line"></span><br><span class="line">用户HOME（家）目录/.profile</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># ~/.profile: executed by Bourne-compatible login shells.</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">针对全体用户</span><br><span class="line">/etc/bash.bashrc</span><br><span class="line"># System-wide .bashrc file for interactive bash(1) shells.</span><br><span class="line"></span><br><span class="line">/etc/profile</span><br><span class="line"></span><br><span class="line"># /etc/profile: system-wide .profile file for the Bourne shell (sh(1)</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">bashrc和profile的差异</span><br><span class="line"></span><br><span class="line">从上面的英文描述可以知道，bashrc和profile的差异在于：</span><br><span class="line"></span><br><span class="line">1. bashrc是在系统启动后就会自动运行。</span><br><span class="line"></span><br><span class="line">2. profile是在用户登录后才会运行。</span><br><span class="line"></span><br><span class="line">3. 进行设置后，可运用source bashrc命令更新bashrc，也可运用source profile命令更新profile。</span><br><span class="line"></span><br><span class="line">PS：通常我们修改bashrc,有些linux的发行版本不一定有profile这个文件</span><br><span class="line"></span><br><span class="line">4. /etc/profile中设定的变量(全局)的可以作用于任何用户，而~/.bashrc等中设定的变量(局部)只能继承/etc/profile中的变量，他们是&quot;父子&quot;关系。</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>先退回到bash中，使用vi打开.bashrc进行修改：</p>
+<p><code>vi .bashrc</code><br><img src="image/image-20200719205008064.png" alt="image-20200719205008064"></p>
+<p>保存退出，再进行上面的测试过程(如果是远程连接 需要重连)：<br><img src="image/image-20200719205107860.png" alt="image-20200719205107860"></p>
+<blockquote>
+<p>可以看出，导出的环境变量已经在子shell中生效了</p>
+</blockquote>
+<blockquote>
+<p>在这个实验操作中，一定要理解<code>source</code>命令和<code>export</code>起到的作用</p>
+</blockquote>
+<p>如果想设置<strong>全局</strong>的环境变量，就是所以用户都可以访问到，那么就需要在==/etc/profile==中进行配置环境变量，但是需要使用root权限才能修改，或者使用sudo命令。修改方式和上面一样。</p>
+<p>==建议一般在~/.bashrc中进行配置即可。==</p>
+<table>
+<thead>
+<tr>
+<th>shell</th>
+<th>临时变量</th>
+<th>用户级别</th>
+<th>系统级别</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>bash</td>
+<td>命令窗口中直接设置，例如name=tom</td>
+<td>在~/.bashrc中配置</td>
+<td>在/ect/profile中配置</td>
+</tr>
+</tbody></table>
+<p><strong>特殊的环境变量：PATH</strong></p>
+<p><strong>Linux中的环境变量的名字大小写是敏感的：</strong><br><img src="image/image-20200719210155334.png" alt="image-20200719210155334"></p>
+<p>当在命令窗口中执行命令的时候，例如执行ls命令，其实是运行了一个执行文件/bin/ls文件：<br><code>ls -l /bin/ls</code><br><img src="image/image-20200719210356472.png" alt="image-20200719210356472"></p>
+<p>==问题：执行ls命令的时候，系统是怎么找到这个ls文件所在位置的？==</p>
+<p>这里系统就是通过PATH这个环境变量来查找的，使用echo可以看到，PATH环境变量中配置的是一个个的路径，多个路径之间使用冒号（:）分割<br><img src="image/image-20200719210758423.png" alt="image-20200719210758423"></p>
+<blockquote>
+<p>注意，必须是英文输入法下的冒号（:），windows系统中path变量的路径分割使用的是英文输入法下的分号（;）</p>
+</blockquote>
+<p><code>which</code>命令，可以查看某个命令所在的路径：<br><img src="image/image-20200719234356178.png" alt="image-20200719234356178"></p>
+<blockquote>
+<p>Windows系统中类似的命令 where，例如 where java</p>
+</blockquote>
+<p>临时把PATH的值设置为空之后，ls以及其他命令都是无法使用的，除非我们把当前路径切换到/bin目录中，因为默认会在当前目录下查找是否有要执行的命令文件：<br><img src="image/image-20200719211123070.png" alt="image-20200719211123070"></p>
+<blockquote>
+<p>注意，cd切换目录是系统内置的默认命令，不受PATH变量配置的影响。</p>
+</blockquote>
+<p>==这里只是把PATH临时设置为空了，只要关闭这个命令窗口，再打开一个新的窗口，PATH就恢复过来了==</p>
+<p><strong>在设置环境变量值的时候，也可以引用其他环境变量的值，甚至是当前设置的环境变量本身：</strong></p>
+<p><code>PATH=$PATH:/home/briup/test</code></p>
+<p><img src="image/image-20200719211742564.png" alt="image-20200719211742564"></p>
+<blockquote>
+<p>这里表示设置PATH变量值的时候，又引用了PATH变量本身的值，相当于在PATH自己本身的基础上，进行了一个路径的追加，路径之间冒号分割</p>
+</blockquote>
+<p>另一个例子：<br><img src="image/image-20200719212016808.png" alt="image-20200719212016808"></p>
+<blockquote>
+<p>这里在设置PATH变量的时候，使用了上面定义好的JAVA_HOME这个变量的值，以及PATH变量自己本身的值</p>
+</blockquote>
+<h3 id="13-2-windows"><a href="#13-2-windows" class="headerlink" title="13.2 windows"></a>13.2 windows</h3><blockquote>
+<p>windows系统中，环境变量的意义和作用和Linux中列举出的基本一致。</p>
+</blockquote>
+<p><strong>windows和Linux中环境变量的主意区别：</strong></p>
+<ul>
+<li>配置的地方或方式不同</li>
+<li>引用变量的符号不同，windows使用变量名字**俩边加%<strong>符号，Linux使用变量名字</strong>左边加$**符号</li>
+<li>多个路径之间分割的符号不同，windows使用<strong>分号</strong>，Linux使用<strong>冒号</strong></li>
+<li>windows系统中环境变量名字的大小写<strong>不敏感</strong>，而Linux中大小写是<strong>敏感</strong>的</li>
+</ul>
+<p><strong>例如： 临时设置环境变量，以及查看环境变量</strong><br><img src="image/image-20200719212604754.png" alt="image-20200719212604754"></p>
+<p><strong>例如：配置用户的环境变量、配置系统的环境变量：</strong><br>我的电脑 –》属性 –》高级系统设置 –》环境变量<br><img src="image/image-20200719213002483.png" alt="image-20200719213002483"></p>
+<blockquote>
+<p>注意，在windows中，一般设置系统变量即可。</p>
+</blockquote>
+<h2 id="14-归档压缩"><a href="#14-归档压缩" class="headerlink" title="14 归档压缩"></a>14 归档压缩</h2><h3 id="14-1-归档"><a href="#14-1-归档" class="headerlink" title="14.1 归档"></a>14.1 归档</h3><blockquote>
+<p>归档，把若干个文件或目录简单的合并在一起，它并不对文件进行压缩，就是将多个文件前后连接在一起，形成一个大文件。<br>另外还会额外的添加一些信息，所以归档后的总文件的大小，反而往往比之前文件之和还要大一些。</p>
+</blockquote>
+<p><strong>例如，把指定文件和目录进行归档</strong><br><code>tar -cvf work.tar a b c test1 test2 </code><br><img src="image/image-20200719214218663.png" alt="image-20200719214218663"></p>
+<p><strong>例如，解除归档文件到指定目录中</strong>(该目录需要存在)<br><code>tar -xvf work.tar -C dir1</code><br><img src="image/image-20200719214511228.png" alt="image-20200719214511228"></p>
+<p><strong>tar命令常用的选项及其作用：</strong></p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-c</td>
+<td>建立新的压缩文件</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>添加文件到已经压缩的文件</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>添加改变了和现有的文件到已经存在的压缩文件</td>
+</tr>
+<tr>
+<td>-x</td>
+<td>从压缩的文件中提取文件</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>显示压缩文件的内容</td>
+</tr>
+<tr>
+<td>-z</td>
+<td>支持gzip解压文件</td>
+</tr>
+<tr>
+<td>-j</td>
+<td>支持bzip2解压文件</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>显示操作过程</td>
+</tr>
+<tr>
+<td>-k</td>
+<td>保留源有文件不覆盖</td>
+</tr>
+<tr>
+<td>-C</td>
+<td>切换到指定目录</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>指定压缩文件</td>
+</tr>
+</tbody></table>
+<h3 id="14-2-压缩"><a href="#14-2-压缩" class="headerlink" title="14.2 压缩"></a>14.2 压缩</h3><blockquote>
+<p>压缩，是一种通过特定的算法来减小计算机文件大小的机制，Linux中的文件压缩命令有多种，其中最常用的命令就是gzip。</p>
+</blockquote>
+<p><strong>例如，将归档好的文件进行压缩</strong><br><code>gzip work.tar</code><br><img src="image/image-20200719215552599.png" alt="image-20200719215552599"></p>
+<p><strong>在tar进行归档之后直接进行压缩：</strong><br><code>rm work.tar.gz</code><br><code>tar -zcvf work.tar.gz a b c test1 test2</code><br><img src="image/image-20200719215940228.png" alt="image-20200719215940228"></p>
+<h3 id="14-3-解压"><a href="#14-3-解压" class="headerlink" title="14.3 解压"></a>14.3 解压</h3><p><strong>例如，对gz文件进行解压，解压到当前目录</strong><br><code>gunzip work.tar.gz</code><br><img src="image/image-20200719220157609.png" alt="image-20200719220157609"></p>
+<p><strong>例如，对tar.gz文件进行解压并解除归档</strong><br><code>tar -zxvf work.tar.gz -C dir2</code> (默认解压在当前目录)<br><img src="image/image-20200719220636489.png" alt="image-20200719220636489"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
   id="post-briup-estore"
   class="article article-type-post"
   itemscope
@@ -1361,7 +2359,24 @@
 
 <h4 id="shopCart-jsp"><a href="#shopCart-jsp" class="headerlink" title="shopCart.jsp"></a>shopCart.jsp</h4><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib prefix=<span class="string">&quot;c&quot;</span> uri=<span class="string">&quot;http://java.sun.com/jsp/jstl/core&quot;</span> %&gt;</span><br><span class="line">&lt;%@ page contentType=<span class="string">&quot;text/html;charset=UTF-8&quot;</span> language=<span class="string">&quot;java&quot;</span> isELIgnored=<span class="string">&quot;false&quot;</span> %&gt;</span><br><span class="line">&lt;!DOCTYPE HTML PUBLIC <span class="string">&quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;</span> <span class="string">&quot;http://www.w3.org/TR/html4/loose.dtd&quot;</span>&gt;</span><br><span class="line">&lt;html lang=<span class="string">&quot;en&quot;</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">&quot;Content-Type&quot;</span> content=<span class="string">&quot;text/html;charset=UTF-8&quot;</span>&gt;</span><br><span class="line">    &lt;title&gt;购物车页面&lt;/title&gt;</span><br><span class="line">    &lt;link rel=<span class="string">&quot;stylesheet&quot;</span> href=<span class="string">&quot;css/fullCar.css&quot;</span>/&gt;</span><br><span class="line">    &lt;link rel=<span class="string">&quot;stylesheet&quot;</span> href=<span class="string">&quot;css/common.css&quot;</span>/&gt;</span><br><span class="line">    &lt;link rel=<span class="string">&quot;stylesheet&quot;</span> href=<span class="string">&quot;css/style.css&quot;</span>/&gt;</span><br><span class="line">    &lt;link rel=<span class="string">&quot;stylesheet&quot;</span> href=<span class="string">&quot;css/icons.css&quot;</span>/&gt;</span><br><span class="line">    &lt;link rel=<span class="string">&quot;stylesheet&quot;</span> href=<span class="string">&quot;css/table.css&quot;</span>/&gt;</span><br><span class="line">    &lt;link rel=<span class="string">&quot;stylesheet&quot;</span> type=<span class="string">&quot;text/css&quot;</span> href=<span class="string">&quot;css/shopCar.css&quot;</span>&gt;</span><br><span class="line">    &lt;script type=<span class="string">&quot;text/javascript&quot;</span> src=<span class="string">&quot;js/jquery-1.12.3.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">        <span class="function">function <span class="title">reduceCount</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> numObj = document.getElementsByName(<span class="string">&quot;num&quot;</span>)[<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">if</span> (parseInt(numObj.value) &gt; <span class="number">1</span>) &#123;</span><br><span class="line">                numObj.value = parseInt(numObj.value) - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function">function <span class="title">addCount</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> numObj = document.getElementsByName(<span class="string">&quot;num&quot;</span>)[<span class="number">0</span>];</span><br><span class="line">            numObj.value = parseInt(numObj.value) + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;!--顶部--&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;top&quot;</span>&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;top_center&quot;</span>&gt;</span><br><span class="line">        &lt;ul <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;top_bars&quot;</span>&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href=<span class="string">&quot;/userLogout&quot;</span>&gt;退出&lt;/a&gt;|&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href=<span class="string">&quot;#&quot;</span>&gt;我的订单&lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;jt_down&quot;</span>&gt;&lt;/span&gt;&lt;/a&gt;|&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href=<span class="string">&quot;#&quot;</span>&gt;关注杰普&lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;jt_down&quot;</span>&gt;&lt;/span&gt;&lt;/a&gt;|&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;&lt;a href=<span class="string">&quot;#&quot;</span>&gt;网站导航&lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;jt_down&quot;</span>&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;!--头部--&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;header3&quot;</span>&gt;</span><br><span class="line">    &lt;a href=<span class="string">&quot;#&quot;</span>&gt;&lt;img src=<span class="string">&quot;images/logo.png&quot;</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;oneImg&quot;</span>&gt;&lt;/a&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;h3_right&quot;</span>&gt;</span><br><span class="line">        &lt;img src=<span class="string">&quot;images/play_03.png&quot;</span> alt=<span class="string">&quot;&quot;</span>&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;!--中间部分div--&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;empty&quot;</span>&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;peisong&quot;</span>&gt;</span><br><span class="line">        &lt;pre&gt;全部商品  $&#123;map.size&#125; &lt;/pre&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;mainCenter&quot;</span>&gt;</span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;allCheck&quot;</span>&gt;</span><br><span class="line">            &lt;input type=<span class="string">&quot;checkbox&quot;</span>&gt;</span><br><span class="line">            &lt;p&gt;全选&lt;/p&gt;</span><br><span class="line">            &lt;p <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;leftM&quot;</span>&gt;商品&lt;/p&gt;</span><br><span class="line">            &lt;p <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;rightM&quot;</span>&gt;单价(元)&lt;/p&gt;</span><br><span class="line">            &lt;p <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;leftM&quot;</span>&gt;数量&lt;/p&gt;</span><br><span class="line">            &lt;p <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;leftM&quot;</span>&gt;小计(元)&lt;/p&gt;</span><br><span class="line">            &lt;p <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;leftM&quot;</span>&gt;操作&lt;/p&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;mainPro&quot;</span>&gt;</span><br><span class="line">            &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;aa&quot;</span>&gt;</span><br><span class="line">                &lt;input type=<span class="string">&quot;checkbox&quot;</span>&gt;&lt;span id=<span class="string">&quot;but&quot;</span>&gt;自营&lt;/span&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;cartForm&quot;</span>&gt;</span><br><span class="line">                &lt;c:set <span class="keyword">var</span>=<span class="string">&quot;totalCost&quot;</span> value=<span class="string">&quot;0&quot;</span>/&gt;</span><br><span class="line">                &lt;c:forEach items=<span class="string">&quot;$&#123;map.shopCarList&#125;&quot;</span> <span class="keyword">var</span>=<span class="string">&quot;shopCar&quot;</span> varStatus=<span class="string">&quot;s&quot;</span>&gt;</span><br><span class="line">                    &lt;form action=<span class="string">&quot;/shopCarUpdate&quot;</span> method=<span class="string">&quot;get&quot;</span>&gt;</span><br><span class="line">                        &lt;table&gt;</span><br><span class="line">                            &lt;tbody&gt;</span><br><span class="line">                            &lt;tr&gt;</span><br><span class="line">                                &lt;td <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;index&quot;</span> style=<span class="string">&quot;padding-left: 15px&quot;</span>&gt;$&#123;s.index+<span class="number">1</span>&#125;&lt;/td&gt;</span><br><span class="line">                                &lt;td&gt;</span><br><span class="line">                                    &lt;img src=<span class="string">&quot;$&#123;shopCar.book.image&#125;&quot;</span> width=<span class="string">&quot;100px&quot;</span> height=<span class="string">&quot;123px&quot;</span>&gt;</span><br><span class="line">                                    &lt;span&gt;</span><br><span class="line">                                   $&#123;shopCar.book.name&#125;</span><br><span class="line">                                    &lt;br&gt;</span><br><span class="line">                                &lt;/span&gt;</span><br><span class="line">                                &lt;/td&gt;</span><br><span class="line">                                &lt;td&gt;</span><br><span class="line">                                    &lt;span&gt;¥$&#123;shopCar.book.price&#125;&lt;/span&gt;</span><br><span class="line">                                &lt;/td&gt;</span><br><span class="line">                                &lt;td <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;index2&quot;</span>&gt;</span><br><span class="line">                                    &lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;num&quot;</span> value=<span class="string">&quot;$&#123;shopCar.num&#125;&quot;</span>&gt;&lt;br&gt;</span><br><span class="line">                                        &lt;%--隐藏bookId--%&gt;</span><br><span class="line">                                    &lt;input type=<span class="string">&quot;hidden&quot;</span> name=<span class="string">&quot;bookId&quot;</span> value=<span class="string">&quot;$&#123;shopCar.book.id&#125;&quot;</span>&gt;&lt;br&gt;</span><br><span class="line">                                        &lt;%--&lt;dl&gt;</span><br><span class="line">                                            &lt;dd onclick=<span class="string">&quot;addCount()&quot;</span>&gt;+&lt;/dd&gt;</span><br><span class="line">                                            &lt;dd onclick=<span class="string">&quot;reduceCount()&quot;</span>&gt;-&lt;/dd&gt;</span><br><span class="line">                                        &lt;/dl&gt;--%&gt;</span><br><span class="line">                                    &lt;span&gt;有货&lt;/span&gt;</span><br><span class="line">                                &lt;/td&gt;</span><br><span class="line">                                &lt;td&gt;</span><br><span class="line">                                    &lt;span&gt;¥$&#123;shopCar.book.price * shopCar.num&#125;&lt;/span&gt;</span><br><span class="line">                                &lt;/td&gt;</span><br><span class="line">                                &lt;c:set <span class="keyword">var</span>=<span class="string">&quot;totalCost&quot;</span> value=<span class="string">&quot;$&#123;totalCost + shopCar.book.price * shopCar.num&#125;&quot;</span>/&gt;</span><br><span class="line">                                &lt;td&gt;</span><br><span class="line">                                    &lt;button type=<span class="string">&quot;submit&quot;</span>&gt;更新&lt;/button&gt;</span><br><span class="line">                                    &lt;button type=<span class="string">&quot;button&quot;</span></span><br><span class="line">                                            onclick=<span class="string">&quot;window.location.href=&#x27;shopCarRemove?bookId=&#x27;+$&#123;orderLine.book.id&#125;&quot;</span>&gt;移除</span><br><span class="line">                                    &lt;/button&gt;</span><br><span class="line">                                &lt;/td&gt;</span><br><span class="line">                            &lt;/tr&gt;</span><br><span class="line">                            &lt;/tbody&gt;</span><br><span class="line">                        &lt;/table&gt;</span><br><span class="line">                    &lt;/form&gt;</span><br><span class="line">                &lt;/c:forEach&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;allButtom&quot;</span>&gt;</span><br><span class="line">            &lt;!-- &lt;p <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;caozuo&quot;</span>&gt;去结算&lt;/p&gt; --&gt;</span><br><span class="line">            &lt;!-- &lt;input value=<span class="string">&quot;去提交&quot;</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;caozuo&quot;</span> type=<span class="string">&quot;submit&quot;</span>&gt; --&gt;</span><br><span class="line">            &lt;a href=<span class="string">&quot;/orderConfirm&quot;</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;caozuo&quot;</span>&gt;去提交&lt;/a&gt;</span><br><span class="line">            &lt;span&gt;已选择&lt;font&gt;$&#123;map.size&#125;&lt;/font&gt;件商品&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;总价(不含运费)：&lt;font&gt;¥$&#123;totalCost&#125;元&lt;/font&gt;&lt;/span&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!--脚部--&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;footer3&quot;</span>&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;f3_top&quot;</span>&gt;</span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;f3_center&quot;</span>&gt;</span><br><span class="line">            &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;ts1&quot;</span>&gt;品目繁多 愉悦购物&lt;/div&gt;</span><br><span class="line">            &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;ts2&quot;</span>&gt;正品保障 天天低价&lt;/div&gt;</span><br><span class="line">            &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;ts3&quot;</span>&gt;极速物流 特色定制&lt;/div&gt;</span><br><span class="line">            &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;ts4&quot;</span>&gt;优质服务 以客为尊&lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;f3_middle&quot;</span>&gt;</span><br><span class="line">        &lt;ul <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;f3_center&quot;</span>&gt;</span><br><span class="line">            &lt;li <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;f3_mi_li01&quot;</span>&gt;</span><br><span class="line">                &lt;h1&gt;购物指南&lt;/h1&gt;</span><br><span class="line">                &lt;p&gt;常见问题&lt;/p&gt;</span><br><span class="line">                &lt;p&gt;找回密码&lt;/p&gt;</span><br><span class="line">                &lt;p&gt;会员介绍&lt;/p&gt;</span><br><span class="line">                &lt;p&gt;购物演示&lt;/p&gt;</span><br><span class="line">            &lt;/li&gt;</span><br><span class="line">            &lt;li <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;f3_mi_li01&quot;</span>&gt;</span><br><span class="line">                &lt;h1&gt;配送方式&lt;/h1&gt;</span><br><span class="line">                &lt;p&gt;常见问题&lt;/p&gt;</span><br><span class="line">                &lt;p&gt;找回密码&lt;/p&gt;</span><br><span class="line">                &lt;p&gt;会员介绍&lt;/p&gt;</span><br><span class="line">                &lt;p&gt;购物演示&lt;/p&gt;</span><br><span class="line">            &lt;/li&gt;</span><br><span class="line">            &lt;li <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;f3_mi_li01&quot;</span>&gt;</span><br><span class="line">                &lt;h1&gt;支付方式&lt;/h1&gt;</span><br><span class="line">                &lt;p&gt;常见问题&lt;/p&gt;</span><br><span class="line">                &lt;p&gt;找回密码&lt;/p&gt;</span><br><span class="line">                &lt;p&gt;会员介绍&lt;/p&gt;</span><br><span class="line">                &lt;p&gt;购物演示&lt;/p&gt;</span><br><span class="line">            &lt;/li&gt;</span><br><span class="line">            &lt;li <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;f3_mi_li01&quot;</span>&gt;</span><br><span class="line">                &lt;h1&gt;售后服务&lt;/h1&gt;</span><br><span class="line">                &lt;p&gt;常见问题&lt;/p&gt;</span><br><span class="line">                &lt;p&gt;找回密码&lt;/p&gt;</span><br><span class="line">                &lt;p&gt;会员介绍&lt;/p&gt;</span><br><span class="line">                &lt;p&gt;购物演示&lt;/p&gt;</span><br><span class="line">            &lt;/li&gt;</span><br><span class="line">            &lt;li <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;f3_mi_li01&quot;</span>&gt;</span><br><span class="line">                &lt;h1&gt;服务保障&lt;/h1&gt;</span><br><span class="line">                &lt;p&gt;常见问题&lt;/p&gt;</span><br><span class="line">                &lt;p&gt;找回密码&lt;/p&gt;</span><br><span class="line">                &lt;p&gt;会员介绍&lt;/p&gt;</span><br><span class="line">                &lt;p&gt;购物演示&lt;/p&gt;</span><br><span class="line">            &lt;/li&gt;</span><br><span class="line">            &lt;li <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;f3_mi_li06&quot;</span>&gt;</span><br><span class="line">                &lt;h1&gt;客服中心&lt;/h1&gt;</span><br><span class="line">                &lt;img src=<span class="string">&quot;images/qrcode_jprj.jpg&quot;</span> width=<span class="string">&quot;80px&quot;</span> height=<span class="string">&quot;80px&quot;</span>&gt;</span><br><span class="line">                &lt;p&gt;抢红包、疑问咨询、优惠活动&lt;/p&gt;</span><br><span class="line">            &lt;/li&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;f3_bottom&quot;</span>&gt;</span><br><span class="line">        &lt;p <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;f3_links&quot;</span>&gt;</span><br><span class="line">            &lt;a href=<span class="string">&quot;#&quot;</span>&gt;关于我们&lt;/a&gt;|</span><br><span class="line">            &lt;a href=<span class="string">&quot;#&quot;</span>&gt;联系我们&lt;/a&gt;|</span><br><span class="line">            &lt;a href=<span class="string">&quot;#&quot;</span>&gt;友情链接&lt;/a&gt;|</span><br><span class="line">            &lt;a href=<span class="string">&quot;#&quot;</span>&gt;供货商入驻&lt;/a&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;沪ICP备<span class="number">14033591</span>号-<span class="number">8</span> 杰普软件briup.com版权所有 杰普软件科技有限公司 &lt;/p&gt;</span><br><span class="line">        &lt;img src=<span class="string">&quot;images/police.png&quot;</span>&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 
-<h3 id="更新购物车数量-todo"><a href="#更新购物车数量-todo" class="headerlink" title="更新购物车数量(todo)"></a>更新购物车数量(todo)</h3><h3 id="移除购物车-todo"><a href="#移除购物车-todo" class="headerlink" title="移除购物车(todo)"></a>移除购物车(todo)</h3><h2 id="订单模块"><a href="#订单模块" class="headerlink" title="订单模块"></a>订单模块</h2><h3 id="准备提交"><a href="#准备提交" class="headerlink" title="准备提交"></a>准备提交</h3><h4 id="分析-7"><a href="#分析-7" class="headerlink" title="==分析=="></a>==分析==</h4><ul>
+<h3 id="更新购物车数量-todo"><a href="#更新购物车数量-todo" class="headerlink" title="更新购物车数量(todo)"></a>更新购物车数量(todo)</h3><ul>
+<li>form中的button按钮会提交表单<ul>
+<li>给定num值和bookId值(隐藏框)</li>
+</ul>
+</li>
+<li>传递num和id给后台</li>
+<li>后台根据用户id,bookId,num 修改购物车数量</li>
+</ul>
+<h3 id="移除购物车-todo"><a href="#移除购物车-todo" class="headerlink" title="移除购物车(todo)"></a>移除购物车(todo)</h3><ul>
+<li>点击移除按钮 传递购物车id</li>
+<li>servlet接收id</li>
+<li>dao层根据id删除购物车</li>
+<li>重新跳转shopQuery <ul>
+<li>此时查的数据少一条</li>
+</ul>
+</li>
+</ul>
+<h2 id="订单模块"><a href="#订单模块" class="headerlink" title="订单模块"></a>订单模块</h2><h3 id="准备提交"><a href="#准备提交" class="headerlink" title="准备提交"></a>准备提交</h3><h4 id="分析-7"><a href="#分析-7" class="headerlink" title="==分析=="></a>==分析==</h4><ul>
 <li>在真正提交之前,先跳转到确认页面</li>
 <li>选择收货信息<ul>
 <li>查找以前的收货信息</li>
@@ -1587,7 +2602,12 @@
 <p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221127045.png" alt="image-20211025211711375"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221127802.png" alt="image-20211025211419465"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/estore-out/202206221127996.png" alt="image-20211025211611145"></p>
-<h2 id="优化-todo"><a href="#优化-todo" class="headerlink" title="优化(todo)"></a>优化(todo)</h2><h3 id="自动登录"><a href="#自动登录" class="headerlink" title="自动登录"></a>自动登录</h3><p>LoginServlet</p>
+<h2 id="优化-todo"><a href="#优化-todo" class="headerlink" title="优化(todo)"></a>优化(todo)</h2><h3 id="自动登录"><a href="#自动登录" class="headerlink" title="自动登录"></a>自动登录</h3><p><strong>login.jsp</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;fg_box&quot;</span>&gt;</span><br><span class="line">                   	&lt;span style=<span class="string">&quot;line-height: 22px&quot;</span>&gt;</span><br><span class="line">                   		&lt;input type=<span class="string">&quot;checkbox&quot;</span> name=<span class="string">&quot;autologin&quot;</span> value=<span class="string">&quot;t&quot;</span>&gt;&amp;nbsp;&amp;nbsp;七天内免登录</span><br><span class="line">                   	&lt;/span&gt;</span><br><span class="line">                       &lt;a <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;treg&quot;</span> href=<span class="string">&quot;#&quot;</span>&gt;立即注册&lt;/a&gt;</span><br><span class="line">                   &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>LoginServlet</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.briup.estore.web.servlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.briup.estore.constant.EstoreConstant;</span><br><span class="line"><span class="keyword">import</span> com.briup.estore.entity.Customer;</span><br><span class="line"><span class="keyword">import</span> com.briup.estore.service.IUserService;</span><br><span class="line"><span class="keyword">import</span> com.briup.estore.service.impl.UserServiceImpl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.*;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Auther</span>: vanse(lc))</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: 2022/5/31-05-31-15:42</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>：登录接口</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@WebServlet(&quot;/userLogin&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserLoginServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">// 1.获取用户名和密码</span></span><br><span class="line">        String name = req.getParameter(<span class="string">&quot;name&quot;</span>);</span><br><span class="line">        String password = req.getParameter(<span class="string">&quot;password&quot;</span>);</span><br><span class="line">        String auto = req.getParameter(<span class="string">&quot;auto&quot;</span>);</span><br><span class="line">        <span class="comment">// 2.调用service校验用户名和密码</span></span><br><span class="line">        IUserService userService = <span class="keyword">new</span> UserServiceImpl();</span><br><span class="line">        <span class="comment">// 3.跳转页面</span></span><br><span class="line">        String path = <span class="string">&quot;index.jsp&quot;</span>;</span><br><span class="line">        HttpSession session = req.getSession();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 登录成功  跳转首页(重定向)</span></span><br><span class="line">            Customer customer = userService.login(name, password);</span><br><span class="line">            session.setAttribute(<span class="string">&quot;customer&quot;</span>, customer);</span><br><span class="line">            <span class="comment">// 如果勾选了自动登录 写入cookie</span></span><br><span class="line">            <span class="keyword">if</span>(<span class="string">&quot;true&quot;</span>.equals(auto))&#123;</span><br><span class="line">                Cookie nameCookie = <span class="keyword">new</span> Cookie(<span class="string">&quot;auto_name&quot;</span>,name);</span><br><span class="line">                nameCookie.setMaxAge(EstoreConstant.auto_max_time);</span><br><span class="line">                Cookie passwordCookie = <span class="keyword">new</span> Cookie(<span class="string">&quot;auto_password&quot;</span>,password);</span><br><span class="line">                passwordCookie.setMaxAge(EstoreConstant.auto_max_time);</span><br><span class="line">                resp.addCookie(nameCookie);</span><br><span class="line">                resp.addCookie(passwordCookie);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            <span class="comment">// 登录失败  重新登录(请求转发 提示信息)</span></span><br><span class="line">            path = <span class="string">&quot;login.jsp&quot;</span>;</span><br><span class="line">            session.setAttribute(<span class="string">&quot;error&quot;</span>, <span class="string">&quot;登录失败 &quot;</span> +e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line">        resp.sendRedirect(path);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p><strong>AutoLogin</strong></p>
@@ -2016,7 +3036,7 @@
     
     
 <script>
-  const password = "vanse";
+  const password = "briup!";
   const lock_password = window.sessionStorage.getItem("lock_password");
   console.log(password, lock_password);
   if (lock_password !== password) {
