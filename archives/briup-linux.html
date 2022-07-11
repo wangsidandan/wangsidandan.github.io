@@ -92,7 +92,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">10.7k</span>
+            <span class="post-count">10.8k</span>
         </span>
     </span>
 
@@ -101,7 +101,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">39 分钟</span>
+            <span class="post-count">40 分钟</span>
         </span>
     </span>
 </div>
@@ -479,7 +479,7 @@
 
 
 
-<h2 id="9常用命令"><a href="#9常用命令" class="headerlink" title="9常用命令"></a>9常用命令</h2><h3 id="9-1-touch命令"><a href="#9-1-touch命令" class="headerlink" title="9.1 touch命令"></a>9.1 touch命令</h3><p>例如，创建一个文件或者修改文件的更新时间</p>
+<h2 id="9-常用命令"><a href="#9-常用命令" class="headerlink" title="9 常用命令"></a>9 常用命令</h2><h3 id="9-1-touch命令"><a href="#9-1-touch命令" class="headerlink" title="9.1 touch命令"></a>9.1 touch命令</h3><p>例如，创建一个文件或者修改文件的更新时间</p>
 <p><code>touch a.txt</code></p>
 <blockquote>
 <p>当a.txt文件不存在的时候，会创建该文件</p>
@@ -510,7 +510,7 @@
 
 
 
-<p><img src="image/image-20200716231513679.png" alt="image-20200716231513679"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120755491.png" alt="image-20200716231513679"></p>
 <blockquote>
 <p>  y是覆盖，n是取消操作，直接回车也是取消操作</p>
 </blockquote>
@@ -531,7 +531,7 @@
 <p>例如，把test目录复制到test4目录中，并且修改目录名字为temp</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">此时test4存在,temp不存在</span><br></pre></td></tr></table></figure>
 
-<p><code>cp -r test test4/temp</code><br><img src="image/image-20200717094302574.png" alt="image-20200717094302574"></p>
+<p><code>cp -r test test4/temp</code><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120755788.png" alt="image-20200717094302574"></p>
 <blockquote>
 <p> 注意，要求test4目录必须是存在的</p>
 </blockquote>
@@ -545,12 +545,16 @@
 <p><code>mv ./test/a.txt .</code></p>
 <p>例如，修改一个文件的名字，将a.txt改为b.txt</p>
 <p><code>mv a.txt b.txt</code></p>
+<ul>
+<li>如果b.txt不存在,改名</li>
+<li>如果b.txt存在, 覆盖</li>
+</ul>
 <p>例如，-i参数，覆盖提示</p>
-<p><code>mv -i a.txt b.txt</code><br><img src="image/image-20200717003032354.png" alt="image-20200717003032354"></p>
+<p><code>mv -i a.txt b.txt</code><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120755441.png" alt="image-20200717003032354"></p>
 <blockquote>
 <p>本机 ubuntu16</p>
 </blockquote>
-<p><img src="image/image-20220220230501862.png" alt="image-20220220230501862"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120755877.png" alt="image-20220220230501862"></p>
 <p>移动时发现同名也会出现提示</p>
 <p>例如，修改目录的名字</p>
 <p><code>mv dir1 dir2</code></p>
@@ -581,7 +585,7 @@
 <p>例如，删除非空目录，并且删除前确认</p>
 <p><code>rm -r -i test</code></p>
 <p>或者</p>
-<p><code>rm -ri test</code><br><img src="image/image-20200717100643439.png" alt="image-20200717100643439"></p>
+<p><code>rm -ri test</code><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120755135.png" alt="image-20200717100643439"></p>
 <p>例如，删除非空目录，强制删除，不做任何提示</p>
 <p><code>rm -r -f test</code></p>
 <p>或者</p>
@@ -592,7 +596,7 @@
 </blockquote>
 <p>例如，查看ls命令的使用手册</p>
 <p><code>man ls</code></p>
-<p><img src="image/image-20200717004708058.png" alt="image-20200717004708058"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120756453.png" alt="image-20200717004708058"></p>
 <p>空格，每次往下翻一个屏幕的内容</p>
 <p>回车，每次往下翻一行内容</p>
 <p>b，每次向上翻回一页</p>
@@ -600,7 +604,7 @@
 <p>q，退出当前手册界面</p>
 <p>/stirng，查找指定字符串，例如，/the 就是查找这个单词</p>
 <p>n，配合/string命令，可以快速调整跳到下一个指定字符串的位置</p>
-<h3 id="9-7-telnet-todo"><a href="#9-7-telnet-todo" class="headerlink" title="9.7 telnet(todo)"></a>9.7 telnet(todo)</h3><p>使用telnet命令进行远程登录服务器</p>
+<h3 id="9-7-telnet"><a href="#9-7-telnet" class="headerlink" title="9.7 telnet"></a>9.7 telnet</h3><p>使用telnet命令进行远程登录服务器</p>
 <p>ifconfig ，查看ip地址</p>
 <p>telnet远程登录服务器的要求：</p>
 <ol>
@@ -608,9 +612,21 @@
 <li>服务器主机安装了telnet服务器端，并已经开启服务</li>
 <li>本机可以ping通服务器主机的ip地址</li>
 </ol>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 服务器主机安装软件 192.168.23.130</span></span><br><span class="line"><span class="comment"># 查看telnet运行状态 </span></span><br><span class="line">netstat -a | grep telnet</span><br><span class="line"><span class="comment"># 安装openbsd-inetd</span></span><br><span class="line">sudo apt-get install openbsd-inetd</span><br><span class="line"><span class="comment"># 安装telnetd</span></span><br><span class="line">sudo apt-get install telnetd</span><br><span class="line"><span class="comment"># 再次查看telnet运行状态 </span></span><br><span class="line">netstat -a | grep telnet</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#用192.168.2a3.131(客户端) 远程连接192.168.23.130(服务端)</span></span><br><span class="line">telnet 192.168.23.130</span><br></pre></td></tr></table></figure>
+
+
+
 <blockquote>
 <p>也可使用ssh连接方式</p>
 </blockquote>
+<h3 id="9-10-find"><a href="#9-10-find" class="headerlink" title="9.10 find"></a>9.10 find</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name <span class="string">&quot;*.txt&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
 <h2 id="10-特殊字符"><a href="#10-特殊字符" class="headerlink" title="10 特殊字符"></a>10 特殊字符</h2><blockquote>
 <p>Shell命令中可以接收一些特殊字符来表示特殊的含义</p>
 </blockquote>
@@ -621,12 +637,12 @@
 <p><code>rm *.txt</code></p>
 <h3 id="10-2"><a href="#10-2" class="headerlink" title="10.2 ?"></a>10.2 ?</h3><p>表示任意的一个字符</p>
 <p>例如，显示a?.txt文件</p>
-<p><code>ls a?.txt</code><br><img src="image/image-20200717012440648.png" alt="image-20200717012440648"></p>
+<p><code>ls a?.txt</code><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120756196.png" alt="image-20200717012440648"></p>
 <h3 id="10-3"><a href="#10-3" class="headerlink" title="10.3 ;"></a>10.3 ;</h3><p>表示在一行语句中连续执行多个命令，命令之间使用分号进行分割</p>
 <p>例如，先cd回到家目录，然后再执行ls命令</p>
 <p><code>cd;ls</code></p>
 <p>例如，先显示时间，再显示日历，再显示当前路径</p>
-<p><code>date;cal;pwd</code><br><img src="image/image-20200717012652303.png" alt="image-20200717012652303"></p>
+<p><code>date;cal;pwd</code><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120756292.png" alt="image-20200717012652303"></p>
 <h3 id="10-4-gt-和-gt-gt"><a href="#10-4-gt-和-gt-gt" class="headerlink" title="10.4 &gt;和&gt;&gt;"></a>10.4 &gt;和&gt;&gt;</h3><p> <strong>输出重定向符合，将来原本输出到命令行中的内容，重定向输入到另外一个地方。</strong></p>
 <p><code>&gt;</code>表示往文件中写入内容，是覆盖操作</p>
 <p>例如，把hello写入到a文件中</p>
@@ -644,9 +660,9 @@
 <p>例如，先把date命令显示的日期写入到a文件中，再把cal显示的日历追到a文件中，再查看a文件的内容</p>
 <p><code>date &gt;&gt; a</code></p>
 <p><code>cal &gt;&gt; a</code></p>
-<p><code>cat a</code><br><img src="image/image-20200717013425909.png" alt="image-20200717013425909"></p>
+<p><code>cat a</code><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120756674.png" alt="image-20200717013425909"></p>
 <p>例如，把2020年12月的日历，写入到a文件中，覆盖之前的内容</p>
-<p><code>cal 12 2020 &gt; a</code><br><img src="image/image-20200717013556995.png" alt="image-20200717013556995"></p>
+<p><code>cal 12 2020 &gt; a</code><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120756847.png" alt="image-20200717013556995"></p>
 <h3 id="10-5"><a href="#10-5" class="headerlink" title="10.5 |"></a>10.5 |</h3><p>管道符，可以把第一个命令的结果，交给第二个命令作为参数进行操作</p>
 <p>例如，把当前日历通过打印机进行打印</p>
 <p><code>cal | lp</code></p>
@@ -654,7 +670,7 @@
 <p>如果当前网络中配置好打印机并连接成功的话，可以打印出日历</p>
 </blockquote>
 <p>例如，查看/etc/passwd中的内容并筛选出briup相关的信息</p>
-<p><code>cat /etc/passwd | grep &quot;briup&quot;</code><br><img src="image/image-20200717014118194.png" alt="image-20200717014118194"></p>
+<p><code>cat /etc/passwd | grep &quot;briup&quot;</code><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120756997.png" alt="image-20200717014118194"></p>
 <blockquote>
 <p>grep命令进行对结果进行过滤筛选</p>
 </blockquote>
@@ -662,17 +678,17 @@
 <p>例如，显示文件中的所有内容</p>
 <p><code>cat a.txt</code></p>
 <p>例如，把a.txt和b.txt的内容合并到c.txt中</p>
-<p><code>cat a.txt b.txt &gt; c.txt</code><br><img src="image/image-20200717014501638.png" alt="image-20200717014501638"></p>
+<p><code>cat a.txt b.txt &gt; c.txt</code><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120756003.png" alt="image-20200717014501638"></p>
 <p>例如，把c.txt文件内容，设置为空</p>
-<p><code>cat /dev/null &gt; c.txt</code><br><img src="image/image-20200717014625553.png" alt="image-20200717014625553"></p>
+<p><code>cat /dev/null &gt; c.txt</code><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120756661.png" alt="image-20200717014625553"></p>
 <p>Linux系统中，/dev/null（空设备文件或黑洞文件）是一个特殊的设备文件，所有写入其中的数据，都会被丢弃的无影无踪，/dev/null通常被用于丢弃不需要的数据输出，或作为用于输入流的空文件。这些操作通常由重定向完成。</p>
 <p>例如，清空a文件</p>
 <p><code>cat /dev/null &gt; a</code></p>
 <p>例如，将本来要输出的内容直接丢弃不要</p>
-<p><code>ls -R &gt; /dev/null</code><br><img src="image/image-20200717015042831.png" alt="image-20200717015042831"></p>
+<p><code>ls -R &gt; /dev/null</code><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120756956.png" alt="image-20200717015042831"></p>
 <h3 id="12-2-more命令"><a href="#12-2-more命令" class="headerlink" title="12.2 more命令"></a>12.2 more命令</h3><p>more和cat一样，也是查看内容的命令，但是more命令可以一点点的显示内容，而不是一次全显示出来。</p>
 <p>例如，使用more命令查看/etc/passwd文件内容</p>
-<p><code>more /etc/passwd</code><br><img src="image/image-20200717015324152.png" alt="image-20200717015324152"></p>
+<p><code>more /etc/passwd</code><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120756808.png" alt="image-20200717015324152"></p>
 <p><strong>在这种情况下，可以使用命令进行操作。</strong></p>
 <p>空格，每次往下翻一个屏幕的内容</p>
 <p>回车，每次往下翻一行内容</p>
@@ -700,16 +716,16 @@
 </ul>
 <p>例如，直接使用vi打开文件的时候，就是命令模式</p>
 <p><code>echo &quot;hello&quot; &gt; a</code></p>
-<p><code>vi a</code><br><img src="image/image-20200717022317484.png" alt="image-20200717022317484"></p>
+<p><code>vi a</code><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120756646.png" alt="image-20200717022317484"></p>
 <blockquote>
 <p> 这时候，不能直接编辑文件，但是可以简单的命令操作文件内容，例如yy命令复制当前行，p命令把复制内容粘贴到下一行。</p>
 </blockquote>
-<p>先yy命令然后p命令<br><img src="image/image-20200717022507226.png" alt="image-20200717022507226"></p>
-<p>在命令模式下，按冒号（shift+:）进入到命令行模式： 输入命令w，然后回车，把内容进行保存<br><img src="image/image-20200717022751872.png" alt="image-20200717022751872"><br><img src="image/image-20200717022816176.png" alt="image-20200717022816176"></p>
+<p>先yy命令然后p命令<br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120756477.png" alt="image-20200717022507226"></p>
+<p>在命令模式下，按冒号（shift+:）进入到命令行模式： 输入命令w，然后回车，把内容进行保存<br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120756946.png" alt="image-20200717022751872"><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120756555.png" alt="image-20200717022816176"></p>
 <blockquote>
 <p>命令行模式执行完命令自动返回到命令模式</p>
 </blockquote>
-<p>在命令模式下，按命令i或者a或者o都可以进入到编辑模式，然后可以直接编辑内容<br><img src="image/image-20200717023316856.png" alt="image-20200717023316856"></p>
+<p>在命令模式下，按命令i或者a或者o都可以进入到编辑模式，然后可以直接编辑内容<br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120756857.png" alt="image-20200717023316856"></p>
 <blockquote>
 <p>i 表示在光标当前位置处插入，并变为编辑模式</p>
 <p>a 表示在光标所在位置后插入，并变为编辑模式</p>
@@ -717,12 +733,12 @@
 <p>在插入模式下，可以像在记事本中一样编辑文件内容了。</p>
 <p>编辑模式下按Esc，退回到命令模式。</p>
 </blockquote>
-<p>编辑完成后，先按Esc进入到命令模式，再按（shift+:）进入到命令行模式，再输入wq，然后回车，表示保存内容并退出<br><img src="image/image-20200717023904083.png" alt="image-20200717023904083"></p>
+<p>编辑完成后，先按Esc进入到命令模式，再按（shift+:）进入到命令行模式，再输入wq，然后回车，表示保存内容并退出<br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120756995.png" alt="image-20200717023904083"></p>
 <blockquote>
 <p>如果是 wq! 则表示保存并强制退出</p>
 </blockquote>
 <p><strong>三种模式的转换关系如下：</strong></p>
-<p><img src="image/image-20200717023204594.png" alt="image-20200717023204594"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120756134.png" alt="image-20200717023204594"></p>
 <h3 id="12-2-命令模式"><a href="#12-2-命令模式" class="headerlink" title="12.2 命令模式"></a>12.2 命令模式</h3><p>:tipping_hand_man: 以下每个命令都需要动手</p>
 <table>
 <thead>
@@ -920,15 +936,15 @@
 <p><strong>environment variables</strong></p>
 <p>在操作系统中，可以设置一些环境变量（名字=值），将来在执行命令的时候，可以从指的环境变量中获取到对应的值，也可以将来在我们写的程序中，通过环境变量的名字获取到这些值。</p>
 </blockquote>
-<h3 id="13-1-Linux"><a href="#13-1-Linux" class="headerlink" title="13.1 Linux"></a>13.1 Linux</h3><p>设置<strong>临时</strong>的环境变量的值：<br><code>name=tom</code><br><img src="image/image-20200719202801115.png" alt="image-20200719202801115"></p>
-<p>使用$符合，获取环境变量的值：<br><code>echo $name</code><br><img src="image/image-20200719202917368.png" alt="image-20200719202917368"></p>
+<h3 id="13-1-Linux"><a href="#13-1-Linux" class="headerlink" title="13.1 Linux"></a>13.1 Linux</h3><p>设置<strong>临时</strong>的环境变量的值：<br><code>name=tom</code><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120756405.png" alt="image-20200719202801115"></p>
+<p>使用$符合，获取环境变量的值：<br><code>echo $name</code><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120757569.png" alt="image-20200719202917368"></p>
 <blockquote>
 <p>注意，这种临时设置环境变量的方式，一旦关闭命令创建，这个环境变量就失效了</p>
 </blockquote>
 <p>设置<strong>用户级别</strong>的环境变量：把环境变量配置到用户家目录中的.bashrc中</p>
-<p><code>vi .bashrc</code><br><img src="image/image-20200719204201553.png" alt="image-20200719204201553"></p>
-<p>保存退出后，使用<code>source</code>命令，让修改过的配置文件生效：<br><img src="image/image-20200719204418654.png" alt="image-20200719204418654"></p>
-<p>当前默认使用的bash，在这个窗口中切换到sh中，然后再查看sh中是否能使用刚刚配置的环境变量：<br><img src="image/image-20200719204622120.png" alt="image-20200719204622120"></p>
+<p><code>vi .bashrc</code><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120757659.png" alt="image-20200719204201553"></p>
+<p>保存退出后，使用<code>source</code>命令，让修改过的配置文件生效：<br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120757134.png" alt="image-20200719204418654"></p>
+<p>当前默认使用的bash，在这个窗口中切换到sh中，然后再查看sh中是否能使用刚刚配置的环境变量：<br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120757179.png" alt="image-20200719204622120"></p>
 <blockquote>
 <p>打开命令窗口默认使用的bash是父shell，又打开的sh是子shell，这时候父shell中配置的环境变量没有传递给子shell中，如果想让它进行传递，需要使用export命令将配置好的环境导出。</p>
 </blockquote>
@@ -940,8 +956,8 @@
 
 
 <p>先退回到bash中，使用vi打开.bashrc进行修改：</p>
-<p><code>vi .bashrc</code><br><img src="image/image-20200719205008064.png" alt="image-20200719205008064"></p>
-<p>保存退出，再进行上面的测试过程(如果是远程连接 需要重连)：<br><img src="image/image-20200719205107860.png" alt="image-20200719205107860"></p>
+<p><code>vi .bashrc</code><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120757880.png" alt="image-20200719205008064"></p>
+<p>保存退出，再进行上面的测试过程(如果是远程连接 需要重连)：<br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120757505.png" alt="image-20200719205107860"></p>
 <blockquote>
 <p>可以看出，导出的环境变量已经在子shell中生效了</p>
 </blockquote>
@@ -967,29 +983,29 @@
 </tr>
 </tbody></table>
 <p><strong>特殊的环境变量：PATH</strong></p>
-<p><strong>Linux中的环境变量的名字大小写是敏感的：</strong><br><img src="image/image-20200719210155334.png" alt="image-20200719210155334"></p>
-<p>当在命令窗口中执行命令的时候，例如执行ls命令，其实是运行了一个执行文件/bin/ls文件：<br><code>ls -l /bin/ls</code><br><img src="image/image-20200719210356472.png" alt="image-20200719210356472"></p>
+<p><strong>Linux中的环境变量的名字大小写是敏感的：</strong><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120757861.png" alt="image-20200719210155334"></p>
+<p>当在命令窗口中执行命令的时候，例如执行ls命令，其实是运行了一个执行文件/bin/ls文件：<br><code>ls -l /bin/ls</code><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120757712.png" alt="image-20200719210356472"></p>
 <p>==问题：执行ls命令的时候，系统是怎么找到这个ls文件所在位置的？==</p>
-<p>这里系统就是通过PATH这个环境变量来查找的，使用echo可以看到，PATH环境变量中配置的是一个个的路径，多个路径之间使用冒号（:）分割<br><img src="image/image-20200719210758423.png" alt="image-20200719210758423"></p>
+<p>这里系统就是通过PATH这个环境变量来查找的，使用echo可以看到，PATH环境变量中配置的是一个个的路径，多个路径之间使用冒号（:）分割<br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120757292.png" alt="image-20200719210758423"></p>
 <blockquote>
 <p>注意，必须是英文输入法下的冒号（:），windows系统中path变量的路径分割使用的是英文输入法下的分号（;）</p>
 </blockquote>
-<p><code>which</code>命令，可以查看某个命令所在的路径：<br><img src="image/image-20200719234356178.png" alt="image-20200719234356178"></p>
+<p><code>which</code>命令，可以查看某个命令所在的路径：<br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120757877.png" alt="image-20200719234356178"></p>
 <blockquote>
 <p>Windows系统中类似的命令 where，例如 where java</p>
 </blockquote>
-<p>临时把PATH的值设置为空之后，ls以及其他命令都是无法使用的，除非我们把当前路径切换到/bin目录中，因为默认会在当前目录下查找是否有要执行的命令文件：<br><img src="image/image-20200719211123070.png" alt="image-20200719211123070"></p>
+<p>临时把PATH的值设置为空之后，ls以及其他命令都是无法使用的，除非我们把当前路径切换到/bin目录中，因为默认会在当前目录下查找是否有要执行的命令文件：<br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120757496.png" alt="image-20200719211123070"></p>
 <blockquote>
 <p>注意，cd切换目录是系统内置的默认命令，不受PATH变量配置的影响。</p>
 </blockquote>
 <p>==这里只是把PATH临时设置为空了，只要关闭这个命令窗口，再打开一个新的窗口，PATH就恢复过来了==</p>
 <p><strong>在设置环境变量值的时候，也可以引用其他环境变量的值，甚至是当前设置的环境变量本身：</strong></p>
 <p><code>PATH=$PATH:/home/briup/test</code></p>
-<p><img src="image/image-20200719211742564.png" alt="image-20200719211742564"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120757686.png" alt="image-20200719211742564"></p>
 <blockquote>
 <p>这里表示设置PATH变量值的时候，又引用了PATH变量本身的值，相当于在PATH自己本身的基础上，进行了一个路径的追加，路径之间冒号分割</p>
 </blockquote>
-<p>另一个例子：<br><img src="image/image-20200719212016808.png" alt="image-20200719212016808"></p>
+<p>另一个例子：<br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120757788.png" alt="image-20200719212016808"></p>
 <blockquote>
 <p>这里在设置PATH变量的时候，使用了上面定义好的JAVA_HOME这个变量的值，以及PATH变量自己本身的值</p>
 </blockquote>
@@ -1003,16 +1019,16 @@
 <li>多个路径之间分割的符号不同，windows使用<strong>分号</strong>，Linux使用<strong>冒号</strong></li>
 <li>windows系统中环境变量名字的大小写<strong>不敏感</strong>，而Linux中大小写是<strong>敏感</strong>的</li>
 </ul>
-<p><strong>例如： 临时设置环境变量，以及查看环境变量</strong><br><img src="image/image-20200719212604754.png" alt="image-20200719212604754"></p>
-<p><strong>例如：配置用户的环境变量、配置系统的环境变量：</strong><br>我的电脑 –》属性 –》高级系统设置 –》环境变量<br><img src="image/image-20200719213002483.png" alt="image-20200719213002483"></p>
+<p><strong>例如： 临时设置环境变量，以及查看环境变量</strong><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120757388.png" alt="image-20200719212604754"></p>
+<p><strong>例如：配置用户的环境变量、配置系统的环境变量：</strong><br>我的电脑 –》属性 –》高级系统设置 –》环境变量<br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120757679.png" alt="image-20200719213002483"></p>
 <blockquote>
 <p>注意，在windows中，一般设置系统变量即可。</p>
 </blockquote>
 <h2 id="14-归档压缩"><a href="#14-归档压缩" class="headerlink" title="14 归档压缩"></a>14 归档压缩</h2><h3 id="14-1-归档"><a href="#14-1-归档" class="headerlink" title="14.1 归档"></a>14.1 归档</h3><blockquote>
 <p>归档，把若干个文件或目录简单的合并在一起，它并不对文件进行压缩，就是将多个文件前后连接在一起，形成一个大文件。<br>另外还会额外的添加一些信息，所以归档后的总文件的大小，反而往往比之前文件之和还要大一些。</p>
 </blockquote>
-<p><strong>例如，把指定文件和目录进行归档</strong><br><code>tar -cvf work.tar a b c test1 test2 </code><br><img src="image/image-20200719214218663.png" alt="image-20200719214218663"></p>
-<p><strong>例如，解除归档文件到指定目录中</strong>(该目录需要存在)<br><code>tar -xvf work.tar -C dir1</code><br><img src="image/image-20200719214511228.png" alt="image-20200719214511228"></p>
+<p><strong>例如，把指定文件和目录进行归档</strong><br><code>tar -cvf work.tar a b c test1 test2 </code><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120757802.png" alt="image-20200719214218663"></p>
+<p><strong>例如，解除归档文件到指定目录中</strong>(该目录需要存在)<br><code>tar -xvf work.tar -C dir1</code><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120757384.png" alt="image-20200719214511228"></p>
 <p><strong>tar命令常用的选项及其作用：</strong></p>
 <table>
 <thead>
@@ -1069,10 +1085,10 @@
 <h3 id="14-2-压缩"><a href="#14-2-压缩" class="headerlink" title="14.2 压缩"></a>14.2 压缩</h3><blockquote>
 <p>压缩，是一种通过特定的算法来减小计算机文件大小的机制，Linux中的文件压缩命令有多种，其中最常用的命令就是gzip。</p>
 </blockquote>
-<p><strong>例如，将归档好的文件进行压缩</strong><br><code>gzip work.tar</code><br><img src="image/image-20200719215552599.png" alt="image-20200719215552599"></p>
-<p><strong>在tar进行归档之后直接进行压缩：</strong><br><code>rm work.tar.gz</code><br><code>tar -zcvf work.tar.gz a b c test1 test2</code><br><img src="image/image-20200719215940228.png" alt="image-20200719215940228"></p>
-<h3 id="14-3-解压"><a href="#14-3-解压" class="headerlink" title="14.3 解压"></a>14.3 解压</h3><p><strong>例如，对gz文件进行解压，解压到当前目录</strong><br><code>gunzip work.tar.gz</code><br><img src="image/image-20200719220157609.png" alt="image-20200719220157609"></p>
-<p><strong>例如，对tar.gz文件进行解压并解除归档</strong><br><code>tar -zxvf work.tar.gz -C dir2</code> (默认解压在当前目录)<br><img src="image/image-20200719220636489.png" alt="image-20200719220636489"></p>
+<p><strong>例如，将归档好的文件进行压缩</strong><br><code>gzip work.tar</code><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120757866.png" alt="image-20200719215552599"></p>
+<p><strong>在tar进行归档之后直接进行压缩：</strong><br><code>rm work.tar.gz</code><br><code>tar -zcvf work.tar.gz a b c test1 test2</code><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120757527.png" alt="image-20200719215940228"></p>
+<h3 id="14-3-解压"><a href="#14-3-解压" class="headerlink" title="14.3 解压"></a>14.3 解压</h3><p><strong>例如，对gz文件进行解压，解压到当前目录</strong><br><code>gunzip work.tar.gz</code><br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120757089.png" alt="image-20200719220157609"></p>
+<p><strong>例如，对tar.gz文件进行解压并解除归档</strong><br><code>tar -zxvf work.tar.gz -C dir2</code> (默认解压在当前目录)<br><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120757795.png" alt="image-20200719220636489"></p>
  
       <!-- reward -->
       
