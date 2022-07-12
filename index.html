@@ -507,8 +507,7 @@
 <p>例如：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">rw- r-- ---</span><br><span class="line"></span><br><span class="line">rw-   表示当前文件对拥有者的权限</span><br><span class="line"></span><br><span class="line">r--   表示当前文件对同组人的权限</span><br><span class="line"></span><br><span class="line">---   表示当前文件对其他人的权限</span><br></pre></td></tr></table></figure>
 
-
-
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/linux/202207120846730.png" alt="image-20220712084621534"></p>
 <p><strong>默认情况下 演示briup和swift(不分配sudo组)对hello.txt的操作</strong></p>
 <blockquote>
 <p>Linux/Unix 的文件调用权限分为三级 : 文件所有者（Owner）、用户组（Group）、其它用户（Other Users）。</p>
@@ -538,7 +537,7 @@
 <p>0000 0100 r      读权限                十进制数字 4</p>
 <p>在这种情况下，任意权限组合相加得出的数字结果，都是唯一。</p>
 <p>例如，</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//7一定是1+2+4所得，表示拥有者、同组人、其他人都是可读可写可执行</span><br><span class="line">chmod 777 b.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//7一定是1+2+4所得，表示拥有者、同组人、其他人都是可读可写可执行</span><br><span class="line">chmod 777 b.txt</span><br><span class="line"><span class="meta">#</span><span class="bash"> 改变temp文件夹的权限属性</span></span><br><span class="line">chmod 777 temp</span><br><span class="line"><span class="meta">#</span><span class="bash"> 递归改变temp以及temp下所有内容的权限</span></span><br><span class="line">chmod -R temp</span><br></pre></td></tr></table></figure>
 
 
 
