@@ -5,7 +5,7 @@
     <url>/archives/hello.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>hello</p>
 <p><a href="/html/springmvc.html">点击</a></p>
-<p><img src="/images/mouse.cur" alt="图片"></p>
+<p>图片 <img src="/images/mouse.cur" alt="图片"></p>
 ]]></content>
   </entry>
 </search>
