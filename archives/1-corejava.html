@@ -91,7 +91,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">18.5k</span>
+            <span class="post-count">18.7k</span>
         </span>
     </span>
 
@@ -100,7 +100,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">82 分钟</span>
+            <span class="post-count">83 分钟</span>
         </span>
     </span>
 </div>
@@ -132,7 +132,7 @@
 
                                       
 
-                                          <h1 id="0-前言"><a href="#0-前言" class="headerlink" title="0.前言"></a>0.前言</h1><ul>
+                                          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
 <li><p>笔记: corejava</p>
 </li>
 <li><p>整理人: vanse(lc)</p>
@@ -140,7 +140,7 @@
 <li><p>时间: 2023/7/19</p>
 </li>
 </ul>
-<h1 id="1-认识java"><a href="#1-认识java" class="headerlink" title="1.认识java"></a>1.认识java</h1><blockquote>
+<h1 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><blockquote>
 <p>术语</p>
 </blockquote>
 <ul>
@@ -172,7 +172,7 @@
     System.out.println(&quot;hello world&quot;)
 &#125;
 </code></pre>
-}<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 编译源代码(java)  javac Hello.java</span><br><span class="line"></span><br><span class="line">- ==运行字节码(class)  java Hello==</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&gt; 加上包的类</span><br><span class="line"></span><br><span class="line">- 1班tom    briup.Hello.java</span><br><span class="line"></span><br><span class="line">- 2班tom    vanse.Hello.java</span><br><span class="line"></span><br><span class="line">- javac -d 目录 Hello.java 编译期间自动根据包创建文件夹</span><br><span class="line"></span><br><span class="line">- java com.briup.Tom</span><br><span class="line"></span><br><span class="line">  ```java</span><br><span class="line">  // 定义包</span><br><span class="line">  package com.briup;  // ;结束</span><br><span class="line">  public class Tom&#123;</span><br><span class="line">      public static void main(String[] args)&#123;</span><br><span class="line">          System.out.println(&quot;hello world&quot;)</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  --------------------------------------------------------------------------------</span><br><span class="line">  package com.vanse;</span><br><span class="line">  public class Tom&#123;</span><br><span class="line">      public static void main(String[] args)&#123;</span><br><span class="line">          System.out.println(&quot;hello world&quot;)</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></li>
+}<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 编译源代码(java)  javac Hello.java</span><br><span class="line"></span><br><span class="line">- ==运行字节码(class)  java Hello==</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&gt; 加上包的类</span><br><span class="line"></span><br><span class="line">- 1班tom    briup.Hello.java</span><br><span class="line"></span><br><span class="line">- 2班tom    vanse.Hello.java</span><br><span class="line"></span><br><span class="line">- javac -d 目录 Hello.java 编译期间自动根据包创建文件夹</span><br><span class="line"></span><br><span class="line">- java com.briup.Tom</span><br><span class="line"></span><br><span class="line">  ```java</span><br><span class="line">  // 定义包</span><br><span class="line">  package com.briup;  // ;结束</span><br><span class="line">  public class Tom&#123;</span><br><span class="line">      public static void main(String[] args)&#123;</span><br><span class="line">          System.out.println(&quot;hello world&quot;)</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  --------------------------------------------------------------------------------</span><br><span class="line">  package com.vanse;</span><br><span class="line">  public class Tom&#123;</span><br><span class="line">      public static void main(String[] args)&#123;</span><br><span class="line">          System.out.println(&quot;hello world&quot;)</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 </ul>
@@ -197,22 +197,22 @@
 </ul>
 </li>
 </ol>
-<h1 id="2-注释-标识符"><a href="#2-注释-标识符" class="headerlink" title="2.注释|标识符"></a>2.注释|标识符</h1><ul>
-<li><p>单行注释</p>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><ul>
+<li><p>单行注释  <code>// </code></p>
 </li>
-<li><p>多行注释</p>
+<li><p>多行注释 <code>/** /</code></p>
 </li>
-<li><p>文档注释 javadoc  </p>
+<li><p>文档注释 <code>/** */</code> javadoc  </p>
 <ul>
 <li><p>sts/eclipse默认的编码（window） GBK</p>
 </li>
-<li><p>如果修改了编码UTF-8 将来所有编码统一,不然会乱码</p>
-<p><img src="assets/202308221430273.png" alt="image-20230721100629160"></p>
+<li><p>修改为编码UTF-8 将来所有编码统一,不然会乱码</p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/teaching/202308221430273.png" alt="image-20230721100629160"></p>
 </li>
 </ul>
 </li>
 </ul>
-<blockquote>
+<h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><blockquote>
 <p>标识符 限制</p>
 </blockquote>
 <ul>
@@ -232,21 +232,8 @@
 </ul>
 </li>
 </ul>
-<h1 id="3-数据类型"><a href="#3-数据类型" class="headerlink" title="3.数据类型"></a>3.数据类型</h1><blockquote>
-<p>变量: 类型+变量名+值</p>
-</blockquote>
-<ul>
-<li>基本类型变量</li>
-<li>引用类型变量<ul>
-<li>类类型</li>
-<li>数组 类类型 + []</li>
-<li>接口</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>万物都可为类型    </p>
-<p>​    基本类(使用频率高 虚拟机做了优化):</p>
+<h1 id="类型-变量"><a href="#类型-变量" class="headerlink" title="类型|变量"></a>类型|变量</h1><h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><blockquote>
+<p>万物都可为类型     基本类(使用频率高 虚拟机做了优化)</p>
 </blockquote>
 <table>
 <thead>
@@ -378,18 +365,32 @@
 
 
 
-<h1 id="4-操作符"><a href="#4-操作符" class="headerlink" title="4.操作符"></a>4.操作符</h1><ul>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><blockquote>
+<p>变量: 类型+变量名+值</p>
+</blockquote>
+<ul>
+<li>基本类型变量</li>
+<li>引用类型变量<ul>
+<li>类类型</li>
+<li>数组 类类型 + []</li>
+<li>接口</li>
+</ul>
+</li>
+</ul>
+<h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><ul>
+<li>宏观量 System.out.println(100)</li>
+<li>final修饰的常量 public static final int A = 100</li>
+</ul>
+<h1 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h1><ul>
 <li>算术 + - * /    <strong>%(取模)</strong> <ul>
 <li>/ 取整</li>
 <li>==++/– 自增自减 顺序== (不是在操作数栈中计算的,是直接在插槽中计算)<ul>
 <li>++a 先＋1，再用ａ</li>
 <li>a++ 先用a 再+1</li>
 <li>注意;的结束,不管是前面还是后面 都要+1</li>
-<li><img src="assets/202308221430275.png" alt="image-20230807144334927"></li>
 </ul>
 </li>
-<li><img src="assets/202308221430276.png" alt="image-20230807144749775"></li>
-<li><code>+</code> 拼接字符串 java默认使用的SringBuilder去拼接字符串</li>
+<li><code>+</code> 拼接字符串</li>
 </ul>
 </li>
 <li>赋值  =  += -=<ul>
@@ -420,7 +421,11 @@
 </ul>
 </li>
 </ul>
-<h1 id="5-流程控制"><a href="#5-流程控制" class="headerlink" title="5.流程控制"></a>5.流程控制</h1><h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><ul>
+<table><thead><tr><th>优先级</th><th>运算符</th><th>结合性</th></tr></thead><tbody><tr><td>1</td><td>( )　[ ] 　.</td><td>从左到右</td></tr><tr><td>2</td><td>! 　~　 ++　 –</td><td>从右到左</td></tr><tr><td>3</td><td>*　 /　 %</td><td>从左到右</td></tr><tr><td>4</td><td>+　 -</td><td>从左到右</td></tr><tr><td>5</td><td>&lt;&lt; 　&gt;&gt;　 &gt;&gt;&gt;</td><td>从左到右</td></tr><tr><td>6</td><td>&lt; 　&lt;=　 &gt; 　&gt;=　 instanceof</td><td>从左到右</td></tr><tr><td>7</td><td>== 　!=</td><td>从左到右</td></tr><tr><td>8</td><td>&amp;</td><td>从左到右</td></tr><tr><td>9</td><td>^</td><td>从左到右</td></tr><tr><td>10</td><td><code contenteditable="true">|</code></td><td>从左到右</td></tr><tr><td>11</td><td>&amp;&amp;</td><td>从左到右</td></tr><tr><td>12</td><td><code contenteditable="true">||</code></td><td>从左到右</td></tr><tr><td>13</td><td>? :</td><td>从左到右</td></tr><tr><td>14</td><td>= 　+= 　-= 　*=　 /=　 %=　 &amp;=　 <code contenteditable="true">|=</code>　 ^=　 ~= 　&lt;&lt;= 　&gt;&gt;=　 &gt;&gt;&gt;=</td><td>从右到左</td></tr><tr><td>15</td><td>，</td><td>从右到左</td></tr></tbody></table>
+
+
+
+<h1 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h1><h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><ul>
 <li>顺序结构</li>
 <li>分支结构<ul>
 <li>if else   冗余</li>
@@ -445,10 +450,10 @@
 <li>return 结束整个方法 会影响循环外的代码</li>
 <li>通过控制循环条件打破</li>
 </ul>
-<h1 id="6-数组"><a href="#6-数组" class="headerlink" title="6.数组"></a>6.数组</h1><blockquote>
-<p>使用场景: 一次存储多个数据 (容器)  String[]     类型 + []   =&gt; 数组类型</p>
-<p>​    数组类型 是 引用类型的一种  </p>
+<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><h2 id="一维"><a href="#一维" class="headerlink" title="一维"></a>一维</h2><blockquote>
+<p>使用场景: 一次存储多个数据 (容器)  </p>
 </blockquote>
+<p><strong>定义</strong>: 一块连续的内存空间</p>
 <p><strong>定义方式:</strong>  类型 + []</p>
 <ul>
 <li>int + []  =  int[]    该容器可以存多个int类型 [1,2,3,4]</li>
@@ -489,7 +494,7 @@
 &#125;
 </code></pre>
 <p>}</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  **补充: 增强for循环**</span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line">		// 增强for (语法糖) 没有索引,直接取</span><br><span class="line">		for (int value : arr) &#123;</span><br><span class="line">			System.out.println(value);</span><br><span class="line">		&#125;</span><br><span class="line">		// 反编译效果</span><br><span class="line">		for (int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">			int value = arr[i];</span><br><span class="line">			System.out.println(value);</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">**数组异常**</span><br><span class="line"></span><br><span class="line">- 空指针异常 </span><br><span class="line">  - 引用类型没有赋予地址的话,默认是空地址(null),当用空地址调用方法</span><br><span class="line">- 数组越界异常 下标 &lt;0  &gt; =lenth</span><br><span class="line"></span><br><span class="line">**补充: 增强for循环**</span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line">		// 增强for (语法糖) 没有索引,直接取</span><br><span class="line">		for (int value : arr) &#123;</span><br><span class="line">			System.out.println(value);</span><br><span class="line">		&#125;</span><br><span class="line">		// 反编译效果</span><br><span class="line">		for (int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">			int value = arr[i];</span><br><span class="line">			System.out.println(value);</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 <blockquote>
 <p>java.lang.Arrays 操作数组的工具类</p>
@@ -504,26 +509,24 @@
 </li>
 </ul>
 <blockquote>
-<p>二维数组 <code>int [][] arr = new int[row][col]</code></p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i&lt; arr.length; i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(intj = <span class="number">0</span>; j&lt; arr[i].length; j++)&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<blockquote>
 <p>可变参 : 本质是一个数组 接受多值和数组以及null</p>
 </blockquote>
-<blockquote>
-<p>注意数组异常</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">(<span class="keyword">int</span>... args)</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="二维"><a href="#二维" class="headerlink" title="二维"></a>二维</h2><blockquote>
+<p>二维数组 <code>int [][] arr = new int[row][col]</code> row代表行(有几个一维数组) col代表列(各一维数组的长度)</p>
 </blockquote>
-<ul>
-<li>空指针异常 <ul>
-<li>引用类型没有赋予地址的话,默认是空地址(null),当用空地址调用方法</li>
-</ul>
-</li>
-<li>数组越界异常 下标 &lt;0  &gt; =lenth</li>
-</ul>
-<h1 id="7-面向对象"><a href="#7-面向对象" class="headerlink" title="7.面向对象"></a>7.面向对象</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 遍历凡是</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i&lt; arr.length; i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(intj = <span class="number">0</span>; j&lt; arr[i].length; j++)&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><blockquote>
 <p>类和对象</p>
 </blockquote>
 <ul>
@@ -538,11 +541,9 @@
 </li>
 <li>引用(变量)</li>
 </ul>
-<h2 id="成员"><a href="#成员" class="headerlink" title="成员"></a>成员</h2><blockquote>
-<p>类中的成员</p>
+<h2 id="成员"><a href="#成员" class="headerlink" title="成员"></a>成员</h2><h3 id="成员变量"><a href="#成员变量" class="headerlink" title="成员变量"></a>成员变量</h3><blockquote>
+<p>成员变量和局部变量的区别</p>
 </blockquote>
-<ul>
-<li><p>成员变量 局部变量</p>
 <ul>
 <li>代码位置 成员: 方法外 类中</li>
 <li>初始化  成员:有初始值</li>
@@ -550,7 +551,7 @@
 <li>内存位置 成员: 堆</li>
 </ul>
 <p><code>注意: 如果局部变量和成员变量同名,走局部变量(就近原则)</code></p>
-</li>
+<h3 id="成员方法"><a href="#成员方法" class="headerlink" title="成员方法"></a>成员方法</h3><ul>
 <li><p>成员方法</p>
 <ul>
 <li><p>public 修饰符</p>
@@ -585,12 +586,104 @@ public static int getN(int n) &#123;
     return getN(n-1) + getN(n-2);
 &#125;
 </code></pre>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 构造方法</span><br><span class="line"></span><br><span class="line">  - 特点: 1. 没有返回值也不写void   2.方法名称和类名一样</span><br><span class="line">  - java创建对象 通过new  本质就是调用构造方法</span><br><span class="line">  - 可以重载 可以加参数</span><br><span class="line"></span><br><span class="line">- 成员代码块 &#123;&#125;</span><br><span class="line"></span><br><span class="line">- 成员内部类</span><br><span class="line"></span><br><span class="line">&gt; 内部类: 使用场景: 当类和类的关系密切时(内部类可以方便获取外部类的成员),可以使用内部类 </span><br><span class="line"></span><br><span class="line">**测试: 外部类如何访问内部类成员,内部类如何访问外部类成员**</span><br><span class="line"></span><br><span class="line">&gt; 成员内部类</span><br><span class="line"></span><br><span class="line">- 成员内部类可以直接获取外部类的任意成员</span><br><span class="line">- 外部类成员可以**通过内部类对象**访问内部类的任意成员</span><br><span class="line"></span><br><span class="line">**成员内部类和外部类的区别**</span><br><span class="line"></span><br><span class="line">- ==成员内部类不能拥有静态成员==</span><br><span class="line">  - 静态成员所在的内部类是外部类的普通成员,需要先创建外部类类对象才能开辟内存</span><br><span class="line"></span><br><span class="line">- 内部类可以加修饰符 private static protected</span><br><span class="line"></span><br><span class="line">&gt; 静态内部类</span><br><span class="line"></span><br><span class="line">- 静态内部类可以直接访问外部类的成员</span><br><span class="line"></span><br><span class="line">  - 静态内部类的成员方法不能访问外部类的普通成员</span><br><span class="line"></span><br><span class="line">- 外部类可以访问静态内部类的所有成员</span><br><span class="line"></span><br><span class="line">  - 如果是静态成员 用静态内部类.成员</span><br><span class="line">  - 如果是普通成员 用静态内部类实例.成员</span><br><span class="line"></span><br><span class="line">- **静态内部类可以定义静态成员**</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&gt; 局部内部类(了解即可)</span><br><span class="line"></span><br><span class="line">- 局部内部类只能在外部类定义的方法中使用。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&gt; ==**匿名内部类(局部内部类的简化写法)**==</span><br><span class="line">&gt;</span><br><span class="line">&gt; ==使用场景: 不想手动创建子类/实现类==</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 特性</span><br><span class="line"></span><br><span class="line">### 封装</span><br><span class="line"></span><br><span class="line">&gt; 使用场景: 成员修饰符(属性) private </span><br><span class="line"></span><br><span class="line">- 修饰字段</span><br><span class="line">- 修饰方法</span><br><span class="line">- 修饰构造器</span><br><span class="line"></span><br><span class="line">一般属性私有,并提供对应的set/get方法</span><br><span class="line"></span><br><span class="line">`如果构造器私有,其他类无法创建该类对象`</span><br><span class="line"></span><br><span class="line">|      修饰符      | 本类 | 本包 | 不同包的子类 | 不同包的无关类 |</span><br><span class="line">| :--------------: | :--: | :--: | :----------: | :------------: |</span><br><span class="line">| **private 私有** |  √   |      |              |                |</span><br><span class="line">|     default      |  √   |  √   |              |                |</span><br><span class="line">|  protected 子类  |  √   |  √   |      √       |                |</span><br><span class="line">| **public 公有**  |  √   |  √   |      √       |       √        |</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 继承</span><br><span class="line"></span><br><span class="line">&gt; 使用场景: 将共性的代码抽取为父类 通过关键字extends 继承父类可获取父类的非私有成员</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">==注意==</span><br><span class="line"></span><br><span class="line">1. java中是单继承,不能直接继承多个类,但是可以间接继承</span><br><span class="line">2. 子类只能继承父类的非私有成员,但是可以通过继承父类的公有方法访问</span><br><span class="line">3. Object是所有引用类型的父类</span><br><span class="line">4. **子类构造器执行之前,会先隐式调用父类无参构造器(super)**</span><br><span class="line">5. **构造方法不能继承**</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&gt; 方法重写:  在子父类关系下,如果父类方法不满足子类特性,可重写父类的方法,将来调用的是子类重写的方法</span><br><span class="line"></span><br><span class="line">**重载** 参数</span><br><span class="line"></span><br><span class="line">- 参数个数 类型 顺序</span><br><span class="line"></span><br><span class="line">**重写** 一大两小 参数,方法名一致</span><br><span class="line"></span><br><span class="line">- **重写后的方法 修饰符 &gt;= 父类方法**</span><br><span class="line">- **重写后的方法 返回值 &lt;= 父类方法**</span><br><span class="line">  - 基本类型 =</span><br><span class="line">  - 引用类型 &lt;</span><br><span class="line">- 重写后的方法 异常 &lt;= 父类方法</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">`注意`</span><br><span class="line"></span><br><span class="line">- 私有方法不可重写(不报错)</span><br><span class="line">- 静态方法不可重写(不报错)</span><br><span class="line">- final修饰的方法不可重写(报错)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 多态</span><br><span class="line"></span><br><span class="line">&gt; 使用场景: 通常将父类/接口放在参数位置,复用代码</span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line">父类  变量 = new 子类()</span><br><span class="line">接口  变量  = new 实现类()</span><br><span class="line"> 成员变量  编译看父类 运行看父类</span><br><span class="line"> 成员方法  编译看父类 运行看子类</span><br><span class="line">    </span><br><span class="line">向下转型注意事项: instanceof</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">### 构造方法</span><br><span class="line"></span><br><span class="line">- 特点: 1. 没有返回值也不写void   2.方法名称和类名一样</span><br><span class="line"></span><br><span class="line">- java创建对象 通过new  本质就是调用构造方法</span><br><span class="line"></span><br><span class="line">- 可以重载 可以加参数</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">### 成员代码块</span><br><span class="line"></span><br><span class="line">&gt; 初始化普通成员变量  前提是(先执行完父类的初始化 声明 代码块 构造)</span><br><span class="line"></span><br><span class="line">- 声明时赋值  int a = 1;</span><br><span class="line">- **代码块赋值 &#123; a =2&#125; 会在构造器之前执行**</span><br><span class="line">- **构造器赋值** </span><br><span class="line"></span><br><span class="line">**如果同时出现**  归为方法init()</span><br><span class="line"></span><br><span class="line">1. 代码块和声明时赋值有先后关系</span><br><span class="line">2. 构造器在后面执行</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 成员内部类</span><br><span class="line"></span><br><span class="line">&gt; 使用场景: 当类和类的关系密切时(内部类可以方便获取外部类的成员),可以使用内部类 </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&gt; 成员内部类</span><br><span class="line"></span><br><span class="line">- 成员内部类可以直接获取外部类的任意成员</span><br><span class="line">- 外部类成员可以**通过内部类对象**访问内部类的任意成员</span><br><span class="line"></span><br><span class="line">**成员内部类和外部类的区别**</span><br><span class="line"></span><br><span class="line">- ==成员内部类不能拥有静态成员==</span><br><span class="line">  - 静态成员所在的内部类是外部类的普通成员,需要先创建外部类类对象才能开辟内存</span><br><span class="line"></span><br><span class="line">- 内部类可以加修饰符 private static protected</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&gt; 静态内部类</span><br><span class="line"></span><br><span class="line">- 静态内部类可以直接访问外部类的成员</span><br><span class="line"></span><br><span class="line">  - 静态内部类的成员方法不能访问外部类的普通成员</span><br><span class="line"></span><br><span class="line">- 外部类可以访问静态内部类的所有成员</span><br><span class="line"></span><br><span class="line">  - 如果是静态成员 用静态内部类.成员</span><br><span class="line">  - 如果是普通成员 用静态内部类实例.成员</span><br><span class="line"></span><br><span class="line">- **静态内部类可以定义静态成员**</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&gt; 局部内部类(了解即可)</span><br><span class="line"></span><br><span class="line">- 局部内部类只能在外部类定义的方法中使用。</span><br><span class="line">- 局部变量为final修饰</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&gt; ==**匿名内部类(局部内部类的简化写法)**====使用场景: 不想手动创建子类/实现类==</span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line">Thread t = new Thread()&#123;&#125;</span><br><span class="line">Runnable r = new Runnable()&#123;&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><blockquote>
+<p>使用场景: 成员修饰符(属性) private </p>
+</blockquote>
+<ul>
+<li>修饰字段</li>
+<li>修饰方法</li>
+<li>修饰构造器</li>
+</ul>
+<p>一般属性私有,并提供对应的set/get方法</p>
+<p><code>如果构造器私有,其他类无法创建该类对象</code></p>
+<table>
+<thead>
+<tr>
+<th align="center">修饰符</th>
+<th align="center">本类</th>
+<th align="center">本包</th>
+<th align="center">不同包的子类</th>
+<th align="center">不同包的无关类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>private 私有</strong></td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">default</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">protected 子类</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><strong>public 公有</strong></td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+</tbody></table>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><blockquote>
+<p>使用场景: 将共性的代码抽取为父类 通过关键字extends 继承父类可获取父类的非私有成员</p>
+</blockquote>
+<p><code>注意</code></p>
+<ol>
+<li>java中是单继承,不能直接继承多个类,但是可以间接继承</li>
+<li>子类只能继承父类的非私有成员,但是可以通过继承父类的公有方法访问</li>
+<li>Object是所有引用类型的父类</li>
+<li><strong>子类构造器执行之前,会先隐式调用父类无参构造器(super)</strong></li>
+<li><strong>构造方法不能继承</strong></li>
+</ol>
+<blockquote>
+<p>方法重写:  在子父类关系下,如果父类方法不满足子类特性,可重写父类的方法,将来调用的是子类重写的方法</p>
+</blockquote>
+<p><strong>重载</strong> 参数</p>
+<ul>
+<li>参数个数 类型 顺序</li>
+</ul>
+<p><strong>重写</strong> 一大两小 参数,方法名一致</p>
+<ul>
+<li><strong>重写后的方法 修饰符 &gt;= 父类方法</strong></li>
+<li><strong>重写后的方法 返回值 &lt;= 父类方法</strong><ul>
+<li>基本类型 =</li>
+<li>引用类型 &lt;</li>
+</ul>
+</li>
+<li>重写后的方法 异常 &lt;= 父类方法</li>
+</ul>
+<p><code>注意</code></p>
+<ul>
+<li>私有方法不可重写(不报错)</li>
+<li>静态方法不可重写(不报错)</li>
+<li>final修饰的方法不可重写(报错)</li>
+</ul>
+<h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><blockquote>
+<p>使用场景: 通常将父类/接口放在参数位置,复用代码</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">父类  变量 = <span class="keyword">new</span> 子类()</span><br><span class="line">接口  变量  = <span class="keyword">new</span> 实现类()</span><br><span class="line"> 成员变量  编译看父类 运行看父类</span><br><span class="line"> 成员方法  编译看父类 运行看子类</span><br><span class="line">    </span><br><span class="line">向下转型注意事项: <span class="keyword">instanceof</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
 <h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><h3 id="static"><a href="#static" class="headerlink" title="static"></a>static</h3><blockquote>
 <p>使用场景: 将对象范围提升为类范围</p>
 </blockquote>
@@ -605,7 +698,7 @@ public static int getN(int n) &#123;
 <p>修饰成员变量   静态成员变量</p>
 </blockquote>
 <ul>
-<li>不能修饰局部变量</li>
+<li>static不能修饰局部变量</li>
 </ul>
 <blockquote>
 <p>修饰成员方法 静态成员方法</p>
@@ -620,7 +713,15 @@ public static int getN(int n) &#123;
 </li>
 </ul>
 <blockquote>
-<p>初始化静态成员变量的值</p>
+<p>修饰代码块 静态代码块 static{} 用于做类的初始化擦欧总</p>
+</blockquote>
+<ul>
+<li>局部代码块 方法内</li>
+<li>成员代码块 在构造器之前执行, 构造器执行几次,代码块执行几次</li>
+<li>静态代码块 类加载一次,代码块执行一次</li>
+</ul>
+<blockquote>
+<p>类初始化 cinit</p>
 </blockquote>
 <ul>
 <li>声明时赋值 static int a = 1;</li>
@@ -628,25 +729,6 @@ public static int getN(int n) &#123;
 </ul>
 <p><strong>如果同时出现</strong>,谁在前面谁先执行</p>
 <p>main函数最后执行</p>
-<blockquote>
-<p>初始化普通成员变量  前提是(先执行完父类的初始化 声明 代码块 构造)</p>
-</blockquote>
-<ul>
-<li>声明时赋值  int a = 1;</li>
-<li><strong>代码块赋值 { a =2} 会在构造器之前执行</strong></li>
-<li><strong>构造器赋值</strong> </li>
-</ul>
-<p><strong>如果同时出现</strong>  归为方法init()</p>
-<p>1.代码块和声明时赋值有先后关系</p>
-<p>2.构造器在后面执行</p>
-<blockquote>
-<p>代码块的区别</p>
-</blockquote>
-<ul>
-<li>局部代码块 方法内</li>
-<li>成员代码块 在构造器之前执行, 构造器执行几次,代码块执行几次</li>
-<li>静态代码块 类加载一次,代码块执行一次</li>
-</ul>
 <blockquote>
 <p>类什么时候加载 (懒加载)</p>
 </blockquote>
@@ -664,7 +746,7 @@ public static int getN(int n) &#123;
 <li>类型+[] 数组类型不会初始化</li>
 <li>静态常量 编译期间确定</li>
 </ul>
-<p><code>补充: java Hello 类加载器加载类到jvm中   </code></p>
+<p><code>补充: 类的加载过程   </code></p>
 <ul>
 <li>加载</li>
 <li>链接<ul>
@@ -682,7 +764,7 @@ public static int getN(int n) &#123;
 <p>this 指带将要创建的对象  (非静态方法 默认含有this的局部变量)</p>
 </blockquote>
 <ul>
-<li>区分成员变量和局部变量  指代的就是对象</li>
+<li>区分成员变量和局部变量  指代的就是当前对象</li>
 <li>调用其他成员方法</li>
 <li>调用其他构造器 <strong>只能放第一行</strong></li>
 </ul>
@@ -749,11 +831,11 @@ public static int getN(int n) &#123;
 <li><p>```java<br>default void show() {</p>
 <p>}<br>static void hello() {</p>
 <p>}</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">- 接口变量都是静态常量</span><br><span class="line"></span><br><span class="line">- 接口多实现(多继承) 类单继承</span><br><span class="line"></span><br><span class="line">  - 接口和接口 是多继承</span><br><span class="line">  - 类和接口是多实现</span><br><span class="line">  - 类和类 是单继承</span><br><span class="line"></span><br><span class="line">- 接口没有构造器</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 8.枚举</span><br><span class="line"></span><br><span class="line">&gt; 使用场景: 如果该类的对象个数明确,建议使用枚举</span><br><span class="line"></span><br><span class="line">- 该类默认使用final修饰,继承了Enum类</span><br><span class="line">- 写的**字符串**对象将来就是 static final 枚举类对象</span><br><span class="line">- 构造器私有</span><br><span class="line">- 方法</span><br><span class="line">  - Gender[] values()  返回该类的所有对象</span><br><span class="line">  - Gender valueOf(&quot;&quot;);</span><br><span class="line">  - getName(); 获取枚举对象名称</span><br><span class="line">  - getOrderinal() 获取枚举对象所在位置</span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line">// 获取枚举对象的方式</span><br><span class="line">Color blue = Color.blue;</span><br><span class="line">Color blue2 = Color.valueOf(&quot;blue&quot;);</span><br><span class="line">Color[] values = Color.values();</span><br><span class="line">Color blue3 = values[2];</span><br><span class="line">System.out.println(blue == blue2);</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">- 接口变量都是静态常量</span><br><span class="line"></span><br><span class="line">- 接口多实现(多继承) 类单继承</span><br><span class="line"></span><br><span class="line">  - 接口和接口 是多继承</span><br><span class="line">  - 类和接口是多实现</span><br><span class="line">  - 类和类 是单继承</span><br><span class="line"></span><br><span class="line">- 接口没有构造器</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 枚举</span><br><span class="line"></span><br><span class="line">&gt; 使用场景: 如果该类的对象个数明确,建议使用枚举</span><br><span class="line"></span><br><span class="line">- 该类默认使用final修饰,继承了Enum类</span><br><span class="line">- 写的**字符串**对象将来就是 static final 枚举类对象</span><br><span class="line">- 构造器私有</span><br><span class="line">- 方法</span><br><span class="line">  - Gender[] values()  返回该类的所有对象</span><br><span class="line">  - Gender valueOf(&quot;&quot;);</span><br><span class="line">  - getName(); 获取枚举对象名称</span><br><span class="line">  - getOrderinal() 获取枚举对象所在位置</span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line">public enum Gender&#123;</span><br><span class="line">    MAN,WOMAN;  // 必须放第一行,如果后面有代码,加上分号做分割</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 获取枚举对象的方式</span><br><span class="line">Color blue = Color.blue;</span><br><span class="line">Color blue2 = Color.valueOf(&quot;blue&quot;);</span><br><span class="line">Color[] values = Color.values();</span><br><span class="line">Color blue3 = values[2];</span><br><span class="line">System.out.println(blue == blue2);</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 </ul>
-<h1 id="9-系统基类"><a href="#9-系统基类" class="headerlink" title="9.系统基类"></a>9.系统基类</h1><blockquote>
+<h1 id="系统基类"><a href="#系统基类" class="headerlink" title="系统基类"></a>系统基类</h1><blockquote>
 <p>注意: java.lang下的类不需要通过import导入</p>
 </blockquote>
 <table>
@@ -786,6 +868,14 @@ public static int getN(int n) &#123;
 <tr>
 <td align="center">java.lang.String</td>
 <td align="center">字符串类型</td>
+</tr>
+<tr>
+<td align="center">java.lang.Integer</td>
+<td align="center">包装类</td>
+</tr>
+<tr>
+<td align="center">…</td>
+<td align="center"></td>
 </tr>
 </tbody></table>
 <h2 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h2><blockquote>
@@ -837,7 +927,7 @@ public static int getN(int n) &#123;
 </li>
 <li><p><strong>Integer.valueOf(基本类型) == 自动装箱: Integer a = 1;</strong></p>
 <ul>
-<li>会自动缓存-128-127的地址 (IntegerCache)</li>
+<li>默认会自动缓存[-128到127]的地址 (IntegerCache)</li>
 </ul>
 </li>
 <li><hr>
@@ -883,7 +973,7 @@ public static int getN(int n) &#123;
 <li>hashcode不同,equals一定不同</li>
 </ul>
 <p>先比较hashcode,筛选一部分对象,再用equals比较</p>
-<p><img src="assets/202308221430277.png" alt="image-20230804104244280"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/teaching/202308221430277.png" alt="image-20230804104244280"></p>
 <blockquote>
 <p>getClass 返回运行时的类,该方法无法重写</p>
 <p>使用场景: 判断运行时的类型是否为同一个</p>
@@ -913,6 +1003,9 @@ public static int getN(int n) &#123;
 <blockquote>
 <p>StringBuilder 拼接字符 可变的字符数组 (原内容修改字符串)</p>
 </blockquote>
+<ul>
+<li>new出来的字符串通过+拼接,默认使用StringBuilder拼接的</li>
+</ul>
 <p><strong>问题: 以下创建了几个对象</strong></p>
 <ul>
 <li><p>String b = “b”; 创建了几个对象 </p>
@@ -942,7 +1035,7 @@ public static int getN(int n) &#123;
 <li>如果a已经存在于字符串常量池中,那么a不会放入,但是返回字符串常量池的引用</li>
 <li>如果a不存在于字符串常量池中,那么a会放入(a指向字符串常量池),而且返回字符串常量池的引用</li>
 </ul>
-<h1 id="10-集合"><a href="#10-集合" class="headerlink" title="10.集合"></a>10.集合</h1><h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><blockquote>
+<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><blockquote>
 <p>集合的结构</p>
 </blockquote>
 <ul>
@@ -1008,7 +1101,7 @@ public static int getN(int n) &#123;
 <blockquote>
 <p>实现类 HashSet  底层使用哈希表</p>
 </blockquote>
-<p><img src="assets/202308221430278.png" alt="image-20230809141254981"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/teaching/202308221430278.png" alt="image-20230809141254981"></p>
 <p><strong>特性</strong></p>
 <ul>
 <li>存null</li>
@@ -1119,7 +1212,7 @@ public static int getN(int n) &#123;
 <li><strong>存取有序</strong></li>
 <li>键值可以为空</li>
 </ul>
-<h1 id="11-泛型"><a href="#11-泛型" class="headerlink" title="11.泛型"></a>11.泛型</h1><blockquote>
+<h1 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h1><blockquote>
 <p>使用场景： 代码复用，解决安全性问题</p>
 </blockquote>
 <p><strong>特征</strong></p>
@@ -1167,7 +1260,7 @@ public static int getN(int n) &#123;
 <li>泛型不能构成重载</li>
 <li>泛型擦除后统一为Object</li>
 </ul>
-<h1 id="12-注解"><a href="#12-注解" class="headerlink" title="12.注解"></a>12.注解</h1><blockquote>
+<h1 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h1><blockquote>
 <p>每个注解有特殊含义，将来编译器能识别</p>
 <p>使用场景：自定义注解来判断方法权限</p>
 </blockquote>
@@ -1196,7 +1289,8 @@ public static int getN(int n) &#123;
 
 
 
-<h1 id="13-异常"><a href="#13-异常" class="headerlink" title="13.异常"></a>13.异常</h1><h2 id="学习目标"><a href="#学习目标" class="headerlink" title="==学习目标=="></a>==学习目标==</h2><ul>
+<h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><p>==学习目标==</p>
+<ul>
 <li>异常使用场景</li>
 <li>异常种类</li>
 <li>异常传播</li>
@@ -1275,6 +1369,7 @@ public static int getN(int n) &#123;
 </ul>
 </li>
 </ul>
+<p><strong>补充</strong></p>
 <ul>
 <li><p>try中有return</p>
 <ul>
@@ -1291,9 +1386,9 @@ public static int getN(int n) &#123;
 </ul>
 <p>==总之：finally中不要写return==</p>
 <blockquote>
-<p>断言</p>
+<p>断言 assert</p>
 </blockquote>
-<h1 id="14-线程"><a href="#14-线程" class="headerlink" title="14.线程"></a>14.线程</h1><blockquote>
+<h1 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h1><blockquote>
 <p>使用场景：多线程可以解决资源耗时  提升效率</p>
 </blockquote>
 <p>==学习目标==</p>
@@ -1304,8 +1399,9 @@ public static int getN(int n) &#123;
 <li>守护线程 优先级 线程组（了解）</li>
 <li>==线程状态（笔试面试掌握）==</li>
 <li><strong>==线程安全和线程通信==</strong></li>
+<li>死锁</li>
 </ul>
-<blockquote>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
 <p>进程和线程</p>
 </blockquote>
 <p>进程指一个内存中运行的应用程序，它是系统运行程序的基本单位。</p>
@@ -1314,7 +1410,7 @@ public static int getN(int n) &#123;
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.briup.thread;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test01_JVM</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">1000000</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">new</span> Test(i);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 通知垃圾回收器 需要回收对象（不一定回收）</span></span><br><span class="line">		System.gc();</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 当前线程睡眠3秒 此时不占用资源</span></span><br><span class="line">		Thread.sleep(<span class="number">300000</span>); </span><br><span class="line">		System.err.println(<span class="string">&quot;main end...&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//main线程休眠3s </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Test</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.n = n;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//当GC进行垃圾回收指定对象的时候，对象的finalize方法会被自动</span></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">finalize</span><span class="params">()</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;Test被销毁, n: &quot;</span> + n);</span><br><span class="line">		<span class="keyword">super</span>.finalize();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>使用jsconsole查看线程情况</p>
-<p><img src="assets/202308221430279.png" alt="image-20230815103506854"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/teaching/202308221430279.png" alt="image-20230815103506854"></p>
 <blockquote>
 <p>线程调度策略（并发 单核）</p>
 </blockquote>
@@ -1341,7 +1437,7 @@ public static int getN(int n) &#123;
 <li>每个线程拥有各自的栈空间 互相独立</li>
 <li>线程共享堆和方法区</li>
 </ul>
-<blockquote>
+<h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><blockquote>
 <p>线程的创建方式 (线程的执行顺序不可控)</p>
 </blockquote>
 <ul>
@@ -1357,7 +1453,7 @@ public static int getN(int n) &#123;
 <li><p>通过线程池创建</p>
 </li>
 </ul>
-<blockquote>
+<h2 id="种类"><a href="#种类" class="headerlink" title="种类"></a>种类</h2><blockquote>
 <p>线程的种类（了解）</p>
 </blockquote>
 <ul>
@@ -1368,10 +1464,7 @@ public static int getN(int n) &#123;
 </li>
 <li>守护线程</li>
 </ul>
-<blockquote>
-<p>线程的方法</p>
-</blockquote>
-<ul>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
 <li>静态方法<ul>
 <li><strong>currentThread</strong></li>
 </ul>
@@ -1411,7 +1504,21 @@ public static int getN(int n) &#123;
 <li><p>notify();</p>
 </li>
 </ul>
-<p>==状态变化==</p>
+<h2 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h2><blockquote>
+<p>==线程状态==</p>
+</blockquote>
+<ul>
+<li>正常状态 NEW -&gt; RUNNBALE(Runnable(就绪)/Running（运行）) -&gt; TERMINED</li>
+<li>阻塞状态<ul>
+<li>timed_waitting 有限等待</li>
+<li>waitting 无限等待</li>
+<li>blocked 锁阻塞</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>状态变化</p>
+</blockquote>
 <ul>
 <li><p>NEW </p>
 <ul>
@@ -1451,19 +1558,7 @@ public static int getN(int n) &#123;
 </ul>
 </li>
 </ul>
-<blockquote>
-<p>==线程状态==</p>
-</blockquote>
-<ul>
-<li>正常状态 NEW -&gt; RUNNBALE(Runnable(就绪)/Running（运行）) -&gt; TERMINED</li>
-<li>阻塞状态<ul>
-<li>timed_waitting 有限等待</li>
-<li>waitting 无限等待</li>
-<li>blocked 锁阻塞</li>
-</ul>
-</li>
-</ul>
-<blockquote>
+<h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><blockquote>
 <p>线程安全问题 （多线程 并发 <strong>写</strong> <strong>共享资源</strong>，可能导致读的预期效果不一致）</p>
 </blockquote>
 <p>解决思路： 控制临界资源只能同时被一个线程访问</p>
@@ -1494,7 +1589,7 @@ public static int getN(int n) &#123;
 </li>
 </ul>
 <p>==注意： 多个线程必须使用同一把锁对象==</p>
-<blockquote>
+<h2 id="通信"><a href="#通信" class="headerlink" title="通信"></a>通信</h2><blockquote>
 <p>线程通信 （解决线程之间以某种规则运行的问题）</p>
 <p>生产消费队列模型（mq）</p>
 </blockquote>
@@ -1547,10 +1642,7 @@ public static int getN(int n) &#123;
 
 
 
-<blockquote>
-<p>死锁</p>
-</blockquote>
-<h1 id="15-BIO"><a href="#15-BIO" class="headerlink" title="15.BIO"></a>15.BIO</h1><p>==学习目标==</p>
+<h2 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h2><h1 id="BIO"><a href="#BIO" class="headerlink" title="BIO"></a>BIO</h1><p>==学习目标==</p>
 <ul>
 <li>File使用</li>
 <li>IO流(BIO blocked io 阻塞io)</li>
@@ -1785,7 +1877,7 @@ public static int getN(int n) &#123;
 <li><p>反复定位 seek()</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.briup.io;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.FileNotFoundException;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.RandomAccessFile;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 任意访问流  能读能写 反复定位</span></span><br><span class="line"><span class="comment"> * 将a.txt文件内容：hello world123，</span></span><br><span class="line"><span class="comment"> * 使用随机访问流进行内容替换，完成后文件 </span></span><br><span class="line"><span class="comment"> * 内容：hello briup123</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> vanse</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestRandomAccessIo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// hello world123</span></span><br><span class="line">		<span class="comment">// hello briup123</span></span><br><span class="line">		<span class="comment">// 1.创建任意访问流</span></span><br><span class="line">		RandomAccessFile ra = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			ra = <span class="keyword">new</span> RandomAccessFile(<span class="string">&quot;a.txt&quot;</span>, <span class="string">&quot;rw&quot;</span>);</span><br><span class="line">			<span class="comment">// 2.定位到需要修改的位置 从0开始</span></span><br><span class="line">				<span class="comment">// 读写文件会使指针变动</span></span><br><span class="line"><span class="comment">//			System.out.println(ra.getFilePointer());</span></span><br><span class="line">			ra.seek(<span class="number">6</span>);</span><br><span class="line">			ra.write(<span class="string">&quot;briup&quot;</span>.getBytes()); <span class="comment">// 11 </span></span><br><span class="line">			System.out.println(ra.getFilePointer());</span><br><span class="line">			ra.seek(<span class="number">0</span>);</span><br><span class="line">			<span class="comment">// 3.重新读文件</span></span><br><span class="line">			<span class="keyword">int</span> len = -<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">while</span>( (len = ra.read()) != -<span class="number">1</span>) &#123;</span><br><span class="line"><span class="comment">//				ra.write(len);</span></span><br><span class="line">				System.out.write(len);</span><br><span class="line">				System.out.flush();</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">			<span class="keyword">if</span>(ra != <span class="keyword">null</span>) &#123;</span><br><span class="line">				<span class="keyword">try</span> &#123;</span><br><span class="line">					ra.close();</span><br><span class="line">				&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">					e.printStackTrace();</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<p><strong>作业1 如果现在有一款只能试用10次的软件，超过10次之后就需要提醒用户购买正版软件。(程序运行一次，</strong></p>
+<h2 id="work"><a href="#work" class="headerlink" title="work"></a>work</h2><p><strong>作业1 如果现在有一款只能试用10次的软件，超过10次之后就需要提醒用户购买正版软件。(程序运行一次，</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.briup.homework.io;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Auther</span>: vanse(lc))</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: 2023/8/22-08-22-22:36</span></span><br><span class="line"><span class="comment"> * 编程实现:如果现在有一款只能试用10次的软件，超过10次之后就需要提醒用户购买正版软件。(程序运行一次，</span></span><br><span class="line"><span class="comment"> * 使用次数就要减一次)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test3</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        File file = <span class="keyword">new</span> File(<span class="string">&quot;a.txt&quot;</span>);</span><br><span class="line">        <span class="keyword">if</span> (!file.exists()) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                file.createNewFile();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">try</span> (FileInputStream fis = <span class="keyword">new</span> FileInputStream(file)) &#123;</span><br><span class="line">            <span class="keyword">byte</span>[] arr = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">2</span>];</span><br><span class="line">            <span class="keyword">int</span> len = fis.read(arr);</span><br><span class="line">            System.out.println(<span class="string">&quot;len = &quot;</span> + len);</span><br><span class="line">            <span class="keyword">int</span> intCont = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                String strCount = <span class="keyword">new</span> String(arr, <span class="number">0</span>, len);</span><br><span class="line">                intCont = Integer.parseInt(strCount);</span><br><span class="line">                System.out.println(<span class="string">&quot;strCount = &quot;</span> + strCount);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (NumberFormatException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;intCont = &quot;</span> + intCont);</span><br><span class="line">                <span class="keyword">if</span> (intCont &gt; <span class="number">5</span>) &#123;</span><br><span class="line">                    System.out.println(<span class="string">&quot;使用次数已到&quot;</span>);</span><br><span class="line">                    System.exit(-<span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">try</span>(PrintStream fos = <span class="keyword">new</span> PrintStream(<span class="keyword">new</span> FileOutputStream(file));) &#123;</span><br><span class="line">                    fos.print(++intCont); <span class="comment">// 使用了1次</span></span><br><span class="line">                    fos.flush();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p><strong>作业2： 复制10张图片，命名img_copy_i_.png</strong></p>
@@ -1807,7 +1899,7 @@ public static int getN(int n) &#123;
 <ul>
 <li>将图片字节数分为2半，每个线程控制一半数据读写 （保证线程安全 | 使用任意访问流）</li>
 </ul>
-<h1 id="16-网络"><a href="#16-网络" class="headerlink" title="16.网络"></a>16.网络</h1><blockquote>
+<h1 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h1><blockquote>
 <p>计算机通信三要素</p>
 </blockquote>
 <ul>
@@ -1914,7 +2006,7 @@ public static int getN(int n) &#123;
 
 
 
-<p><img src="assets/202308241529071.png" alt="image-20230824152901647"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/teaching/202308241529071.png" alt="image-20230824152901647"></p>
 <blockquote>
 <p><strong>聊天室</strong></p>
 </blockquote>
@@ -1933,7 +2025,7 @@ public static int getN(int n) &#123;
 
 
 
-<h2 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h2><h1 id="17-反射"><a href="#17-反射" class="headerlink" title="17.反射"></a>17.反射</h1><h2 id="类加载"><a href="#类加载" class="headerlink" title="类加载"></a>类加载</h2><blockquote>
+<h2 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h2><h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><h2 id="类加载"><a href="#类加载" class="headerlink" title="类加载"></a>类加载</h2><blockquote>
 <p>类什么时候加载</p>
 </blockquote>
 <p>什么时候用 什么时候加载，不一定会初始化</p>
@@ -2019,11 +2111,11 @@ public static int getN(int n) &#123;
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.briup.classloader;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoaderFile</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"><span class="comment">//		new FileInputStream(&quot;src/a.txt&quot;);</span></span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line"><span class="comment">//		ClassLoader systemClassLoader = ClassLoader.getSystemClassLoader();</span></span><br><span class="line">		ClassLoader classLoader = LoaderFile.class.getClassLoader();</span><br><span class="line">		<span class="comment">// 将a.txt放到bin目录下</span></span><br><span class="line">		InputStream is = classLoader.getResourceAsStream(<span class="string">&quot;a.txt&quot;</span>);</span><br><span class="line">		System.out.println(is);</span><br><span class="line">		<span class="keyword">int</span> read = is.read();</span><br><span class="line">		System.out.println(read);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>==注意： 只加载bin/out目录下的文件，如果文件放在src下，编译器可能会自动将文件放到bin/out==</p>
-<h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a><strong>反射</strong></h2><blockquote>
+<h2 id="反射-1"><a href="#反射-1" class="headerlink" title="反射"></a><strong>反射</strong></h2><h3 id="CLASS"><a href="#CLASS" class="headerlink" title="CLASS"></a>CLASS</h3><blockquote>
 <p>Class的含义</p>
 </blockquote>
 <p><strong>Class 类是一个重要的核心类，它用于表示一个类或接口的运行时 信息。每个类在Java虚拟机中都有一个对应的 Class 对象，可以通过该对象获 取类的构造函数、方法、属性等信息，并且可以进行实例化对象、方法调用和数 据成员访问等操作。</strong></p>
-<p><img src="assets/202308251203009.png" alt="image-20230825120312035"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/teaching/202308251203009.png" alt="image-20230825120312035"></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Student s = <span class="keyword">new</span> Student();</span><br><span class="line"><span class="comment">// 左边是类 右边是对象</span></span><br><span class="line">Class&lt;Student&gt; c = Student.class;</span><br><span class="line">Filed</span><br><span class="line">  Method</span><br><span class="line">  Consturcotr</span><br><span class="line">  Annotation</span><br></pre></td></tr></table></figure>
 
 
@@ -2041,16 +2133,14 @@ public static int getN(int n) &#123;
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.briup.reflect;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取Class对象</span></span><br><span class="line"><span class="comment"> * 	 同一个对象（类只加载一次，运行时区域一个）</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestGetClass</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException </span>&#123;</span><br><span class="line">		<span class="comment">// 1.类名class</span></span><br><span class="line">		Class&lt;?&gt; c = A.class;</span><br><span class="line">		<span class="comment">// 2.对象.getClass()</span></span><br><span class="line">		A a = <span class="keyword">new</span> A();</span><br><span class="line">		Class&lt;?&gt; c2 = a.getClass();</span><br><span class="line">		System.out.println(c == c2);</span><br><span class="line">		<span class="comment">// 3.Class.forName(&quot;带包类名&quot;); 建议</span></span><br><span class="line">		Class&lt;?&gt; c3 = Class.forName(<span class="string">&quot;com.briup.reflect.A&quot;</span>);</span><br><span class="line">		System.out.println(c3 == c2);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p><code>注意： 同一个对象（类只加载一次，运行时区域一个）</code></p>
-<blockquote>
+<h3 id="获取类info"><a href="#获取类info" class="headerlink" title="获取类info"></a>获取类info</h3><blockquote>
 <p>动态获取类本身信息</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.briup.reflect;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Modifier;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取Class对象 同一个对象（类只加载一次，运行时区域一个）</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestGetClassInfo</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException </span>&#123;</span><br><span class="line">		<span class="comment">// 1.获取Class对象</span></span><br><span class="line">		Class&lt;?&gt; a = Class.forName(<span class="string">&quot;com.briup.reflect.TestGetClassInfo$A&quot;</span>);</span><br><span class="line">		Class a1 = <span class="keyword">int</span>.class;</span><br><span class="line">		Class a2 = Integer.class;</span><br><span class="line">		<span class="comment">// 2.获取该类的信息</span></span><br><span class="line"><span class="comment">//		System.out.println(&quot;原始类型: &quot; + a1.isPrimitive());</span></span><br><span class="line"><span class="comment">//		System.out.println(&quot;原始类型: &quot; + a2.isPrimitive());</span></span><br><span class="line">		System.out.println(<span class="string">&quot;基本类型: &quot;</span> + a.isPrimitive());</span><br><span class="line">		System.out.println(<span class="string">&quot;类完整名: &quot;</span> + a.getName());</span><br><span class="line">		System.out.println(<span class="string">&quot;类简写名: &quot;</span> + a.getSimpleName());</span><br><span class="line">		System.out.println(<span class="string">&quot;类修饰符: &quot;</span> + Modifier.toString(a.getModifiers()));</span><br><span class="line">		System.out.println(<span class="string">&quot;是否为父类|接口: &quot;</span> + a.isAssignableFrom(B.class));</span><br><span class="line">		System.out.println(<span class="string">&quot;父类: &quot;</span> + a.getSuperclass());</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">B</span> </span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// default是不写</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
-
-
-<blockquote>
+<h3 id="获取类成员"><a href="#获取类成员" class="headerlink" title="获取类成员"></a>获取类成员</h3><blockquote>
 <p>动态获取类成员 Class</p>
 </blockquote>
 <ul>
@@ -2069,7 +2159,7 @@ public static int getN(int n) &#123;
 <li><p>Annotation 注解</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">boolean</span> flag = a.isAnnotationPresent(MyAnno.class);</span><br><span class="line"><span class="keyword">if</span>(flag) &#123;</span><br><span class="line">  MyAnno annotation = a.getAnnotation(MyAnno.class);</span><br><span class="line">  String value = annotation.value();</span><br><span class="line">  System.out.println(value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Target(value = &#123;ElementType.TYPE,ElementType.METHOD&#125;)</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="meta">@interface</span> MyAnno&#123;</span><br><span class="line">	<span class="function">String <span class="title">value</span><span class="params">()</span> <span class="keyword">default</span> &quot;&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<blockquote>
+<h3 id="操作类成员"><a href="#操作类成员" class="headerlink" title="操作类成员"></a>操作类成员</h3><blockquote>
 <p>动态操作类成员Class</p>
 </blockquote>
 <ul>
@@ -2098,7 +2188,7 @@ public static int getN(int n) &#123;
 
 
 
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><blockquote>
+<h1 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h1><h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><blockquote>
 <p>底层的数据结构</p>
 </blockquote>
 <ul>
@@ -2133,16 +2223,10 @@ public static int getN(int n) &#123;
 
 
 
-
-
-
-
-
-
-<h1 id="chatgpt插件"><a href="#chatgpt插件" class="headerlink" title="chatgpt插件"></a>chatgpt插件</h1><p><strong>先安装油猴插件</strong></p>
-<p><img src="assets/202308221430280.png" alt="image-20230810104302678"></p>
+<h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><h1 id="chatgpt"><a href="#chatgpt" class="headerlink" title="chatgpt"></a>chatgpt</h1><p><strong>先安装油猴插件</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/teaching/202308221430280.png" alt="image-20230810104302678"></p>
 <p><a target="_blank" rel="noopener" href="https://greasyfork.org/zh-CN/scripts?q=chatgpt">再安装chatgpt脚本</a></p>
-<p><img src="assets/202308221429369.png" alt="image-20230810104412211"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/teaching/202308221429369.png" alt="image-20230810104412211"></p>
 <h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><ul>
 <li>ctrl + shift +  + 字体放大</li>
 <li><strong>alt + /   提示</strong></li>
@@ -2153,7 +2237,7 @@ public static int getN(int n) &#123;
 <li>alt+ 左右方向 上一步下一步代码</li>
 <li>ctrl + shift + f 格式化代码</li>
 <li>alt+shift+r 重构类名</li>
-<li>ctrl+1 快速接受变量</li>
+<li>ctrl+1 快速接收变量</li>
 <li>ctrl + n 快速创建 class package project</li>
 <li>ctrl + d 快速删除一行</li>
 <li>ctrl + shift + t 查找类型</li>
@@ -2195,7 +2279,7 @@ public static int getN(int n) &#123;
     
       <a href="/archives/0-soft.html" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">软件</div>
+        <div class="article-nav-title">0-软件</div>
       </a>
     
   </nav>
