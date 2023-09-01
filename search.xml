@@ -2438,7 +2438,7 @@ public static int getN(int n) &#123;
 <p>安装包安装, 可以图形化界面自主配置<br>如果是压缩包解压, 可以配置 配置文件, 可以解压安装到指定的路径. </p>
 <h2 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h2><p>双击安装包 </p>
 <p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/soft/202309010017001.png" alt="img"></p>
-<p><img src="https://img-blog.csdnimg.cn/a4353fa9bc9d4380b64ef365611ae589.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBATk9SVEhFUk4gIENSRVNDRU5U,size_17,color_FFFFFF,t_70,g_se,x_16" alt="img"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/soft/202309011052947.png" alt="img"></p>
 <p>我们选择自定义安装, 因为有些应用我们可能用不到</p>
 <p><img src="https://cdn.jsdelivr.net/gh/wangsidandan/blog_images@main/soft/202309010017002.png" alt="img"></p>
 <p>选择要安装的服务, 并点击箭头 将其添加到右边</p>
